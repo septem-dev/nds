@@ -1,0 +1,119 @@
+// =============================================================================
+// Process (Step Indicator) — NDS Design Library v1.0
+// =============================================================================
+
+.process {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+
+  &__step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    // Connector line
+    &::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: calc(50% + 16px);
+      right: calc(-50% + 16px);
+      height: 2px;
+      background-color: var(--color-border-default);
+    }
+
+    &:last-child::before { display: none; }
+
+    // Completed connector
+    &--completed::before {
+      background-color: var(--primitive-green-500);
+    }
+  }
+
+  // Step circle
+  &__circle {
+    @include flex-center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-border-default);
+    background-color: var(--color-bg-default);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-tertiary);
+    position: relative;
+    z-index: 1;
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+  }
+
+  &__step--active .process__circle {
+    border-color: var(--primitive-green-500);
+    color: var(--primitive-green-500);
+  }
+
+  &__step--completed .process__circle {
+    border-color: var(--primitive-green-500);
+    background-color: var(--primitive-green-500);
+    color: var(--primitive-gray-0);
+  }
+
+  &__step--error .process__circle {
+    border-color: var(--primitive-red-500);
+    background-color: var(--primitive-red-500);
+    color: var(--primitive-gray-0);
+  }
+
+  // Step label
+  &__label {
+    margin-top: var(--spacing-3);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-tertiary);
+    text-align: center;
+    line-height: var(--line-height-snug);
+  }
+
+  &__step--active .process__label   { color: var(--color-text-brand); }
+  &__step--completed .process__label { color: var(--color-text-primary); }
+
+  // Vertical orientation
+  &--vertical {
+    flex-direction: column;
+    gap: 0;
+
+    .process__step {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--spacing-4);
+      padding-bottom: var(--spacing-8);
+
+      &::before {
+        top: calc(32px + var(--spacing-2));
+        left: 16px;
+        right: auto;
+        bottom: 0;
+        width: 2px;
+        height: auto;
+      }
+    }
+
+    .process__label {
+      text-align: left;
+      margin-top: 4px;
+    }
+  }
+
+  // Compact size
+  &--sm {
+    .process__circle {
+      width: 24px;
+      height: 24px;
+      font-size: var(--font-size-xs);
+    }
+
+    .process__step::before { top: 12px; }
+  }
+}

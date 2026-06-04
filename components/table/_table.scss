@@ -1,0 +1,151 @@
+// =============================================================================
+// Table — NDS Design Library v1.0
+// =============================================================================
+
+.table {
+  &-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    @include scrollbar-hidden;
+  }
+
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-md);
+
+  // Header
+  thead tr {
+    border-bottom: 2px solid var(--color-border-default);
+  }
+
+  th {
+    padding: var(--spacing-4) var(--spacing-5);
+    text-align: left;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-subtle);
+    white-space: nowrap;
+
+    &.sortable {
+      cursor: pointer;
+      user-select: none;
+
+      &:hover { color: var(--color-text-primary); }
+    }
+  }
+
+  &__sort-icon {
+    display: inline-flex;
+    margin-left: var(--spacing-1);
+    vertical-align: middle;
+    color: var(--color-icon-tertiary);
+
+    &--asc,
+    &--desc { color: var(--color-icon-brand); }
+  }
+
+  // Body
+  tbody tr {
+    border-bottom: 1px solid var(--color-border-subtle);
+    transition: background-color var(--transition-base);
+
+    &:last-child { border-bottom: none; }
+
+    &:hover { background-color: var(--color-bg-subtle); }
+
+    &.selected { background-color: var(--primitive-green-50); }
+  }
+
+  td {
+    padding: var(--spacing-4) var(--spacing-5);
+    color: var(--color-text-primary);
+    vertical-align: middle;
+  }
+
+  // Footer
+  tfoot tr { border-top: 2px solid var(--color-border-default); }
+
+  tfoot td {
+    padding: var(--spacing-4) var(--spacing-5);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-subtle);
+  }
+
+  // Cell types
+  &__cell {
+    &--number { text-align: right; font-variant-numeric: tabular-nums; }
+    &--center { text-align: center; }
+    &--nowrap { white-space: nowrap; }
+    &--actions {
+      white-space: nowrap;
+      text-align: right;
+    }
+  }
+
+  // Sizes
+  &--sm {
+    th, td { padding: var(--spacing-3) var(--spacing-4); font-size: var(--font-size-sm); }
+  }
+
+  &--lg {
+    th, td { padding: var(--spacing-5) var(--spacing-6); }
+  }
+
+  // Striped
+  &--striped tbody tr:nth-child(even) {
+    background-color: var(--color-bg-subtle);
+  }
+
+  // Bordered
+  &--bordered {
+    th, td { border-right: 1px solid var(--color-border-subtle); }
+    th:last-child, td:last-child { border-right: none; }
+  }
+
+  // Fixed header
+  &--fixed-header {
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  // Pagination
+  &-pagination {
+    @include flex-between;
+    padding: var(--spacing-4) var(--spacing-5);
+    border-top: 1px solid var(--color-border-subtle);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  &-pagination__pages {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+  }
+
+  &-pagination__page {
+    @include reset-button;
+    @include flex-center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: background-color var(--transition-base);
+
+    &:hover { background-color: var(--color-bg-subtle); }
+    &--active {
+      background-color: var(--primitive-green-500);
+      color: var(--primitive-gray-0);
+    }
+    &:disabled { opacity: 0.5; pointer-events: none; }
+  }
+}

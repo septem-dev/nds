@@ -1,0 +1,88 @@
+// =============================================================================
+// Badge — NDS Design Library v1.0
+// =============================================================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  border-radius: var(--radius-full);
+
+  // Size
+  &--sm {
+    height: 16px;
+    padding: 0 var(--spacing-2);
+    font-size: var(--font-size-2xs);
+  }
+
+  &--md {
+    height: 20px;
+    padding: 0 var(--spacing-3);
+    font-size: var(--font-size-xs);
+  }
+
+  &--lg {
+    height: 24px;
+    padding: 0 var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+
+  // Color variants — filled
+  &--primary {
+    background-color: var(--color-bg-badge-primary);
+    color: var(--primitive-gray-0);
+  }
+
+  &--secondary {
+    background-color: var(--color-bg-badge-secondary);
+    color: var(--color-text-primary);
+  }
+
+  &--info {
+    background-color: var(--color-bg-badge-info);
+    color: var(--primitive-gray-0);
+  }
+
+  &--danger {
+    background-color: var(--color-bg-badge-danger);
+    color: var(--primitive-gray-0);
+  }
+
+  &--warning {
+    background-color: var(--color-bg-badge-warning);
+    color: var(--primitive-gray-0);
+  }
+
+  // Outlined variant
+  &--outline {
+    background-color: transparent;
+    border: 1px solid currentColor;
+
+    &.badge--primary  { color: var(--primitive-green-500); }
+    &.badge--info     { color: var(--primitive-blue-500); }
+    &.badge--danger   { color: var(--primitive-red-500); }
+    &.badge--secondary {
+      color: var(--color-text-secondary);
+      border-color: var(--color-border-default);
+    }
+  }
+
+  // Dot badge (notification)
+  &--dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: var(--radius-full);
+
+    &.badge--sm { width: 6px; height: 6px; }
+    &.badge--lg { width: 10px; height: 10px; }
+  }
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+  }
+}
