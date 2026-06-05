@@ -59,5 +59,7 @@ $RECYCLE.BIN/
 .svn
 .git
 
+.svn/
+**/wc.db
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos
