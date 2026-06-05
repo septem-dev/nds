@@ -33,7 +33,7 @@
   // Color variants — filled
   &--primary {
     background-color: var(--color-bg-badge-primary);
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
   }
 
   &--secondary {
@@ -43,17 +43,17 @@
 
   &--info {
     background-color: var(--color-bg-badge-info);
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
   }
 
   &--danger {
     background-color: var(--color-bg-badge-danger);
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
   }
 
   &--warning {
     background-color: var(--color-bg-badge-warning);
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
   }
 
   // Outlined variant

@@ -59,13 +59,13 @@
   &__step--completed .process__circle {
     border-color: var(--primitive-green-500);
     background-color: var(--primitive-green-500);
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
   }
 
   &__step--error .process__circle {
     border-color: var(--primitive-red-500);
     background-color: var(--primitive-red-500);
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
   }
 
   // Step label

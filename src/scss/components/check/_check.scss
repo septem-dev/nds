@@ -37,8 +37,8 @@
       display: block;
       width: 10px;
       height: 6px;
-      border-left: 2px solid var(--primitive-gray-0);
-      border-bottom: 2px solid var(--primitive-gray-0);
+      border-left: 2px solid var(--primitive-gray-50);
+      border-bottom: 2px solid var(--primitive-gray-50);
       transform: rotate(-45deg) translateY(-1px);
       opacity: 0;
       transition: opacity var(--transition-base);
@@ -74,7 +74,7 @@
       width: 10px;
       height: 0;
       border-left: none;
-      border-bottom: 2px solid var(--primitive-gray-0);
+      border-bottom: 2px solid var(--primitive-gray-50);
       transform: none;
       opacity: 1;
       margin-top: 1px;

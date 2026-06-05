@@ -30,7 +30,7 @@
   padding: var(--spacing-4) var(--spacing-5);
   border-radius: var(--radius-lg);
   background-color: var(--color-bg-toast-default);
-  color: var(--primitive-gray-0);
+  color: var(--primitive-gray-50);
   box-shadow: var(--shadow-lg);
   max-width: 380px;
   min-width: 280px;
@@ -64,7 +64,7 @@
     @include reset-button;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
     text-decoration: underline;
     cursor: pointer;
     margin-top: var(--spacing-2);
@@ -80,7 +80,7 @@
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    color: var(--primitive-gray-0);
+    color: var(--primitive-gray-50);
     opacity: 0.6;
 
     &:hover { opacity: 1; }

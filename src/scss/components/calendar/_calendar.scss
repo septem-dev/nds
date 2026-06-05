@@ -85,7 +85,7 @@
 
     &--selected {
       background-color: var(--primitive-green-500);
-      color: var(--primitive-gray-0);
+      color: var(--primitive-gray-50);
       font-weight: var(--font-weight-semibold);
 
       &:hover { background-color: var(--primitive-green-600); }
@@ -99,7 +99,7 @@
     &--range-start,
     &--range-end {
       background-color: var(--primitive-green-500);
-      color: var(--primitive-gray-0);
+      color: var(--primitive-gray-50);
     }
 
     &--other-month { color: var(--color-text-tertiary); }

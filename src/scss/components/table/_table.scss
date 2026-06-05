@@ -146,7 +146,7 @@
     &:hover { background-color: var(--color-bg-subtle); }
     &--active {
       background-color: var(--primitive-green-500);
-      color: var(--primitive-gray-0);
+      color: var(--primitive-gray-50);
     }
     &:disabled { opacity: 0.5; pointer-events: none; }
   }
