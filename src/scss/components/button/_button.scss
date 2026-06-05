@@ -8,38 +8,6 @@
 @use '../../styles/mixins/mixins' as *;
 
 // -----------------------------------------------------------------------------
-// Design Tokens (CSS Custom Properties)
-// -----------------------------------------------------------------------------
-
-:root {
-  // Primary
-  --color-bg-button-primary-default:   #00B140; // color/bg/button/primary-default
-  --color-bg-button-primary-pressed:   #009933; // color/bg/button/primary-pressed
-  --color-bg-button-primary-disabled:  #E5E5E5; // color/bg/button/primary-disabled
-  --color-text-button-primary-default: #FFFFFF;  // color/text/button/primary-default
-  --color-text-button-primary-disabled:#AAAAAA; // color/text/button/primary-disabled
-
-  // Secondary
-  --color-bg-button-secondary-default:   transparent;
-  --color-bg-button-secondary-pressed:   #F0FAF4;
-  --color-bg-button-secondary-disabled:  transparent;
-  --color-border-button-secondary-default:  #00B140;
-  --color-border-button-secondary-disabled: #E5E5E5;
-  --color-text-button-secondary-default:    #00B140;
-  --color-text-button-secondary-disabled:   #AAAAAA;
-
-  // Tertiary
-  --color-bg-button-tertiary-default:   #F5F5F5; // color/bg/button/tertiary-default
-  --color-bg-button-tertiary-pressed:   rgba(0, 122, 252, 0.1); // #007AFC · 0.1%
-  --color-bg-button-tertiary-disabled:  #F5F5F5;
-  --color-border-button-tertiary-default:  transparent; // color/border/button/tertiary-default
-  --color-border-button-tertiary-disabled: transparent;
-  --color-text-button-tertiary-default:    #1A1A1A; // color/text/button/tertiary-default
-  --color-text-button-tertiary-disabled:   #AAAAAA;
-  --color-icon-gray900:                    #1A1A1A; // color/icon/gray900
-}
-
-// -----------------------------------------------------------------------------
 // Size Tokens
 // -----------------------------------------------------------------------------
 
