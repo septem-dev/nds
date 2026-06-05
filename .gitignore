@@ -1,5 +1,6 @@
 # database
 *.db
+wc.db
 
 # vscode
 .vscode/
