@@ -1,0 +1,110 @@
+// =============================================================================
+// Load Data (Loading State) — NDS Design Library v1.0
+// =============================================================================
+
+.load-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-16);
+  gap: var(--spacing-4);
+
+  // Spinner
+  &__spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--color-border-default);
+    border-top-color: var(--primitive-green-500);
+    border-radius: var(--radius-full);
+    animation: load-data-spin 0.75s linear infinite;
+  }
+
+  &__text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  // Skeleton loader
+  &--skeleton {
+    width: 100%;
+    display: block;
+  }
+
+  // Skeleton shimmer base
+  &__skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-bg-muted) 25%,
+      var(--color-bg-subtle) 50%,
+      var(--color-bg-muted) 75%
+    );
+    background-size: 200% 100%;
+    animation: load-data-shimmer 1.5s infinite;
+    border-radius: var(--radius-sm);
+
+    &--text {
+      height: 16px;
+      width: 100%;
+      margin-bottom: var(--spacing-3);
+
+      &:last-child { width: 70%; }
+    }
+
+    &--title {
+      height: 22px;
+      width: 60%;
+      margin-bottom: var(--spacing-4);
+    }
+
+    &--avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+    }
+
+    &--image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+
+    &--button {
+      height: 36px;
+      width: 100px;
+      border-radius: var(--radius-full);
+    }
+  }
+
+  // Skeleton row (icon + text)
+  &__skeleton-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+    width: 100%;
+  }
+
+  // Inline loading (inside button etc.)
+  &--inline {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 0;
+    gap: var(--spacing-2);
+
+    .load-data__spinner {
+      width: 16px;
+      height: 16px;
+      border-width: 2px;
+    }
+  }
+}
+
+@keyframes load-data-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes load-data-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

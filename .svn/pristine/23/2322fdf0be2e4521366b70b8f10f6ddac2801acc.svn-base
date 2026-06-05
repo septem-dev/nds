@@ -1,0 +1,125 @@
+// =============================================================================
+// Radio — NDS Design Library v1.0
+// =============================================================================
+
+.radio {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__circle {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--color-border-default);
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-control-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+
+    &::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-full);
+      background-color: var(--primitive-gray-0);
+      opacity: 0;
+      transition: opacity var(--transition-base), transform var(--transition-base);
+      transform: scale(0.5);
+    }
+  }
+
+  &__label {
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
+  }
+
+  &__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-1);
+  }
+
+  // Checked
+  &__input:checked + .radio__circle {
+    border-color: var(--primitive-green-500);
+    background-color: var(--primitive-green-500);
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  // Disabled
+  &__input:disabled + .radio__circle {
+    border-color: var(--color-border-default);
+    background-color: var(--color-bg-control-disabled);
+    cursor: not-allowed;
+  }
+
+  &__input:disabled ~ .radio__label {
+    color: var(--color-text-disabled);
+  }
+
+  // Focus
+  &__input:focus-visible + .radio__circle {
+    @include focus-ring;
+  }
+
+  // Error
+  &--error .radio__circle {
+    border-color: var(--color-border-danger);
+  }
+
+  // Sizes
+  &--sm {
+    .radio__circle { width: 16px; height: 16px; }
+    .radio__circle::after { width: 6px; height: 6px; }
+    .radio__label { font-size: var(--font-size-sm); }
+  }
+
+  &--lg {
+    .radio__circle { width: 20px; height: 20px; }
+    .radio__circle::after { width: 10px; height: 10px; }
+    .radio__label { font-size: var(--font-size-lg); }
+  }
+
+  // Card style radio
+  &--card {
+    border: 1.5px solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-5) var(--spacing-6);
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+
+    &:hover { border-color: var(--color-border-emphasis); }
+
+    .radio__input:checked ~ & {
+      border-color: var(--primitive-green-500);
+      background-color: var(--primitive-green-50);
+    }
+  }
+
+  // Group
+  &-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+
+    &--horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--spacing-6);
+    }
+  }
+}

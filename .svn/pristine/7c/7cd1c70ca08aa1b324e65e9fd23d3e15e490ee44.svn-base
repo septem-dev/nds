@@ -1,0 +1,131 @@
+// =============================================================================
+// Calendar — NDS Design Library v1.0
+// =============================================================================
+
+.calendar {
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--color-bg-default);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+
+  // Header
+  &__header {
+    @include flex-between;
+    margin-bottom: var(--spacing-6);
+  }
+
+  &__nav {
+    @include reset-button;
+    @include flex-center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    color: var(--color-icon-secondary);
+    transition: background-color var(--transition-base);
+
+    &:hover { background-color: var(--color-bg-subtle); }
+  }
+
+  &__title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    cursor: pointer;
+
+    &:hover { color: var(--color-text-brand); }
+  }
+
+  // Weekday labels
+  &__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: var(--spacing-2);
+  }
+
+  &__weekday {
+    @include flex-center;
+    height: 32px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-tertiary);
+
+    &--sunday { color: var(--color-text-danger); }
+    &--saturday { color: var(--color-text-info); }
+  }
+
+  // Days grid
+  &__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-1);
+  }
+
+  &__day {
+    @include reset-button;
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    transition: background-color var(--transition-base), color var(--transition-base);
+    margin: 0 auto;
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-bg-subtle);
+    }
+
+    &--today {
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-brand);
+    }
+
+    &--selected {
+      background-color: var(--primitive-green-500);
+      color: var(--primitive-gray-0);
+      font-weight: var(--font-weight-semibold);
+
+      &:hover { background-color: var(--primitive-green-600); }
+    }
+
+    &--in-range {
+      background-color: var(--primitive-green-50);
+      border-radius: 0;
+    }
+
+    &--range-start,
+    &--range-end {
+      background-color: var(--primitive-green-500);
+      color: var(--primitive-gray-0);
+    }
+
+    &--other-month { color: var(--color-text-tertiary); }
+
+    &--sunday { color: var(--color-text-danger); }
+    &--saturday { color: var(--color-text-info); }
+
+    &:disabled {
+      color: var(--color-text-disabled);
+      cursor: not-allowed;
+    }
+
+    &--has-event::after {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: var(--radius-full);
+      background-color: var(--primitive-green-500);
+      margin: 1px auto 0;
+    }
+  }
+
+  // Footer
+  &__footer {
+    @include flex-between;
+    margin-top: var(--spacing-6);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-border-subtle);
+  }
+}

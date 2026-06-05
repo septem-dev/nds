@@ -1,0 +1,77 @@
+// =============================================================================
+// Bullet — NDS Design Library v1.0
+// =============================================================================
+
+.bullet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
+  }
+
+  &__marker {
+    flex-shrink: 0;
+    margin-top: 7px; // optical alignment
+
+    // Dot
+    &--dot {
+      width: 4px;
+      height: 4px;
+      background-color: var(--color-text-primary);
+      border-radius: var(--radius-full);
+    }
+
+    // Dash
+    &--dash {
+      width: 8px;
+      height: 1px;
+      background-color: var(--color-text-secondary);
+      margin-top: 10px;
+    }
+
+    // Number (ordered)
+    &--number {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text-primary);
+      min-width: 16px;
+      margin-top: 0;
+    }
+
+    // Icon
+    &--icon {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      color: var(--color-icon-brand);
+    }
+  }
+
+  &__text { flex: 1; }
+
+  // Secondary (sub-bullet)
+  &--secondary {
+    margin-top: var(--spacing-2);
+    padding-left: var(--spacing-6);
+
+    .bullet__marker--dot {
+      background-color: var(--color-text-tertiary);
+    }
+
+    .bullet__item {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+  }
+
+  // Size
+  &--sm .bullet__item { font-size: var(--font-size-sm); }
+  &--lg .bullet__item { font-size: var(--font-size-lg); }
+}

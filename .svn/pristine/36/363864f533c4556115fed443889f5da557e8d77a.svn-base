@@ -1,0 +1,74 @@
+// =============================================================================
+// Label — NDS Design Library v1.0
+// =============================================================================
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+
+  // Size
+  &--sm {
+    height: 18px;
+    padding: 0 var(--spacing-2);
+    font-size: var(--font-size-2xs);
+    border-radius: var(--radius-xs);
+  }
+
+  &--md {
+    height: 22px;
+    padding: 0 var(--spacing-3);
+    font-size: var(--font-size-xs);
+    border-radius: var(--radius-sm);
+  }
+
+  &--lg {
+    height: 26px;
+    padding: 0 var(--spacing-4);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  // Color variants — filled
+  &--default {
+    background-color: var(--color-bg-muted);
+    color: var(--color-text-secondary);
+  }
+
+  &--primary {
+    background-color: var(--primitive-green-50);
+    color: var(--primitive-green-700);
+  }
+
+  &--info {
+    background-color: var(--primitive-blue-50);
+    color: var(--primitive-blue-700);
+  }
+
+  &--danger {
+    background-color: var(--primitive-red-50);
+    color: var(--primitive-red-600);
+  }
+
+  &--warning {
+    background-color: var(--primitive-orange-50);
+    color: var(--primitive-orange-500);
+  }
+
+  // Outlined
+  &--outline {
+    background-color: transparent;
+    border: 1px solid currentColor;
+  }
+
+  // Dot indicator
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background-color: currentColor;
+    flex-shrink: 0;
+  }
+}

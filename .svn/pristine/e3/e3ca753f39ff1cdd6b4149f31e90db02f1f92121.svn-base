@@ -1,0 +1,96 @@
+// =============================================================================
+// Chip — NDS Design Library v1.0
+// =============================================================================
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+  user-select: none;
+
+  // Size
+  &--sm {
+    height: 28px;
+    padding: 0 var(--spacing-4);
+    font-size: var(--font-size-xs);
+    gap: var(--spacing-1);
+  }
+
+  &--md {
+    height: 32px;
+    padding: 0 var(--spacing-5);
+    font-size: var(--font-size-sm);
+  }
+
+  &--lg {
+    height: 36px;
+    padding: 0 var(--spacing-6);
+    font-size: var(--font-size-md);
+  }
+
+  // Default state
+  background-color: var(--color-bg-chip-default);
+  color: var(--color-text-primary);
+
+  &:hover {
+    background-color: var(--color-bg-muted);
+  }
+
+  // Selected
+  &--selected {
+    background-color: var(--color-bg-chip-selected);
+    border-color: var(--color-border-brand);
+    color: var(--color-text-brand);
+
+    &:hover {
+      background-color: var(--primitive-green-100);
+    }
+  }
+
+  // Disabled
+  &--disabled,
+  &:disabled {
+    background-color: var(--color-bg-chip-disabled);
+    color: var(--color-text-disabled);
+    border-color: var(--color-border-default);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    color: inherit;
+  }
+
+  // Remove button
+  &__remove {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+    color: var(--color-icon-tertiary);
+    margin-left: var(--spacing-1);
+
+    &:hover { color: var(--color-icon-primary); }
+  }
+
+  // Group
+  &-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+  }
+}

@@ -1,0 +1,186 @@
+// =============================================================================
+// Navigation — NDS Design Library v1.0
+// =============================================================================
+
+// Top Navigation Bar
+.nav {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 var(--spacing-8);
+  background-color: var(--color-bg-default);
+  border-bottom: 1px solid var(--color-border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    height: 28px;
+    width: auto;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    margin: 0 var(--spacing-8);
+    flex: 1;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    height: 40px;
+    padding: 0 var(--spacing-4);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background-color var(--transition-base), color var(--transition-base);
+
+    &:hover {
+      background-color: var(--color-bg-subtle);
+      color: var(--color-text-primary);
+    }
+
+    &--active {
+      color: var(--color-text-brand);
+      background-color: var(--primitive-green-50);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  &__icon-btn {
+    @include reset-button;
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    color: var(--color-icon-secondary);
+    transition: background-color var(--transition-base);
+
+    &:hover { background-color: var(--color-bg-subtle); }
+  }
+}
+
+// Side Navigation
+.sidenav {
+  width: 240px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-default);
+  border-right: 1px solid var(--color-border-subtle);
+  padding: var(--spacing-4) 0;
+  overflow-y: auto;
+  @include scrollbar-hidden;
+
+  &__section {
+    & + & { margin-top: var(--spacing-2); }
+  }
+
+  &__section-title {
+    padding: var(--spacing-4) var(--spacing-6) var(--spacing-2);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    height: 40px;
+    padding: 0 var(--spacing-6);
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color var(--transition-base), color var(--transition-base);
+    border-radius: 0;
+
+    &:hover {
+      background-color: var(--color-bg-subtle);
+      color: var(--color-text-primary);
+    }
+
+    &--active {
+      background-color: var(--primitive-green-50);
+      color: var(--color-text-brand);
+      font-weight: var(--font-weight-medium);
+      border-right: 2px solid var(--primitive-green-500);
+    }
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: inherit;
+    }
+
+    &-badge {
+      margin-left: auto;
+    }
+  }
+}
+
+// Bottom Tab Navigation (mobile)
+.tab-nav {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-default);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-bottom: env(safe-area-inset-bottom);
+
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-1);
+    height: 56px;
+    cursor: pointer;
+    color: var(--color-icon-tertiary);
+    transition: color var(--transition-base);
+    text-decoration: none;
+
+    &--active { color: var(--primitive-green-500); }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &-label {
+      font-size: var(--font-size-2xs);
+      font-weight: var(--font-weight-medium);
+    }
+  }
+}

@@ -1,0 +1,66 @@
+// =============================================================================
+// Controls (Form Controls wrapper) — NDS Design Library v1.0
+// =============================================================================
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+
+  // Label
+  &__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+
+    &--required::after {
+      content: ' *';
+      color: var(--color-text-danger);
+    }
+  }
+
+  // Helper / Description text
+  &__helper {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+  }
+
+  // Error message
+  &__error {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-danger);
+
+    &-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+  }
+
+  // Count / Max length indicator
+  &__count {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    text-align: right;
+
+    &--exceeded { color: var(--color-text-danger); }
+  }
+
+  // Row layout (label + control side by side)
+  &--horizontal {
+    flex-direction: row;
+    align-items: center;
+
+    .controls__label {
+      flex-shrink: 0;
+      min-width: 100px;
+    }
+  }
+
+  // States
+  &--error .controls__label   { color: var(--color-text-danger); }
+  &--disabled .controls__label { color: var(--color-text-disabled); }
+}

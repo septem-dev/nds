@@ -1,0 +1,226 @@
+// =============================================================================
+// Button Component
+// NDS Design Library v1.0
+// node: 9781-75830
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Design Tokens (CSS Custom Properties)
+// -----------------------------------------------------------------------------
+
+:root {
+  // Primary
+  --color-bg-button-primary-default:   #00B140; // color/bg/button/primary-default
+  --color-bg-button-primary-pressed:   #009933; // color/bg/button/primary-pressed
+  --color-bg-button-primary-disabled:  #E5E5E5; // color/bg/button/primary-disabled
+  --color-text-button-primary-default: #FFFFFF;  // color/text/button/primary-default
+  --color-text-button-primary-disabled:#AAAAAA; // color/text/button/primary-disabled
+
+  // Secondary
+  --color-bg-button-secondary-default:   transparent;
+  --color-bg-button-secondary-pressed:   #F0FAF4;
+  --color-bg-button-secondary-disabled:  transparent;
+  --color-border-button-secondary-default:  #00B140;
+  --color-border-button-secondary-disabled: #E5E5E5;
+  --color-text-button-secondary-default:    #00B140;
+  --color-text-button-secondary-disabled:   #AAAAAA;
+
+  // Tertiary
+  --color-bg-button-tertiary-default:   #F5F5F5; // color/bg/button/tertiary-default
+  --color-bg-button-tertiary-pressed:   rgba(0, 122, 252, 0.1); // #007AFC · 0.1%
+  --color-bg-button-tertiary-disabled:  #F5F5F5;
+  --color-border-button-tertiary-default:  transparent; // color/border/button/tertiary-default
+  --color-border-button-tertiary-disabled: transparent;
+  --color-text-button-tertiary-default:    #1A1A1A; // color/text/button/tertiary-default
+  --color-text-button-tertiary-disabled:   #AAAAAA;
+  --color-icon-gray900:                    #1A1A1A; // color/icon/gray900
+}
+
+// -----------------------------------------------------------------------------
+// Size Tokens
+// -----------------------------------------------------------------------------
+
+$btn-sizes: (
+  'xl': (
+    height:       52px,
+    padding-h:    20px,
+    font-size:    16px,
+    font-weight:  600,
+    line-height:  24px,
+    border-radius: 8px,
+    icon-size:    24px,
+    gap:          6px,
+  ),
+  'lg': (
+    height:       44px,
+    padding-h:    16px,
+    font-size:    15px,
+    font-weight:  600,
+    line-height:  22px,
+    border-radius: 8px,
+    icon-size:    24px,
+    gap:          4px,
+  ),
+  'md': (
+    height:       36px,
+    padding-h:    14px,
+    font-size:    14px,
+    font-weight:  500,
+    line-height:  20px,
+    border-radius: 6px,
+    icon-size:    18px,
+    gap:          4px,
+  ),
+  'sm': (
+    height:       28px,
+    padding-h:    10px,
+    font-size:    13px,
+    font-weight:  500,
+    line-height:  18px,
+    border-radius: 4px,
+    icon-size:    16px,
+    gap:          2px,
+  ),
+);
+
+// -----------------------------------------------------------------------------
+// Base Button
+// -----------------------------------------------------------------------------
+
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             4px;
+  border:          1px solid transparent;
+  cursor:          pointer;
+  white-space:     nowrap;
+  text-decoration: none;
+  transition:      background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  box-sizing:      border-box;
+
+  // Icon
+  &__icon {
+    display:     inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  // Full width
+  &--full {
+    width: 100%;
+  }
+
+  // Loading state
+  &--loading {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  // Disabled (global)
+  &:disabled,
+  &[aria-disabled="true"] {
+    cursor:         not-allowed;
+    pointer-events: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Size Variants  (.btn--xl / --lg / --md / --sm)
+// -----------------------------------------------------------------------------
+
+@each $size, $values in $btn-sizes {
+  .btn--#{$size} {
+    height:        map-get($values, height);
+    padding:       0 map-get($values, padding-h);
+    font-size:     map-get($values, font-size);
+    font-weight:   map-get($values, font-weight);
+    line-height:   map-get($values, line-height);
+    border-radius: map-get($values, border-radius);
+    gap:           map-get($values, gap);
+
+    .btn__icon {
+      width:  map-get($values, icon-size);
+      height: map-get($values, icon-size);
+    }
+
+    // Icon-only (square)
+    &.btn--icon-only {
+      width:   map-get($values, height);
+      padding: 0;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Color Variants
+// -----------------------------------------------------------------------------
+
+// Primary -----------------------------------------------
+.btn--primary {
+  background-color: var(--color-bg-button-primary-default);
+  color:            var(--color-text-button-primary-default);
+  border-color:     transparent;
+
+  &:hover {
+    background-color: var(--color-bg-button-primary-pressed);
+  }
+
+  &:active {
+    background-color: var(--color-bg-button-primary-pressed);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: var(--color-bg-button-primary-disabled);
+    color:            var(--color-text-button-primary-disabled);
+  }
+}
+
+// Secondary ---------------------------------------------
+.btn--secondary {
+  background-color: var(--color-bg-button-secondary-default);
+  color:            var(--color-text-button-secondary-default);
+  border-color:     var(--color-border-button-secondary-default);
+
+  &:hover {
+    background-color: var(--color-bg-button-secondary-pressed);
+  }
+
+  &:active {
+    background-color: var(--color-bg-button-secondary-pressed);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: var(--color-bg-button-secondary-disabled);
+    color:            var(--color-text-button-secondary-disabled);
+    border-color:     var(--color-border-button-secondary-disabled);
+  }
+}
+
+// Tertiary ----------------------------------------------
+.btn--tertiary {
+  background-color: var(--color-bg-button-tertiary-default);
+  color:            var(--color-text-button-tertiary-default);
+  border-color:     var(--color-border-button-tertiary-default);
+
+  .btn__icon {
+    color: var(--color-icon-gray900);
+  }
+
+  &:hover {
+    background-color: var(--color-bg-button-tertiary-pressed);
+  }
+
+  &:active {
+    background-color: var(--color-bg-button-tertiary-pressed);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: var(--color-bg-button-tertiary-disabled);
+    color:            var(--color-text-button-tertiary-disabled);
+    border-color:     var(--color-border-button-tertiary-disabled);
+  }
+}
