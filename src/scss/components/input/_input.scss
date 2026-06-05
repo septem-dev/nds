@@ -1,0 +1,127 @@
+// =============================================================================
+// Input — NDS Design Library v1.0
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+.input {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  // Native input element
+  &__field {
+    width: 100%;
+    border: 1px solid var(--color-border-input-default);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-bg-input-default);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family-base);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    outline: none;
+    box-sizing: border-box;
+
+    &::placeholder { color: var(--color-text-tertiary); }
+
+    &:focus {
+      border-color: var(--color-border-input-focus);
+      box-shadow: 0 0 0 3px rgba(0, 122, 252, 0.12);
+    }
+
+    &:disabled {
+      background-color: var(--color-bg-input-disabled);
+      color: var(--color-text-disabled);
+      cursor: not-allowed;
+    }
+  }
+
+  // Size variants
+  &--sm .input__field {
+    height: 32px;
+    padding: 0 var(--spacing-4);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-md);
+  }
+
+  &--md .input__field {
+    height: 40px;
+    padding: 0 var(--spacing-5);
+  }
+
+  &--lg .input__field {
+    height: 48px;
+    padding: 0 var(--spacing-6);
+    font-size: var(--font-size-lg);
+  }
+
+  // Prefix / Suffix slot
+  &__prefix,
+  &__suffix {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-icon-secondary);
+    pointer-events: none;
+  }
+
+  &__prefix {
+    left: var(--spacing-4);
+    ~ .input__field { padding-left: calc(var(--spacing-4) * 2 + 18px); }
+  }
+
+  &__suffix {
+    right: var(--spacing-4);
+    ~ .input__field { padding-right: calc(var(--spacing-4) * 2 + 18px); }
+  }
+
+  // Clear button
+  &__clear {
+    @include reset-button;
+    position: absolute;
+    right: var(--spacing-4);
+    display: flex;
+    align-items: center;
+    color: var(--color-icon-tertiary);
+    cursor: pointer;
+
+    &:hover { color: var(--color-icon-primary); }
+  }
+
+  // States
+  &--error .input__field {
+    border-color: var(--color-border-input-error);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(240, 62, 62, 0.12);
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+    .input__prefix,
+    .input__suffix { opacity: 0.5; }
+  }
+
+  // Textarea variant
+  &--textarea {
+    .input__field {
+      height: auto;
+      padding: var(--spacing-4) var(--spacing-5);
+      resize: vertical;
+      min-height: 80px;
+      line-height: var(--line-height-normal);
+    }
+  }
+
+  // Search variant
+  &--search {
+    .input__field {
+      border-radius: var(--radius-full);
+      padding-left: calc(var(--spacing-5) + 20px + var(--spacing-2));
+    }
+    .input__prefix { left: var(--spacing-5); }
+  }
+}

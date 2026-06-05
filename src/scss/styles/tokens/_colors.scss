@@ -1,0 +1,429 @@
+// =============================================================================
+// Color Tokens — NDS Design Library v1.0
+// Updated with Primitive Color palette from design spec
+// =============================================================================
+
+:root {
+  // ---------------------------------------------------------------------------
+  // Primitive Colors — Base / Gray
+  // ---------------------------------------------------------------------------
+
+  // Base
+  --primitive-base-0:   #FFFFFF;
+  --primitive-base-950: #212121;
+
+  // Gray
+  --primitive-gray-0:   #FFFFFF;
+  --primitive-gray-100: #F6F6F6;
+  --primitive-gray-200: #F0F0F0;
+  --primitive-gray-300: #E1E1E1;
+  --primitive-gray-400: #D3D3D3;
+  --primitive-gray-500: #B3B3B3;
+  --primitive-gray-550: #929292;
+  --primitive-gray-600: #707070;
+  --primitive-gray-700: #555555;
+  --primitive-gray-800: #333333;
+  --primitive-gray-900: #111111;
+
+  // Gray-Dark (inverted scale: lower number = darker)
+  --primitive-gray-dark-50:  #434343;
+  --primitive-gray-dark-100: #505050;
+  --primitive-gray-dark-200: #6D6D6D;
+  --primitive-gray-dark-300: #707070;
+  --primitive-gray-dark-400: #929292;
+  --primitive-gray-dark-500: #AFAFAF;
+  --primitive-gray-dark-600: #CFCFCF;
+  --primitive-gray-dark-700: #E5E5E5;
+  --primitive-gray-dark-800: #FEFEFE;
+
+  // Gray-Font
+  --primitive-gray-font-50:  #D9D9D9;
+  --primitive-gray-font-100: #BFBFBF;
+  --primitive-gray-font-200: #A5A5A5;
+  --primitive-gray-font-300: #929292;
+  --primitive-gray-font-400: #757575;
+  --primitive-gray-font-500: #505050;
+  --primitive-gray-font-600: #333333;
+  --primitive-gray-font-700: #111111;
+
+  // Gray-Font-Dark (inverted scale)
+  --primitive-gray-font-dark-50:  #525252;
+  --primitive-gray-font-dark-100: #757575;
+  --primitive-gray-font-dark-200: #929292;
+  --primitive-gray-font-dark-300: #A5A5A5;
+  --primitive-gray-font-dark-400: #BFBFBF;
+  --primitive-gray-font-dark-500: #D9D9D9;
+  --primitive-gray-font-dark-600: #F2F2F2;
+  --primitive-gray-font-dark-700: #FEFEFE;
+
+  // Blue-Gray
+  --primitive-blue-gray-0:   #FFFFFF;
+  --primitive-blue-gray-50:  #D8E0EB;
+  --primitive-blue-gray-100: #BBC2CE;
+  --primitive-blue-gray-200: #A2A6B1;
+  --primitive-blue-gray-300: #828895;
+  --primitive-blue-gray-400: #656B73;
+  --primitive-blue-gray-500: #505159;
+  --primitive-blue-gray-600: #393B40;
+  --primitive-blue-gray-700: #222325;
+
+  // Blue-Gray-Slot (inverted scale)
+  --primitive-blue-gray-slot-50:  #53555D;
+  --primitive-blue-gray-slot-100: #666A73;
+  --primitive-blue-gray-slot-200: #858895;
+  --primitive-blue-gray-slot-300: #A2A7B1;
+  --primitive-blue-gray-slot-400: #BCC2D0;
+  --primitive-blue-gray-slot-500: #DADEEB;
+  --primitive-blue-gray-slot-600: #EBEFF3;
+  --primitive-blue-gray-slot-700: #F3F4F7;
+
+  // ---------------------------------------------------------------------------
+  // Primitive Colors — Chromatic
+  // ---------------------------------------------------------------------------
+
+  // Red
+  --primitive-red-50:  #FCE5E7;
+  --primitive-red-100: #F8B3B2;
+  --primitive-red-200: #FC878C;
+  --primitive-red-300: #DE4B4A;
+  --primitive-red-400: #E43E41;
+  --primitive-red-500: #E4211D;
+  --primitive-red-600: #CC1110;
+  --primitive-red-700: #810303;
+  --primitive-red-800: #5D0303;
+  --primitive-red-900: #3F0202;
+
+  // Orange
+  --primitive-orange-50:  #FCF0E5;
+  --primitive-orange-100: #FDD0B2;
+  --primitive-orange-200: #FBB37F;
+  --primitive-orange-300: #F79550;
+  --primitive-orange-400: #F98532;
+  --primitive-orange-500: #D77A27;
+  --primitive-orange-600: #CF4C11;
+  --primitive-orange-700: #7C3204;
+  --primitive-orange-800: #4B1F03;
+  --primitive-orange-900: #321504;
+
+  // Yellow
+  --primitive-yellow-50:  #FDFBE6;
+  --primitive-yellow-100: #FDF8BE;
+  --primitive-yellow-200: #FDF184;
+  --primitive-yellow-300: #FBEC43;
+  --primitive-yellow-400: #FBE711;
+  --primitive-yellow-500: #FBD216;
+  --primitive-yellow-600: #D6AE05;
+  --primitive-yellow-700: #967204;
+  --primitive-yellow-800: #644203;
+  --primitive-yellow-900: #311E01;
+
+  // Green
+  --primitive-green-50:  #DDF2E4;
+  --primitive-green-100: #CBF2D6;
+  --primitive-green-200: #ACE3BC;
+  --primitive-green-300: #6DD189;
+  --primitive-green-400: #3CDB61;
+  --primitive-green-500: #19973C;
+  --primitive-green-600: #12732E;
+  --primitive-green-700: #0D5722;
+  --primitive-green-800: #094018;
+  --primitive-green-900: #062512;
+
+  // LightBlue (Teal/Cyan)
+  --primitive-light-blue-50:  #E7FCFB;
+  --primitive-light-blue-100: #BEF5F4;
+  --primitive-light-blue-200: #8FF0E6;
+  --primitive-light-blue-300: #60ECDD;
+  --primitive-light-blue-400: #3CE8D6;
+  --primitive-light-blue-500: #2ACFBF;
+  --primitive-light-blue-600: #14A092;
+  --primitive-light-blue-700: #0D706A;
+  --primitive-light-blue-800: #0D4441;
+  --primitive-light-blue-900: #082B29;
+
+  // SkyBlue
+  --primitive-sky-blue-50:  #E8F8FD;
+  --primitive-sky-blue-100: #CFF0FD;
+  --primitive-sky-blue-200: #A6DDF3;
+  --primitive-sky-blue-300: #81CAE3;
+  --primitive-sky-blue-400: #5FB9E2;
+  --primitive-sky-blue-500: #3D9ECB;
+  --primitive-sky-blue-600: #1A789E;
+  --primitive-sky-blue-700: #0A5579;
+  --primitive-sky-blue-800: #043F5A;
+  --primitive-sky-blue-900: #022D40;
+
+  // Blue
+  --primitive-blue-50:  #E4EEFD;
+  --primitive-blue-100: #B3CFFD;
+  --primitive-blue-200: #8DBCFB;
+  --primitive-blue-300: #7DACF8;
+  --primitive-blue-400: #6BA6FA;
+  --primitive-blue-500: #3879D1;
+  --primitive-blue-600: #2656A4;
+  --primitive-blue-700: #013C95;
+  --primitive-blue-800: #033287;
+  --primitive-blue-900: #022252;
+
+  // Navy
+  --primitive-navy-50:  #E5F2FE;
+  --primitive-navy-100: #B5D9F9;
+  --primitive-navy-200: #82C0F8;
+  --primitive-navy-300: #69A6DD;
+  --primitive-navy-400: #2090F7;
+  --primitive-navy-500: #1180E6;
+  --primitive-navy-600: #699CCA;
+  --primitive-navy-700: #0D467D;
+  --primitive-navy-800: #022649;
+  --primitive-navy-900: #031B34;
+
+  // Cobalt
+  --primitive-cobalt-50:  #E3DFFD;
+  --primitive-cobalt-100: #C5BCFB;
+  --primitive-cobalt-200: #A59EF9;
+  --primitive-cobalt-300: #A5A0F8;
+  --primitive-cobalt-400: #6F67F7;
+  --primitive-cobalt-500: #6F67F7;
+  --primitive-cobalt-600: #9590E2;
+  --primitive-cobalt-700: #3D35B3;
+  --primitive-cobalt-800: #211E8B;
+  --primitive-cobalt-900: #0F0C5A;
+
+  // Purple
+  --primitive-purple-50:  #FEF0F6;
+  --primitive-purple-100: #F6DDE9;
+  --primitive-purple-200: #F5CCE0;
+  --primitive-purple-300: #EFC7DC;
+  --primitive-purple-400: #E594BC;
+  --primitive-purple-500: #D877A6;
+  --primitive-purple-600: #CC96B0;
+  --primitive-purple-700: #8F2C5D;
+  --primitive-purple-800: #570D30;
+  --primitive-purple-900: #36011A;
+
+  // ---------------------------------------------------------------------------
+  // Primitive Colors — Product
+  // ---------------------------------------------------------------------------
+
+  // Product-1 (Blue)
+  --primitive-product1-50:  #DAEAF6;
+  --primitive-product1-100: #BEDAEC;
+  --primitive-product1-200: #A4CCE7;
+  --primitive-product1-300: #78B4DF;
+  --primitive-product1-400: #5198CD;
+  --primitive-product1-500: #2672AC;
+  --primitive-product1-600: #124D7B;
+  --primitive-product1-700: #0C3E5F;
+  --primitive-product1-800: #0E2F4A;
+
+  // Product-2 (Indigo)
+  --primitive-product2-50:  #DDE4F7;
+  --primitive-product2-100: #C8D3ED;
+  --primitive-product2-200: #AEBFE7;
+  --primitive-product2-300: #819DD6;
+  --primitive-product2-400: #5D80CC;
+  --primitive-product2-500: #315AB3;
+  --primitive-product2-600: #1B41A2;
+  --primitive-product2-700: #0E2E74;
+  --primitive-product2-800: #0E1F53;
+
+  // Product-3 (Violet)
+  --primitive-product3-50:  #E7E5F2;
+  --primitive-product3-100: #D3CCEE;
+  --primitive-product3-200: #BEB4E8;
+  --primitive-product3-300: #A291DE;
+  --primitive-product3-400: #7C68CF;
+  --primitive-product3-500: #5741AE;
+  --primitive-product3-600: #38238C;
+  --primitive-product3-700: #1F0C67;
+  --primitive-product3-800: #1B0C51;
+
+  // Product-4 (Pink/Rose)
+  --primitive-product4-50:  #F1E9F0;
+  --primitive-product4-100: #F0D0E6;
+  --primitive-product4-200: #EBB6DA;
+  --primitive-product4-300: #DB8EC3;
+  --primitive-product4-400: #CB69AE;
+  --primitive-product4-500: #AF428E;
+  --primitive-product4-600: #8F2C6F;
+  --primitive-product4-700: #6D0F50;
+  --primitive-product4-800: #4B0E39;
+
+  // Product-5 (Yellow/Gold)
+  --primitive-product5-50:  #F3F0E3;
+  --primitive-product5-100: #F7E8CD;
+  --primitive-product5-200: #EBC990;
+  --primitive-product5-300: #E2B854;
+  --primitive-product5-400: #EBAE25;
+  --primitive-product5-500: #C79316;
+  --primitive-product5-600: #A77A16;
+  --primitive-product5-700: #694B0D;
+  --primitive-product5-800: #4E3B0F;
+
+  // Product-6 (Green)
+  --primitive-product6-50:  #E1EDE7;
+  --primitive-product6-100: #C3EED7;
+  --primitive-product6-200: #A3E0BE;
+  --primitive-product6-300: #66D49A;
+  --primitive-product6-400: #3DC27A;
+  --primitive-product6-500: #239C58;
+  --primitive-product6-600: #177B44;
+  --primitive-product6-700: #044522;
+  --primitive-product6-800: #0B4324;
+
+  // ---------------------------------------------------------------------------
+  // Primitive Colors — Plant
+  // ---------------------------------------------------------------------------
+
+  // Plant-1 (Steel Blue)
+  --primitive-plant1-50:  #DCEEFA;
+  --primitive-plant1-100: #C4E2F6;
+  --primitive-plant1-200: #9DD0EB;
+  --primitive-plant1-300: #78BCE5;
+  --primitive-plant1-400: #53ABD9;
+  --primitive-plant1-500: #2E9FDC;
+  --primitive-plant1-600: #2E80B2;
+  --primitive-plant1-700: #29668D;
+  --primitive-plant1-800: #1D475F;
+  --primitive-plant1-900: #152C3A;
+
+  // Plant-2 (Purple)
+  --primitive-plant2-50:  #F4DCFA;
+  --primitive-plant2-100: #E9D9FC;
+  --primitive-plant2-200: #D2B2F4;
+  --primitive-plant2-300: #B58CE6;
+  --primitive-plant2-400: #9C64E9;
+  --primitive-plant2-500: #9B55DF;
+  --primitive-plant2-600: #6C2FBD;
+  --primitive-plant2-700: #541F9B;
+  --primitive-plant2-800: #441776;
+  --primitive-plant2-900: #2D124D;
+
+  // Plant-3 (Orange/Amber)
+  --primitive-plant3-50:  #FDF2E8;
+  --primitive-plant3-100: #FCE7D3;
+  --primitive-plant3-200: #FAD0AB;
+  --primitive-plant3-300: #F8BA87;
+  --primitive-plant3-400: #F7A766;
+  --primitive-plant3-500: #EF9950;
+  --primitive-plant3-600: #DB7F33;
+  --primitive-plant3-700: #B85B18;
+  --primitive-plant3-800: #834715;
+  --primitive-plant3-900: #4C2B11;
+
+  // ---------------------------------------------------------------------------
+  // Semantic — Background
+  // ---------------------------------------------------------------------------
+
+  --color-bg-default:           var(--primitive-base-0);
+  --color-bg-subtle:            var(--primitive-gray-50);
+  --color-bg-muted:             var(--primitive-gray-100);
+  --color-bg-emphasis:          var(--primitive-gray-800);
+  --color-bg-overlay:           rgba(0, 0, 0, 0.4);
+
+  // Button
+  --color-bg-button-primary-default:    var(--primitive-green-500);
+  --color-bg-button-primary-hover:      var(--primitive-green-600);
+  --color-bg-button-primary-pressed:    var(--primitive-green-600);
+  --color-bg-button-primary-disabled:   var(--primitive-gray-200);
+
+  --color-bg-button-secondary-default:  transparent;
+  --color-bg-button-secondary-hover:    var(--primitive-green-50);
+  --color-bg-button-secondary-pressed:  var(--primitive-green-50);
+  --color-bg-button-secondary-disabled: transparent;
+
+  --color-bg-button-tertiary-default:   var(--primitive-gray-50);
+  --color-bg-button-tertiary-hover:     var(--primitive-gray-100);
+  --color-bg-button-tertiary-pressed:   rgba(56, 121, 209, 0.1);
+  --color-bg-button-tertiary-disabled:  var(--primitive-gray-50);
+
+  // Input
+  --color-bg-input-default:    var(--primitive-base-0);
+  --color-bg-input-filled:     var(--primitive-base-0);
+  --color-bg-input-disabled:   var(--primitive-gray-50);
+  --color-bg-input-error:      var(--primitive-base-0);
+
+  // Badge
+  --color-bg-badge-primary:    var(--primitive-green-500);
+  --color-bg-badge-secondary:  var(--primitive-gray-200);
+  --color-bg-badge-info:       var(--primitive-blue-500);
+  --color-bg-badge-danger:     var(--primitive-red-500);
+  --color-bg-badge-warning:    var(--primitive-orange-500);
+
+  // Chip
+  --color-bg-chip-default:     var(--primitive-gray-50);
+  --color-bg-chip-selected:    var(--primitive-green-50);
+  --color-bg-chip-disabled:    var(--primitive-gray-50);
+
+  // Check / Radio / Switch
+  --color-bg-control-default:  var(--primitive-base-0);
+  --color-bg-control-selected: var(--primitive-green-500);
+  --color-bg-control-disabled: var(--primitive-gray-200);
+
+  // Toast / Infobox
+  --color-bg-toast-default:    var(--primitive-gray-800);
+  --color-bg-infobox-info:     var(--primitive-blue-50);
+  --color-bg-infobox-success:  var(--primitive-green-50);
+  --color-bg-infobox-warning:  var(--primitive-orange-50);
+  --color-bg-infobox-danger:   var(--primitive-red-50);
+
+  // ---------------------------------------------------------------------------
+  // Semantic — Text
+  // ---------------------------------------------------------------------------
+
+  --color-text-primary:        var(--primitive-gray-800);
+  --color-text-secondary:      var(--primitive-gray-600);
+  --color-text-tertiary:       var(--primitive-gray-400);
+  --color-text-disabled:       var(--primitive-gray-400);
+  --color-text-inverse:        var(--primitive-base-0);
+  --color-text-brand:          var(--primitive-green-500);
+  --color-text-danger:         var(--primitive-red-500);
+  --color-text-info:           var(--primitive-blue-500);
+  --color-text-warning:        var(--primitive-orange-500);
+
+  // Button text
+  --color-text-button-primary-default:    var(--primitive-base-0);
+  --color-text-button-primary-disabled:   var(--primitive-gray-400);
+  --color-text-button-secondary-default:  var(--primitive-green-500);
+  --color-text-button-secondary-disabled: var(--primitive-gray-400);
+  --color-text-button-tertiary-default:   var(--primitive-gray-800);
+  --color-text-button-tertiary-disabled:  var(--primitive-gray-400);
+
+  // ---------------------------------------------------------------------------
+  // Semantic — Border
+  // ---------------------------------------------------------------------------
+
+  --color-border-default:      var(--primitive-gray-200);
+  --color-border-subtle:       var(--primitive-gray-100);
+  --color-border-emphasis:     var(--primitive-gray-800);
+  --color-border-brand:        var(--primitive-green-500);
+  --color-border-danger:       var(--primitive-red-500);
+  --color-border-info:         var(--primitive-blue-500);
+  --color-border-focus:        var(--primitive-blue-500);
+
+  // Button border
+  --color-border-button-primary-default:    transparent;
+  --color-border-button-secondary-default:  var(--primitive-green-500);
+  --color-border-button-secondary-disabled: var(--primitive-gray-200);
+  --color-border-button-tertiary-default:   transparent;
+
+  // Input border
+  --color-border-input-default:   var(--primitive-gray-200);
+  --color-border-input-focus:     var(--primitive-blue-500);
+  --color-border-input-error:     var(--primitive-red-500);
+  --color-border-input-disabled:  var(--primitive-gray-200);
+
+  // ---------------------------------------------------------------------------
+  // Semantic — Icon
+  // ---------------------------------------------------------------------------
+
+  --color-icon-primary:        var(--primitive-gray-800);
+  --color-icon-secondary:      var(--primitive-gray-600);
+  --color-icon-tertiary:       var(--primitive-gray-400);
+  --color-icon-disabled:       var(--primitive-gray-400);
+  --color-icon-inverse:        var(--primitive-base-0);
+  --color-icon-brand:          var(--primitive-green-500);
+  --color-icon-danger:         var(--primitive-red-500);
+  --color-icon-info:           var(--primitive-blue-500);
+  --color-icon-gray900:        var(--primitive-gray-800);
+}

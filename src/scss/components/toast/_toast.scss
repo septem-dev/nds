@@ -1,0 +1,141 @@
+// =============================================================================
+// Toast — NDS Design Library v1.0
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+// Container for stacking toasts
+.toast-container {
+  position: fixed;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  pointer-events: none;
+
+  // Positions
+  &--top-right    { top: var(--spacing-8); right: var(--spacing-8); align-items: flex-end; }
+  &--top-left     { top: var(--spacing-8); left: var(--spacing-8);  align-items: flex-start; }
+  &--top-center   { top: var(--spacing-8); left: 50%; transform: translateX(-50%); align-items: center; }
+  &--bottom-right { bottom: var(--spacing-8); right: var(--spacing-8); align-items: flex-end; flex-direction: column-reverse; }
+  &--bottom-left  { bottom: var(--spacing-8); left: var(--spacing-8);  align-items: flex-start; flex-direction: column-reverse; }
+  &--bottom-center { bottom: var(--spacing-8); left: 50%; transform: translateX(-50%); align-items: center; flex-direction: column-reverse; }
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4) var(--spacing-5);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-toast-default);
+  color: var(--primitive-gray-0);
+  box-shadow: var(--shadow-lg);
+  max-width: 380px;
+  min-width: 280px;
+  animation: toast-in var(--transition-base) ease;
+
+  // Icon
+  &__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+  }
+
+  // Content
+  &__content { flex: 1; min-width: 0; }
+
+  &__title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-1);
+  }
+
+  &__message {
+    font-size: var(--font-size-sm);
+    opacity: 0.85;
+    line-height: var(--line-height-normal);
+  }
+
+  // Action link
+  &__action {
+    @include reset-button;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--primitive-gray-0);
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: var(--spacing-2);
+    display: inline-block;
+    opacity: 0.9;
+
+    &:hover { opacity: 1; }
+  }
+
+  // Close
+  &__close {
+    @include reset-button;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    color: var(--primitive-gray-0);
+    opacity: 0.6;
+
+    &:hover { opacity: 1; }
+  }
+
+  // Progress bar (auto-dismiss)
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: toast-progress linear forwards;
+  }
+
+  position: relative;
+  overflow: hidden;
+
+  // Variants
+  &--success { background-color: var(--primitive-green-600); }
+  &--info    { background-color: var(--primitive-blue-600); }
+  &--warning { background-color: var(--primitive-orange-500); }
+  &--danger  { background-color: var(--primitive-red-600); }
+
+  // Light variant
+  &--light {
+    background-color: var(--color-bg-default);
+    border: 1px solid var(--color-border-default);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-md);
+
+    .toast__close { color: var(--color-icon-secondary); opacity: 1; }
+    .toast__message { opacity: 1; color: var(--color-text-secondary); }
+    .toast__action { color: var(--color-text-brand); }
+    .toast__progress { background-color: var(--primitive-green-500); }
+  }
+
+  // Exit animation
+  &--exit {
+    animation: toast-out var(--transition-base) ease forwards;
+  }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toast-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes toast-progress {
+  from { width: 100%; }
+  to   { width: 0; }
+}

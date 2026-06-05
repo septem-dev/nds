@@ -1,0 +1,115 @@
+// =============================================================================
+// Popup (Modal / Dialog) — NDS Design Library v1.0
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  @include flex-center;
+  padding: var(--spacing-6);
+  pointer-events: none;
+
+  &--open { pointer-events: auto; }
+
+  // Backdrop
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-bg-overlay);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+
+    .popup--open & { opacity: 1; }
+  }
+
+  // Dialog container
+  &__container {
+    position: relative;
+    background-color: var(--color-bg-default);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100vh - var(--spacing-12));
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+
+    .popup--open & {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  // Header
+  &__header {
+    @include flex-between;
+    padding: var(--spacing-8) var(--spacing-8) var(--spacing-4);
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    flex: 1;
+  }
+
+  &__close {
+    @include reset-button;
+    @include flex-center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    color: var(--color-icon-secondary);
+    margin-left: var(--spacing-4);
+    flex-shrink: 0;
+
+    &:hover { background-color: var(--color-bg-subtle); }
+  }
+
+  // Body
+  &__body {
+    padding: 0 var(--spacing-8);
+    flex: 1;
+    overflow-y: auto;
+    @include scrollbar-hidden;
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-normal);
+  }
+
+  // Footer
+  &__footer {
+    padding: var(--spacing-6) var(--spacing-8) var(--spacing-8);
+    @include flex-between;
+    gap: var(--spacing-4);
+    flex-shrink: 0;
+
+    .btn { flex: 1; }
+  }
+
+  // Size variants
+  &--sm .popup__container { max-width: 360px; }
+  &--lg .popup__container { max-width: 640px; }
+  &--xl .popup__container { max-width: 800px; }
+  &--full .popup__container {
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+
+  // Alert/Confirm variant
+  &--alert {
+    .popup__header { justify-content: center; padding-bottom: 0; }
+    .popup__title  { text-align: center; }
+    .popup__body   { text-align: center; padding: var(--spacing-4) var(--spacing-8); }
+    .popup__footer { justify-content: center; }
+  }
+}

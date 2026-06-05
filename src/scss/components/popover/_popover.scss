@@ -1,0 +1,84 @@
+// =============================================================================
+// Popover — NDS Design Library v1.0
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+.popover {
+  position: absolute;
+  z-index: var(--z-popover);
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  min-width: 160px;
+  max-width: 320px;
+  animation: popover-in var(--transition-fast) ease;
+
+  // Header
+  &__header {
+    @include flex-between;
+    padding: var(--spacing-4) var(--spacing-6);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  &__title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+
+  &__close {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    color: var(--color-icon-secondary);
+    padding: var(--spacing-1);
+
+    &:hover { color: var(--color-icon-primary); }
+  }
+
+  // Body
+  &__body {
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-normal);
+  }
+
+  // Footer
+  &__footer {
+    @include flex-between;
+    padding: var(--spacing-4) var(--spacing-6);
+    border-top: 1px solid var(--color-border-subtle);
+    gap: var(--spacing-3);
+  }
+
+  // Arrow
+  &__arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-bg-default);
+    border: 1px solid var(--color-border-default);
+    transform: rotate(45deg);
+
+    &--top    { bottom: -6px; border-top: none; border-left: none; }
+    &--bottom { top: -6px;    border-bottom: none; border-right: none; }
+    &--left   { right: -6px;  border-left: none; border-bottom: none; }
+    &--right  { left: -6px;   border-right: none; border-top: none; }
+  }
+
+  // Menu style (no padding)
+  &--menu {
+    padding: var(--spacing-2) 0;
+    min-width: 180px;
+
+    .popover__body { padding: 0; }
+  }
+}
+
+@keyframes popover-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
