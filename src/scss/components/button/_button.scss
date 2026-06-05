@@ -4,6 +4,9 @@
 // node: 9781-75830
 // =============================================================================
 
+@use 'sass:map';
+@use '../../styles/mixins/mixins' as *;
+
 // -----------------------------------------------------------------------------
 // Design Tokens (CSS Custom Properties)
 // -----------------------------------------------------------------------------
@@ -131,22 +134,22 @@ $btn-sizes: (
 
 @each $size, $values in $btn-sizes {
   .btn--#{$size} {
-    height:        map-get($values, height);
-    padding:       0 map-get($values, padding-h);
-    font-size:     map-get($values, font-size);
-    font-weight:   map-get($values, font-weight);
-    line-height:   map-get($values, line-height);
-    border-radius: map-get($values, border-radius);
-    gap:           map-get($values, gap);
+    height:        map.get($values, height);
+    padding:       0 map.get($values, padding-h);
+    font-size:     map.get($values, font-size);
+    font-weight:   map.get($values, font-weight);
+    line-height:   map.get($values, line-height);
+    border-radius: map.get($values, border-radius);
+    gap:           map.get($values, gap);
 
     .btn__icon {
-      width:  map-get($values, icon-size);
-      height: map-get($values, icon-size);
+      width:  map.get($values, icon-size);
+      height: map.get($values, icon-size);
     }
 
     // Icon-only (square)
     &.btn--icon-only {
-      width:   map-get($values, height);
+      width:   map.get($values, height);
       padding: 0;
     }
   }
