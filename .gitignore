@@ -12,7 +12,7 @@ wc.db
 node_modules/
 
 # build
-dist/
+# dist/
 
 # svn
 .svn/
