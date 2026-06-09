@@ -15,6 +15,10 @@
 	<div class="g-nav-label">Foundation</div>
 	<nav>
 	  <a href="#secColor">Color Palette</a>
+	  <a href="#secTypography">Typography</a>
+	  <a href="#secSpacing">Spacing</a>
+	  <a href="#secRadius">Radius</a>
+	  <a href="#secLayout">Layout</a>
 	</nav>
   </div>
   <div class="g-nav-group">
@@ -470,6 +474,362 @@
 	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-gray900)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-gray900</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
 	</div>
 
+  </section>
+
+  <!-- ===================== TYPOGRAPHY ===================== -->
+  <section class="g-section" id="secTypography">
+    <h3 class="g-section-title">Typography</h3>
+
+    <!-- Font Family -->
+    <p class="g-sub-title">Font Family</p>
+    <table class="g-table">
+      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
+      <tr>
+        <td><code>--font-family-base</code></td>
+        <td><code>Pretendard, -apple-system, …</code></td>
+        <td style="font-family:var(--font-family-base);font-size:15px">가나다 ABC abc 123</td>
+      </tr>
+      <tr>
+        <td><code>--font-family-mono</code></td>
+        <td><code>JetBrains Mono, Fira Code, …</code></td>
+        <td style="font-family:var(--font-family-mono);font-size:15px">const nds = 'v1.0';</td>
+      </tr>
+    </table>
+
+    <!-- Font Size -->
+    <p class="g-sub-title" style="margin-top:32px">Font Size</p>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-2xs</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">11px</span>
+        <span style="font-size:var(--font-size-2xs)">NDS Design Library v1.0 — 가나다라마바사</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-xs</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">12px</span>
+        <span style="font-size:var(--font-size-xs)">NDS Design Library v1.0 — 가나다라마바사</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-sm</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">13px</span>
+        <span style="font-size:var(--font-size-sm)">NDS Design Library v1.0 — 가나다라마바사</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-md</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">14px</span>
+        <span style="font-size:var(--font-size-md)">NDS Design Library v1.0 — 가나다라마바사</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-lg</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">15px</span>
+        <span style="font-size:var(--font-size-lg)">NDS Design Library v1.0 — 가나다라마바사</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-xl</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">16px</span>
+        <span style="font-size:var(--font-size-xl)">NDS Design Library v1.0 — 가나다라마바사</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-2xl</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">18px</span>
+        <span style="font-size:var(--font-size-2xl)">NDS Design Library — 가나다라마바</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-3xl</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">20px</span>
+        <span style="font-size:var(--font-size-3xl)">NDS Design Library — 가나다라마</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-4xl</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">24px</span>
+        <span style="font-size:var(--font-size-4xl)">NDS Design Library — 가나다라</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-5xl</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">28px</span>
+        <span style="font-size:var(--font-size-5xl)">NDS Design Library — 가나다</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-6xl</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">32px</span>
+        <span style="font-size:var(--font-size-6xl)">NDS Design Library — 가나다</span>
+      </div>
+    </div>
+
+    <!-- Font Weight -->
+    <p class="g-sub-title" style="margin-top:32px">Font Weight</p>
+    <table class="g-table">
+      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
+      <tr>
+        <td><code>--font-weight-regular</code></td><td>400</td>
+        <td style="font-weight:var(--font-weight-regular);font-size:16px">NDS Design Library 가나다라마</td>
+      </tr>
+      <tr>
+        <td><code>--font-weight-medium</code></td><td>500</td>
+        <td style="font-weight:var(--font-weight-medium);font-size:16px">NDS Design Library 가나다라마</td>
+      </tr>
+      <tr>
+        <td><code>--font-weight-semibold</code></td><td>600</td>
+        <td style="font-weight:var(--font-weight-semibold);font-size:16px">NDS Design Library 가나다라마</td>
+      </tr>
+      <tr>
+        <td><code>--font-weight-bold</code></td><td>700</td>
+        <td style="font-weight:var(--font-weight-bold);font-size:16px">NDS Design Library 가나다라마</td>
+      </tr>
+    </table>
+
+    <!-- Line Height -->
+    <p class="g-sub-title" style="margin-top:32px">Line Height</p>
+    <table class="g-table">
+      <tr><th>Token</th><th>Value</th><th>Preview (2줄)</th></tr>
+      <tr>
+        <td><code>--line-height-tight</code></td><td>1.2</td>
+        <td style="line-height:var(--line-height-tight);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
+      </tr>
+      <tr>
+        <td><code>--line-height-snug</code></td><td>1.4</td>
+        <td style="line-height:var(--line-height-snug);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
+      </tr>
+      <tr>
+        <td><code>--line-height-normal</code></td><td>1.5</td>
+        <td style="line-height:var(--line-height-normal);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
+      </tr>
+      <tr>
+        <td><code>--line-height-relaxed</code></td><td>1.6</td>
+        <td style="line-height:var(--line-height-relaxed);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
+      </tr>
+    </table>
+
+    <!-- Letter Spacing -->
+    <p class="g-sub-title" style="margin-top:32px">Letter Spacing</p>
+    <table class="g-table">
+      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
+      <tr>
+        <td><code>--letter-spacing-tight</code></td><td>-0.02em</td>
+        <td style="letter-spacing:var(--letter-spacing-tight);font-size:16px">NDS Design Library 가나다라마바사</td>
+      </tr>
+      <tr>
+        <td><code>--letter-spacing-normal</code></td><td>0</td>
+        <td style="letter-spacing:var(--letter-spacing-normal);font-size:16px">NDS Design Library 가나다라마바사</td>
+      </tr>
+      <tr>
+        <td><code>--letter-spacing-wide</code></td><td>0.02em</td>
+        <td style="letter-spacing:var(--letter-spacing-wide);font-size:16px">NDS Design Library 가나다라마바사</td>
+      </tr>
+    </table>
+
+  </section>
+
+  <!-- ===================== SPACING ===================== -->
+  <section class="g-section" id="secSpacing">
+    <h3 class="g-section-title">Spacing</h3>
+    <p class="g-sub-title">Spacing Scale — 4px base</p>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-1</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">2px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-1)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-2</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">4px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-2)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-3</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">6px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-3)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-4</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">8px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-4)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-5</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">10px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-5)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-6</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">12px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-6)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-7</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">14px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-7)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-8</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">16px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-8)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-9</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">18px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-9)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-10</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">20px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-10)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-12</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">24px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-12)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-14</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">28px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-14)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-16</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">32px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-16)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-20</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">40px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-20)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-24</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">48px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-24)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-28</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">56px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-28)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
+        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-32</code>
+        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">64px</span>
+        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-32)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RADIUS ===================== -->
+  <section class="g-section" id="secRadius">
+    <h3 class="g-section-title">Radius</h3>
+    <p class="g-sub-title">Border Radius</p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-none)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">none</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">0</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-xs)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">xs</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">2px</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-sm)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">sm</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">4px</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-md)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">md</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">6px</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-lg)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">lg</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">8px</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-xl)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">xl</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">12px</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-2xl)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">2xl</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">16px</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-3xl)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">3xl</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">24px</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="width:64px;height:64px;background:var(--color-bg-button-primary-default);border-radius:var(--radius-full)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">full</code>
+        <span style="font-size:11px;color:var(--color-text-primary)">9999px</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LAYOUT ===================== -->
+  <section class="g-section" id="secLayout">
+    <h3 class="g-section-title">Layout</h3>
+
+    <!-- Shadow -->
+    <p class="g-sub-title">Shadow</p>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;padding:8px 0 24px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-xs)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-xs</code>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-sm)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-sm</code>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-md)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-md</code>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-lg)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-lg</code>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-xl)"></div>
+        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-xl</code>
+      </div>
+    </div>
+
+    <!-- Z-index -->
+    <p class="g-sub-title">Z-index</p>
+    <table class="g-table">
+      <tr><th>Token</th><th>Value</th><th>용도</th></tr>
+      <tr><td><code>--z-base</code></td><td>0</td><td>기본 레이어</td></tr>
+      <tr><td><code>--z-dropdown</code></td><td>100</td><td>드롭다운, Select</td></tr>
+      <tr><td><code>--z-sticky</code></td><td>200</td><td>스티키 헤더</td></tr>
+      <tr><td><code>--z-overlay</code></td><td>300</td><td>딤 레이어</td></tr>
+      <tr><td><code>--z-modal</code></td><td>400</td><td>팝업, 모달</td></tr>
+      <tr><td><code>--z-popover</code></td><td>500</td><td>Popover, Tooltip</td></tr>
+      <tr><td><code>--z-toast</code></td><td>600</td><td>Toast</td></tr>
+      <tr><td><code>--z-tooltip</code></td><td>700</td><td>Tooltip (최상위)</td></tr>
+    </table>
+
+    <!-- Transition -->
+    <p class="g-sub-title" style="margin-top:32px">Transition</p>
+    <table class="g-table">
+      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
+      <tr>
+        <td><code>--transition-fast</code></td><td>0.1s ease</td>
+        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-fast)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
+      </tr>
+      <tr>
+        <td><code>--transition-base</code></td><td>0.15s ease</td>
+        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-base)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
+      </tr>
+      <tr>
+        <td><code>--transition-slow</code></td><td>0.25s ease</td>
+        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-slow)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
+      </tr>
+      <tr>
+        <td><code>--transition-slower</code></td><td>0.35s ease</td>
+        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-slower)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
+      </tr>
+    </table>
   </section>
 
   <!-- ===================== ACCORDION ===================== -->
