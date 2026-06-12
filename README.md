@@ -1,4 +1,4 @@
-# Gulp Publishing Starter
+# NDS UI Library
 
 ## 설치
 
@@ -21,3 +21,17 @@ npm run build
 ## 접속
 
 http://localhost:3000
+
+
+## 폴더구조
+
+```text
+nds/
+├─ src/
+│  ├─ assets/
+│  ├─ html/
+│  ├─ js/
+│  └─ scss/
+├─ dist/
+└─ package.json
+```
