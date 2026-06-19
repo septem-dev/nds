@@ -1,0 +1,105 @@
+// =============================================================================
+// Tooltip — NDS Design Library v1.0
+// =============================================================================
+// 특정 콘텐츠 요소를 선택하면 노출되고, 닫기 기능의 [X] 아이콘 버튼을 함께 제공해야 합니다.
+// 트리거 요소 가까이에 위치하여 사용자의 작업을 돕도록 설계합니다.
+// =============================================================================
+// Background : Radius 16 / BG #FFFFFF / Border #F0F0F0
+// Shadow     : x0, y3, blur6, #000000 5%
+// Title      : 16 / Semibold / -2% / #121212 / Left
+// Sub Title  : 14 / Medium  / -2% / #121212 / Left
+// Body txt   : 14 / Regular / -2% / #505050 / Left
+//
+// Spacing
+//   Padding (outer)       : 20px
+//   Header (title+close)  : margin-bottom 12px
+//   Sub Title             : margin-bottom 12px
+//   Body → List gap       : 8px between items
+// =============================================================================
+
+.tooltip-card {
+  border: 1px solid #F0F0F0;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+
+  // ── 헤더 (타이틀 + 닫기) ────────────────────────────────────────────────
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  // ── 타이틀 ──────────────────────────────────────────────────────────────
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #121212;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  // ── 닫기 버튼 ───────────────────────────────────────────────────────────
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #505050;
+    padding: 0;
+
+    svg { width: 18px; height: 18px; }
+    &:hover { color: #121212; }
+  }
+
+  // ── 서브 타이틀 ─────────────────────────────────────────────────────────
+  &__sub {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  // ── 본문 텍스트 ─────────────────────────────────────────────────────────
+  &__body {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+    line-height: 1.5;
+    margin-bottom: 8px;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  // ── 리스트 ──────────────────────────────────────────────────────────────
+  &__list {
+    margin: 0;
+    padding: 0 0 0 16px;
+    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__item {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+    line-height: 1.5;
+  }
+}

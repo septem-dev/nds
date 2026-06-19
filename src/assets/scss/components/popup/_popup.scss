@@ -1,0 +1,209 @@
+// =============================================================================
+// Popup (Modal / Dialog) — NDS Design Library v1.0
+// =============================================================================
+// Background: #FFFFFF / Radius: 16px
+// Dimmed: #111111 30%
+// Padding: top 40px / left·right 24px / bottom 20px
+// Gap: title↔body 12px / body↔footer 32px
+// Title: 16px / SemiBold / -2% / #121212 / Left
+// Body:  15px / Regular  / -2% / #121212 / Left
+// Variants: basic / error-accordion / push / login
+// Min-height: 200px / Max-height: viewport - statusbar - 40px
+// =============================================================================
+
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  &--open { pointer-events: auto; }
+
+  // ── Dimmed 오버레이 ──────────────────────────────────────────────────────────
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: #111111;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    .popup--open & { opacity: 0.3; }
+  }
+
+  // ── 컨테이너 ─────────────────────────────────────────────────────────────────
+  &__container {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 440px;
+    min-height: 200px;
+    max-height: calc(100vh - env(safe-area-inset-top, 44px) - 40px);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    .popup--open & {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  // ── 콘텐츠 영역 (패딩 처리) ──────────────────────────────────────────────────
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 24px 20px;
+    gap: 0;
+    flex: 1;
+    min-height: 0;
+  }
+
+  // ── 타이틀 ───────────────────────────────────────────────────────────────────
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #121212;
+    line-height: 1.4;
+    flex-shrink: 0;
+    margin-bottom: 12px; // title ↔ body gap
+  }
+
+  // ── 본문 ─────────────────────────────────────────────────────────────────────
+  &__body {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #121212;
+    line-height: 1.6;
+    flex: 1;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  // ── 푸터 (버튼 영역) ──────────────────────────────────────────────────────────
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-top: 32px; // body ↔ footer gap
+  }
+
+  // ── 2-버튼 행 레이아웃 ────────────────────────────────────────────────────────
+  &__footer-row {
+    display: flex;
+    gap: 8px;
+
+    .btn { flex: 1; }
+  }
+}
+
+// ── 팝업 아코디언 (Error variant) ────────────────────────────────────────────
+// 오류코드 확인 / 고객센터 안내
+.popup-accordion {
+  margin-top: 16px;
+  border: 1px solid #F0F0F0;
+  border-radius: 8px;
+  overflow: hidden;
+
+  // 헤더 토글
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: #F6F6F6;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  &__chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: #B3B3B3;
+    transition: transform 0.2s ease;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  // 열린 상태
+  &--open {
+    .popup-accordion__chevron { transform: rotate(180deg); }
+  }
+
+  // 콘텐츠 패널
+  &__body {
+    padding: 12px 16px;
+    display: none;
+    background-color: #fff;
+  }
+
+  &--open &__body { display: block; }
+
+  // 오류코드 행
+  &__code {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #C62828;
+    line-height: 1.8;
+  }
+}
+
+// 고객센터 안내 문구 (Error variant 하단)
+.popup-contact {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #767676;
+  line-height: 1.6;
+}
+
+// ── 카운트다운 (Login variant) ────────────────────────────────────────────────
+.popup-countdown {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #505050;
+
+  &__time {
+    font-weight: 600;
+    color: #19973C; // 브랜드 초록
+  }
+}
+
+// ── 정적 프리뷰용 래퍼 (디자인 라이브러리 전용) ──────────────────────────────
+.popup-mock {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+
+  .popup__inner { padding: 40px 24px 20px; }
+}

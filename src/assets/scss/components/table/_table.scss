@@ -1,0 +1,157 @@
+// =============================================================================
+// Table — NDS Design Library v1.0
+// =============================================================================
+// 1. table--v   — Vertical   (구분 th 좌측 열, 내용 td 우측)
+// 2. table--h   — Horizontal (th 헤더 행, 균등/혼합 열)
+// Data helpers : __mono (숫자) / __rise (상승 #E24949) / __fall (하락 #2C6DD4) / __total (합계 행)
+// =============================================================================
+// Th  : 14 / Medium / -2% / #121212 / BG #F6F6F6 / Line #E1E1E1
+// Td  : 14 / Regular / -2% / #505050 / BG #FFFFFF / Line #E1E1E1
+// Vertical   — 기본 Left 정렬
+// Horizontal — 기본 Center 정렬 / 문장형(is-text) Left
+// =============================================================================
+
+// ── 외부 래퍼 (스크롤 + 라운드 테두리) ──────────────────────────────────────────
+.tbl-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #E1E1E1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+// ── 기본 테이블 ────────────────────────────────────────────────────────────────
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+
+  th,
+  td {
+    padding: 10px 8px;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid #E1E1E1;
+    vertical-align: middle;
+    line-height: 1.5;
+    box-sizing: border-box;
+  }
+
+  tr:last-child th,
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  th {
+    background-color: #F6F6F6;
+    font-weight: 500;
+    color: #121212;
+  }
+
+  td {
+    background-color: #FFFFFF;
+    font-weight: 400;
+    color: #505050;
+  }
+
+  // ══ Variant: Vertical ══════════════════════════════════════════════════════
+  // 첫 번째 열이 Th (구분), 나머지 열이 Td
+  // Text: Left 기본
+  &--v {
+    th {
+      text-align: left;
+      width: 30%;
+      min-width: 80px;
+      border-right: 1px solid #E1E1E1;
+    }
+
+    td { text-align: left; }
+  }
+
+  // ══ Variant: Horizontal ════════════════════════════════════════════════════
+  // 첫 번째 행이 Th (헤더)
+  // Text: Center 기본 / 문장형은 Left
+  &--h {
+    th { text-align: center; }
+    td { text-align: center; }
+
+    // 문장형 데이터가 있는 열: Left
+    td.is-text,
+    th.is-text { text-align: left; }
+  }
+
+  // ── 열 너비 유틸 ──────────────────────────────────────────────────────────
+  .col-eq   { width: 1%; }          // 1/n 균등 (flex: 1 효과)
+  .col-min  { width: 30%; min-width: 80px; }  // Min 30%
+  .col-flex { }                     // 나머지 가변
+  .col-fix  { width: 40px; white-space: nowrap; text-align: center; }
+
+  // ── 숫자: Monospace Lining ─────────────────────────────────────────────────
+  // 숫자 데이터는 오른쪽 정렬 + tabular nums
+  &__mono {
+    text-align: right !important;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+    letter-spacing: 0; // tabular-nums with -2% conflicts
+  }
+
+  // ── 강조 ──────────────────────────────────────────────────────────────────
+  &__em {
+    font-weight: 500;
+    color: #505050;
+  }
+
+  // ── 상승 (한국 증시: 적색) ────────────────────────────────────────────────
+  &__rise { color: #E24949; }
+
+  // ── 하락 (한국 증시: 청색) ────────────────────────────────────────────────
+  &__fall { color: #2C6DD4; }
+
+  // ── 합계 행 ───────────────────────────────────────────────────────────────
+  // Th BG #F6F6F6 / Text 14 / Medium / #121212
+  &__total {
+    th,
+    td {
+      background-color: #F6F6F6;
+      font-weight: 500;
+      color: #121212;
+      border-top: 1px solid #E1E1E1;
+    }
+  }
+
+  // ── 셀 내 블릿 리스트 ──────────────────────────────────────────────────────
+  // 2개 이상 항목은 ul/li 사용
+  &__ul {
+    margin: 0;
+    padding: 0 0 0 16px;
+    list-style: disc;
+
+    li {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #505050;
+      line-height: 1.6;
+
+      & + li { margin-top: 2px; }
+    }
+  }
+}
+
+// ── 테이블 간격 (Combined 레이아웃) ──────────────────────────────────────────
+// 세로 배열: 16px 간격
+.tbl-group-v {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// 가로 배열: 8px 간격
+.tbl-group-h {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  .tbl-wrap { flex: 1; min-width: 0; }
+}

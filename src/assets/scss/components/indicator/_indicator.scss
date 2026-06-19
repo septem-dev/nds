@@ -1,0 +1,115 @@
+// =============================================================================
+// Indicator — NDS Design Library v1.0
+// =============================================================================
+
+// ── Number ──────────────────────────────────────────────────────────────────
+// 컨텐츠 현재 위치를 숫자로 표시
+.indicator-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: rgba(17, 17, 17, 0.4);
+  border-radius: 999px;
+  padding: 4px 8px;
+
+  &__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 2px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  &__pause {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 2px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 8px;
+      border-radius: 1px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 16px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.6);
+
+    &--active {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  &__divider {
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 4px;
+  }
+}
+
+// ── Dot ─────────────────────────────────────────────────────────────────────
+// 컨텐츠 현재 위치를 점으로 표시
+.indicator-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  &__item {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #D3D3D3;
+    transition: background-color 0.2s;
+
+    &--active {
+      background-color: #19973C;
+    }
+  }
+
+  &__pause {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 8px;
+      border-radius: 1px;
+      background-color: #D3D3D3;
+    }
+  }
+}

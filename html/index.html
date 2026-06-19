@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NDS UI 공통가이드 - NDS v1.0</title>
-<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
@@ -57,7 +57,7 @@
 	  <a href="#secTab">Tab</a>
 	  <a href="#secTable">Table</a>
 	  <a href="#secTerms">Terms</a>
-	  <a href="#secTextareaMessage">Textarea Message</a>
+	  <a href="#secTextareaMessage">Textarea</a>
 	  <a href="#secToast">Toast</a>
 	  <a href="#secTooltip">Tooltip</a>
 	</nav>
@@ -1412,119 +1412,182 @@
   <!-- ===================== EMPTY ===================== -->
   <section class="g-section" id="secEmpty">
 	<h3 class="g-section-title">Empty</h3>
+
+	<p class="g-sub-title">Result</p>
+	<p class="g-desc">검색 결과가 없는 경우 결과 리스트 영역에 사용</p>
 	<div class="g-example">
-	  <div class="empty-state">
-		<svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--primitive-gray-300)">
-		  <!-- 박스 외형 -->
-		  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-		  <!-- 수평 중간선 -->
-		  <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
-		  <!-- 수직 중앙선 -->
-		  <line x1="12" y1="22.08" x2="12" y2="12"/>
-		</svg>
-		<div class="empty-state__title">데이터가 없습니다</div>
-		<div class="empty-state__desc">조회된 내역이 없습니다. 조건을 변경하여 다시 검색해 주세요.</div>
-		<button class="btn btn--md btn--primary" style="margin-top:16px">다시 검색</button>
+	  <div class="empty empty--result">
+		<div class="empty__icon">
+		  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="5"  cy="10" r="1.5" fill="currentColor"/>
+			<circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+			<circle cx="15" cy="10" r="1.5" fill="currentColor"/>
+		  </svg>
+		</div>
+		<span class="empty__text">조회 결과가 없습니다.</span>
 	  </div>
 	</div>
+
+	<p class="g-sub-title">Page</p>
+	<p class="g-desc">페이지 목록에 데이터가 없는 경우 사용</p>
+	<div class="g-example">
+	  <div class="empty empty--page">
+		<div class="empty__icon">
+		  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="5"  cy="10" r="1.5" fill="currentColor"/>
+			<circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+			<circle cx="15" cy="10" r="1.5" fill="currentColor"/>
+		  </svg>
+		</div>
+		<span class="empty__text">조회 결과가 없습니다.</span>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.empty-state</code></td><td>중앙 정렬 빈 상태 컨테이너</td></tr>
-	  <tr><td><code>.empty-state__title</code></td><td>메인 타이틀</td></tr>
-	  <tr><td><code>.empty-state__desc</code></td><td>설명 텍스트</td></tr>
-	  <tr><td><code>.empty--sm/lg</code></td><td>크기 변형</td></tr>
+	  <tr><td><code>.empty</code></td><td>Empty 기본 컨테이너</td></tr>
+	  <tr><td><code>.empty--result</code></td><td>검색 결과 없음 (padding 24px, font 14px)</td></tr>
+	  <tr><td><code>.empty--page</code></td><td>페이지 데이터 없음 (padding-top 48px, font 16px)</td></tr>
+	  <tr><td><code>.empty__icon</code></td><td>회색 원형 아이콘 영역</td></tr>
+	  <tr><td><code>.empty__text</code></td><td>안내 텍스트</td></tr>
 	</table>
   </section>
 
   <!-- ===================== FILTER ===================== -->
   <section class="g-section" id="secFilter">
 	<h3 class="g-section-title">Filter</h3>
-	<div class="g-example">
-	  <button class="filter-trigger">기간 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-	  <button class="filter-trigger active">거래유형 <span class="filter-count">2</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-	  <button class="filter-trigger">금액 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+
+	<p class="g-sub-title">Right</p>
+	<p class="g-desc">기본형으로 필터 아이콘 우측 정렬</p>
+	<div class="g-example" style="padding:0;background:#F6F6F6;">
+	  <div class="filter filter--right filter--divider">
+		<div class="filter__left">
+		  <span class="filter__period">2024.01.01~2024.03.01</span>
+		  <span class="filter__option">최신순</span>
+		</div>
+		<button class="filter__btn" aria-label="필터">
+		  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<line x1="2" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			<line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			<line x1="2" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			<circle cx="6"  cy="5"  r="2" fill="#fff" stroke="currentColor" stroke-width="1.5"/>
+			<circle cx="12" cy="9"  r="2" fill="#fff" stroke="currentColor" stroke-width="1.5"/>
+			<circle cx="7"  cy="13" r="2" fill="#fff" stroke="currentColor" stroke-width="1.5"/>
+		  </svg>
+		</button>
+	  </div>
 	</div>
+
+	<p class="g-sub-title">Left</p>
+	<p class="g-desc">부가 기능이 있는 경우 부가 기능을 우측에 정렬</p>
+	<div class="g-example" style="padding:0;background:#F6F6F6;">
+	  <div class="filter filter--left filter--divider">
+		<div class="filter__left">
+		  <span class="filter__option">최신순 · 3개월</span>
+		  <button class="filter__btn" aria-label="필터">
+			<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+			  <line x1="2" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			  <line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			  <line x1="2" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			  <circle cx="6"  cy="5"  r="2" fill="#fff" stroke="currentColor" stroke-width="1.5"/>
+			  <circle cx="12" cy="9"  r="2" fill="#fff" stroke="currentColor" stroke-width="1.5"/>
+			  <circle cx="7"  cy="13" r="2" fill="#fff" stroke="currentColor" stroke-width="1.5"/>
+			</svg>
+		  </button>
+		</div>
+		<div class="filter__extra">
+		  <span class="filter__label">추천 상품</span>
+		  <button class="filter__tooltip-btn" aria-label="도움말">?</button>
+		  <label class="switch switch--xs">
+			<input type="checkbox" class="switch__input">
+			<span class="switch__track"></span>
+		  </label>
+		</div>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.filter-trigger</code></td><td>필터 트리거 버튼</td></tr>
-	  <tr><td><code>.filter-trigger.active</code></td><td>선택된 필터 (초록)</td></tr>
-	  <tr><td><code>.filter-count</code></td><td>선택 개수 뱃지</td></tr>
+	  <tr><td><code>.filter</code></td><td>필터 기본 컨테이너 (padding 0 24px)</td></tr>
+	  <tr><td><code>.filter--right</code></td><td>기간+정렬 왼쪽, 필터 아이콘 오른쪽</td></tr>
+	  <tr><td><code>.filter--left</code></td><td>필터 옵션 왼쪽, 부가 기능 오른쪽</td></tr>
+	  <tr><td><code>.filter--divider</code></td><td>하단 구분선 추가</td></tr>
+	  <tr><td><code>.filter__period</code></td><td>기간 텍스트 (13px / #121212)</td></tr>
+	  <tr><td><code>.filter__option</code></td><td>정렬·옵션 텍스트 (13px / #505050)</td></tr>
+	  <tr><td><code>.filter__btn</code></td><td>필터 아이콘 버튼</td></tr>
+	  <tr><td><code>.filter__extra</code></td><td>우측 부가 기능 영역 (gap 8px)</td></tr>
+	  <tr><td><code>.filter__label</code></td><td>부가 기능 레이블 (13px Medium / #121212)</td></tr>
+	  <tr><td><code>.filter__tooltip-btn</code></td><td>툴팁 버튼 (?)</td></tr>
 	</table>
   </section>
 
   <!-- ===================== INDICATOR ===================== -->
   <section class="g-section" id="secIndicator">
 	<h3 class="g-section-title">Indicator</h3>
-	<p class="g-sub-title">Status Dot / Spinner / Skeleton</p>
-	<div class="g-example">
-	  <div class="status status--active"><span class="status__dot"></span>온라인</div>
-	  <div class="status status--inactive"><span class="status__dot"></span>오프라인</div>
-	  <div class="status status--error"><span class="status__dot"></span>오류</div>
-	  <div class="status status--pending"><span class="status__dot"></span>대기</div>
-	</div>
-	<p class="g-sub-title">Spinner</p>
-	<div class="g-example" style="align-items:center;gap:16px">
-	  <div class="spinner"></div>
-	  <div class="spinner" style="width:20px;height:20px;border-width:2px"></div>
-	  <div class="spinner" style="width:40px;height:40px;border-width:3px"></div>
-	</div>
-	<p class="g-sub-title">Spinner Inline</p>
-	<div class="g-example">
-	  <div class="load-data--inline">
-		<div class="spinner load-data--inline" style="width:16px;height:16px;border-width:2px;display:inline-block"></div>
-		<span style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">데이터 불러오는 중...</span>
+	<p class="g-desc">컨텐츠의 현재 위치를 숫자 또는 점으로 표시해 놓은 유형입니다.</p>
+
+	<p class="g-sub-title">Number</p>
+	<p class="g-desc">Background: #111111, 40% / Font Default: 12px #FFFFFF 60% / Active: 12px #FFFFFF 100%</p>
+	<div class="g-example" style="background:#e8e8e8;">
+	  <div class="indicator-number">
+		<button class="indicator-number__arrow">&#8249;</button>
+		<span class="indicator-number__item">1</span>
+		<span class="indicator-number__item indicator-number__item--active">2</span>
+		<span class="indicator-number__item">3</span>
+		<button class="indicator-number__arrow">&#8250;</button>
+		<span class="indicator-number__divider"></span>
+		<button class="indicator-number__pause" aria-label="일시정지"></button>
 	  </div>
 	</div>
-	<p class="g-sub-title">Skeleton — Text / Title / Avatar / Image / Button</p>
-	<div class="g-example col" style="width:280px">
-	  <div class="skel-row">
-		<div class="skeleton skel-avatar"></div>
-		<div class="skel-block">
-		  <div class="skeleton skel-title"></div>
-		  <div class="skeleton skel-text"></div>
-		  <div class="skeleton skel-text" style="width:70%"></div>
-		</div>
+
+	<p class="g-sub-title">Dot</p>
+	<p class="g-desc">Default: #D3D3D3 / Active: #19973C</p>
+	<div class="g-example">
+	  <div class="indicator-dot">
+		<span class="indicator-dot__item indicator-dot__item--active"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<span class="indicator-dot__item"></span>
+		<button class="indicator-dot__pause" aria-label="일시정지"></button>
 	  </div>
-	  <div class="skeleton skel-text" style="width:100%"></div>
-	  <div class="skeleton skel-text" style="width:85%"></div>
-	  <div class="skeleton skel-text" style="width:60%"></div>
-	  <div class="skeleton" style="height:36px;width:100px;border-radius:var(--radius-full)"></div>
 	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.status--active/inactive/error/pending</code></td><td>상태 dot 색상 자동 적용</td></tr>
-	  <tr><td><code>.spinner</code></td><td>회전 로딩 인디케이터</td></tr>
-	  <tr><td><code>.indicator--progress</code></td><td>프로그레스 바 형태</td></tr>
+	  <tr><td><code>.indicator-number</code></td><td>숫자형 인디케이터 (dark pill)</td></tr>
+	  <tr><td><code>.indicator-number__item</code></td><td>페이지 번호 아이템 (opacity 60%)</td></tr>
+	  <tr><td><code>.indicator-number__item--active</code></td><td>현재 페이지 (opacity 100%)</td></tr>
+	  <tr><td><code>.indicator-number__arrow</code></td><td>이전/다음 화살표 버튼</td></tr>
+	  <tr><td><code>.indicator-number__pause</code></td><td>일시정지 버튼</td></tr>
+	  <tr><td><code>.indicator-number__divider</code></td><td>구분선</td></tr>
+	  <tr><td><code>.indicator-dot</code></td><td>점형 인디케이터</td></tr>
+	  <tr><td><code>.indicator-dot__item</code></td><td>기본 점 (#D3D3D3)</td></tr>
+	  <tr><td><code>.indicator-dot__item--active</code></td><td>현재 위치 점 (#19973C)</td></tr>
+	  <tr><td><code>.indicator-dot__pause</code></td><td>일시정지 버튼</td></tr>
 	</table>
   </section>
 
   <!-- ===================== INFOBOX ===================== -->
   <section class="g-section" id="secInfobox">
 	<h3 class="g-section-title">Infobox</h3>
-	<div class="g-example col" style="width:100%;max-width:480px">
-	  <div class="infobox infobox--info">
-		<svg class="infobox__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-		<div><div class="infobox__title">안내</div><div class="infobox__body">이용 시간은 평일 09:00 ~ 18:00입니다.</div></div>
-	  </div>
-	  <div class="infobox infobox--success">
-		<svg class="infobox__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
-		<div><div class="infobox__title">완료</div><div class="infobox__body">신청이 정상적으로 처리되었습니다.</div></div>
-	  </div>
-	  <div class="infobox infobox--warning">
-		<svg class="infobox__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-		<div><div class="infobox__title">주의</div><div class="infobox__body">만기일이 7일 이내입니다. 연장을 확인해 주세요.</div></div>
-	  </div>
-	  <div class="infobox infobox--danger">
-		<svg class="infobox__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-		<div><div class="infobox__title">오류</div><div class="infobox__body">처리 중 오류가 발생했습니다. 다시 시도해 주세요.</div></div>
+	<p class="g-desc">사각형 형태로 경계를 명확히 정의하여 시각적으로 강조하는 형태입니다. 각 항목은 독립적으로 구분되어 카드 컴포넌트와 같은 다양한 레이아웃으로 조합하여 설계합니다.</p>
+	<div class="g-example" style="max-width:360px;">
+	  <div class="infobox">
+		<div class="infobox__title">타이틀</div>
+		<div class="infobox__body">내용을 입력해 주세요.</div>
 	  </div>
 	</div>
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.infobox--info</code></td><td>파랑 (안내)</td></tr>
-	  <tr><td><code>.infobox--success</code></td><td>초록 (완료)</td></tr>
-	  <tr><td><code>.infobox--warning</code></td><td>주황 (주의)</td></tr>
-	  <tr><td><code>.infobox--danger</code></td><td>빨강 (오류)</td></tr>
+	  <tr><td><code>.infobox</code></td><td>Infobox 컨테이너 (radius 16px / #F6F6F6 / padding 20px 16px)</td></tr>
+	  <tr><td><code>.infobox__title</code></td><td>타이틀 (16px Medium / #121212)</td></tr>
+	  <tr><td><code>.infobox__body</code></td><td>본문 텍스트 (14px Regular / #505050)</td></tr>
 	</table>
   </section>
 
@@ -1600,125 +1663,544 @@
   <!-- ===================== LABEL ===================== -->
   <section class="g-section" id="secLabel">
 	<h3 class="g-section-title">Label</h3>
+	<p class="g-desc">상태·등급·분류를 나타내는 소형 텍스트 뱃지입니다. 테두리형(Line)과 채움형(Fill) 두 가지 타입으로 사용합니다.</p>
+
+	<!-- Line: Basic -->
+	<p class="g-sub-title">Line — Basic</p>
 	<div class="g-example">
-	  <span class="label label--md label--default">기본</span>
-	  <span class="label label--md label--primary">Primary</span>
-	  <span class="label label--md label--info">Info</span>
-	  <span class="label label--md label--danger">Danger</span>
-	  <span class="label label--md label--warning">Warning</span>
+	  <span class="label label--line label--default">기본</span>
+	  <span class="label label--line label--blue">진행</span>
+	  <span class="label label--line label--green">완료</span>
+	  <span class="label label--line label--orange">대기</span>
+	  <span class="label label--line label--red">오류</span>
+	  <span class="label label--line label--purple">신규</span>
+	  <span class="label label--line label--teal">보류</span>
+	  <span class="label label--line label--yellow">처리중</span>
+	  <span class="label label--line label--pink">반려</span>
 	</div>
-	<p class="g-sub-title">With Description</p>
+
+	<!-- Line: Grade -->
+	<p class="g-sub-title">Line — Grade</p>
+	<div class="g-example">
+	  <span class="label label--line label--grade1">1등급</span>
+	  <span class="label label--line label--grade2">2등급</span>
+	  <span class="label label--line label--grade3">3등급</span>
+	  <span class="label label--line label--grade4">4등급</span>
+	  <span class="label label--line label--grade5">5등급</span>
+	  <span class="label label--line label--grade6">6등급</span>
+	</div>
+
+	<!-- Fill: Basic -->
+	<p class="g-sub-title">Fill — Basic</p>
+	<div class="g-example">
+	  <span class="label label--fill label--green">완료</span>
+	  <span class="label label--fill label--blue">진행</span>
+	  <span class="label label--fill label--orange">대기</span>
+	  <span class="label label--fill label--red">오류</span>
+	</div>
+
+	<!-- Text-Label -->
+	<p class="g-sub-title">Text-Label</p>
 	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">SMS 만기 안내</span>
-		  <span class="switch__description">만기일 7일 전 SMS로 알림을 보내드립니다</span>
-		</div>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">마케팅 수신 동의</span>
-		  <span class="switch__description">이벤트 및 혜택 정보를 받아보실 수 있습니다</span>
-		</div>
-	  </label>
+	  <span class="text-label">레이블 <span class="label label--fill label--blue">라벨</span></span>
+	  <span class="text-label">레이블 <span class="text-label__divider"></span> <span class="label label--fill label--blue">라벨</span></span>
 	</div>
-	<p class="g-sub-title">Size — sm / md / lg</p>
-	<div class="g-example">
-	  <span class="label label--sm label--primary">SM</span>
-	  <span class="label label--md label--primary">MD</span>
-	  <span class="label label--lg label--primary">LG</span>
-	</div>
-	<p class="g-sub-title">Outline</p>
-	<div class="g-example">
-	  <span class="label label--md label--primary label--outline">Primary</span>
-	  <span class="label label--md label--info label--outline">Info</span>
-	  <span class="label label--md label--danger label--outline">Danger</span>
-	</div>
-	<p class="g-sub-title">Dot Indicator</p>
-	<div class="g-example">
-	  <span class="label label--md label--primary"><span class="label__dot"></span>Primary</span>
-	  <span class="label label--md label--info"><span class="label__dot"></span>Info</span>
-	  <span class="label label--md label--danger"><span class="label__dot"></span>Danger</span>
-	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.label--default</code></td><td>회색 기본 레이블</td></tr>
-	  <tr><td><code>.label--primary/info/danger/warning</code></td><td>색상 채움 변형</td></tr>
-	  <tr><td><code>.label--outline</code></td><td>테두리만 형태</td></tr>
+	  <tr><td><code>.label--line</code></td><td>테두리형 (border 1px / 투명 배경)</td></tr>
+	  <tr><td><code>.label--fill</code></td><td>채움형 (컬러 배경 / 흰 글자)</td></tr>
+	  <tr><td><code>.label--default/blue/green/orange/red/yellow/purple/teal/pink</code></td><td>상태 컬러 지정</td></tr>
+	  <tr><td><code>.label--grade1 ~ grade6</code></td><td>등급 컬러 (1=빨강 → 6=파랑)</td></tr>
 	  <tr><td><code>.label__dot</code></td><td>앞에 붙는 컬러 점</td></tr>
-	  <tr><td><code>.label--sm/md/lg</code></td><td>크기 (18/22/26px)</td></tr>
+	  <tr><td><code>.text-label</code></td><td>텍스트 옆 인라인 레이블 패턴 (14px / #505050)</td></tr>
+	  <tr><td><code>.text-label__divider</code></td><td>텍스트와 레이블 사이 구분선</td></tr>
 	</table>
   </section>
 
   <!-- ===================== LINK ===================== -->
   <section class="g-section" id="secLink">
 	<h3 class="g-section-title">Link</h3>
-	<div class="g-example">
-	  <a class="link" href="#">기본 링크</a>
-	  <a class="link link--secondary" href="#">Secondary 링크</a>
-	  <a class="link link--danger" href="#">위험 링크</a>
+	<p class="g-desc">사용자가 리스트의 항목을 선택하여 다른 화면으로 이동하거나 추가 정보를 확인할 수 있도록 합니다.</p>
+
+	<!-- None: 텍스트 + 화살표 -->
+	<p class="g-sub-title">None</p>
+	<div class="g-example" style="max-width:360px;">
+	  <a class="link-item link-item--none" href="#">
+		<div class="link-item__body"><span class="link-item__title">타이틀</span></div>
+		<span class="link-item__arrow">›</span>
+	  </a>
 	</div>
+	<p class="g-sub-title">None — Usage</p>
+	<div class="g-example" style="max-width:360px;">
+	  <a class="link-item link-item--none" href="#">
+		<div class="link-item__body"><span class="link-item__title">예금</span></div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	  <a class="link-item link-item--none" href="#">
+		<div class="link-item__body"><span class="link-item__title">펀드</span></div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	  <a class="link-item link-item--none" href="#">
+		<div class="link-item__body"><span class="link-item__title">ETF</span></div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	  <a class="link-item link-item--none" href="#">
+		<div class="link-item__body"><span class="link-item__title">더블드옵션</span></div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	</div>
+
+	<!-- Horizontal: 아이콘(좌) + 텍스트 + 화살표 -->
+	<p class="g-sub-title">Horizontal</p>
+	<div class="g-example" style="max-width:360px;">
+	  <a class="link-item link-item--horizontal" href="#">
+		<div class="link-item__icon">
+		  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+		</div>
+		<div class="link-item__body"><span class="link-item__title">타이틀</span></div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	</div>
+	<p class="g-sub-title">Horizontal — Usage</p>
+	<div class="g-example col" style="max-width:360px;">
+	  <a class="link-item link-item--horizontal" href="#">
+		<div class="link-item__icon" style="background-color:#E8F5E9;">
+		  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#19973C" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+		</div>
+		<div class="link-item__body"><span class="link-item__title">딱 맞는 상품을 찾아드릴게요</span></div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	  <a class="link-item link-item--none" href="#"><div class="link-item__body"><span class="link-item__title">비교이력보기</span></div><span class="link-item__arrow">›</span></a>
+	  <a class="link-item link-item--none" href="#"><div class="link-item__body"><span class="link-item__title">기본약관</span></div><span class="link-item__arrow">›</span></a>
+	  <a class="link-item link-item--none" href="#"><div class="link-item__body"><span class="link-item__title">상품설명서</span></div><span class="link-item__arrow">›</span></a>
+	  <a class="link-item link-item--none" href="#"><div class="link-item__body"><span class="link-item__title">상품특약</span></div><span class="link-item__arrow">›</span></a>
+	</div>
+
+	<!-- Vertical: 아이콘(위) + 텍스트(아래) -->
+	<p class="g-sub-title">Vertical</p>
+	<div class="g-example" style="max-width:360px;">
+	  <a class="link-item link-item--vertical" href="#">
+		<div class="link-item__icon" style="width:48px;height:48px;">
+		  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+		</div>
+		<div class="link-item__body"><span class="link-item__title">타이틀</span></div>
+	  </a>
+	</div>
+	<p class="g-sub-title">Vertical — Usage</p>
+	<div class="g-example" style="gap:0;">
+	  <a class="link-item link-item--vertical" href="#">
+		<div class="link-item__icon" style="width:48px;height:48px;">
+		  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+		</div>
+		<div class="link-item__body"><span class="link-item__title">타이틀</span></div>
+	  </a>
+	  <a class="link-item link-item--vertical" href="#">
+		<div class="link-item__icon" style="width:48px;height:48px;">
+		  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
+		</div>
+		<div class="link-item__body"><span class="link-item__title">타이틀</span></div>
+	  </a>
+	  <a class="link-item link-item--vertical" href="#">
+		<div class="link-item__icon" style="width:48px;height:48px;">
+		  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+		</div>
+		<div class="link-item__body"><span class="link-item__title">타이틀</span></div>
+	  </a>
+	</div>
+
+	<!-- Mix: 아이콘 + 텍스트+설명 -->
+	<p class="g-sub-title">Mix</p>
+	<div class="g-example" style="max-width:360px;">
+	  <a class="link-item link-item--mix" href="#">
+		<div class="link-item__icon" style="border-radius:10px;background-color:#FFF3E0;">
+		  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E65100" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+		</div>
+		<div class="link-item__body">
+		  <span class="link-item__title">타이틀</span>
+		  <span class="link-item__sub">부가설명</span>
+		</div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	</div>
+	<p class="g-sub-title">Mix — Usage</p>
+	<div class="g-example col" style="max-width:360px;">
+	  <a class="link-item link-item--mix" href="#">
+		<div class="link-item__icon" style="border-radius:10px;background-color:#E8F5E9;">
+		  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#19973C" stroke-width="2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+		</div>
+		<div class="link-item__body">
+		  <span class="link-item__title">포트폴리오 연필기</span>
+		  <span class="link-item__sub">투기·기간과 목적에 맞는 투자상품을 제안합니다</span>
+		</div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	  <a class="link-item link-item--mix" href="#">
+		<div class="link-item__icon" style="border-radius:10px;background-color:#E3F2FD;">
+		  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1565C0" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+		</div>
+		<div class="link-item__body">
+		  <span class="link-item__title">투자상품 모니터링</span>
+		  <span class="link-item__sub">나스닥하락방지등급파악및알림</span>
+		</div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	</div>
+
+	<!-- Category: 카테고리 + 아이콘 + 타이틀 -->
+	<p class="g-sub-title">Category</p>
+	<div class="g-example" style="max-width:360px;">
+	  <a class="link-item link-item--category" href="#">
+		<div class="link-item__icon">
+		  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+		</div>
+		<div class="link-item__body">
+		  <span class="link-item__category">카테고리</span>
+		  <span class="link-item__title">타이틀</span>
+		</div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	</div>
+	<p class="g-sub-title">Category — Usage</p>
+	<div class="g-example col" style="max-width:360px;">
+	  <a class="link-item link-item--category" href="#">
+		<div class="link-item__icon" style="background-color:#F3E5F5;">
+		  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A1B9A" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+		</div>
+		<div class="link-item__body">
+		  <span class="link-item__category">금융감독원</span>
+		  <span class="link-item__title">금융소비자정보포털시스템</span>
+		</div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	  <a class="link-item link-item--category" href="#">
+		<div class="link-item__icon" style="background-color:#E3F2FD;">
+		  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1565C0" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+		</div>
+		<div class="link-item__body">
+		  <span class="link-item__category">한국은행협회</span>
+		  <span class="link-item__title">은행상품비교공시</span>
+		</div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	  <a class="link-item link-item--category" href="#">
+		<div class="link-item__icon" style="background-color:#E8F5E9;">
+		  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#19973C" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+		</div>
+		<div class="link-item__body">
+		  <span class="link-item__category">금융감독원</span>
+		  <span class="link-item__title">예금보험공사</span>
+		</div>
+		<span class="link-item__arrow">›</span>
+	  </a>
+	</div>
+
+	<!-- Divide: 구분선 리스트 -->
+	<p class="g-sub-title">Divide</p>
+	<div class="g-example" style="max-width:360px;">
+	  <div class="link-card">
+		<a class="link-item link-item--divide" href="#">
+		  <div class="link-item__body">
+			<span class="link-item__title">타이틀</span>
+			<span class="link-item__sub">부가설명</span>
+		  </div>
+		  <span class="link-item__arrow">›</span>
+		</a>
+		<a class="link-item link-item--divide" href="#">
+		  <div class="link-item__body">
+			<span class="link-item__title">타이틀</span>
+			<span class="link-item__sub">부가설명</span>
+		  </div>
+		  <span class="link-item__arrow">›</span>
+		</a>
+	  </div>
+	</div>
+	<p class="g-sub-title">Divide — Usage</p>
+	<div class="g-example" style="max-width:360px;">
+	  <div class="link-card">
+		<a class="link-item link-item--divide" href="#">
+		  <div class="link-item__body">
+			<span class="link-item__title">NH저축은행</span>
+			<span class="link-item__sub">서민금융, 뱃살론</span>
+		  </div>
+		  <span class="link-item__arrow">›</span>
+		</a>
+		<a class="link-item link-item--divide" href="#">
+		  <div class="link-item__body">
+			<span class="link-item__title">NH농협캐피탈</span>
+			<span class="link-item__sub">대출이 필요할 때</span>
+		  </div>
+		  <span class="link-item__arrow">›</span>
+		</a>
+		<a class="link-item link-item--divide" href="#">
+		  <div class="link-item__body">
+			<span class="link-item__title">다모아대출</span>
+			<span class="link-item__sub">신용, 보험계약대출 상품 조회</span>
+		  </div>
+		  <span class="link-item__arrow">›</span>
+		</a>
+	  </div>
+	</div>
+
+	<!-- Divide — Transaction (금융 거래 내역) -->
+	<p class="g-sub-title">Divide — Transaction</p>
+	<div class="g-example" style="max-width:360px;">
+	  <div class="link-card">
+		<div class="link-tx">
+		  <div class="link-tx__left">
+			<span class="link-tx__date">2024.01.01 01:01:01</span>
+			<span class="link-tx__name">김농협</span>
+			<span class="link-tx__sub">부가설명</span>
+		  </div>
+		  <div class="link-tx__right">
+			<span class="label label--line label--red" style="font-size:10px;">출금</span>
+			<span class="link-tx__amount link-tx__amount--out">5,000,000,000원</span>
+			<span class="link-tx__balance">잔액 5,000,000,000원</span>
+		  </div>
+		</div>
+		<div class="link-tx">
+		  <div class="link-tx__left">
+			<span class="link-tx__date">2024.01.01 01:01:01</span>
+			<span class="link-tx__name">김농협</span>
+			<span class="link-tx__sub">부가설명</span>
+		  </div>
+		  <div class="link-tx__right">
+			<span class="label label--line label--blue" style="font-size:10px;">입금</span>
+			<span class="link-tx__amount link-tx__amount--in">5,000,000원</span>
+			<span class="link-tx__balance">잔액 5,000,000,000원</span>
+		  </div>
+		</div>
+		<div class="link-tx">
+		  <div class="link-tx__left">
+			<span class="link-tx__date">2024.01.01 01:01:01</span>
+			<span class="link-tx__name">김농협</span>
+			<span class="link-tx__sub">부가설명</span>
+		  </div>
+		  <div class="link-tx__right">
+			<span class="label label--line label--pink" style="font-size:10px;">이수령</span>
+			<span class="link-tx__amount link-tx__amount--recv">75,000,000원</span>
+			<span class="link-tx__balance">잔액 5,000,000,000원</span>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.link</code></td><td>초록 브랜드 링크</td></tr>
-	  <tr><td><code>.link--secondary</code></td><td>회색 서브 링크</td></tr>
-	  <tr><td><code>.link--danger</code></td><td>빨간 위험 링크</td></tr>
-	  <tr><td><code>.link--underline</code></td><td>항상 밑줄</td></tr>
+	  <tr><td><code>.link-item</code></td><td>네비게이션 리스트 아이템 기본</td></tr>
+	  <tr><td><code>.link-item--none</code></td><td>텍스트 + 화살표 (아이콘 없음)</td></tr>
+	  <tr><td><code>.link-item--horizontal</code></td><td>아이콘(좌) + 텍스트 + 화살표</td></tr>
+	  <tr><td><code>.link-item--vertical</code></td><td>아이콘(위) + 텍스트(아래)</td></tr>
+	  <tr><td><code>.link-item--mix</code></td><td>아이콘 + 제목 + 설명 혼합형</td></tr>
+	  <tr><td><code>.link-item--category</code></td><td>카테고리 텍스트 + 아이콘 + 제목</td></tr>
+	  <tr><td><code>.link-item--divide</code></td><td>하단 구분선 — .link-card 내부 사용</td></tr>
+	  <tr><td><code>.link-card</code></td><td>divide 아이템 그룹 컨테이너</td></tr>
+	  <tr><td><code>.link-tx</code></td><td>금융 거래 내역 행 (divide 내부)</td></tr>
+	  <tr><td><code>.link-tx__amount--out/in/recv</code></td><td>출금(빨강) / 입금(파랑) / 이수령(핑크)</td></tr>
 	</table>
   </section>
 
   <!-- ===================== LIST ===================== -->
   <section class="g-section" id="secList">
 	<h3 class="g-section-title">List</h3>
-	<div class="g-example">
-	  <div class="list-comp">
-		<div class="list-comp__item">
-		  <div class="list-comp__avatar">김</div>
-		  <div><div class="list-comp__title">김올원</div><div class="list-comp__sub">010-1234-5678</div></div>
-		  <div class="list-comp__trail">›</div>
-		</div>
-		<div class="list-comp__item">
-		  <div class="list-comp__avatar">이</div>
-		  <div><div class="list-comp__title">이올원</div><div class="list-comp__sub">010-9876-5432</div></div>
-		  <div class="list-comp__trail">›</div>
-		</div>
-		<div class="list-comp__item">
-		  <div class="list-comp__avatar">박</div>
-		  <div><div class="list-comp__title">박올원</div><div class="list-comp__sub">010-1111-2222</div></div>
-		  <div class="list-comp__trail"><span class="badge badge--sm badge--primary">신규</span></div>
+	<p class="g-desc">데이터를 키-값 쌍으로 표시하는 정보 리스트 컴포넌트입니다.</p>
+
+	<!-- Card — lg -->
+	<p class="g-sub-title">Card — lg</p>
+	<div class="g-example" style="max-width:640px;">
+	  <div class="list-card list-card--lg">
+		<div class="list-kv">
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
 		</div>
 	  </div>
 	</div>
-	<p class="g-sub-title">Selected / Disabled 상태</p>
-	<div class="g-example">
-	  <div class="list-comp">
-		<div class="list-comp__item" style="background:var(--primitive-green-50)">
-		  <div class="list-comp__avatar" style="background:var(--primitive-green-100);color:var(--primitive-green-700)">김</div>
-		  <div><div class="list-comp__title" style="color:var(--color-text-brand)">김올원 (선택됨)</div><div class="list-comp__sub">010-1234-5678</div></div>
-		  <div class="list-comp__trail"><svg viewBox="0 0 24 24" fill="none" stroke="var(--primitive-green-500)" stroke-width="2" width="16" height="16"><polyline points="20,6 9,17 4,12"/></svg></div>
-		</div>
-		<div class="list-comp__item" style="opacity:.45;pointer-events:none">
-		  <div class="list-comp__avatar">이</div>
-		  <div><div class="list-comp__title">이올원 (비활성)</div><div class="list-comp__sub">010-9876-5432</div></div>
-		  <div class="list-comp__trail">›</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:8px;">Font — Title: 15/Regular/-2%/#505050/Left &nbsp;·&nbsp; Data: 22/Semibold/-2%/#121212/Right</p>
+
+	<!-- Card — sm -->
+	<p class="g-sub-title">Card — sm</p>
+	<div class="g-example" style="max-width:640px;">
+	  <div class="list-card list-card--sm">
+		<div class="list-kv">
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">가볍</span></span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">가볍</span></span></div>
 		</div>
 	  </div>
 	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:8px;">Font — Title: 15/Regular/-2%/#505050/Left &nbsp;·&nbsp; Data: 15/Medium/-2%/#121212/Right</p>
+
+	<!-- Card — xs -->
+	<p class="g-sub-title">Card — xs</p>
+	<div class="g-example" style="max-width:640px;">
+	  <div class="list-card list-card--xs">
+		<div class="list-kv">
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">가볍</span></span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">가볍</span></span></div>
+		</div>
+	  </div>
+	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:8px;">Font — Title: 14/Regular/-2%/#505050/Left &nbsp;·&nbsp; Data: 14/Regular/-2%/#505050/Right</p>
+
+	<!-- Page — sm -->
+	<p class="g-sub-title">Page — sm</p>
+	<div class="g-example" style="max-width:640px;">
+	  <div class="list-page list-page--sm">
+		<div class="list-kv">
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">가볍</span></span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">가볍</span></span></div>
+		</div>
+	  </div>
+	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:8px;">Font — Title: 15/Regular/-2%/#505050/Left &nbsp;·&nbsp; Data: 15/Medium/-2%/#121212/Right</p>
+
+	<!-- Page — xs -->
+	<p class="g-sub-title">Page — xs</p>
+	<div class="g-example" style="max-width:640px;">
+	  <div class="list-page list-page--xs">
+		<div class="list-kv">
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data">데이터</span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">라벨</span></span></div>
+		  <div class="list-kv__pair"><span class="list-kv__title">타이틀</span><span class="list-kv__data"><span class="label label--line label--default">라벨</span></span></div>
+		</div>
+	  </div>
+	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:8px;">Font — Title: 14/Regular/-2%/#505050/Left &nbsp;·&nbsp; Data: 14/Regular/-2%/#505050/Right</p>
+
+	<!-- Line -->
+	<p class="g-sub-title">Line</p>
+	<div class="g-example" style="max-width:560px;">
+	  <div class="list-line">
+		<div class="list-line__item">
+		  <span class="list-line__period">2024.01.01 ~ 2025.01.01</span>
+		  <div class="list-line__row">
+			<span class="list-line__title">타이틀</span>
+			<span class="list-line__data">데이터</span>
+		  </div>
+		</div>
+		<div class="list-line__item">
+		  <span class="list-line__period">2024.01.01 ~ 2025.01.01</span>
+		  <div class="list-line__row">
+			<span class="list-line__title">타이틀</span>
+			<span class="list-line__data">데이터</span>
+		  </div>
+		</div>
+		<div class="list-line__item">
+		  <span class="list-line__period">2024.01.01 ~ 2025.01.01</span>
+		  <div class="list-line__row">
+			<span class="list-line__title">타이틀</span>
+			<span class="list-line__data">데이터</span>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:8px;">Font — Title: 15/Regular/-2%/#505050 &nbsp;·&nbsp; Data: 15/Medium/-2%/#121212 &nbsp;·&nbsp; Period: 13/Regular/-2%/#767676</p>
+
+	<!-- Account -->
+	<p class="g-sub-title">Account</p>
+	<div class="g-example" style="max-width:480px;">
+	  <div class="list-account">
+		<div class="list-account__item">
+		  <div class="list-account__icon">NH</div>
+		  <div class="list-account__body">
+			<span class="list-account__name">금융사명</span>
+			<span class="list-account__number">계좌번호</span>
+		  </div>
+		  <button class="list-account__fav" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+		  </button>
+		</div>
+		<div class="list-account__item">
+		  <div class="list-account__icon">
+			NH
+			<span class="list-account__badge">12</span>
+		  </div>
+		  <div class="list-account__body">
+			<span class="list-account__name">금융사명</span>
+			<span class="list-account__number">계좌번호</span>
+		  </div>
+		  <button class="list-account__fav list-account__fav--active" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+		  </button>
+		</div>
+	  </div>
+	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:8px;">Font — Name: 16/Medium/-2%/#121212 &nbsp;·&nbsp; Number: 14/Regular/-2%/#767676</p>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.list-comp__item</code></td><td>목록 항목 (hover)</td></tr>
-	  <tr><td><code>.list-comp__avatar</code></td><td>아바타/아이콘</td></tr>
-	  <tr><td><code>.list-comp__trail</code></td><td>trailing 영역</td></tr>
+	  <tr><td><code>.list-card--lg/sm/xs</code></td><td>카드형 키-값 목록 (border+radius) — 데이터 크기 22/15/14px</td></tr>
+	  <tr><td><code>.list-page--sm/xs</code></td><td>페이지형 키-값 목록 (카드 없음) — 데이터 15/14px</td></tr>
+	  <tr><td><code>.list-kv</code></td><td>키-값 2열 그리드 공통 래퍼</td></tr>
+	  <tr><td><code>.list-kv__pair</code></td><td>키-값 한 쌍 셀</td></tr>
+	  <tr><td><code>.list-line</code></td><td>구분선 리스트 (기간+타이틀+데이터)</td></tr>
+	  <tr><td><code>.list-account</code></td><td>계좌/금융상품 리스트</td></tr>
+	  <tr><td><code>.list-account__badge</code></td><td>아이콘 위 숫자 뱃지</td></tr>
+	  <tr><td><code>.list-account__fav--active</code></td><td>즐겨찾기 활성 (노란 별)</td></tr>
 	</table>
   </section>
 
   <!-- ===================== LOAD DATA ===================== -->
   <section class="g-section" id="secLoadData">
 	<h3 class="g-section-title">Load Data</h3>
+	<p class="g-desc">서버에서 불러온 데이터를 읽기 전용 필드 형태로 표시합니다.</p>
+
+	<!-- Basic -->
+	<p class="g-sub-title">Basic</p>
+	<div class="g-example col" style="max-width:400px;">
+	  <div class="load-data">
+		<span class="load-data__label">레이블</span>
+		<div class="load-data__box">
+		  <div class="load-data__left">
+			<span class="load-data__key">Label</span>
+		  </div>
+		  <span class="load-data__value">Data</span>
+		</div>
+		<span class="load-data__msg">안내 문구 입력</span>
+	  </div>
+	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:4px;">
+	  Label: 14/Medium/#505050 &nbsp;·&nbsp; Data: 18/SemiBold/#121212 &nbsp;·&nbsp; Message: 13/Regular/#767676
+	</p>
+
+	<!-- Highlight -->
+	<p class="g-sub-title">Highlight</p>
+	<div class="g-example col" style="max-width:400px;">
+	  <div class="load-data load-data--highlight">
+		<span class="load-data__label">레이블</span>
+		<div class="load-data__box">
+		  <div class="load-data__left">
+			<span class="load-data__key">Label</span>
+			<span class="load-data__sub">부가설명</span>
+		  </div>
+		  <span class="load-data__value">Data</span>
+		</div>
+		<span class="load-data__msg">안내 문구 입력</span>
+	  </div>
+	</div>
+	<p class="g-desc" style="font-size:12px;color:#767676;margin-top:4px;">
+	  Label Text: 18/SemiBold/#121212 &nbsp;·&nbsp; Sub: 13/Regular/#505050 &nbsp;·&nbsp; Data: 18/SemiBold/#121212
+	</p>
+
+	<!-- Skeleton / Spinner -->
 	<p class="g-sub-title">Skeleton UI</p>
 	<div class="g-example col">
 	  <div class="skel-row">
@@ -1736,52 +2218,234 @@
 	  </div>
 	</div>
 	<p class="g-sub-title">Spinner</p>
-	<div class="g-example">
+	<div class="g-example" style="align-items:center;">
 	  <div class="spinner"></div>
-	  <span style="font-size:var(--font-size-sm);color:var(--primitive-gray-500);margin-left:8px">데이터를 불러오는 중...</span>
+	  <span style="font-size:13px;color:#767676;margin-left:8px;">데이터를 불러오는 중...</span>
 	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.skeleton</code></td><td>shimmer 애니메이션 블록</td></tr>
-	  <tr><td><code>.skeleton.skel-text</code></td><td>텍스트 줄 스켈레톤</td></tr>
-	  <tr><td><code>.skeleton.skel-avatar</code></td><td>원형 아바타 스켈레톤</td></tr>
-	  <tr><td><code>.spinner</code></td><td>회전 스피너</td></tr>
+	  <tr><td><code>.load-data</code></td><td>데이터 표시 필드 컨테이너</td></tr>
+	  <tr><td><code>.load-data__label</code></td><td>상단 라벨 (14px/Medium/#505050)</td></tr>
+	  <tr><td><code>.load-data__box</code></td><td>회색 박스 (#F6F6F6 / radius 12px)</td></tr>
+	  <tr><td><code>.load-data__key</code></td><td>박스 내 키 텍스트 (왼쪽)</td></tr>
+	  <tr><td><code>.load-data__sub</code></td><td>부가설명 (highlight 시 표시)</td></tr>
+	  <tr><td><code>.load-data__value</code></td><td>데이터 값 (오른쪽, 18px/SemiBold)</td></tr>
+	  <tr><td><code>.load-data__msg</code></td><td>하단 안내 메시지 (13px/#767676)</td></tr>
+	  <tr><td><code>.load-data--highlight</code></td><td>키 텍스트 강조 (18px/SemiBold) + 부가설명 표시</td></tr>
+	  <tr><td><code>.skeleton</code></td><td>shimmer 애니메이션 로딩 블록</td></tr>
+	  <tr><td><code>.spinner</code></td><td>회전 로딩 스피너</td></tr>
 	</table>
   </section>
 
   <!-- ===================== NAVIGATION ===================== -->
   <section class="g-section" id="secNavigation">
 	<h3 class="g-section-title">Navigation</h3>
-	<p class="g-sub-title">Top Navigation — <code>.nav-bar</code></p>
-	<div class="g-example block">
-	  <div class="nav-preview">
-		<div class="nav-bar">
-		  <span class="nav-brand">NDS</span>
-		  <span class="nav-item active">홈</span>
-		  <span class="nav-item">거래내역</span>
-		  <span class="nav-item">서비스</span>
-		  <div class="nav-actions">
-			<div class="nav-icon">
-			  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-			</div>
-			<div class="nav-icon" style="background:var(--gray-200);border-radius:var(--radius-full);width:28px;height:28px;font-size:12px;font-weight:var(--font-weight-semibold);color:var(--gray-700);display:flex;align-items:center;justify-content:center">김</div>
-		  </div>
+	<p class="g-desc">서비스 타이틀은 가운데 정렬하여 다른 영역에 영향을 주지 않도록 합니다.</p>
+
+	<!-- Top: Main -->
+	<p class="g-sub-title">Top — Main</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">메인 페이지에서 사용합니다. Name Font: 18/Medium/-2%/#121212</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav">
+		<div class="top-nav__left">
+		  <button class="top-nav__name" type="button">
+			김농협님
+			<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+		  </button>
+		</div>
+		<div class="top-nav__center"></div>
+		<div class="top-nav__right">
+		  <label class="switch switch--xs" style="gap:4px;">
+			<input class="switch__input" type="checkbox">
+			<span class="switch__track"></span>
+			<span class="switch__label">르글</span>
+		  </label>
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+		  </button>
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+		  </button>
 		</div>
 	  </div>
 	</div>
-	<p class="g-sub-title">Side Navigation — <code>.sidenav</code></p>
-	<div class="g-example">
-	  <div class="sidenav-preview">
+
+	<!-- Top: Basic -->
+	<p class="g-sub-title">Top — Basic</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">일반 서비스 페이지. Title Font: 16/Semibold/-2%/#121212/Center</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav top-nav--gray">
+		<div class="top-nav__left">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+		  </button>
+		</div>
+		<div class="top-nav__center">
+		  <span class="top-nav__title">서비스 타이틀</span>
+		</div>
+		<div class="top-nav__right">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+		  </button>
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+		  </button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Top: Process -->
+	<p class="g-sub-title">Top — Process</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">프로세스가 진행되는 페이지. Button Font: 14/Regular/-2%/#343434</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav top-nav--gray">
+		<div class="top-nav__left">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+		  </button>
+		</div>
+		<div class="top-nav__center"></div>
+		<div class="top-nav__right">
+		  <button class="top-nav__text-btn" type="button">취소</button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Top: Full-Popup -->
+	<p class="g-sub-title">Top — Full-Popup</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">풀페이지 팝업. Title Font: 16/Semibold/-2%/#121212/Left</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav top-nav--gray top-nav--full-popup">
+		<div class="top-nav__center">
+		  <span class="top-nav__title" style="text-align:left;">서비스 타이틀</span>
+		</div>
+		<div class="top-nav__right">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+		  </button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Top: Partnership -->
+	<p class="g-sub-title">Top — Partnership</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">파트너사 페이지. Title: 16/Semibold/Center, Button: 14/Regular/#343434</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav">
+		<div class="top-nav__left">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+		  </button>
+		</div>
+		<div class="top-nav__center">
+		  <span class="top-nav__title">서비스 타이틀</span>
+		</div>
+		<div class="top-nav__right">
+		  <button class="top-nav__text-btn" type="button">닫기</button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Top: Tooltip -->
+	<p class="g-sub-title">Top — Tooltip</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">서비스 페이지. 타이틀 옆 툴팁 버튼 포함.</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav">
+		<div class="top-nav__left">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+		  </button>
+		</div>
+		<div class="top-nav__center">
+		  <span class="top-nav__title">서비스 타이틀</span>
+		  <button class="top-nav__help" type="button">?</button>
+		</div>
+		<div class="top-nav__right">
+		  <button class="top-nav__text-btn" type="button">취소</button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Top: Login -->
+	<p class="g-sub-title">Top — Login</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">로그인 페이지에서 사용합니다.</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav">
+		<div class="top-nav__left">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+		  </button>
+		</div>
+		<div class="top-nav__center">
+		  <span class="top-nav__brand top-nav__brand--nh">
+			<span class="top-nav__brand-nh">NH</span><span class="top-nav__brand-txt">올원뱅크</span>
+		  </span>
+		</div>
+		<div class="top-nav__right">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+		  </button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Top: Mydata -->
+	<p class="g-sub-title">Top — Mydata</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">마이데이터 페이지에서 사용합니다.</p>
+	<div class="g-example block" style="max-width:390px;">
+	  <div class="top-nav top-nav--gray">
+		<div class="top-nav__left">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+		  </button>
+		</div>
+		<div class="top-nav__center">
+		  <span class="top-nav__mydata">마이데이터</span>
+		</div>
+		<div class="top-nav__right">
+		  <button class="top-nav__btn" type="button">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+		  </button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Bottom: All-one -->
+	<p class="g-sub-title">Bottom — All-one</p>
+	<p class="g-desc" style="font-size:12px;color:#767676;">메인 페이지 하단 탭 메뉴. Font: 13/Regular/-2%/#121212 &nbsp;·&nbsp; Shadow: Y-3 Blur10 #000 5%</p>
+	<div class="g-example block" style="max-width:390px;padding:0;">
+	  <div class="bottom-nav">
+		<a class="bottom-nav__item bottom-nav__item--active" href="#">
+		  <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+		  <span class="bottom-nav__label">홈</span>
+		</a>
+		<a class="bottom-nav__item" href="#">
+		  <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+		  <span class="bottom-nav__label">상품몰</span>
+		</a>
+		<a class="bottom-nav__item" href="#">
+		  <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h1v6H9zM14 9h1v6h-1z"/></svg>
+		  <span class="bottom-nav__label">마이데이터</span>
+		</a>
+		<a class="bottom-nav__item" href="#">
+		  <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+		  <span class="bottom-nav__label">생활+</span>
+		</a>
+	  </div>
+	</div>
+
+	<!-- Side Navigation -->
+	<p class="g-sub-title">Side Navigation</p>
+	<div class="g-example" style="max-width:360px;">
+	  <div class="sidenav">
 		<div class="sidenav__section">
 		  <div class="sidenav__label">메뉴</div>
 		  <div class="sidenav__item sidenav__item--active">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>홈
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>홈
 		  </div>
 		  <div class="sidenav__item">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>거래내역
-		  </div>
-		  <div class="sidenav__item">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M16.24 7.76a6 6 0 0 1 0 8.49"/></svg>서비스
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/></svg>거래내역
 		  </div>
 		  <div class="sidenav__item">
 			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>마이페이지
@@ -1789,178 +2453,353 @@
 		</div>
 	  </div>
 	</div>
-	<p class="g-sub-title">Mobile Tab Navigation — <code>.tab-nav</code></p>
-	<div class="g-example">
-	  <div class="tab-nav-preview">
-		<div style="height:120px;background:var(--color-bg-subtle);display:flex;align-items:center;justify-content:center;font-size:var(--font-size-sm);color:var(--color-text-tertiary)">콘텐츠 영역</div>
-		<div class="tab-nav">
-		  <div class="tab-nav__item tab-nav__item--active">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-			<span class="tab-nav__label">홈</span>
-		  </div>
-		  <div class="tab-nav__item">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-			<span class="tab-nav__label">거래</span>
-		  </div>
-		  <div class="tab-nav__item">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-			<span class="tab-nav__label">검색</span>
-		  </div>
-		  <div class="tab-nav__item">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-			<span class="tab-nav__label">내정보</span>
-		  </div>
-		</div>
-	  </div>
-	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.nav-bar</code></td><td>상단 네비게이션 바 (56px)</td></tr>
-	  <tr><td><code>.nav-item.active</code></td><td>현재 페이지 (초록)</td></tr>
-	  <tr><td><code>.sidenav__item--active</code></td><td>사이드 활성 항목 (초록 + 우측 border)</td></tr>
-	  <tr><td><code>.tab-nav__item--active</code></td><td>모바일 하단 탭 활성</td></tr>
+	  <tr><td><code>.top-nav</code></td><td>상단 내비게이션 (height 50px)</td></tr>
+	  <tr><td><code>.top-nav--gray</code></td><td>회색 배경 (#F6F6F6)</td></tr>
+	  <tr><td><code>.top-nav--full-popup</code></td><td>타이틀 왼쪽 정렬 (풀팝업용)</td></tr>
+	  <tr><td><code>.top-nav__title</code></td><td>페이지 타이틀 (16px/Semibold/Center)</td></tr>
+	  <tr><td><code>.top-nav__name</code></td><td>사용자명 버튼 (Main용, 18px/Medium)</td></tr>
+	  <tr><td><code>.top-nav__text-btn</code></td><td>텍스트 버튼 (취소/닫기, 14px/#343434)</td></tr>
+	  <tr><td><code>.top-nav__help</code></td><td>툴팁 물음표 버튼</td></tr>
+	  <tr><td><code>.top-nav__brand--nh</code></td><td>NH올원뱅크 브랜드 타이틀 (로그인용)</td></tr>
+	  <tr><td><code>.bottom-nav</code></td><td>하단 탭바 (height 80px / shadow)</td></tr>
+	  <tr><td><code>.bottom-nav__item--active</code></td><td>활성 탭 (#121212)</td></tr>
 	</table>
   </section>
 
   <!-- ===================== POPOVER ===================== -->
   <section class="g-section" id="secPopover">
 	<h3 class="g-section-title">Popover</h3>
-	<div class="g-example">
-	  <div class="popover-box">
-		<div class="popover-box__header">계좌 옵션</div>
-		<div class="popover-box__body">
-		  <div style="padding:6px 0;cursor:pointer;color:var(--gray-900);font-size:13px">계좌 별칭 설정</div>
-		  <div style="padding:6px 0;cursor:pointer;color:var(--gray-900);font-size:13px">숨김 설정</div>
-		  <div style="padding:6px 0;cursor:pointer;color:var(--red-500);font-size:13px">해지 신청</div>
-		</div>
+	<p class="g-desc">어두운 배경의 툴팁형 말풍선으로, 입력 안내나 간단한 메시지를 표시합니다.</p>
+
+	<!-- Basic -->
+	<p class="g-sub-title">Basic</p>
+	<div class="g-example" style="padding-top:32px;">
+	  <div class="popover">
+		<span class="popover__text">텍스트를 입력해 주세요</span>
+		<button class="popover__close" type="button">×</button>
 	  </div>
 	</div>
+
+	<!-- Arrow variants -->
+	<p class="g-sub-title">Arrow — Bottom (포포버가 위에 위치)</p>
+	<div class="g-example" style="padding-bottom:32px;">
+	  <div class="popover popover--arrow-bottom">
+		<span class="popover__text">텍스트를 입력해 주세요</span>
+		<button class="popover__close" type="button">×</button>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Arrow — Left / Right</p>
+	<div class="g-example" style="gap:48px;align-items:center;">
+	  <div class="popover popover--arrow-left" style="margin-left:20px;">
+		<span class="popover__text">왼쪽 화살표</span>
+		<button class="popover__close" type="button">×</button>
+	  </div>
+	  <div class="popover popover--arrow-right" style="margin-right:20px;">
+		<span class="popover__text">오른쪽 화살표</span>
+		<button class="popover__close" type="button">×</button>
+	  </div>
+	</div>
+
+	<!-- Arrow position -->
+	<p class="g-sub-title">Arrow Position — Start / End</p>
+	<div class="g-example col" style="padding-top:24px;">
+	  <div class="popover popover--arrow-start">
+		<span class="popover__text">화살표 왼쪽 (start)</span>
+		<button class="popover__close" type="button">×</button>
+	  </div>
+	  <div class="popover popover--arrow-end" style="margin-top:16px;">
+		<span class="popover__text">화살표 오른쪽 (end)</span>
+		<button class="popover__close" type="button">×</button>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.popover</code></td><td>절대 위치 팝오버 컨테이너</td></tr>
-	  <tr><td><code>.popover__arrow--top/bottom/left/right</code></td><td>방향별 말풍선 화살표</td></tr>
-	  <tr><td><code>.popover--menu</code></td><td>드롭다운 메뉴 스타일</td></tr>
+	  <tr><td><code>.popover</code></td><td>기본 팝오버 (상단 화살표, #111111 배경)</td></tr>
+	  <tr><td><code>.popover__text</code></td><td>메시지 텍스트 (13px/Regular/#FFFFFF)</td></tr>
+	  <tr><td><code>.popover__close</code></td><td>닫기 버튼 (×)</td></tr>
+	  <tr><td><code>.popover--arrow-bottom</code></td><td>하단 화살표 (포포버가 위에)</td></tr>
+	  <tr><td><code>.popover--arrow-left/right</code></td><td>좌/우 화살표</td></tr>
+	  <tr><td><code>.popover--arrow-start/end</code></td><td>화살표 좌측/우측 정렬</td></tr>
 	</table>
   </section>
 
   <!-- ===================== POPUP ===================== -->
   <section class="g-section" id="secPopup">
-	<h3 class="g-section-title">Popup</h3>
-	<p class="g-sub-title">Demo</p>
-	<div class="g-example">
-	  <button class="btn btn--md btn--primary" data-popup-open="popup-default">팝업 열기</button>
-	</div>
-	<p class="g-sub-title">Modal Dialog Preview</p>
-	<div class="g-example">
-	  <div class="popup-preview">
-		<div class="popup-preview__header">
-		  <span class="popup-preview__title">신청을 취소하시겠습니까?</span>
-		  <button style="background:none;border:none;cursor:pointer;color:var(--gray-400);font-size:var(--font-size-2xl)">✕</button>
-		</div>
-		<div class="popup-preview__body">현재까지 입력하신 내용이 모두 삭제됩니다.</div>
-		<div class="popup-preview__footer">
-		  <button class="btn btn--md btn--secondary">아니오</button>
-		  <button class="btn btn--md btn--primary">예</button>
-		</div>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.popup--open</code></td><td>팝업 열림 상태 (fade + scale)</td></tr>
-	  <tr><td><code>.popup--sm/lg/xl</code></td><td>크기 변형 (360/640/800px)</td></tr>
-	  <tr><td><code>.popup--alert</code></td><td>Alert 형태 (중앙 정렬)</td></tr>
-	  <tr><td><code>.popup__backdrop</code></td><td>어두운 배경 오버레이</td></tr>
-	</table>
+    <h3 class="g-section-title">Popup</h3>
+
+    <!-- Basic -->
+    <p class="g-sub-title">Basic — 단일 확인 버튼</p>
+    <div class="g-example">
+      <div class="popup-mock">
+        <div class="popup__inner">
+          <div class="popup__title">신청을 취소하시겠습니까?</div>
+          <div class="popup__body">현재까지 입력하신 내용이 모두 삭제됩니다.</div>
+          <div class="popup__footer">
+            <button class="btn btn--lg btn--primary">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error-Accordion -->
+    <p class="g-sub-title">Error-Accordion — 오류코드 접기/펼치기</p>
+    <div class="g-example">
+      <div class="popup-mock">
+        <div class="popup__inner">
+          <div class="popup__title">서비스 이용에 불편을 드려<br>죄송합니다.</div>
+          <div class="popup__body">
+            <p>인터넷뱅킹 서비스 이용이 원활하지 않습니다. 잠시 후 다시 시도해 주세요.</p>
+            <div class="popup-accordion popup-accordion--open">
+              <div class="popup-accordion__header">
+                <span class="popup-accordion__label">오류코드 확인</span>
+                <span class="popup-accordion__chevron">▲</span>
+              </div>
+              <div class="popup-accordion__body">
+                <div class="popup-accordion__code">ERR-9001 : 서버 응답 시간 초과</div>
+                <div class="popup-accordion__code">ERR-9002 : 네트워크 연결 오류</div>
+              </div>
+            </div>
+            <p class="popup-contact">고객행복센터: 1661-3000, 1522-3000</p>
+          </div>
+          <div class="popup__footer">
+            <button class="btn btn--lg btn--primary">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Push -->
+    <p class="g-sub-title">Push — 닫기 / 동의하고 알림받기</p>
+    <div class="g-example">
+      <div class="popup-mock">
+        <div class="popup__inner">
+          <div class="popup__title">알림 수신에 동의하시겠습니까?</div>
+          <div class="popup__body">NH올원뱅크의 맞춤형 혜택, 이벤트, 공지 등 유용한 정보를 알림으로 받아보세요.</div>
+          <div class="popup__footer">
+            <div class="popup__footer-row">
+              <button class="btn btn--lg btn--secondary">닫기</button>
+              <button class="btn btn--lg btn--primary">동의하고 알림받기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login -->
+    <p class="g-sub-title">Login — 카운트다운 + 2버튼</p>
+    <div class="g-example">
+      <div class="popup-mock">
+        <div class="popup__inner">
+          <div class="popup__title">로그인 세션이 곧 만료됩니다.</div>
+          <div class="popup__body">
+            <p>보안을 위해 일정 시간 동안 활동이 없으면 자동으로 로그아웃됩니다.</p>
+            <p class="popup-countdown">남은시간 <span class="popup-countdown__time">24초</span></p>
+          </div>
+          <div class="popup__footer">
+            <div class="popup__footer-row">
+              <button class="btn btn--lg btn--secondary">로그아웃</button>
+              <button class="btn btn--lg btn--primary">연장하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.popup--open</code></td><td>팝업 열림 상태 (fade + scale)</td></tr>
+      <tr><td><code>.popup__backdrop</code></td><td>딤드 오버레이 #111111 30%</td></tr>
+      <tr><td><code>.popup__title</code></td><td>16px / SemiBold / #121212</td></tr>
+      <tr><td><code>.popup__body</code></td><td>15px / Regular / #121212 / 스크롤</td></tr>
+      <tr><td><code>.popup__footer</code></td><td>body와 32px gap / 버튼 영역</td></tr>
+      <tr><td><code>.popup__footer-row</code></td><td>2버튼 가로 배치 (flex)</td></tr>
+      <tr><td><code>.popup-accordion</code></td><td>오류코드 접기/펼치기 (Error variant)</td></tr>
+      <tr><td><code>.popup-accordion--open</code></td><td>아코디언 펼친 상태</td></tr>
+      <tr><td><code>.popup-countdown__time</code></td><td>카운트다운 숫자 (#19973C)</td></tr>
+      <tr><td><code>.popup-mock</code></td><td>정적 프리뷰용 래퍼 (라이브러리 전용)</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== PROCESS ===================== -->
+    <!-- ===================== PROCESS ===================== -->
   <section class="g-section" id="secProcess">
-	<h3 class="g-section-title">Process</h3>
-	<p class="g-sub-title">Step Indicator — <code>.process</code></p>
-	<div class="g-example block">
-	  <div class="process" style="max-width:440px">
-		<div class="process__step done">
-		  <div class="process__circle">✓</div>
-		  <div class="process__label">정보 확인</div>
-		</div>
-		<div class="process__step done">
-		  <div class="process__circle">✓</div>
-		  <div class="process__label">본인 인증</div>
-		</div>
-		<div class="process__step active">
-		  <div class="process__circle">3</div>
-		  <div class="process__label">약관 동의</div>
-		</div>
-		<div class="process__step">
-		  <div class="process__circle">4</div>
-		  <div class="process__label">신청 완료</div>
-		</div>
-	  </div>
-	</div>
-	<p class="g-sub-title">Vertical — <code>.process--vertical</code></p>
-	<div class="g-example">
-	  <div class="process process--vertical" style="max-width:240px">
-		<div class="process__step done" style="position:relative">
-		  <div class="process__circle">✓</div>
-		  <div class="process__label" style="text-align:left;margin-left:0">
-			<div style="font-size:var(--font-size-md);font-weight:var(--font-weight-medium);color:var(--color-text-primary)">신청서 제출</div>
-			<div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-top:2px">2025.06.01 09:00</div>
-		  </div>
-		</div>
-		<div class="process__step done" style="position:relative">
-		  <div class="process__circle">✓</div>
-		  <div class="process__label" style="text-align:left">
-			<div style="font-size:var(--font-size-md);font-weight:var(--font-weight-medium);color:var(--color-text-primary)">서류 검토</div>
-			<div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-top:2px">2025.06.02 14:30</div>
-		  </div>
-		</div>
-		<div class="process__step active" style="position:relative">
-		  <div class="process__circle">3</div>
-		  <div class="process__label" style="text-align:left">
-			<div style="font-size:var(--font-size-md);font-weight:var(--font-weight-medium);color:var(--primitive-green-500)">최종 심사 중</div>
-			<div style="font-size:var(--font-size-sm);color:var(--color-text-tertiary);margin-top:2px">진행 중</div>
-		  </div>
-		</div>
-		<div class="process__step" style="position:relative">
-		  <div class="process__circle">4</div>
-		  <div class="process__label" style="text-align:left">
-			<div style="font-size:var(--font-size-md);color:var(--color-text-tertiary)">승인 완료</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
-	<p class="g-sub-title">SM 크기 — <code>.process--sm</code></p>
-	<div class="g-example block">
-	  <div class="process process--sm" style="max-width:360px">
-		<div class="process__step done"><div class="process__circle">✓</div><div class="process__label">확인</div></div>
-		<div class="process__step active"><div class="process__circle">2</div><div class="process__label">진행</div></div>
-		<div class="process__step"><div class="process__circle">3</div><div class="process__label">완료</div></div>
-	  </div>
-	</div>
-	<p class="g-sub-title">Error 상태</p>
-	<div class="g-example block">
-	  <div class="process" style="max-width:440px">
-		<div class="process__step done"><div class="process__circle">✓</div><div class="process__label">정보 확인</div></div>
-		<div class="process__step error">
-		  <div class="process__circle">
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-		  </div>
-		  <div class="process__label">인증 실패</div>
-		</div>
-		<div class="process__step"><div class="process__circle">3</div><div class="process__label">약관 동의</div></div>
-		<div class="process__step"><div class="process__circle">4</div><div class="process__label">완료</div></div>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.process__step.done</code></td><td>완료 (초록 채움)</td></tr>
-	  <tr><td><code>.process__step.active</code></td><td>현재 (초록 테두리)</td></tr>
-	  <tr><td><code>.process__step.error</code></td><td>오류 (빨강 채움)</td></tr>
-	  <tr><td><code>.process--sm</code></td><td>작은 크기 (24px)</td></tr>
-	</table>
+    <h3 class="g-section-title">Process</h3>
+
+    <!-- Progress Bar -->
+    <p class="g-sub-title">Progress — <code>.process-progress</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">프로세스 단계를 나타내는 경우 사용하며, 콘텐츠 영역의 최상단에 배치해야 합니다.</p>
+    <div class="g-example" style="padding:0;overflow:hidden;border-radius:8px;">
+      <div class="process-progress">
+        <div class="process-progress__fill" style="width:40%"></div>
+      </div>
+    </div>
+
+    <!-- Step Horizontal -->
+    <p class="g-sub-title">Step / Horizontal — <code>.process-step.process-step--horizontal</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">각 단계의 진행 상태를 나타내는 숫자와 타이틀을 사용하여 사용자의 상태를 실시간으로 시각화합니다.</p>
+    <div class="g-example block">
+      <div class="process-step process-step--horizontal" style="max-width:320px">
+        <div class="process-step__item is-disabled">
+          <div class="process-step__num">1</div>
+          <div class="process-step__name">스텝명</div>
+        </div>
+        <div class="process-step__item is-active">
+          <div class="process-step__num">2</div>
+          <div class="process-step__name">스텝명</div>
+        </div>
+        <div class="process-step__item">
+          <div class="process-step__num">3</div>
+          <div class="process-step__name">스텝명</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step Vertical -->
+    <p class="g-sub-title">Step / Vertical — <code>.process-step.process-step--vertical</code></p>
+    <div class="g-example">
+      <div class="process-step process-step--vertical" style="max-width:280px">
+        <div class="process-step__item is-disabled">
+          <div class="process-step__num">1</div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+        <div class="process-step__item is-active">
+          <div class="process-step__num">2</div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+        <div class="process-step__item">
+          <div class="process-step__num">3</div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text-lg -->
+    <p class="g-sub-title">Step / Text-lg — <code>.process-step.process-step--text-lg</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">뱃지 Font: 12 / Medium / #19973C &nbsp;·&nbsp; 타이틀: 16 / Medium / #121212 &nbsp;·&nbsp; 바디: 14 / Regular / #505050</p>
+    <div class="g-example">
+      <div class="process-step process-step--text-lg" style="max-width:280px">
+        <div class="process-step__item is-active">
+          <div class="process-step__badge">1단계</div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+        <div class="process-step__item">
+          <div class="process-step__badge">2단계</div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text-sm -->
+    <p class="g-sub-title">Step / Text-sm — <code>.process-step.process-step--text-sm</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">뱃지 Font: 12 / Semibold / #19973C &nbsp;·&nbsp; 바디: 15 / Regular / #505050</p>
+    <div class="g-example">
+      <div class="process-step process-step--text-sm" style="max-width:280px">
+        <div class="process-step__item is-active">
+          <div class="process-step__badge">①</div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+        <div class="process-step__item">
+          <div class="process-step__badge">②</div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Icon Vertical -->
+    <p class="g-sub-title">Step / Icon-Vertical — <code>.process-step.process-step--icon-v</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Icon: BG #FFFFFF / Border #E1E1E1 &nbsp;·&nbsp; 타이틀: 16 / Medium / #121212 &nbsp;·&nbsp; 바디: 14 / Regular / #505050</p>
+    <div class="g-example">
+      <div class="process-step process-step--icon-v" style="max-width:280px">
+        <div class="process-step__item">
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9h8M8 12h8M8 15h5"/></svg>
+          </div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+        <div class="process-step__item">
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9h8M8 12h8M8 15h5"/></svg>
+          </div>
+          <div class="process-step__content">
+            <div class="process-step__title">타이틀</div>
+            <div class="process-step__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Icon Horizontal -->
+    <p class="g-sub-title">Step / Icon-Horizontal — <code>.process-step.process-step--icon-h</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Icon Active: Border #19973C &nbsp;·&nbsp; 타이틀: 14 / Regular / Center / #121212 &nbsp;·&nbsp; Sub: 13 / Regular / Center / #19973C</p>
+    <div class="g-example block">
+      <div class="process-step process-step--icon-h" style="max-width:400px">
+        <div class="process-step__item is-active">
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 13c-5.33 0-8 2.67-8 4v1h16v-1c0-1.33-2.67-4-8-4z"/></svg>
+          </div>
+          <div class="process-step__name">스텝명</div>
+          <div class="process-step__sub">부가설명</div>
+        </div>
+        <div class="process-step__item">
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9h8M8 12h8M8 15h5"/></svg>
+          </div>
+          <div class="process-step__name">스텝명</div>
+          <div class="process-step__sub">부가설명</div>
+        </div>
+        <div class="process-step__item is-disabled">
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div class="process-step__name">스텝명</div>
+          <div class="process-step__sub">부가설명</div>
+        </div>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.process-progress__fill</code></td><td>진행 바 채움 (width % 조절)</td></tr>
+      <tr><td><code>.process-step--horizontal</code></td><td>숫자 원 가로 배열</td></tr>
+      <tr><td><code>.process-step--vertical</code></td><td>숫자 원 + 타이틀/바디 세로 배열</td></tr>
+      <tr><td><code>.process-step--text-lg</code></td><td>텍스트 뱃지 세로 (Medium)</td></tr>
+      <tr><td><code>.process-step--text-sm</code></td><td>텍스트 뱃지 세로 (Semibold, body 15px)</td></tr>
+      <tr><td><code>.process-step--icon-v</code></td><td>아이콘 원 세로 배열</td></tr>
+      <tr><td><code>.process-step--icon-h</code></td><td>아이콘 원 가로 배열</td></tr>
+      <tr><td><code>.process-step__item.is-active</code></td><td>현재 단계 (초록)</td></tr>
+      <tr><td><code>.process-step__item.is-disabled</code></td><td>비활성 단계 (회색)</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== RADIO ===================== -->
+    <!-- ===================== RADIO ===================== -->
   <section class="g-section" id="secRadio">
 	<h3 class="g-section-title">Radio</h3>
 	<p class="g-sub-title">Default / Selected / Disabled</p>
@@ -2095,49 +2934,556 @@
 
   <!-- ===================== SEARCH ===================== -->
   <section class="g-section" id="secSearch">
-	<h3 class="g-section-title">Search</h3>
-	<div class="g-example">
-	  <div class="search-wrap">
-		<svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-		<input type="text" placeholder="검색어를 입력하세요">
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.search__field</code></td><td>pill 형태 검색 인풋</td></tr>
-	  <tr><td><code>.search__dropdown</code></td><td>추천 검색어 드롭다운</td></tr>
-	  <tr><td><code>.search__suggestion--focused</code></td><td>키보드 포커스 항목</td></tr>
-	</table>
+    <h3 class="g-section-title">Search</h3>
+
+    <!-- Search: Inactive -->
+    <p class="g-sub-title">Inactive</p>
+    <div class="g-example">
+      <div class="search" style="max-width:320px">
+        <label class="search__label">레이블</label>
+        <div class="search__wrap">
+          <input class="search__field" type="text" placeholder="검색어 입력">
+          <div class="search__actions">
+            <button class="search__btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </div>
+        </div>
+        <span class="search__msg">안내 문구 입력</span>
+      </div>
+    </div>
+
+    <!-- Search: Focus -->
+    <p class="g-sub-title">Focus</p>
+    <div class="g-example">
+      <div class="search" style="max-width:320px">
+        <label class="search__label">레이블</label>
+        <div class="search__wrap">
+          <input class="search__field" type="text" value="검색어 입력" style="border-color:#19973C">
+          <div class="search__actions">
+            <button class="search__clear">✕</button>
+            <button class="search__btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </div>
+        </div>
+        <span class="search__msg">안내 문구 입력</span>
+      </div>
+    </div>
+
+    <!-- Search: Filled -->
+    <p class="g-sub-title">Filled</p>
+    <div class="g-example">
+      <div class="search" style="max-width:320px">
+        <label class="search__label">레이블</label>
+        <div class="search__wrap">
+          <input class="search__field" type="text" value="검색어 입력">
+          <div class="search__actions">
+            <button class="search__btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </div>
+        </div>
+        <span class="search__msg">안내 문구 입력</span>
+      </div>
+    </div>
+
+    <!-- Search: Error -->
+    <p class="g-sub-title">Error</p>
+    <div class="g-example">
+      <div class="search search--error" style="max-width:320px">
+        <label class="search__label">레이블</label>
+        <div class="search__wrap">
+          <input class="search__field" type="text" value="검색어 입력">
+          <div class="search__actions">
+            <button class="search__btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </div>
+        </div>
+        <span class="search__msg">오류 메세지 출력</span>
+      </div>
+    </div>
+
+    <!-- Search Filter: Inactive -->
+    <p class="g-sub-title">Search Filter / Inactive — <code>.search-filter</code></p>
+    <div class="g-example">
+      <div class="search-filter" style="max-width:360px">
+        <div class="search-filter__wrap">
+          <input class="search-filter__field" type="text" placeholder="검색어 입력">
+          <div class="search-filter__actions">
+            <button class="search-filter__btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </div>
+        </div>
+        <button class="search-filter__filter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg></button>
+      </div>
+    </div>
+
+    <!-- Search Filter: Focus -->
+    <p class="g-sub-title">Search Filter / Focus</p>
+    <div class="g-example">
+      <div class="search-filter" style="max-width:360px">
+        <div class="search-filter__wrap">
+          <input class="search-filter__field" type="text" value="검색어 입력" style="border-color:#19973C">
+          <div class="search-filter__actions">
+            <button class="search-filter__clear">✕</button>
+            <button class="search-filter__btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </div>
+        </div>
+        <button class="search-filter__filter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg></button>
+      </div>
+    </div>
+
+    <!-- Search Filter: Filled -->
+    <p class="g-sub-title">Search Filter / Filled</p>
+    <div class="g-example">
+      <div class="search-filter" style="max-width:360px">
+        <div class="search-filter__wrap">
+          <input class="search-filter__field" type="text" value="검색어 입력">
+          <div class="search-filter__actions">
+            <button class="search-filter__btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </div>
+        </div>
+        <button class="search-filter__filter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg></button>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.search__label</code></td><td>라벨 (14px / Medium / #505050)</td></tr>
+      <tr><td><code>.search__field</code></td><td>인풋 필드 (18px / #121212 / Radius 12)</td></tr>
+      <tr><td><code>.search__clear</code></td><td>지우기 버튼 (포커스 시 표시)</td></tr>
+      <tr><td><code>.search__btn</code></td><td>검색 아이콘 버튼</td></tr>
+      <tr><td><code>.search__msg</code></td><td>안내 메시지 (13px / #767676)</td></tr>
+      <tr><td><code>.search--error</code></td><td>오류 상태 (border #E24949 / msg #E24949)</td></tr>
+      <tr><td><code>.search-filter__filter</code></td><td>필터 버튼 (48×48 / Radius 12)</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== SELECT ===================== -->
+    <!-- ===================== SELECT ===================== -->
   <section class="g-section" id="secSelect">
-	<h3 class="g-section-title">Select</h3>
-	<div class="g-example">
-	  <div class="select-wrap">
-		<select>
-		  <option value="" disabled selected>관계를 선택하세요</option>
-		  <option>공동상속인</option>
-		  <option>배우자</option>
-		  <option>자녀</option>
-		</select>
-	  </div>
-	  <div class="select-wrap">
-		<select disabled>
-		  <option>비활성 상태</option>
-		</select>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.select__trigger</code></td><td>커스텀 셀렉트 트리거</td></tr>
-	  <tr><td><code>.select__dropdown</code></td><td>옵션 드롭다운 목록</td></tr>
-	  <tr><td><code>.select__option--selected</code></td><td>선택된 옵션 (초록)</td></tr>
-	  <tr><td><code>.select--error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
-	</table>
+    <h3 class="g-section-title">Select</h3>
+
+    <!-- Basic -->
+    <p class="g-sub-title">Basic — <code>.select-field</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <!-- Inactive -->
+      <div class="select-field" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">선택</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Focus -->
+      <div class="select-field" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">선택</span></div>
+          <span class="select-field__chevron select-field__chevron--up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Filled -->
+      <div class="select-field select-field--filled" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">선택된 옵션입니다</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Error -->
+      <div class="select-field select-field--filled select-field--error" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">선택된 옵션입니다</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+      <!-- Readonly -->
+      <div class="select-field select-field--filled select-field--readonly" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">선택된 옵션입니다</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Disabled -->
+      <div class="select-field select-field--filled select-field--disabled" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">선택된 옵션입니다</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+    </div>
+
+    <!-- 2Row -->
+    <p class="g-sub-title">2Row — 부가설명 포함 <code>.select-field (sub 추가)</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <!-- Inactive -->
+      <div class="select-field" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content">
+            <span class="select-field__text">선택</span>
+            <span class="select-field__sub">부가설명</span>
+          </div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Filled -->
+      <div class="select-field select-field--filled" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content">
+            <span class="select-field__text">선택된 옵션입니다</span>
+            <span class="select-field__sub">부가설명</span>
+          </div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Error -->
+      <div class="select-field select-field--filled select-field--error" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content">
+            <span class="select-field__text">선택된 옵션입니다</span>
+            <span class="select-field__sub">부가설명</span>
+          </div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+    </div>
+
+    <!-- Currency -->
+    <p class="g-sub-title">Currency — 국기+통화 <code>.select-field__prefix</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <div class="select-field" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">선택</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <div class="select-field select-field--filled" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <span class="select-field__prefix">🇺🇸</span>
+          <div class="select-field__content"><span class="select-field__text">USD</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <div class="select-field select-field--filled select-field--error" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <span class="select-field__prefix">🇺🇸</span>
+          <div class="select-field__content"><span class="select-field__text">USD</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+    </div>
+
+    <!-- Icon -->
+    <p class="g-sub-title">Icon — 커스텀 아이콘 <code>.select-field__prefix</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <div class="select-field" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <span class="select-field__prefix">🏦</span>
+          <div class="select-field__content"><span class="select-field__text">선택</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <div class="select-field select-field--filled" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <span class="select-field__prefix">🏦</span>
+          <div class="select-field__content"><span class="select-field__text">선택된 옵션입니다</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <div class="select-field select-field--filled select-field--error" style="max-width:220px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <span class="select-field__prefix">🏦</span>
+          <div class="select-field__content"><span class="select-field__text">선택된 옵션입니다</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+    </div>
+
+    <!-- Account -->
+    <p class="g-sub-title">Account — 계좌 선택 <code>.select-field__avatar</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <!-- Inactive -->
+      <div class="select-field" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">출금계좌 선택</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Filled -->
+      <div class="select-field select-field--filled" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__avatar">NH</div>
+          <div class="select-field__content">
+            <span class="select-field__acct-name">금융사명</span>
+            <span class="select-field__acct-num">계좌번호</span>
+          </div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Error -->
+      <div class="select-field select-field--filled select-field--error" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__avatar">NH</div>
+          <div class="select-field__content">
+            <span class="select-field__acct-name">금융사명</span>
+            <span class="select-field__acct-num">계좌번호</span>
+          </div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+      <!-- Readonly -->
+      <div class="select-field select-field--filled select-field--readonly" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__avatar">NH</div>
+          <div class="select-field__content">
+            <span class="select-field__acct-name">금융사명</span>
+            <span class="select-field__acct-num">계좌번호</span>
+          </div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+    </div>
+
+    <!-- Price -->
+    <p class="g-sub-title">Price — 한도제한 + 계좌 + 금액 <code>.select-card</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <!-- Inactive -->
+      <div class="select-field" style="max-width:260px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">출금계좌 선택</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Filled -->
+      <div class="select-field select-field--filled" style="max-width:260px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-card">
+          <div class="select-card__limit-row">
+            <span class="select-card__limit-text">한도제한</span>
+            <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </div>
+          <div class="select-card__acct-row">
+            <div class="select-field__avatar">NH</div>
+            <div class="select-field__content">
+              <span class="select-field__acct-name">금융사명</span>
+              <span class="select-field__acct-num">계좌번호</span>
+            </div>
+          </div>
+          <div class="select-card__amount-row">
+            <button class="select-card__fill-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg> 잔액채우기</button>
+            <div style="text-align:right">
+              <span class="select-card__amount-label">금액</span>
+              <span class="select-card__amount-value">5,000,000원</span>
+            </div>
+          </div>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Error -->
+      <div class="select-field select-field--filled select-field--error" style="max-width:260px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-card select-card--error">
+          <div class="select-card__limit-row">
+            <span class="select-card__limit-text">한도제한</span>
+            <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </div>
+          <div class="select-card__acct-row">
+            <div class="select-field__avatar">NH</div>
+            <div class="select-field__content">
+              <span class="select-field__acct-name">금융사명</span>
+              <span class="select-field__acct-num">계좌번호</span>
+            </div>
+          </div>
+          <div class="select-card__amount-row">
+            <button class="select-card__fill-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg> 잔액채우기</button>
+            <div style="text-align:right">
+              <span class="select-card__amount-label">금액</span>
+              <span class="select-card__amount-value">5,000,000원</span>
+            </div>
+          </div>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+    </div>
+
+    <!-- List -->
+    <p class="g-sub-title">List — 계좌 + 키-값 목록 <code>.select-card__list-row</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <!-- Inactive -->
+      <div class="select-field" style="max-width:260px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">출금계좌 선택</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Filled -->
+      <div class="select-field select-field--filled" style="max-width:260px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-card">
+          <div class="select-card__acct-row">
+            <div class="select-field__avatar">NH</div>
+            <div class="select-field__content">
+              <span class="select-field__acct-name">금융사명</span>
+              <span class="select-field__acct-num">계좌번호</span>
+            </div>
+            <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </div>
+          <div class="select-card__list-row">
+            <span class="select-card__list-title">타이틀</span>
+            <span class="select-card__list-data">데이터</span>
+          </div>
+          <div class="select-card__list-row">
+            <span class="select-card__list-title">타이틀</span>
+            <span class="select-card__list-data">데이터</span>
+          </div>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Error -->
+      <div class="select-field select-field--filled select-field--error" style="max-width:260px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-card select-card--error">
+          <div class="select-card__acct-row">
+            <div class="select-field__avatar">NH</div>
+            <div class="select-field__content">
+              <span class="select-field__acct-name">금융사명</span>
+              <span class="select-field__acct-num">계좌번호</span>
+            </div>
+            <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </div>
+          <div class="select-card__list-row">
+            <span class="select-card__list-title">타이틀</span>
+            <span class="select-card__list-data">데이터</span>
+          </div>
+          <div class="select-card__list-row">
+            <span class="select-card__list-title">타이틀</span>
+            <span class="select-card__list-data">데이터</span>
+          </div>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+    </div>
+
+    <!-- Admin -->
+    <p class="g-sub-title">Admin — 계좌 카드 + 금액 (Radius 16) <code>.select-card.select-card--admin</code></p>
+    <div class="g-example" style="gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <!-- Inactive -->
+      <div class="select-field" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-field__box">
+          <div class="select-field__content"><span class="select-field__text">출금계좌 선택</span></div>
+          <span class="select-field__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Filled -->
+      <div class="select-field select-field--filled" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-card select-card--admin">
+          <div class="select-card__acct-row">
+            <div class="select-field__avatar">NH</div>
+            <div class="select-field__content">
+              <span class="select-field__acct-name">금융사명</span>
+              <button class="select-card__acct-sub-btn">계좌번호 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <button class="select-card__menu-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button>
+          </div>
+          <div class="select-card__amount-row">
+            <button class="select-card__fill-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg> 잔액채우기</button>
+            <span class="select-card__amount-value">5,000,000원</span>
+          </div>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+      <!-- Error -->
+      <div class="select-field select-field--filled select-field--error" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-card select-card--admin select-card--error">
+          <div class="select-card__acct-row">
+            <div class="select-field__avatar">NH</div>
+            <div class="select-field__content">
+              <span class="select-field__acct-name">금융사명</span>
+              <button class="select-card__acct-sub-btn">계좌번호 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <button class="select-card__menu-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button>
+          </div>
+          <div class="select-card__amount-row">
+            <button class="select-card__fill-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg> 잔액채우기</button>
+            <span class="select-card__amount-value">5,000,000원</span>
+          </div>
+        </div>
+        <span class="select-field__msg">오류 메세지 출력</span>
+      </div>
+      <!-- Readonly -->
+      <div class="select-field select-field--filled" style="max-width:240px">
+        <label class="select-field__label">레이블</label>
+        <div class="select-card select-card--admin select-card--readonly">
+          <div class="select-card__acct-row">
+            <div class="select-field__avatar">NH</div>
+            <div class="select-field__content">
+              <span class="select-field__acct-name">금융사명</span>
+              <button class="select-card__acct-sub-btn">계좌번호 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <button class="select-card__menu-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button>
+          </div>
+          <div class="select-card__amount-row">
+            <button class="select-card__fill-btn" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg> 잔액채우기</button>
+            <span class="select-card__amount-value">5,000,000원</span>
+          </div>
+        </div>
+        <span class="select-field__msg">안내 문구 입력</span>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.select-field</code></td><td>기본 셀렉트 필드 (label + box + msg)</td></tr>
+      <tr><td><code>.select-field--filled</code></td><td>값 선택됨 (텍스트 #121212)</td></tr>
+      <tr><td><code>.select-field--error</code></td><td>오류 (border #E24949 / msg #E24949)</td></tr>
+      <tr><td><code>.select-field--readonly</code></td><td>읽기전용 (BG #F0F0F0)</td></tr>
+      <tr><td><code>.select-field--disabled</code></td><td>비활성 (BG #F0F0F0)</td></tr>
+      <tr><td><code>.select-field__prefix</code></td><td>왼쪽 아이콘/국기 (currency/icon)</td></tr>
+      <tr><td><code>.select-field__avatar</code></td><td>계좌 아바타 원 (NH 등)</td></tr>
+      <tr><td><code>.select-field__sub</code></td><td>2Row 부가설명</td></tr>
+      <tr><td><code>.select-card</code></td><td>복합 카드형 (price/list/admin)</td></tr>
+      <tr><td><code>.select-card--admin</code></td><td>Admin 카드 (radius 16)</td></tr>
+      <tr><td><code>.select-card--error</code></td><td>카드 오류 border</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== STATUSBAR ===================== -->
+    <!-- ===================== STATUSBAR ===================== -->
   <section class="g-section" id="secStatusbar">
 	<h3 class="g-section-title">Statusbar</h3>
 	<p class="g-sub-title">Status Dot / Tag</p>
@@ -2181,375 +3527,658 @@
 
   <!-- ===================== SWITCH ===================== -->
   <section class="g-section" id="secSwitch">
-	<h3 class="g-section-title">Switch</h3>
-	<p class="g-sub-title">Default / On / Disabled</p>
-	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<span class="switch__label">자동완성</span>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<span class="switch__label">SMS 만기안내 (On)</span>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" disabled>
-		<span class="switch__track"></span>
-		<span class="switch__label">비활성 Off</span>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked disabled>
-		<span class="switch__track"></span>
-		<span class="switch__label">비활성 On</span>
-	  </label>
-	</div>
-	<p class="g-sub-title">With Description</p>
-	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">SMS 만기 안내</span>
-		  <span class="switch__description">만기일 7일 전 SMS로 알림을 보내드립니다</span>
-		</div>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">마케팅 수신 동의</span>
-		  <span class="switch__description">이벤트 및 혜택 정보를 받아보실 수 있습니다</span>
-		</div>
-	  </label>
-	</div>
-	<p class="g-sub-title">Size — sm / md / lg</p>
-	<div class="g-example">
-	  <label class="switch switch--sm">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<span class="switch__label">SM</span>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<span class="switch__label">MD</span>
-	  </label>
-	  <label class="switch switch--lg">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<span class="switch__label">LG</span>
-	  </label>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.switch</code></td><td>기본 토글 (44×24px)</td></tr>
-	  <tr><td><code>.switch--sm</code></td><td>Small (36×20px)</td></tr>
-	  <tr><td><code>.switch--lg</code></td><td>Large (52×28px)</td></tr>
-	  <tr><td><code>input:checked + .switch__track</code></td><td>On 상태 (초록)</td></tr>
-	</table>
+    <h3 class="g-section-title">Switch</h3>
+
+    <!-- Basic / lg -->
+    <p class="g-sub-title">Basic / lg — <code>.switch.switch--lg</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">BG : False #707070 / True #19973C / Track 52×30px</p>
+    <div class="g-example" style="gap:32px;align-items:center">
+      <!-- False -->
+      <label class="switch switch--lg">
+        <input class="switch__input" type="checkbox">
+        <span class="switch__track"></span>
+      </label>
+      <!-- True -->
+      <label class="switch switch--lg">
+        <input class="switch__input" type="checkbox" checked>
+        <span class="switch__track"></span>
+      </label>
+    </div>
+
+    <!-- Basic / sm -->
+    <p class="g-sub-title">Basic / sm — <code>.switch.switch--sm</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Track 42×24px</p>
+    <div class="g-example" style="gap:32px;align-items:center">
+      <label class="switch switch--sm">
+        <input class="switch__input" type="checkbox">
+        <span class="switch__track"></span>
+      </label>
+      <label class="switch switch--sm">
+        <input class="switch__input" type="checkbox" checked>
+        <span class="switch__track"></span>
+      </label>
+    </div>
+
+    <!-- Basic / xs -->
+    <p class="g-sub-title">Basic / xs — <code>.switch.switch--xs</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Track 32×18px</p>
+    <div class="g-example" style="gap:32px;align-items:center">
+      <label class="switch switch--xs">
+        <input class="switch__input" type="checkbox">
+        <span class="switch__track"></span>
+      </label>
+      <label class="switch switch--xs">
+        <input class="switch__input" type="checkbox" checked>
+        <span class="switch__track"></span>
+      </label>
+    </div>
+
+    <!-- Big-Font -->
+    <p class="g-sub-title">Big-Font — <code>.switch-font</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">BG : False #E1E1E1 / True #19973C / Height 28px / 텍스트 내장</p>
+    <div class="g-example" style="gap:32px;align-items:center">
+      <!-- False -->
+      <label class="switch-font">
+        <input class="switch-font__input" type="checkbox">
+        <span class="switch-font__track">
+          <span class="switch-font__thumb"></span>
+          <span class="switch-font__text">큰글</span>
+        </span>
+      </label>
+      <!-- True -->
+      <label class="switch-font">
+        <input class="switch-font__input" type="checkbox" checked>
+        <span class="switch-font__track">
+          <span class="switch-font__thumb" style="order:2"></span>
+          <span class="switch-font__text" style="order:1;color:#FFFFFF"></span>
+        </span>
+      </label>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.switch--lg</code></td><td>Large 토글 (52×30px) / BG False #707070 · True #19973C</td></tr>
+      <tr><td><code>.switch--sm</code></td><td>Small 토글 (42×24px)</td></tr>
+      <tr><td><code>.switch--xs</code></td><td>XSmall 토글 (32×18px)</td></tr>
+      <tr><td><code>input:checked + .switch__track</code></td><td>On 상태 (#19973C)</td></tr>
+      <tr><td><code>.switch-font</code></td><td>텍스트 내장 토글 / BG False #E1E1E1 · True #19973C</td></tr>
+      <tr><td><code>.switch-font__text</code></td><td>트랙 내부 텍스트 (False #707070 · True #FFFFFF)</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== TAB ===================== -->
+    <!-- ===================== TAB ===================== -->
   <section class="g-section" id="secTab">
-	<h3 class="g-section-title">Tab</h3>
-	<p class="g-sub-title">Underline Tab — <code>.tab-list</code></p>
-	<div class="g-example block">
-	  <div class="tab-list">
-		<button class="tab__item active">전체</button>
-		<button class="tab__item">입금</button>
-		<button class="tab__item">출금</button>
-		<button class="tab__item" disabled>비활성</button>
-	  </div>
-	  <div class="tab-panel">선택된 탭의 콘텐츠 영역입니다.</div>
-	</div>
-	<p class="g-sub-title">Pill Tab — <code>.tab-list--pill</code></p>
-	<div class="g-example block">
-	  <div class="tab-list tab-list--pill" style="width:fit-content">
-		<button class="tab__item tab__item--active">서비스안내</button>
-		<button class="tab__item">유의사항</button>
-		<button class="tab__item">제출서류</button>
-	  </div>
-	</div>
-	<p class="g-sub-title">Size — sm / default / lg</p>
-	<div class="g-example block">
-	  <div class="tab-list tab-list--sm" style="margin-bottom:16px">
-		<button class="tab__item tab__item--active">SM 전체</button>
-		<button class="tab__item">입금</button>
-		<button class="tab__item">출금</button>
-	  </div>
-	  <div class="tab-list tab-list--lg">
-		<button class="tab__item tab__item--active">LG 전체</button>
-		<button class="tab__item">입금</button>
-		<button class="tab__item">출금</button>
-	  </div>
-	</div>
-	<p class="g-sub-title">Filled Tab — <code>.tab-list--filled</code></p>
-	<div class="g-example block">
-	  <div class="tab-list tab-list--filled" style="width:fit-content">
-		<button class="tab__item tab__item--active">전체</button>
-		<button class="tab__item">입금</button>
-		<button class="tab__item">출금</button>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.tab-list</code></td><td>기본 탭 목록 (underline)</td></tr>
-	  <tr><td><code>.tab-list--pill</code></td><td>pill/segment 스타일</td></tr>
-	  <tr><td><code>.tab-list--filled</code></td><td>채움 스타일 (초록 배경)</td></tr>
-	  <tr><td><code>.tab__item--active</code></td><td>선택된 탭</td></tr>
-	  <tr><td><code>.tab__item--disabled</code></td><td>비활성 탭</td></tr>
-	  <tr><td><code>.tab-list--sm / --lg</code></td><td>크기 변형</td></tr>
-	  <tr><td><code>.tab-list--stretch</code></td><td>탭 균등 분할</td></tr>
-	</table>
+    <h3 class="g-section-title">Tab</h3>
+
+    <!-- Line / Fixed -->
+    <p class="g-sub-title">Line / Fixed — <code>.tab-line.tab-line--fixed</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">최상위 레벨 탭 · 균등 너비 · Height 48px · Active border #111111</p>
+    <div class="g-example block" style="padding:0">
+      <div class="tab-line tab-line--fixed">
+        <button class="tab-line__item is-active">메뉴메뉴</button>
+        <button class="tab-line__item">메뉴</button>
+        <button class="tab-line__item">메뉴</button>
+        <button class="tab-line__item">메뉴</button>
+      </div>
+    </div>
+
+    <!-- Line / Flexible -->
+    <p class="g-sub-title">Line / Flexible — <code>.tab-line.tab-line--flex</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">콘텐츠 너비 기반 · 넘칠 경우 우측 그라데이션 · 스와이프 가능</p>
+    <div class="g-example block" style="padding:0">
+      <div class="tab-line tab-line--flex">
+        <button class="tab-line__item is-active">메뉴메뉴</button>
+        <button class="tab-line__item">메뉴</button>
+        <button class="tab-line__item">메뉴</button>
+        <button class="tab-line__item">메뉴</button>
+        <button class="tab-line__item">메뉴명이 긴 케이스</button>
+      </div>
+    </div>
+
+    <!-- Chip / Flexible -->
+    <p class="g-sub-title">Chip / Flexible — <code>.tab-chip</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">2Depths 하위 탭 · BG Default #F6F6F6 / Active #111111 · Font 14px</p>
+    <div class="g-example block">
+      <div class="tab-chip">
+        <button class="tab-chip__item is-active">메뉴</button>
+        <button class="tab-chip__item">메뉴</button>
+        <button class="tab-chip__item">메뉴</button>
+        <button class="tab-chip__item">메뉴</button>
+        <button class="tab-chip__item">메뉴</button>
+      </div>
+    </div>
+
+    <!-- Chip / Accordion (collapsed) -->
+    <p class="g-sub-title">Chip / Accordion — <code>.tab-chip-acc</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">접기/펼치기 토글 · 초과 칩을 ∨ 버튼으로 확장</p>
+    <div class="g-example block">
+      <!-- Collapsed -->
+      <div class="tab-chip-acc" style="margin-bottom:16px">
+        <div class="tab-chip-acc__header">
+          <div class="tab-chip-acc__chips">
+            <button class="tab-chip-acc__item is-active">메뉴</button>
+            <button class="tab-chip-acc__item">메뉴</button>
+          </div>
+          <button class="tab-chip-acc__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg></button>
+        </div>
+      </div>
+      <!-- Expanded -->
+      <div class="tab-chip-acc">
+        <div class="tab-chip-acc__header">
+          <div class="tab-chip-acc__chips">
+            <button class="tab-chip-acc__item is-active">메뉴</button>
+            <button class="tab-chip-acc__item">메뉴</button>
+            <button class="tab-chip-acc__item">메뉴</button>
+            <button class="tab-chip-acc__item">메뉴</button>
+          </div>
+          <button class="tab-chip-acc__toggle tab-chip-acc__toggle--open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><polyline points="18 15 12 9 6 15"/></svg></button>
+        </div>
+        <div class="tab-chip-acc__body">
+          <button class="tab-chip-acc__item">메뉴</button>
+          <button class="tab-chip-acc__item">메뉴</button>
+          <button class="tab-chip-acc__item">메뉴</button>
+          <button class="tab-chip-acc__item">메뉴</button>
+          <button class="tab-chip-acc__item">메뉴</button>
+          <button class="tab-chip-acc__item">메뉴</button>
+          <button class="tab-chip-acc__item">메뉴</button>
+          <button class="tab-chip-acc__item">메뉴</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bar -->
+    <p class="g-sub-title">Bar — <code>.tab-bar</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">세그먼트 컨트롤 · BG #F3F5F8 / Radius 12 / Active #FFFFFF shadow · Font 14px</p>
+    <div class="g-example block">
+      <div class="tab-bar" style="max-width:320px;margin-bottom:16px">
+        <button class="tab-bar__item is-active">메뉴</button>
+        <button class="tab-bar__item">메뉴</button>
+      </div>
+      <div class="tab-bar" style="max-width:400px">
+        <button class="tab-bar__item is-active">메뉴</button>
+        <button class="tab-bar__item">메뉴</button>
+        <button class="tab-bar__item">메뉴</button>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.tab-line--fixed</code></td><td>라인 탭 균등 너비 (flex: 1)</td></tr>
+      <tr><td><code>.tab-line--flex</code></td><td>라인 탭 콘텐츠 너비 + 우측 그라데이션</td></tr>
+      <tr><td><code>.tab-line__item.is-active</code></td><td>16px/Semibold/#121212 · border-bottom #111111</td></tr>
+      <tr><td><code>.tab-chip</code></td><td>칩형 탭 (horizontally scrollable)</td></tr>
+      <tr><td><code>.tab-chip__item.is-active</code></td><td>BG #111111 / text #FFFFFF / 14px/Medium</td></tr>
+      <tr><td><code>.tab-chip-acc</code></td><td>칩 아코디언 (접기/펼치기)</td></tr>
+      <tr><td><code>.tab-chip-acc__toggle--open</code></td><td>아코디언 펼친 상태 (chevron 회전)</td></tr>
+      <tr><td><code>.tab-bar</code></td><td>바형 세그먼트 컨트롤 (BG #F3F5F8)</td></tr>
+      <tr><td><code>.tab-bar__item.is-active</code></td><td>BG #FFFFFF · shadow · 14px/Medium/#121212</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== TABLE ===================== -->
-  <section class="g-section" id="secTable">
-	<h3 class="g-section-title">Table</h3>
-	<div class="g-example block">
-	  <div class="tbl-wrap">
-		<table class="tbl">
-		  <thead>
-			<tr><th>거래일시</th><th>거래유형</th><th>금액</th><th>잔액</th><th>상태</th></tr>
-		  </thead>
-		  <tbody>
-			<tr><td>2025.06.05 14:23</td><td>입금</td><td style="color:var(--primitive-blue-600);font-weight:var(--font-weight-semibold)">+150,000원</td><td>1,650,000원</td><td><span class="status-tag active">완료</span></td></tr>
-			<tr><td>2025.06.04 10:11</td><td>출금</td><td style="color:var(--primitive-red-500)">-50,000원</td><td>1,500,000원</td><td><span class="status-tag active">완료</span></td></tr>
-			<tr><td>2025.06.03 09:00</td><td>자동이체</td><td style="color:var(--primitive-red-500)">-200,000원</td><td>1,550,000원</td><td><span class="status-tag pending">대기</span></td></tr>
-		  </tbody>
-		</table>
-	  </div>
-	</div>
-	<p class="g-sub-title">Striped — <code>.tbl--striped</code></p>
-	<div class="g-example block">
-	  <div class="tbl-wrap">
-		<table class="tbl tbl--striped">
-		  <thead><tr><th>이름</th><th>계좌</th><th>금액</th></tr></thead>
-		  <tbody>
-			<tr><td>김올원</td><td>111-1234-5678</td><td style="color:var(--primitive-blue-600)">+50,000원</td></tr>
-			<tr><td>이올원</td><td>222-5678-9012</td><td style="color:var(--primitive-red-500)">-20,000원</td></tr>
-			<tr><td>박올원</td><td>333-3456-7890</td><td style="color:var(--primitive-blue-600)">+100,000원</td></tr>
-		  </tbody>
-		</table>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.tbl-wrap</code></td><td>테이블 래퍼</td></tr>
-	  <tr><td><code>.tbl</code></td><td>기본 테이블</td></tr>
-	  <tr><td><code>.tbl--striped</code></td><td>짝수 행 배경색</td></tr>
-	  <tr><td><code>.tbl--bordered</code></td><td>열 구분선 추가</td></tr>
-	</table>
+    <section class="g-section" id="secTable">
+    <h3 class="g-section-title">Table</h3>
+
+    <!-- ── Vertical / Basic ─────────────────────────────────── -->
+    <p class="g-sub-title">Vertical / Basic — <code>.tbl.tbl--v</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Th 좌측 열(Min 30%) · Td 우측 열(Flexible) · Left 정렬</p>
+    <div class="g-example block">
+      <div class="tbl-wrap" style="max-width:400px;margin-bottom:16px">
+        <table class="tbl tbl--v">
+          <tbody>
+            <tr><th>구분</th><td>내용</td></tr>
+            <tr><th>구분</th><td>내용</td></tr>
+            <tr><th>구분</th><td>내용</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Min:30% + Flexible + Fixed 40px -->
+      <div class="tbl-wrap" style="max-width:400px">
+        <table class="tbl tbl--v">
+          <colgroup>
+            <col class="col-min">
+            <col class="col-flex">
+            <col class="col-fix">
+          </colgroup>
+          <tbody>
+            <tr><th>구분</th><td>내용</td><td class="col-fix">40</td></tr>
+            <tr><th>구분</th><td>내용</td><td class="col-fix"></td></tr>
+            <tr><th>구분</th><td>내용</td><td class="col-fix"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Vertical / Monospace Lining ──────────────────────── -->
+    <p class="g-sub-title">Vertical / Monospace Lining — <code>.tbl__mono</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">숫자 데이터는 Monospace Lining 적용하여 정렬을 일정하게 유지</p>
+    <div class="g-example block">
+      <div class="tbl-wrap" style="max-width:320px">
+        <table class="tbl tbl--v">
+          <tbody>
+            <tr><th>구분</th><td class="tbl__mono">100%</td></tr>
+            <tr><th>구분</th><td class="tbl__mono">200%</td></tr>
+            <tr><th>구분</th><td class="tbl__mono">300%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Vertical / Bullet ─────────────────────────────────── -->
+    <p class="g-sub-title">Vertical / Bullet — <code>.tbl__ul</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">2개 이상의 항목은 블릿을 사용합니다</p>
+    <div class="g-example block">
+      <div class="tbl-wrap" style="max-width:400px">
+        <table class="tbl tbl--v">
+          <tbody>
+            <tr><th>대상</th><td>
+              <ul class="tbl__ul">
+                <li>19세 이상 거주자</li>
+                <li>15세 이상 19세 미만인 거주자로 근로소득이 있는 자</li>
+              </ul>
+            </td></tr>
+            <tr><th>비과세한도</th><td>200만원</td></tr>
+            <tr><th>가입확인서류</th><td>
+              <ul class="tbl__ul">
+                <li>19세 이상 거주자 : 실명확인증표(신분증)</li>
+                <li>15세 이상 19세 미만인 거주자로 근로소득이 있는 자 : 실명확인증표(신분증)</li>
+                <li>소득확인증명서(가계인증합자산관리계좌 가입용)</li>
+              </ul>
+            </td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Horizontal / Basic ────────────────────────────────── -->
+    <p class="g-sub-title">Horizontal / Basic — <code>.tbl.tbl--h</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Th 헤더 행 · Center 기본 · 문장형(is-text) Left · 1/n 균등 또는 Min+Flexible</p>
+    <div class="g-example block">
+      <!-- 1/n 균등 -->
+      <div class="tbl-wrap" style="max-width:400px;margin-bottom:16px">
+        <table class="tbl tbl--h">
+          <thead>
+            <tr><th>구분</th><th>구분</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>내용</td><td>내용</td></tr>
+            <tr><td>내용</td><td>내용</td></tr>
+            <tr><td>내용</td><td>내용</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Min:30% + Flexible (문장형) -->
+      <div class="tbl-wrap" style="max-width:400px">
+        <table class="tbl tbl--h">
+          <colgroup><col class="col-min"><col></colgroup>
+          <thead>
+            <tr><th>구분</th><th class="is-text">내용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>내용</td><td class="is-text">문장형 데이터가 출력되는 경우</td></tr>
+            <tr><td>내용</td><td class="is-text">문장형 데이터가 출력되는 경우</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Horizontal / 강조·상승·하락 ──────────────────────── -->
+    <p class="g-sub-title">Horizontal / 강조·상승·하락 데이터 — <code>.tbl__em .tbl__rise .tbl__fall</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">강조 #505050/Medium · 상승(한국증시 적색) #E24949 · 하락(청색) #2C6DD4</p>
+    <div class="g-example block">
+      <div class="tbl-wrap" style="max-width:420px">
+        <table class="tbl tbl--h">
+          <thead>
+            <tr><th>기준일</th><th>기준가</th><th>전일대비증감</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023.10.20</td>
+              <td class="tbl__mono tbl__em">1,070.47원</td>
+              <td class="tbl__mono tbl__rise">-3.09%</td>
+            </tr>
+            <tr>
+              <td>2023.10.19</td>
+              <td class="tbl__mono tbl__em">1,073.56원</td>
+              <td class="tbl__mono tbl__rise">-1.72%</td>
+            </tr>
+            <tr>
+              <td>2023.10.18</td>
+              <td class="tbl__mono tbl__em">1,075.28원</td>
+              <td class="tbl__mono tbl__fall">+0.57%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Horizontal / 합계 ─────────────────────────────────── -->
+    <p class="g-sub-title">Horizontal / 합계 데이터 — <code>.tbl__total</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">합계 행: BG #F6F6F6 / 14px / Medium / #121212</p>
+    <div class="g-example block">
+      <div class="tbl-wrap" style="max-width:420px">
+        <table class="tbl tbl--h">
+          <thead>
+            <tr><th>회차</th><th>원금</th><th>이자</th><th>총상환액</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="tbl__mono">10,000원</td><td class="tbl__mono">10,000원</td><td class="tbl__mono">10,000원</td></tr>
+            <tr><td>2</td><td class="tbl__mono">10,000원</td><td class="tbl__mono">10,000원</td><td class="tbl__mono">10,000원</td></tr>
+            <tr><td>3</td><td class="tbl__mono">10,000원</td><td class="tbl__mono">10,000원</td><td class="tbl__mono">10,000원</td></tr>
+          </tbody>
+          <tfoot>
+            <tr class="tbl__total">
+              <td>합계</td>
+              <td class="tbl__mono">30,000원</td>
+              <td class="tbl__mono">30,000원</td>
+              <td class="tbl__mono">30,000원</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Combined / Table Spacing ─────────────────────────── -->
+    <p class="g-sub-title">Combined / Table Spacing — <code>.tbl-group-v .tbl-group-h</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">세로 배열: 16px gap · 가로 배열: 8px gap</p>
+    <div class="g-example block">
+      <!-- 세로 배열 (16px) -->
+      <div class="tbl-group-v" style="max-width:380px;margin-bottom:20px">
+        <div class="tbl-wrap">
+          <table class="tbl tbl--v">
+            <tbody>
+              <tr><th>구분</th><td>내용</td></tr>
+              <tr><th>구분</th><td>내용</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl tbl--v">
+            <colgroup><col class="col-min"><col></colgroup>
+            <tbody>
+              <tr><th>구분</th><td>내용</td></tr>
+              <tr><th>구분</th><td>내용</td></tr>
+              <tr><th>구분</th><td>내용</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- 가로 배열 (8px) -->
+      <div class="tbl-group-h">
+        <div class="tbl-wrap">
+          <table class="tbl tbl--h">
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>내용</td><td>내용</td></tr>
+              <tr><td>내용</td><td>내용</td></tr>
+              <tr><td>내용</td><td>내용</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl tbl--h">
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>내용</td><td>내용</td></tr>
+              <tr><td>내용</td><td>내용</td></tr>
+              <tr><td>내용</td><td>내용</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.tbl--v</code></td><td>Vertical — Th 좌측 열(30%) / Left 정렬</td></tr>
+      <tr><td><code>.tbl--h</code></td><td>Horizontal — Th 헤더 행 / Center 기본</td></tr>
+      <tr><td><code>td.is-text</code></td><td>Horizontal에서 문장형 열 Left 정렬</td></tr>
+      <tr><td><code>.tbl__mono</code></td><td>숫자 Monospace Lining + Right 정렬</td></tr>
+      <tr><td><code>.tbl__em</code></td><td>강조 14px/Medium/#505050</td></tr>
+      <tr><td><code>.tbl__rise</code></td><td>상승 #E24949 (한국 증시 적색)</td></tr>
+      <tr><td><code>.tbl__fall</code></td><td>하락 #2C6DD4 (한국 증시 청색)</td></tr>
+      <tr><td><code>.tbl__total</code></td><td>합계 행 BG #F6F6F6 / Medium / #121212</td></tr>
+      <tr><td><code>.tbl__ul</code></td><td>셀 내 블릿 리스트</td></tr>
+      <tr><td><code>.tbl-group-v</code></td><td>테이블 세로 배열 16px gap</td></tr>
+      <tr><td><code>.tbl-group-h</code></td><td>테이블 가로 배열 8px gap</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== TERMS ===================== -->
-  <section class="g-section" id="secTerms">
-	<h3 class="g-section-title">Terms</h3>
-	<div class="g-example">
-	  <div class="terms">
-		<div class="terms__all checked">
-		  <label class="check"><input type="checkbox" checked><span class="check__box"></span></label>
-		  <span class="terms__all-label">전체 동의</span>
-		</div>
-		<div class="terms-divider"></div>
-		<div class="terms__item">
-		  <label class="check"><input type="checkbox" checked><span class="check__box"></span></label>
-		  <span class="terms__tag">[필수]</span>
-		  <span class="terms__text">서비스 이용약관</span>
-		  <span class="terms__detail">보기</span>
-		</div>
-		<div class="terms__item">
-		  <label class="check"><input type="checkbox" checked><span class="check__box"></span></label>
-		  <span class="terms__tag">[필수]</span>
-		  <span class="terms__text">개인정보 수집 및 이용 동의</span>
-		  <span class="terms__detail">보기</span>
-		</div>
-		<div class="terms__item">
-		  <label class="check"><input type="checkbox"><span class="check__box"></span></label>
-		  <span class="terms__tag optional">[선택]</span>
-		  <span class="terms__text">마케팅 수신 동의</span>
-		  <span class="terms__detail">보기</span>
-		</div>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.terms__all</code></td><td>전체 동의 체크 영역</td></tr>
-	  <tr><td><code>.terms__all.checked</code></td><td>전체 동의 선택 상태</td></tr>
-	  <tr><td><code>.terms__tag</code></td><td>[필수]/[선택] 태그</td></tr>
-	  <tr><td><code>.terms__detail</code></td><td>약관 상세보기 버튼</td></tr>
-	</table>
+    <section class="g-section" id="secTerms">
+    <h3 class="g-section-title">Terms</h3>
+    <p style="font-size:14px;color:#767676;margin:0 0 24px">사용자가 서비스의 이용 조건을 이해하고, 동의할 수 있도록 돕습니다.</p>
+
+    <p class="g-sub-title">Collapsed / Expanded — <code>.terms</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 16px">Radius 12 / BG #FFFFFF / Border #E1E1E1 · Title 16/Semibold/#121212 · Body 14/Regular/#505050</p>
+
+    <div class="g-example block" style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- Collapsed: 전체 동의만 (단독 카드) -->
+      <div style="display:flex;flex-direction:column;gap:12px;flex:1;min-width:240px;max-width:320px">
+        <div class="terms">
+          <div class="terms__all terms__all--alone">
+            <span class="terms__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><circle cx="12" cy="12" r="9"/><polyline points="8.5 12.5 11 15 15.5 9.5" stroke-width="2"/></svg></span>
+            <span class="terms__title">[필수] 전체 동의</span>
+            <span class="terms__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg></span>
+          </div>
+        </div>
+
+        <!-- Expanded: 전체 동의 + 개별 약관 5개 -->
+        <div class="terms">
+          <div class="terms__all">
+            <span class="terms__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20"><circle cx="12" cy="12" r="9"/><polyline points="8.5 12.5 11 15 15.5 9.5" stroke-width="2"/></svg></span>
+            <span class="terms__title">[필수] 전체 동의</span>
+            <span class="terms__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg></span>
+          </div>
+          <div class="terms__list">
+            <div class="terms__item">
+              <span class="terms__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="4 13 9 18 20 6"/></svg></span>
+              <span class="terms__name">약관명을 입력해 주세요</span>
+              <span class="terms__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg></span>
+            </div>
+            <div class="terms__item">
+              <span class="terms__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="4 13 9 18 20 6"/></svg></span>
+              <span class="terms__name">약관명을 입력해 주세요</span>
+              <span class="terms__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg></span>
+            </div>
+            <div class="terms__item">
+              <span class="terms__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="4 13 9 18 20 6"/></svg></span>
+              <span class="terms__name">약관명을 입력해 주세요</span>
+              <span class="terms__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg></span>
+            </div>
+            <div class="terms__item">
+              <span class="terms__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="4 13 9 18 20 6"/></svg></span>
+              <span class="terms__name">약관명을 입력해 주세요</span>
+              <span class="terms__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg></span>
+            </div>
+            <div class="terms__item">
+              <span class="terms__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="4 13 9 18 20 6"/></svg></span>
+              <span class="terms__name">약관명을 입력해 주세요</span>
+              <span class="terms__chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.terms</code></td><td>카드 · Radius 12 / Border #E1E1E1 / BG #FFFFFF</td></tr>
+      <tr><td><code>.terms__all</code></td><td>전체 동의 헤더 · padding 20px(상하) 12px(좌) 20px(우) · 16/Semibold / border-bottom #E1E1E1</td></tr>
+      <tr><td><code>.terms__all--alone</code></td><td>단독 카드 시 border-bottom 제거</td></tr>
+      <tr><td><code>.terms__check</code></td><td>체크 아이콘 영역 · 미체크 #B3B3B3 / 체크 is-active #19973C</td></tr>
+      <tr><td><code>.terms__item</code></td><td>개별 약관 행 · padding 14px 20px · border-top #E1E1E1 · 14/Regular/#505050</td></tr>
+      <tr><td><code>.terms__chevron</code></td><td>우측 체브론 #B3B3B3</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== TEXTAREA MESSAGE ===================== -->
-  <section class="g-section" id="secTextareaMessage">
-	<h3 class="g-section-title">Textarea Message</h3>
-	<div class="g-example">
-	  <div class="ta-wrap">
-		<textarea placeholder="메시지를 입력하세요" rows="3"></textarea>
-		<div class="ta-toolbar">
-		  <div style="display:flex;gap:4px">
-			<button style="background:none;border:none;cursor:pointer;padding:6px;border-radius:4px;color:var(--color-text-secondary)" title="파일 첨부">
-			  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
-			</button>
-			<button style="background:none;border:none;cursor:pointer;padding:6px;border-radius:4px;color:var(--color-text-secondary)" title="이모지">😊</button>
-		  </div>
-		  <div style="display:flex;align-items:center;gap:8px">
-			<span style="font-size:11px;color:var(--gray-400)">0/500</span>
-			<button class="ta-submit">
-			  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
-			</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.ta-wrap</code></td><td>메시지 입력 래퍼 (border-radius xl)</td></tr>
-	  <tr><td><code>.ta-toolbar</code></td><td>하단 툴바 (첨부/이모지/전송)</td></tr>
-	  <tr><td><code>.ta-submit</code></td><td>전송 버튼 (초록 원형)</td></tr>
-	  <tr><td><code>.textarea-message--error</code></td><td>오류 상태</td></tr>
-	</table>
+    <section class="g-section" id="secTextareaMessage">
+    <h3 class="g-section-title">Textarea</h3>
+    <p style="font-size:14px;color:#767676;margin:0 0 24px">여러 줄의 텍스트 입력이 가능하도록 설계되어 장문 입력에 사용합니다. 기본적으로 스크롤 기능을 지원해 공간을 절약하며, 사용자가 내용을 쉽게 탐색할 수 있도록 돕습니다.</p>
+
+    <!-- Inactive -->
+    <p class="g-sub-title">Inactive — <code>.textarea</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Border #E1E1E1 / Placeholder 15/Regular/#929292 / Count 13/Regular</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="textarea">
+        <label class="textarea__label">레이블</label>
+        <div class="textarea__wrap">
+          <textarea class="textarea__field" placeholder="내용을 입력하세요내용을 입력하세요" rows="4"></textarea>
+        </div>
+        <div class="textarea__footer">
+          <span class="textarea__msg">안내 문구 입력</span>
+          <span class="textarea__count"><span class="textarea__count-current">0</span> / <span class="textarea__count-max">50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Focus -->
+    <p class="g-sub-title">Focus — <code>.textarea__wrap:focus-within</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Border #19973C / Text 15/Medium/#121212 / Clear 버튼 노출</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="textarea textarea--focus">
+        <label class="textarea__label">레이블</label>
+        <div class="textarea__wrap" style="border-color:#19973C">
+          <textarea class="textarea__field" style="font-weight:500" rows="4">입력된 텍스트 입니다</textarea>
+          <button class="textarea__clear" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <div class="textarea__footer">
+          <span class="textarea__msg">안내 문구 입력</span>
+          <span class="textarea__count"><span class="textarea__count-current">11</span> / <span class="textarea__count-max">50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filled -->
+    <p class="g-sub-title">Filled — <code>.textarea--filled</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Border #E1E1E1 / Text 15/Medium/#121212 / Clear 없음</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="textarea textarea--filled">
+        <label class="textarea__label">레이블</label>
+        <div class="textarea__wrap">
+          <textarea class="textarea__field" style="font-weight:500" rows="4">입력된 텍스트 입니다</textarea>
+        </div>
+        <div class="textarea__footer">
+          <span class="textarea__msg">안내 문구 입력</span>
+          <span class="textarea__count"><span class="textarea__count-current">11</span> / <span class="textarea__count-max">50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <p class="g-sub-title">Error — <code>.textarea--error</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Border #E24949 / Text 15/Medium/#121212 / Message 13/Regular/#E24949</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="textarea textarea--error">
+        <label class="textarea__label">레이블</label>
+        <div class="textarea__wrap">
+          <textarea class="textarea__field" style="font-weight:500" rows="4">입력된 텍스트 입니다</textarea>
+        </div>
+        <div class="textarea__footer">
+          <span class="textarea__msg">오류 메시지 출력</span>
+          <span class="textarea__count"><span class="textarea__count-current">11</span> / <span class="textarea__count-max">50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.textarea</code></td><td>래퍼 · 기본(Inactive) 상태 · Border #E1E1E1</td></tr>
+      <tr><td><code>.textarea__label</code></td><td>14/Medium/#505050</td></tr>
+      <tr><td><code>.textarea__field</code></td><td>15/Regular/#121212 · Placeholder #929292</td></tr>
+      <tr><td><code>.textarea__clear</code></td><td>× 버튼 · Focus 상태에서 노출</td></tr>
+      <tr><td><code>.textarea__msg</code></td><td>안내문구 13/Regular/#767676</td></tr>
+      <tr><td><code>.textarea__count</code></td><td>글자수 카운터 · current #121212 / max #19973C</td></tr>
+      <tr><td><code>.textarea--focus</code></td><td>Border #19973C</td></tr>
+      <tr><td><code>.textarea--filled</code></td><td>입력 완료 · Border #E1E1E1 / Text Medium</td></tr>
+      <tr><td><code>.textarea--error</code></td><td>Border #E24949 / Message #E24949</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== TOAST ===================== -->
-  <section class="g-section" id="secToast">
-	<h3 class="g-section-title">Toast</h3>
-	<p class="g-sub-title">Demo — 버튼 클릭 시 화면 우하단에 토스트 표시</p>
-	<div class="g-example">
-	  <button class="btn btn--sm btn--tertiary" data-toast="">기본</button>
-	  <button class="btn btn--sm btn--tertiary" data-toast="success">성공</button>
-	  <button class="btn btn--sm btn--tertiary" data-toast="danger">오류</button>
-	  <button class="btn btn--sm btn--tertiary" data-toast="warning">주의</button>
-	  <button class="btn btn--sm btn--tertiary" data-toast="info">안내</button>
-	</div>
-	<p class="g-sub-title">With Close Button &amp; Progress</p>
-	<div class="g-example col">
-	  <div class="toast" style="position:relative">
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-		<div style="flex:1"><div class="toast__title">저장 완료</div><div class="toast__msg">변경 사항이 저장되었습니다.</div></div>
-		<button class="toast__close">✕</button>
-		<div class="toast__progress"></div>
-	  </div>
-	  <div class="toast toast--success" style="position:relative">
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><polyline points="20,6 9,17 4,12"/></svg>
-		<div style="flex:1"><div class="toast__title">이체 완료</div><div class="toast__msg">50,000원이 이체되었습니다.</div></div>
-		<button class="toast__close">✕</button>
-		<div class="toast__progress"></div>
-	  </div>
-	  <div class="toast toast--light">
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px;color:var(--primitive-blue-500)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-		<div style="flex:1"><div class="toast__title" style="color:var(--color-text-primary)">공지사항</div><div class="toast__msg">새로운 공지사항이 등록되었습니다.</div></div>
-		<button class="toast__close" style="color:var(--color-text-tertiary)">✕</button>
-	  </div>
-	</div>
-	<p class="g-sub-title">Preview</p>
-	<div class="g-example col">
-	  <div class="toast">
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-		<div><div class="toast__title">기본 알림</div><div class="toast__msg">처리가 완료되었습니다.</div></div>
-	  </div>
-	  <div class="toast toast--success">
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><polyline points="20,6 9,17 4,12"/></svg>
-		<div><div class="toast__title">성공</div><div class="toast__msg">이체가 완료되었습니다.</div></div>
-	  </div>
-	  <div class="toast toast--danger">
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-		<div><div class="toast__title">오류</div><div class="toast__msg">처리 중 오류가 발생했습니다.</div></div>
-	  </div>
-	  <div class="toast toast--warning">
-		<div><div class="toast__title">주의</div><div class="toast__msg">만기일이 3일 남았습니다.</div></div>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.toast</code></td><td>기본 (어두운 배경)</td></tr>
-	  <tr><td><code>.toast--success/info/warning/danger</code></td><td>색상 변형</td></tr>
-	  <tr><td><code>.toast--light</code></td><td>밝은 배경 토스트</td></tr>
-	  <tr><td><code>.toast-container--top-right</code></td><td>표시 위치 지정</td></tr>
-	</table>
+    <section class="g-section" id="secToast">
+    <h3 class="g-section-title">Toast</h3>
+    <p style="font-size:14px;color:#767676;margin:0 0 4px">화면 하단의 Z-index 최상위에 표시되며, 2초 이내에 자동으로 사라집니다.</p>
+    <p style="font-size:14px;color:#767676;margin:0 0 4px">화면 흐름상 팝업을 출력할 수 없는 환경에서 화면 전환 없이 사용자의 작업 흐름을 방해하지 않고 정보를 전달합니다.</p>
+    <p style="font-size:14px;color:#767676;margin:0 0 24px">간결한 메시지와 직관적인 디자인으로 단순한 작업 알림에 사용됩니다.</p>
+
+    <!-- Basic Toast -->
+    <p class="g-sub-title">Basic — <code>.toast</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">BG #111111 / Radius 12 / Shadow y3 blur6 5% / 14/Regular/#FFFFFF / Height 48px</p>
+    <div class="g-example block" style="background:#F3F5F8;padding:40px 24px;display:flex;gap:24px;flex-wrap:wrap;align-items:center">
+      <!-- 기본 (텍스트만) -->
+      <div class="toast" style="max-width:240px">
+        <span class="toast__text">텍스트를 입력해 주세요.</span>
+      </div>
+      <!-- Close 버튼 포함 -->
+      <div class="toast" style="max-width:280px">
+        <span class="toast__text">텍스트를 입력해 주세요.</span>
+        <button class="toast__close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>속성</th><th>값</th></tr>
+      <tr><td>Background</td><td>#111111 / Radius 12</td></tr>
+      <tr><td>Shadow</td><td>x0, y3, blur6, #000000 5%</td></tr>
+      <tr><td>Font</td><td>14 / Regular / -2% / Left / #FFFFFF</td></tr>
+      <tr><td>Height</td><td>48px / Padding 0 16px</td></tr>
+      <tr><td><code>.toast__close</code></td><td>닫기 버튼 (선택) / color rgba(#FFF, 0.6)</td></tr>
+      <tr><td><code>.toast-wrap</code></td><td>화면 하단 고정 컨테이너 / z-index 9999</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== TOOLTIP ===================== -->
-  <section class="g-section" id="secTooltip">
-	<h3 class="g-section-title">Tooltip</h3>
-	<div class="g-example">
-	  <div class="tooltip-wrap">
-		<button class="btn btn--md btn--tertiary">호버하세요</button>
-		<span class="tooltip-box">툴팁 내용입니다</span>
-	  </div>
-	  <div class="tooltip-wrap">
-		<span class="badge badge--md badge--info">?</span>
-		<span class="tooltip-box">추가 설명이 여기 표시됩니다</span>
-	  </div>
-	</div>
-	<p class="g-sub-title">Placement — Top / Bottom / Left / Right</p>
-	<div class="g-example" style="gap:40px;padding:48px 24px">
-	  <div class="tooltip" style="position:relative">
-		<button class="btn btn--sm btn--tertiary">Top</button>
-		<span class="tooltip__box tooltip__box--top">위쪽 툴팁</span>
-	  </div>
-	  <div class="tooltip" style="position:relative">
-		<button class="btn btn--sm btn--tertiary">Bottom</button>
-		<span class="tooltip__box tooltip__box--bottom">아래쪽 툴팁</span>
-	  </div>
-	  <div class="tooltip" style="position:relative">
-		<button class="btn btn--sm btn--tertiary">Left</button>
-		<span class="tooltip__box tooltip__box--left">왼쪽 툴팁</span>
-	  </div>
-	  <div class="tooltip" style="position:relative">
-		<button class="btn btn--sm btn--tertiary">Right</button>
-		<span class="tooltip__box tooltip__box--right">오른쪽 툴팁</span>
-	  </div>
-	</div>
-	<p class="g-sub-title">Light Variant — <code>.tooltip--light</code></p>
-	<div class="g-example">
-	  <div class="tooltip tooltip--light" style="position:relative">
-		<button class="btn btn--sm btn--tertiary">Light</button>
-		<span class="tooltip__box tooltip__box--top">밝은 배경 툴팁</span>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.tooltip</code></td><td>툴팁 래퍼 (relative)</td></tr>
-	  <tr><td><code>.tooltip__box</code></td><td>툴팁 말풍선</td></tr>
-	  <tr><td><code>.tooltip__box--top/bottom/left/right</code></td><td>방향 지정</td></tr>
-	  <tr><td><code>.tooltip--light</code></td><td>밝은 배경 변형</td></tr>
-	</table>
+    <section class="g-section" id="secTooltip">
+    <h3 class="g-section-title">Tooltip</h3>
+    <p style="font-size:14px;color:#767676;margin:0 0 4px">특정 콘텐츠 요소를 선택하면 노출되고, 닫기 기능의 [X] 아이콘 버튼을 함께 제공해야 합니다.</p>
+    <p style="font-size:14px;color:#767676;margin:0 0 24px">트리거 요소 가까이에 위치하여 사용자의 작업을 돕도록 설계합니다.</p>
+
+    <!-- Basic Tooltip Card -->
+    <p class="g-sub-title">Basic — <code>.tooltip-card</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Radius 16 / BG #FFFFFF / Border #F0F0F0 / Shadow y3 blur6 5% / Padding 20px</p>
+    <div class="g-example block" style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- 기본 (타이틀 + 서브타이틀 + 본문 + 리스트) -->
+      <div class="tooltip-card" style="max-width:260px">
+        <div class="tooltip-card__header">
+          <span class="tooltip-card__title">타이틀</span>
+          <button class="tooltip-card__close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <p class="tooltip-card__sub">서브 타이틀</p>
+        <p class="tooltip-card__body">서브 텍스트를 내용을 입력해 주세요.</p>
+        <ul class="tooltip-card__list">
+          <li class="tooltip-card__item">리스트 내용을 입력해 주세요.</li>
+          <li class="tooltip-card__item">리스트 내용을 입력해 주세요.</li>
+        </ul>
+      </div>
+
+      <!-- 컴팩트 (타이틀 + 서브타이틀 + 본문 + 리스트 3개) -->
+      <div class="tooltip-card" style="max-width:260px">
+        <div class="tooltip-card__header">
+          <span class="tooltip-card__title">타이틀</span>
+          <button class="tooltip-card__close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <p class="tooltip-card__sub">서브 타이틀</p>
+        <p class="tooltip-card__body">서브 텍스트를 내용을 입력해 주세요.</p>
+        <ul class="tooltip-card__list">
+          <li class="tooltip-card__item">리스트 내용을 입력해 주세요.</li>
+          <li class="tooltip-card__item">리스트 내용을 입력해 주세요.</li>
+          <li class="tooltip-card__item">리스트 내용을 입력해 주세요.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.tooltip-card</code></td><td>카드 래퍼 · Radius 16 / Border #F0F0F0 / Shadow / Padding 20px</td></tr>
+      <tr><td><code>.tooltip-card__title</code></td><td>16 / Semibold / #121212</td></tr>
+      <tr><td><code>.tooltip-card__close</code></td><td>우상단 × 닫기 버튼</td></tr>
+      <tr><td><code>.tooltip-card__sub</code></td><td>14 / Medium / #121212 · margin-bottom 12px</td></tr>
+      <tr><td><code>.tooltip-card__body</code></td><td>14 / Regular / #505050 · margin-bottom 8px</td></tr>
+      <tr><td><code>.tooltip-card__list</code></td><td>블릿 리스트 · gap 8px</td></tr>
+      <tr><td><code>.tooltip-card__item</code></td><td>14 / Regular / #505050</td></tr>
+    </table>
   </section>
 
-</main>
-
-<!-- ===================== POPUP OVERLAY ===================== -->
-<div class="popup-overlay" id="popup-default">
-  <div class="popup-dialog">
-	<div class="popup-preview__header">
-	  <span class="popup-preview__title">신청을 취소하시겠습니까?</span>
-	  <button data-popup-close style="background:none;border:none;cursor:pointer;color:var(--gray-400);font-size:var(--font-size-2xl);line-height:1">✕</button>
-	</div>
-	<div class="popup-preview__body">현재까지 입력하신 내용이 모두 삭제됩니다.</div>
-	<div class="popup-preview__footer">
-	  <button class="btn btn--md btn--secondary" data-popup-close>아니오</button>
-	  <button class="btn btn--md btn--primary" data-popup-close>예</button>
-	</div>
-  </div>
-</div>
-
-<!-- ===================== BOTTOMSHEET OVERLAY ===================== -->
-<div class="bs-overlay" id="bs-default">
-  <div class="bs-sheet">
-	<div class="bs-handle"></div>
-	<div class="bs-title">바텀시트 제목</div>
-	<div class="bs-body">바텀시트 내용입니다. 필요한 정보를 여기에 입력합니다.</div>
-	<div style="margin-top:16px;display:flex;gap:8px">
-	  <button class="btn btn--md btn--secondary btn--full" data-bs-close>취소</button>
-	  <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-	</div>
-  </div>
-</div>
-
-<script src="./assets/js/main.js"></script>
 </body>
 </html>

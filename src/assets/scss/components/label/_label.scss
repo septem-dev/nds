@@ -1,0 +1,104 @@
+// =============================================================================
+// Label — NDS Design Library v1.0
+// =============================================================================
+// 작은 텍스트 뱃지로 상태·등급·분류를 표시하는 컴포넌트
+// Type: --line (테두리형) / --fill (채움형)
+// =============================================================================
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1;
+
+  // ── Type ────────────────────────────────────────────────────────────────────
+  // Line: 테두리형 (기본)
+  &--line {
+    background-color: transparent;
+    border: 1px solid currentColor;
+  }
+
+  // Fill: 채움형
+  &--fill {
+    border: none;
+  }
+
+  // ── Color — Line ────────────────────────────────────────────────────────────
+  &--default  { color: #707070; }
+  &--blue     { color: #1565C0; }
+  &--green    { color: #19973C; }
+  &--orange   { color: #E65100; }
+  &--red      { color: #C62828; }
+  &--yellow   { color: #B8860B; }
+  &--purple   { color: #6A1B9A; }
+  &--teal     { color: #006064; }
+  &--pink     { color: #AD1457; }
+
+  // ── Color — Fill ────────────────────────────────────────────────────────────
+  &--fill {
+    &.label--default  { background-color: #E0E0E0; color: #505050; }
+    &.label--blue     { background-color: #1565C0; color: #fff; }
+    &.label--green    { background-color: #19973C; color: #fff; }
+    &.label--orange   { background-color: #E65100; color: #fff; }
+    &.label--red      { background-color: #C62828; color: #fff; }
+    &.label--yellow   { background-color: #F9A825; color: #fff; }
+    &.label--purple   { background-color: #6A1B9A; color: #fff; }
+    &.label--teal     { background-color: #006064; color: #fff; }
+    &.label--pink     { background-color: #AD1457; color: #fff; }
+  }
+
+  // ── Grade ───────────────────────────────────────────────────────────────────
+  // 등급 레이블 (1등급 = 최우수, 6등급 = 일반)
+  &--grade1 { color: #C62828; }   // 1등급 — 빨강
+  &--grade2 { color: #EF6C00; }   // 2등급 — 주황
+  &--grade3 { color: #B8860B; }   // 3등급 — 노랑
+  &--grade4 { color: #2E7D32; }   // 4등급 — 초록
+  &--grade5 { color: #006064; }   // 5등급 — 청록
+  &--grade6 { color: #1565C0; }   // 6등급 — 파랑
+
+  &--fill {
+    &.label--grade1 { background-color: #C62828; color: #fff; }
+    &.label--grade2 { background-color: #EF6C00; color: #fff; }
+    &.label--grade3 { background-color: #F9A825; color: #fff; }
+    &.label--grade4 { background-color: #2E7D32; color: #fff; }
+    &.label--grade5 { background-color: #006064; color: #fff; }
+    &.label--grade6 { background-color: #1565C0; color: #fff; }
+  }
+
+  // ── Dot ─────────────────────────────────────────────────────────────────────
+  &__dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: currentColor;
+    flex-shrink: 0;
+  }
+}
+
+// ── Text-Label ───────────────────────────────────────────────────────────────
+// 텍스트 옆에 인라인으로 붙는 레이블 패턴
+.text-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #505050;
+
+  &__divider {
+    width: 1px;
+    height: 12px;
+    background-color: #D3D3D3;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,99 @@
+// =============================================================================
+// Filter — NDS Design Library v1.0
+// =============================================================================
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 24px;
+  min-height: 48px;
+
+  // 왼쪽 정보 영역
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__period {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #121212;
+  }
+
+  &__option {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  // 필터 아이콘 버튼
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #121212;
+    flex-shrink: 0;
+  }
+
+  // 오른쪽 부가 기능 영역 (Left variant)
+  &__extra {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+  }
+
+  &__tooltip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--primitive-gray-400, #D3D3D3);
+    background: none;
+    cursor: pointer;
+    font-size: 10px;
+    color: var(--primitive-gray-600, #707070);
+    padding: 0;
+    line-height: 1;
+  }
+
+  // Right: 기본형 — 기간+정렬 왼쪽, 필터 아이콘 오른쪽
+  &--right {
+    .filter__left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+
+  // Left: 부가 기능형 — 필터 옵션+아이콘 왼쪽, 부가 기능 오른쪽
+  &--left {
+    .filter__left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  // Divider 옵션
+  &--divider {
+    border-bottom: 1px solid var(--primitive-gray-200, #F0F0F0);
+  }
+}

@@ -1,0 +1,248 @@
+// =============================================================================
+// List — NDS Design Library v1.0
+// =============================================================================
+// Variants: list-card (lg/sm/xs) / list-page (sm/xs) / list-line / list-account
+// =============================================================================
+
+// ── 공통: 키-값 그리드 ────────────────────────────────────────────────────────
+// 2열 grid — 각 열이 [타이틀 | 데이터] 쌍
+.list-kv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+
+  &__pair {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--primitive-gray-200, #F0F0F0);
+
+    &:last-child,
+    &:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+
+    // 오른쪽 열 — 왼쪽 구분선
+    &:nth-child(even) {
+      border-left: 1px solid var(--primitive-gray-200, #F0F0F0);
+    }
+  }
+
+  &__title {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__data {
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+    text-align: right;
+  }
+}
+
+// ── Card ─────────────────────────────────────────────────────────────────────
+// 카드 형태 (border + radius) — 기본 sm
+.list-card {
+  border: 1px solid #E1E1E1;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+  width: 100%;
+
+  // lg: 데이터 22px Semibold
+  &--lg {
+    .list-kv__title { font-size: 15px; font-weight: 400; color: #505050; }
+    .list-kv__data  { font-size: 22px; font-weight: 600; color: #121212; }
+    .list-kv__pair  { padding: 12px 20px; }
+  }
+
+  // sm: 데이터 15px Medium
+  &--sm {
+    .list-kv__title { font-size: 15px; font-weight: 400; color: #505050; }
+    .list-kv__data  { font-size: 15px; font-weight: 500; color: #121212; }
+    .list-kv__pair  { padding: 10px 16px; }
+  }
+
+  // xs: 데이터 14px Regular (타이틀과 동일 색상)
+  &--xs {
+    .list-kv__title { font-size: 14px; font-weight: 400; color: #505050; }
+    .list-kv__data  { font-size: 14px; font-weight: 400; color: #505050; }
+    .list-kv__pair  { padding: 8px 12px; }
+  }
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+// 페이지형 — 카드 wrapper 없이 전체 너비
+.list-page {
+  width: 100%;
+
+  // sm: 데이터 15px Medium
+  &--sm {
+    .list-kv__title { font-size: 15px; font-weight: 400; color: #505050; }
+    .list-kv__data  { font-size: 15px; font-weight: 500; color: #121212; }
+    .list-kv__pair  { padding: 10px 16px; }
+  }
+
+  // xs: 데이터 14px Regular
+  &--xs {
+    .list-kv__title { font-size: 14px; font-weight: 400; color: #505050; }
+    .list-kv__data  { font-size: 14px; font-weight: 400; color: #505050; }
+    .list-kv__pair  { padding: 8px 12px; }
+  }
+}
+
+// ── Line ─────────────────────────────────────────────────────────────────────
+// 구분선 리스트 — 기간 + 타이틀/데이터 행
+.list-line {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #E1E1E1;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 20px;
+    border-bottom: 1px solid #E1E1E1;
+    gap: 4px;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  &__period {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #767676;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  &__data {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+    text-align: right;
+  }
+}
+
+// ── Account ──────────────────────────────────────────────────────────────────
+// 계좌/금융상품 리스트 아이템
+.list-account {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #F0F0F0;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #F0F0F0;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  // 로고/아바타
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1565C0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  // 아이콘 위 숫자 뱃지
+  &__badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background-color: #C62828;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #fff;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+  }
+
+  &__number {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #767676;
+  }
+
+  // 즐겨찾기 버튼
+  &__fav {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #B3B3B3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--active { color: #F9A825; }
+  }
+}

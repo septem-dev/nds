@@ -12,13 +12,13 @@ const paths = {
   html: {
     src: 'src/html/**/*.html',
     exclude: '!src/html/include/**',
-    dest: 'dist/'
+    dest: 'html/'
   },
 
   styles: {
-    src: 'src/scss/main.scss',
-    watch: 'src/scss/**/*.scss',
-    dest: 'dist/css/'
+    src: 'src/assets/scss/main.scss',
+    watch: 'src/assets/scss/**/*.scss',
+    dest: 'assets/css/'
   }
 };
 
@@ -66,8 +66,9 @@ function html() {
 function serve() {
   browserSync.init({
     server: {
-      baseDir: './dist'
+      baseDir: './'
     },
+    startPath: '/html/',
     port: 3000
   });
 }
@@ -78,7 +79,7 @@ function watchFiles() {
 }
 
 function cssMinify() {
-  return gulp.src('dist/css/main.css')
+  return gulp.src('assets/css/main.css')
 
     .pipe(cleanCSS())
 
@@ -86,7 +87,7 @@ function cssMinify() {
       suffix: '.min'
     }))
 
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('assets/css'));
 }
 
 exports.styles = styles;

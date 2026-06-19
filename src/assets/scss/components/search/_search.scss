@@ -1,0 +1,233 @@
+// =============================================================================
+// Search — NDS Design Library v1.0
+// =============================================================================
+// search        : 레이블 + 인풋 + 메시지 (단독 검색 필드)
+// search-filter : 인풋 + 필터 버튼 (검색 + 필터 세트)
+// =============================================================================
+// Input states
+//   Inactive : Border #E1E1E1 / BG #FFFFFF / Placeholder 18px/Medium/#929292
+//   Focus    : Border #19973C / BG #FFFFFF / Text 18px/Medium/#121212
+//   Filled   : Border #E1E1E1 / BG #FFFFFF / Text 18px/Medium/#121212
+//   Error    : Border #E24949 / BG #FFFFFF / Message #E24949
+// Label : 14px / Medium / -2% / #505050
+// Message : 13px / Regular / -2% / #767676 (error: #E24949)
+// Radius: 12px
+// =============================================================================
+
+// ── Search ────────────────────────────────────────────────────────────────────
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+
+  // 라벨
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  // 인풋 래퍼
+  &__wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  // 인풋 필드
+  &__field {
+    width: 100%;
+    height: 48px;
+    padding: 0 52px 0 16px; // 오른쪽: clear(20) + gap(4) + icon(20) + 우패딩(8)
+    border: 1px solid #E1E1E1;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+
+    &::placeholder {
+      color: #929292;
+      font-weight: 500;
+    }
+
+    // Focus 상태
+    &:focus {
+      border-color: #19973C;
+    }
+
+    // Error 상태
+    .search--error & {
+      border-color: #E24949;
+    }
+  }
+
+  // 우측 액션 영역 (clear + search icon)
+  &__actions {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  // 지우기 버튼 (×)
+  &__clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #B3B3B3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 1;
+    padding: 0;
+    flex-shrink: 0;
+
+    &:hover { background-color: #929292; }
+  }
+
+  // 검색 아이콘 버튼
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #505050;
+    padding: 0;
+    flex-shrink: 0;
+
+    svg { width: 20px; height: 20px; }
+    &:hover { color: #121212; }
+  }
+
+  // 안내/오류 메시지
+  &__msg {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #767676;
+    line-height: 1.4;
+  }
+
+  // Error 메시지 색상
+  &--error &__msg { color: #E24949; }
+}
+
+// ── Search Filter ─────────────────────────────────────────────────────────────
+// 검색 인풋 + 별도 필터 버튼 (가로 배열)
+.search-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  // 인풋 래퍼 (flex: 1)
+  &__wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__field {
+    width: 100%;
+    height: 48px;
+    padding: 0 52px 0 16px;
+    border: 1px solid #E1E1E1;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+
+    &::placeholder {
+      color: #929292;
+      font-weight: 500;
+    }
+
+    &:focus { border-color: #19973C; }
+  }
+
+  &__actions {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #B3B3B3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 1;
+    padding: 0;
+    flex-shrink: 0;
+
+    &:hover { background-color: #929292; }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #505050;
+    padding: 0;
+    flex-shrink: 0;
+
+    svg { width: 20px; height: 20px; }
+  }
+
+  // 필터 버튼 (우측 독립 버튼)
+  &__filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #505050;
+    flex-shrink: 0;
+    padding: 0;
+
+    svg { width: 20px; height: 20px; }
+    &:hover { border-color: #B3B3B3; }
+    &:active { border-color: #19973C; color: #19973C; }
+  }
+}

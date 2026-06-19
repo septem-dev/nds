@@ -1,0 +1,95 @@
+// =============================================================================
+// Terms — NDS Design Library v1.0
+// =============================================================================
+// Background : Radius 12 / BG #FFFFFF / Border #E1E1E1
+// Title      : 16 / Semibold / -2% / #121212
+// Body Text  : 14 / Regular  / -2% / #505050
+//
+// Spacing (Figma 기준)
+//   카드 전체       : border 1px #E1E1E1 / radius 12
+//   헤더 padding   : 상하 20px / 좌 12px / 우 20px
+//   아이템 padding  : 상하 14px / 좌 20px / 우 20px
+//   아이템 사이     : border-top 1px #E1E1E1
+// =============================================================================
+
+.terms {
+  border: 1px solid #E1E1E1;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  width: 100%;
+
+  // ── 전체 동의 헤더 행 ──────────────────────────────────────────────────────
+  &__all {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 12px;
+    gap: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #E1E1E1;
+
+    // 단독 카드 (하위 항목 없음): 하단 구분선 제거
+    &--alone { border-bottom: none; }
+  }
+
+  // ── 체크 아이콘 (헤더: circle-check / 아이템: plain check) ──────────────
+  &__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #B3B3B3;
+
+    svg { width: 20px; height: 20px; display: block; }
+
+    &.is-active { color: #19973C; }
+  }
+
+  // ── 전체 동의 타이틀 ──────────────────────────────────────────────────────
+  &__title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #121212;
+    line-height: 1.4;
+  }
+
+  // ── 체브론 ────────────────────────────────────────────────────────────────
+  &__chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #B3B3B3;
+
+    svg { width: 20px; height: 20px; display: block; }
+  }
+
+  // ── 개별 약관 목록 ────────────────────────────────────────────────────────
+  &__list { width: 100%; }
+
+  // ── 개별 약관 행 ──────────────────────────────────────────────────────────
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    gap: 8px;
+    border-top: 1px solid #E1E1E1;
+    cursor: pointer;
+
+    // 약관명 텍스트
+    .terms__name {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #505050;
+      line-height: 1.4;
+    }
+  }
+}

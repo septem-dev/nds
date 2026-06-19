@@ -1,0 +1,26 @@
+// =============================================================================
+// Infobox — NDS Design Library v1.0
+// =============================================================================
+
+.infobox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 16px;
+  border-radius: 16px;
+  background-color: #F6F6F6;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #121212;
+  }
+
+  &__body {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+}

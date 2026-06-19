@@ -1,0 +1,51 @@
+// =============================================================================
+// Empty State — NDS Design Library v1.0
+// =============================================================================
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  // Icon: gray circle with ellipsis dots
+  &__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primitive-gray-200, #F0F0F0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primitive-gray-500, #B3B3B3);
+    flex-shrink: 0;
+  }
+
+  &__text {
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  // Result: 검색 결과가 없는 경우 결과 리스트 영역에 사용
+  &--result {
+    padding: 24px;
+    gap: 16px;
+
+    .empty__text {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  // Page: 페이지 목록에 데이터가 없는 경우 사용
+  &--page {
+    padding: 48px 24px 24px;
+    gap: 16px;
+
+    .empty__text {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}

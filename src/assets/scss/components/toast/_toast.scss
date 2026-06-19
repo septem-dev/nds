@@ -1,0 +1,80 @@
+// =============================================================================
+// Toast — NDS Design Library v1.0
+// =============================================================================
+// 화면 하단의 Z-index 최상위에 표시되며, 2초 이내에 자동으로 사라집니다.
+// 화면 흐름상 팝업을 출력할 수 없는 환경에서 화면 전환 없이 사용자의 작업 흐름을 방해하지 않고 정보를 전달합니다.
+// =============================================================================
+// Background : Radius 12 / #111111
+// Shadow     : x0, y3, blur6, #000000 5%
+// Font       : 14 / Regular / -2% / Left / #FFFFFF
+// Height     : 48px
+// Padding    : 0 16px (기본) / 0 16px 0 16px (close 있을 때 우측 조정)
+// =============================================================================
+
+// ── 위치 컨테이너 ─────────────────────────────────────────────────────────────
+.toast-wrap {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  width: calc(100% - 48px);
+  max-width: 480px;
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
+.toast {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background-color: #111111;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+  pointer-events: auto;
+  box-sizing: border-box;
+
+  // 진입 애니메이션
+  animation: toast-in 0.2s ease;
+
+  // ── 텍스트 ──────────────────────────────────────────────────────────────────
+  &__text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    line-height: 1.4;
+    padding: 14px 0;
+  }
+
+  // ── Close 버튼 ──────────────────────────────────────────────────────────────
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-left: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0;
+
+    svg { width: 16px; height: 16px; }
+    &:hover { color: #FFFFFF; }
+  }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,108 @@
+// =============================================================================
+// Popover — NDS Design Library v1.0
+// =============================================================================
+// 어두운 배경의 툴팁형 말풍선 컴포넌트
+// Background: #111111 / Radius: 8px / Shadow: x0 y3 blur6 #000 5%
+// Font: 13/Regular/-2%/#FFFFFF
+// =============================================================================
+
+.popover {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 6px 12px;
+  background-color: #111111;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+
+  // 상단 화살표 (포포버가 트리거 아래 위치할 때)
+  &::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #111111;
+  }
+
+  // 텍스트
+  &__text {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    line-height: 1.4;
+  }
+
+  // 닫기 버튼
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0;
+    flex-shrink: 0;
+    line-height: 1;
+    font-size: 14px;
+
+    &:hover { color: #FFFFFF; }
+  }
+
+  // ── Arrow direction variants ───────────────────────────────────────────────
+  // 기본은 상단 화살표 (::before). 방향 변형 필요 시 modifier 사용.
+  &--arrow-bottom {
+    &::before {
+      top: auto;
+      bottom: -6px;
+      border-bottom: none;
+      border-top: 6px solid #111111;
+    }
+  }
+
+  &--arrow-left {
+    &::before {
+      top: 50%;
+      left: -9px;
+      transform: translateY(-50%);
+      border-bottom: 6px solid transparent;
+      border-top: 6px solid transparent;
+      border-right: 6px solid #111111;
+      border-left: none;
+    }
+  }
+
+  &--arrow-right {
+    &::before {
+      top: 50%;
+      left: auto;
+      right: -9px;
+      transform: translateY(-50%);
+      border-bottom: 6px solid transparent;
+      border-top: 6px solid transparent;
+      border-left: 6px solid #111111;
+      border-right: none;
+    }
+  }
+
+  // 화살표 위치 — 왼쪽 정렬
+  &--arrow-start::before {
+    left: 20px;
+    transform: none;
+  }
+
+  // 화살표 위치 — 오른쪽 정렬
+  &--arrow-end::before {
+    left: auto;
+    right: 20px;
+    transform: none;
+  }
+}
