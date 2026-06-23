@@ -839,13 +839,12 @@
 
     <!-- ── 1. Notice ────────────────────────────────────────────── -->
     <p class="g-sub-title">Notice — <code>.accordion-notice</code></p>
-    <p style="font-size:13px;color:#767676;margin:0 0 12px">라인·박스 없음 / ① 아이콘 + 타이틀 / H56 / 16/Semibold/#121212</p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">라인·박스 없음 / ① 아이콘 + 타이틀 / H56 / Divider 8px / 16/Semibold/#121212</p>
     <div class="g-example block" style="max-width:420px">
       <div class="accordion-notice">
         <!-- Collapsed -->
         <div class="accordion-notice__item">
-          <button class="accordion-notice__trigger" aria-expanded="false"
-            onclick="toggleAccordion(this, 'accordion-notice__arrow', 'accordion-notice__body')">
+          <button class="accordion-notice__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
             <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
             <span class="accordion-notice__title">알아두세요</span>
             <span class="accordion-notice__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
@@ -856,8 +855,7 @@
         </div>
         <!-- Expanded -->
         <div class="accordion-notice__item">
-          <button class="accordion-notice__trigger" aria-expanded="true"
-            onclick="toggleAccordion(this, 'accordion-notice__arrow', 'accordion-notice__body')">
+          <button class="accordion-notice__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
             <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
             <span class="accordion-notice__title">알아두세요</span>
             <span class="accordion-notice__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
@@ -932,6 +930,7 @@
             <div style="display:flex;flex-direction:column;flex:1;gap:2px">
               <span class="accordion-box__badge">기명</span>
               <span class="accordion-box__title">타이틀 부가설명</span>
+              <span class="accordion-box__sub">서브 텍스트를 입력해 주세요.</span>
             </div>
             <span class="accordion-box__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>
@@ -943,6 +942,7 @@
             <div style="display:flex;flex-direction:column;flex:1;gap:2px">
               <span class="accordion-box__badge">기명</span>
               <span class="accordion-box__title">타이틀 부가설명</span>
+              <span class="accordion-box__sub">서브 텍스트를 입력해 주세요.</span>
             </div>
             <span class="accordion-box__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>
@@ -990,7 +990,7 @@
 
     <!-- ── 6. Graybox - List ─────────────────────────────────────── -->
     <p class="g-sub-title">Graybox - List — <code>.accordion-gray (list)</code></p>
-    <p style="font-size:13px;color:#767676;margin:0 0 12px">Radius 12 / BG #F6F6F6 / 다운로드 아이콘 + 체브론 행</p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Radius 12 / BG #F6F6F6 / 다운로드 아이콘 + 체브론 행 / 14/Regular/#121212</p>
     <div class="g-example block" style="max-width:420px">
       <div class="accordion-gray">
         <!-- Collapsed -->
@@ -1042,15 +1042,16 @@
 
     <table class="g-table">
       <tr><th>클래스</th><th>설명</th></tr>
-      <tr><td><code>.accordion-notice</code></td><td>① 아이콘 + 타이틀 / 라인·박스 없음 / H56</td></tr>
+      <tr><td><code>.accordion-notice</code></td><td>① 아이콘 + 타이틀 / 라인·박스 없음 / H56 / gap 8px</td></tr>
       <tr><td><code>.accordion-line</code></td><td>Border-bottom 1px #E1E1E1 / H64</td></tr>
       <tr><td><code>.accordion-box</code></td><td>카드형 · Radius 12 / Border #E1E1E1 / 텍스트·리스트 변형</td></tr>
+      <tr><td><code>.accordion-box__sub</code></td><td>트리거 내 서브 텍스트 / 13/Regular/#505050</td></tr>
       <tr><td><code>.accordion-gray</code></td><td>회색 카드 · Radius 12 / BG #F6F6F6 / 텍스트·리스트 변형</td></tr>
       <tr><td><code>.accordion-content.open</code></td><td>JS toggleAccordion() 으로 open 클래스 토글</td></tr>
     </table>
   </section>
 
-    <section class="g-section" id="secAttachedFile">
+  <section class="g-section" id="secAttachedFile">
 	<h3 class="g-section-title">Attached File</h3>
 
 	<!-- Thumbnail -->

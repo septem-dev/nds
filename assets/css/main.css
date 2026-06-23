@@ -413,12 +413,12 @@
 
 .accordion-notice {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .accordion-notice__item {
   width: 100%;
-}
-.accordion-notice__item + .accordion-notice__item {
-  border-top: 1px solid #E1E1E1;
 }
 .accordion-notice__trigger {
   display: flex;
