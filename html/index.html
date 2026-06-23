@@ -835,79 +835,301 @@
 
   <!-- ===================== ACCORDION ===================== -->
   <section class="g-section" id="secAccordion">
-	<h3 class="g-section-title">Accordion</h3>
-	<p class="g-sub-title">Default — <code>.accordion > .accordion__item</code></p>
-	<div class="g-example block">
-	  <div class="accordion" style="max-width:480px">
-		<div class="accordion__item">
-		  <button class="accordion__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
-			서비스 이용 안내
-			<svg class="accordion__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-		  </button>
-		  <div class="accordion__content open"><div class="accordion__body">이용 시간은 평일 09:00 ~ 18:00이며, 주말 및 공휴일에는 운영하지 않습니다.</div></div>
-		</div>
-		<div class="accordion__item">
-		  <button class="accordion__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-			수수료 안내
-			<svg class="accordion__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-		  </button>
-		  <div class="accordion__content"><div class="accordion__body">기본 수수료는 무료이며, 타행 이체 시 500원이 부과됩니다.</div></div>
-		</div>
-		<div class="accordion__item">
-		  <button class="accordion__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-			자주 묻는 질문
-			<svg class="accordion__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-		  </button>
-		  <div class="accordion__content"><div class="accordion__body">이체 한도는 1일 최대 5천만원입니다.</div></div>
-		</div>
-	  </div>
-	</div>
-	<p class="g-sub-title">Filled — <code>.accordion--filled</code></p>
-	<div class="g-example block">
-	  <div class="accordion accordion--filled" style="max-width:480px">
-		<div class="accordion__item">
-		  <button class="accordion__trigger" aria-expanded="true" onclick="toggleAccordion(this)">이용 안내<svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-		  <div class="accordion__content open"><div class="accordion__body">이용 시간은 평일 09:00 ~ 18:00입니다.</div></div>
-		</div>
-		<div class="accordion__item">
-		  <button class="accordion__trigger" aria-expanded="false" onclick="toggleAccordion(this)">수수료 안내<svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-		  <div class="accordion__content"><div class="accordion__body">타행 이체 시 500원이 부과됩니다.</div></div>
-		</div>
-	  </div>
-	</div>
-	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.accordion__item</code></td><td>개별 항목 — item별 border-bottom</td></tr>
-	  <tr><td><code>.accordion__trigger[aria-expanded]</code></td><td>토글 버튼</td></tr>
-	  <tr><td><code>.accordion__content.open</code></td><td>펼쳐진 콘텐츠</td></tr>
-	  <tr><td><code>.accordion__icon</code></td><td>방향 아이콘 (180도 회전)</td></tr>
-	  <tr><td><code>.accordion--filled</code></td><td>회색 배경 채움 스타일</td></tr>
-	</table>
+    <h3 class="g-section-title">Accordion</h3>
+
+    <!-- ── 1. Notice ────────────────────────────────────────────── -->
+    <p class="g-sub-title">Notice — <code>.accordion-notice</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">라인·박스 없음 / ① 아이콘 + 타이틀 / H56 / 16/Semibold/#121212</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="accordion-notice">
+        <!-- Collapsed -->
+        <div class="accordion-notice__item">
+          <button class="accordion-notice__trigger" aria-expanded="false"
+            onclick="toggleAccordion(this, 'accordion-notice__arrow', 'accordion-notice__body')">
+            <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <span class="accordion-notice__title">알아두세요</span>
+            <span class="accordion-notice__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-notice__body">페이지 하단 안내 내용을 여기에 입력합니다. 별도의 라인이나 박스 없이 화살표 아이콘으로 펼쳐집니다.</div>
+          </div>
+        </div>
+        <!-- Expanded -->
+        <div class="accordion-notice__item">
+          <button class="accordion-notice__trigger" aria-expanded="true"
+            onclick="toggleAccordion(this, 'accordion-notice__arrow', 'accordion-notice__body')">
+            <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <span class="accordion-notice__title">알아두세요</span>
+            <span class="accordion-notice__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content open">
+            <div class="accordion-notice__body">페이지 하단 안내 내용을 여기에 입력합니다. 별도의 라인이나 박스 없이 화살표 아이콘으로 펼쳐집니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2. Line ───────────────────────────────────────────────── -->
+    <p class="g-sub-title">Line — <code>.accordion-line</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">하단 Border 1px #E1E1E1 / H64 / 16/Semibold/#121212</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="accordion-line">
+        <div class="accordion-line__item">
+          <button class="accordion-line__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+            <span class="accordion-line__title">타이틀</span>
+            <span class="accordion-line__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-line__body">헤더 영역을 선으로 구분하여 콘텐츠를 펼치거나 접을 수 있도록 합니다.</div>
+          </div>
+        </div>
+        <div class="accordion-line__item">
+          <button class="accordion-line__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
+            <span class="accordion-line__title">타이틀</span>
+            <span class="accordion-line__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content open">
+            <div class="accordion-line__body">헤더 영역을 선으로 구분하여 콘텐츠를 펼치거나 접을 수 있도록 합니다. 화면 전체 너비를 활용하여 공간을 최적화하여 보여주는 경우 사용합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 3. Box - Text ─────────────────────────────────────────── -->
+    <p class="g-sub-title">Box - Text — <code>.accordion-box</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Radius 12 / Border #E1E1E1 / Title 16/Semibold/#121212 / Body 14/Regular/#505050</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="accordion-box">
+        <!-- Collapsed -->
+        <div class="accordion-box__item">
+          <button class="accordion-box__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+            <span class="accordion-box__title">타이틀</span>
+            <span class="accordion-box__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content"></div>
+        </div>
+        <!-- Expanded -->
+        <div class="accordion-box__item">
+          <button class="accordion-box__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
+            <span class="accordion-box__title">타이틀</span>
+            <span class="accordion-box__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content open">
+            <div class="accordion-box__body">내용을 입력해 주세요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 4. Box - List ─────────────────────────────────────────── -->
+    <p class="g-sub-title">Box - List — <code>.accordion-box (list variant)</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">뱃지 + 타이틀 + 서브 / Body Title 15/Regular/#505050 / Body Data 15/Medium/#121212</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="accordion-box">
+        <!-- Collapsed -->
+        <div class="accordion-box__item">
+          <button class="accordion-box__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+            <div style="display:flex;flex-direction:column;flex:1;gap:2px">
+              <span class="accordion-box__badge">기명</span>
+              <span class="accordion-box__title">타이틀 부가설명</span>
+            </div>
+            <span class="accordion-box__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content"></div>
+        </div>
+        <!-- Expanded -->
+        <div class="accordion-box__item">
+          <button class="accordion-box__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
+            <div style="display:flex;flex-direction:column;flex:1;gap:2px">
+              <span class="accordion-box__badge">기명</span>
+              <span class="accordion-box__title">타이틀 부가설명</span>
+            </div>
+            <span class="accordion-box__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content open">
+            <div class="accordion-box__list">
+              <div class="accordion-box__row">
+                <span class="accordion-box__row-title">타이틀</span>
+                <span class="accordion-box__row-data">데이터</span>
+              </div>
+              <div class="accordion-box__row">
+                <span class="accordion-box__row-title">타이틀</span>
+                <span class="accordion-box__row-data">데이터</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 5. Graybox - Basic ────────────────────────────────────── -->
+    <p class="g-sub-title">Graybox - Basic — <code>.accordion-gray</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Radius 12 / BG #F6F6F6 / Title 14/Regular/#121212 / Body 14/Regular/#505050</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="accordion-gray">
+        <!-- Collapsed -->
+        <div class="accordion-gray__item">
+          <button class="accordion-gray__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+            <span class="accordion-gray__title">타이틀</span>
+            <span class="accordion-gray__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content"></div>
+        </div>
+        <!-- Expanded -->
+        <div class="accordion-gray__item">
+          <button class="accordion-gray__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
+            <span class="accordion-gray__title">타이틀</span>
+            <span class="accordion-gray__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content open">
+            <div class="accordion-gray__body">내용을 입력해 주세요.내용을 입력해 주세요.내용을 입력해 주세요.내용을 입력해 주세요.내용을 입력해 주세요.내용을 입력해 주세요.내용을 입력해 주세요.내용을 입력해 주세요.내용을 입력해 주세요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6. Graybox - List ─────────────────────────────────────── -->
+    <p class="g-sub-title">Graybox - List — <code>.accordion-gray (list)</code></p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">Radius 12 / BG #F6F6F6 / 다운로드 아이콘 + 체브론 행</p>
+    <div class="g-example block" style="max-width:420px">
+      <div class="accordion-gray">
+        <!-- Collapsed -->
+        <div class="accordion-gray__item">
+          <button class="accordion-gray__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+            <span class="accordion-gray__title">타이틀</span>
+            <span class="accordion-gray__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content"></div>
+        </div>
+        <!-- Expanded -->
+        <div class="accordion-gray__item">
+          <button class="accordion-gray__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
+            <span class="accordion-gray__title">타이틀</span>
+            <span class="accordion-gray__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="accordion-content open">
+            <div class="accordion-gray__list">
+              <div class="accordion-gray__row">
+                <span class="accordion-gray__row-text">내용을 입력해 주세요.</span>
+                <span class="accordion-gray__row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+                <span class="accordion-gray__row-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="9 6 15 12 9 18"/></svg></span>
+              </div>
+              <div class="accordion-gray__row">
+                <span class="accordion-gray__row-text">내용을 입력해 주세요.</span>
+                <span class="accordion-gray__row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+                <span class="accordion-gray__row-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="9 6 15 12 9 18"/></svg></span>
+              </div>
+              <div class="accordion-gray__row">
+                <span class="accordion-gray__row-text">내용을 입력해 주세요.</span>
+                <span class="accordion-gray__row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+                <span class="accordion-gray__row-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="9 6 15 12 9 18"/></svg></span>
+              </div>
+              <div class="accordion-gray__row">
+                <span class="accordion-gray__row-text">내용을 입력해 주세요.</span>
+                <span class="accordion-gray__row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+                <span class="accordion-gray__row-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="9 6 15 12 9 18"/></svg></span>
+              </div>
+              <div class="accordion-gray__row">
+                <span class="accordion-gray__row-text">내용을 입력해 주세요.</span>
+                <span class="accordion-gray__row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+                <span class="accordion-gray__row-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><polyline points="9 6 15 12 9 18"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.accordion-notice</code></td><td>① 아이콘 + 타이틀 / 라인·박스 없음 / H56</td></tr>
+      <tr><td><code>.accordion-line</code></td><td>Border-bottom 1px #E1E1E1 / H64</td></tr>
+      <tr><td><code>.accordion-box</code></td><td>카드형 · Radius 12 / Border #E1E1E1 / 텍스트·리스트 변형</td></tr>
+      <tr><td><code>.accordion-gray</code></td><td>회색 카드 · Radius 12 / BG #F6F6F6 / 텍스트·리스트 변형</td></tr>
+      <tr><td><code>.accordion-content.open</code></td><td>JS toggleAccordion() 으로 open 클래스 토글</td></tr>
+    </table>
   </section>
 
-  <!-- ===================== ATTACHED FILE ===================== -->
-  <section class="g-section" id="secAttachedFile">
+    <section class="g-section" id="secAttachedFile">
 	<h3 class="g-section-title">Attached File</h3>
-	<p class="g-sub-title">파일 첨부 표시 — <code>.attached</code></p>
-	<div class="g-example col">
-	  <div class="attached">
-		<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-		<span class="attached__name">디자인_가이드_v1.0.pdf</span>
-		<span class="attached__size">2.4MB</span>
-		<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primitive-gray-400);cursor:pointer"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-	  </div>
-	  <div class="attached" style="border-color:var(--primitive-red-500);background:var(--primitive-red-50)">
-		<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red-500)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-		<span class="attached__name" style="color:var(--primitive-red-600)">오류파일.exe</span>
-		<span class="attached__size" style="color:var(--primitive-red-400)">업로드 실패</span>
+
+	<!-- Thumbnail -->
+	<p class="g-sub-title">Thumbnail — <code>.attached-thumb</code></p>
+	<div class="g-example">
+	  <div class="attached-thumb">
+		<!-- Default -->
+		<div class="attached-thumb__item">
+		  <span class="attached-thumb__icon">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+			  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+			  <circle cx="12" cy="13" r="4"/>
+			</svg>
+		  </span>
+		  <span class="attached-thumb__count">0 / 0</span>
+		</div>
+		<!-- Disabled -->
+		<div class="attached-thumb__item attached-thumb__item--disabled">
+		  <span class="attached-thumb__icon">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+			  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+			  <circle cx="12" cy="13" r="4"/>
+			</svg>
+		  </span>
+		  <span class="attached-thumb__count">0 / 0</span>
+		</div>
+		<!-- Filled -->
+		<div class="attached-thumb__item attached-thumb__item--filled">
+		  <img class="attached-thumb__img" src="https://picsum.photos/96/96?grayscale" alt="첨부 이미지">
+		  <button class="attached-thumb__remove" type="button" aria-label="삭제">
+			<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+			  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+			</svg>
+		  </button>
+		</div>
 	  </div>
 	</div>
+
+	<!-- List -->
+	<p class="g-sub-title">List — <code>.attached-list</code></p>
+	<div class="g-example col">
+	  <div class="attached-list">
+		<div class="attached-list__item">
+		  <span class="attached-list__name">디자인_가이드_최종본_v2.1.pdf</span>
+		  <button class="attached-list__remove" type="button" aria-label="삭제">
+			<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+			  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+			</svg>
+		  </button>
+		</div>
+		<div class="attached-list__item">
+		  <span class="attached-list__name">첨부파일명.jpg</span>
+		  <button class="attached-list__remove" type="button" aria-label="삭제">
+			<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+			  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+			</svg>
+		  </button>
+		</div>
+		<div class="attached-list__item">
+		  <span class="attached-list__name">파일명.docx</span>
+		  <button class="attached-list__remove" type="button" aria-label="삭제">
+			<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+			  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+			</svg>
+		  </button>
+		</div>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.attached</code></td><td>파일 첨부 기본 컨테이너</td></tr>
-	  <tr><td><code>.attached__name</code></td><td>파일명 (ellipsis 처리)</td></tr>
-	  <tr><td><code>.attached__size</code></td><td>파일 크기 표시</td></tr>
-	  <tr><td><code>.attached--error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
+	  <tr><td><code>.attached-thumb</code></td><td>썸네일 래퍼 (flex wrap, gap 4px)</td></tr>
+	  <tr><td><code>.attached-thumb__item</code></td><td>96×96 / Radius12 / Border #E1E1E1</td></tr>
+	  <tr><td><code>.attached-thumb__item--disabled</code></td><td>비활성 상태 (#929292)</td></tr>
+	  <tr><td><code>.attached-thumb__item--filled</code></td><td>이미지 프리뷰 + 삭제 버튼</td></tr>
+	  <tr><td><code>.attached-list</code></td><td>파일 목록 래퍼</td></tr>
+	  <tr><td><code>.attached-list__item</code></td><td>H58 / Border #F0F0F0</td></tr>
+	  <tr><td><code>.attached-list__name</code></td><td>파일명 (14/Medium/#121212)</td></tr>
+	  <tr><td><code>.attached-list__remove</code></td><td>원형 삭제 버튼</td></tr>
 	</table>
   </section>
 
@@ -4181,6 +4403,6 @@
     </table>
   </section>
 
-<script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

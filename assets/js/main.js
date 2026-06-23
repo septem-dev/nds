@@ -5,22 +5,23 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ── Accordion ────────────────────────────────────────────── */
-  // onclick="toggleAccordion(this)" 방식 + 이벤트 위임 방식 모두 지원
+  // onclick="toggleAccordion(this)" — 모든 accordion 변형 공통
+  // trigger 의 nextElementSibling 이 .accordion-content 라고 가정
   window.toggleAccordion = function (btn) {
     var expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    var content = btn.nextElementSibling;
-    if (content) content.classList.toggle('open', !expanded);
-  };
+    var next = !expanded; // 열릴 상태
+    btn.setAttribute('aria-expanded', String(next));
 
-  // 이벤트 위임 방식 (inline onclick 없이도 동작)
-  document.querySelectorAll('.accordion').forEach(function (acc) {
-    acc.addEventListener('click', function (e) {
-      var btn = e.target.closest('.accordion__trigger');
-      if (!btn) return;
-      window.toggleAccordion(btn);
-    });
-  });
+    // 콘텐츠 패널: .accordion-content
+    var content = btn.nextElementSibling;
+    if (content && content.classList.contains('accordion-content')) {
+      content.classList.toggle('open', next);
+    }
+
+    // 화살표 회전: btn 내부 *__arrow 요소
+    var arrow = btn.querySelector('[class*="__arrow"]');
+    if (arrow) arrow.style.transform = next ? 'rotate(180deg)' : '';
+  };
 
   /* ── Tab Line / Chip / Bar (공통 is-active 토글) ──────────── */
   // .tab-line, .tab-chip, .tab-bar 내의 버튼 클릭 시 is-active 전환
