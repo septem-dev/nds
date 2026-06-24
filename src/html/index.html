@@ -845,7 +845,7 @@
         <!-- Collapsed -->
         <div class="accordion-notice__item">
           <button class="accordion-notice__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-            <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="7" x2="12" y2="13" stroke-linecap="round"/><circle cx="12" cy="17" r="1.2" fill="currentColor" stroke="none"/></svg></span>
             <span class="accordion-notice__title">알아두세요</span>
             <span class="accordion-notice__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>
@@ -856,7 +856,7 @@
         <!-- Expanded -->
         <div class="accordion-notice__item">
           <button class="accordion-notice__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
-            <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <span class="accordion-notice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="7" x2="12" y2="13" stroke-linecap="round"/><circle cx="12" cy="17" r="1.2" fill="currentColor" stroke="none"/></svg></span>
             <span class="accordion-notice__title">알아두세요</span>
             <span class="accordion-notice__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>
@@ -927,10 +927,12 @@
         <!-- Collapsed -->
         <div class="accordion-box__item">
           <button class="accordion-box__trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-            <div style="display:flex;flex-direction:column;flex:1;gap:2px">
-              <span class="accordion-box__badge">기명</span>
-              <span class="accordion-box__title">타이틀 부가설명</span>
-              <span class="accordion-box__sub">서브 텍스트를 입력해 주세요.</span>
+            <div style="display:flex;flex-direction:column;flex:1;gap:6px">
+              <span class="accordion-box__badge">라벨</span>
+              <div class="accordion-box__title-row">
+                <span class="accordion-box__title">타이틀</span>
+                <span class="accordion-box__sub">부가설명</span>
+              </div>
             </div>
             <span class="accordion-box__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>
@@ -939,10 +941,12 @@
         <!-- Expanded -->
         <div class="accordion-box__item">
           <button class="accordion-box__trigger" aria-expanded="true" onclick="toggleAccordion(this)">
-            <div style="display:flex;flex-direction:column;flex:1;gap:2px">
-              <span class="accordion-box__badge">기명</span>
-              <span class="accordion-box__title">타이틀 부가설명</span>
-              <span class="accordion-box__sub">서브 텍스트를 입력해 주세요.</span>
+            <div style="display:flex;flex-direction:column;flex:1;gap:6px">
+              <span class="accordion-box__badge">라벨</span>
+              <div class="accordion-box__title-row">
+                <span class="accordion-box__title">타이틀</span>
+                <span class="accordion-box__sub">부가설명</span>
+              </div>
             </div>
             <span class="accordion-box__arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>

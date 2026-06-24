@@ -196,29 +196,38 @@
     padding-top: 16px;
   }
 
-  // 헤더 서브타이틀 (list 타입)
-  &__sub {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #505050;
-    margin-top: 4px;
+  // 타이틀 행 (뱃지 아래, 타이틀 + 서브 인라인)
+  &__title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    flex-wrap: wrap;
   }
 
-  // 뱃지 (기명 등 소형 태그)
+  // 헤더 서브타이틀 — 타이틀과 같은 줄 / 14/Regular/#767676
+  &__sub {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #767676;
+    line-height: 1.4;
+  }
+
+  // 뱃지 — 테두리만, 배경 없음 / Radius 6 / Border #B3B3B3
   &__badge {
     display: inline-flex;
     align-items: center;
-    height: 20px;
-    padding: 0 6px;
-    border-radius: 4px;
-    background-color: #F0F0F0;
-    font-size: 11px;
-    font-weight: 500;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 6px;
+    border: 1px solid #B3B3B3;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 400;
     letter-spacing: -0.02em;
-    color: #505050;
-    margin-bottom: 4px;
+    color: #767676;
     flex-shrink: 0;
+    align-self: flex-start;
   }
 
   // 리스트 행 (list 타입)

@@ -580,26 +580,33 @@
   line-height: 1.6;
   padding-top: 16px;
 }
+.accordion-box__title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
 .accordion-box__sub {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.02em;
-  color: #505050;
-  margin-top: 4px;
+  color: #767676;
+  line-height: 1.4;
 }
 .accordion-box__badge {
   display: inline-flex;
   align-items: center;
-  height: 20px;
-  padding: 0 6px;
-  border-radius: 4px;
-  background-color: #F0F0F0;
-  font-size: 11px;
-  font-weight: 500;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  border: 1px solid #B3B3B3;
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: 400;
   letter-spacing: -0.02em;
-  color: #505050;
-  margin-bottom: 4px;
+  color: #767676;
   flex-shrink: 0;
+  align-self: flex-start;
 }
 .accordion-box__list {
   border-top: 1px solid #E1E1E1;
