@@ -29,6 +29,16 @@
 	  <a href="#secAttachedFile">Attached File</a>
 	  <a href="#secBadge">Badge</a>
 	  <a href="#secBottomsheet">Bottomsheet</a>
+	  <a href="#secBsBasic" class="g-nav-sub">— Basic</a>
+	  <a href="#secBsList" class="g-nav-sub">— List</a>
+	  <a href="#secBsFinance" class="g-nav-sub">— Finance</a>
+	  <a href="#secBsKeypad" class="g-nav-sub">— Keypad</a>
+	  <a href="#secBsAccount" class="g-nav-sub">— Account</a>
+	  <a href="#secBsShare" class="g-nav-sub">— Share</a>
+	  <a href="#secBsCS" class="g-nav-sub">— CS</a>
+	  <a href="#secBsOption" class="g-nav-sub">— Option</a>
+	  <a href="#secBsPickerWheel" class="g-nav-sub">— Picker-Wheel</a>
+	  <a href="#secBsPickerCal" class="g-nav-sub">— Picker-Calendar</a>
 	  <a href="#secBullet">Bullet</a>
 	  <a href="#secButton">Button</a>
 	  <a href="#secCalendar">Calendar</a>
@@ -1141,224 +1151,676 @@
   <!-- ===================== BADGE ===================== -->
   <section class="g-section" id="secBadge">
 	<h3 class="g-section-title">Badge</h3>
-	<p class="g-sub-title">Color — Primary / Secondary / Info / Danger / Warning</p>
-	<div class="g-example">
-	  <span class="badge badge--md badge--primary">Primary</span>
-	  <span class="badge badge--md badge--secondary">Secondary</span>
-	  <span class="badge badge--md badge--info">Info</span>
-	  <span class="badge badge--md badge--danger">Danger</span>
-	  <span class="badge badge--md badge--warning">Warning</span>
-	</div>
-	<p class="g-sub-title">With Description</p>
-	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">SMS 만기 안내</span>
-		  <span class="switch__description">만기일 7일 전 SMS로 알림을 보내드립니다</span>
-		</div>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">마케팅 수신 동의</span>
-		  <span class="switch__description">이벤트 및 혜택 정보를 받아보실 수 있습니다</span>
-		</div>
-	  </label>
-	</div>
-	<p class="g-sub-title">Size — sm / md / lg</p>
-	<div class="g-example">
-	  <span class="badge badge--sm badge--primary">SM</span>
-	  <span class="badge badge--md badge--primary">MD</span>
-	  <span class="badge badge--lg badge--primary">LG</span>
-	</div>
-	<p class="g-sub-title">Outline — <code>.badge--outline .badge--{color}</code></p>
-	<div class="g-example">
-	  <span class="badge badge--md badge--outline badge--primary">Primary</span>
-	  <span class="badge badge--md badge--outline badge--info">Info</span>
-	  <span class="badge badge--md badge--outline badge--danger">Danger</span>
-	  <span class="badge badge--md badge--outline badge--secondary">Secondary</span>
-	</div>
-	<p class="g-sub-title">Dot Badge</p>
+	<p class="g-desc">정보나 아이콘 옆에 위치하여 사용자가 중요한 정보나 미처리된 알림을 빠르게 인식할 수 있도록 돕습니다.<br>알림의 수나 개수를 숫자로 보여줍니다.</p>
+	<p class="g-sub-title">Dot — <code>.badge__dot</code></p>
 	<div class="g-example" style="align-items:center">
-	  <span class="badge badge--dot badge--primary"></span>
-	  <span class="badge badge--dot badge--info"></span>
-	  <span class="badge badge--dot badge--danger"></span>
-	  <span class="badge badge--dot badge--warning"></span>
+	  <div class="badge">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+		<span class="badge__dot"></span>
+	  </div>
+	</div>
+	<p class="g-sub-title">Count — <code>.badge__count</code></p>
+	<div class="g-example" style="align-items:center">
+	  <div class="badge">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+		<span class="badge__count">4</span>
+	  </div>
 	</div>
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.badge--sm/md/lg</code></td><td>크기 (16/20/24px)</td></tr>
-	  <tr><td><code>.badge--primary/secondary/info/danger/warning</code></td><td>색상 채움 변형</td></tr>
-	  <tr><td><code>.badge--outline .badge--{color}</code></td><td>테두리만 형태</td></tr>
-	  <tr><td><code>.badge--dot</code></td><td>알림 점 배지 (8px)</td></tr>
+	  <tr><td><code>.badge</code></td><td>아이콘 래퍼 (position: relative)</td></tr>
+	  <tr><td><code>.badge__dot</code></td><td>알림 점 (8px, 빨간색, 우상단)</td></tr>
+	  <tr><td><code>.badge__count</code></td><td>숫자 카운트 배지 (파란색, 우상단)</td></tr>
 	</table>
   </section>
 
   <!-- ===================== BOTTOMSHEET ===================== -->
   <section class="g-section" id="secBottomsheet">
 	<h3 class="g-section-title">Bottomsheet</h3>
-	<p class="g-sub-title">Demo</p>
-	<div class="g-example">
-	  <button class="btn btn--md btn--primary" data-bs-open="bs-default">바텀시트 열기</button>
-	</div>
-	<p class="g-sub-title">Preview — <code>.bottomsheet__container</code></p>
-	<div class="g-example">
-	  <div class="bs-preview">
-		<div class="bs-handle"></div>
-		<div class="bs-title">바텀시트 제목</div>
-		<div class="bs-body">바텀시트 내용입니다. 필요한 정보를 여기에 입력합니다.</div>
-		<div style="margin-top:16px;display:flex;gap:8px">
-		  <button class="btn btn--md btn--secondary btn--full">취소</button>
-		  <button class="btn btn--md btn--primary btn--full">확인</button>
-		</div>
-	  </div>
-	</div>
+	<p class="g-desc">화면 하단에서 슬라이드 업으로 등장하는 오버레이 패널입니다. 배경을 터치하거나 × 버튼으로 닫힙니다.</p>
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
 	  <tr><td><code>.bottomsheet</code></td><td>고정 포지션 래퍼 (fixed inset)</td></tr>
 	  <tr><td><code>.bottomsheet--open</code></td><td>열림 상태 (backdrop + slide-up)</td></tr>
-	  <tr><td><code>.bottomsheet__handle</code></td><td>상단 드래그 핸들</td></tr>
+	  <tr><td><code>.bottomsheet__backdrop</code></td><td>반투명 딤 레이어 (클릭 시 닫힘)</td></tr>
+	  <tr><td><code>.bottomsheet__handle</code></td><td>상단 드래그 핸들 영역</td></tr>
 	  <tr><td><code>.bottomsheet__container</code></td><td>시트 본체 (border-radius top)</td></tr>
+	  <tr><td><code>.bottomsheet__header</code></td><td>타이틀 + 닫기 버튼 영역</td></tr>
+	  <tr><td><code>.bottomsheet__body</code></td><td>스크롤 가능한 콘텐츠 영역</td></tr>
 	  <tr><td><code>.bottomsheet__footer</code></td><td>하단 고정 버튼 영역</td></tr>
 	</table>
+  </section>
+
+  <!-- ===================== BS — BASIC ===================== -->
+  <section class="g-section" id="secBsBasic">
+	<h3 class="g-section-title">Bottomsheet — Basic</h3>
+	<p class="g-sub-title">With-Header</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-basic-header">With-Header 열기</button>
+	</div>
+	<p class="g-sub-title">None-Header</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--secondary" data-bs-open="bs-basic-none">None-Header 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — LIST ===================== -->
+  <section class="g-section" id="secBsList">
+	<h3 class="g-section-title">Bottomsheet — List</h3>
+	<p class="g-sub-title">Single</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-list-single">Single 열기</button>
+	</div>
+	<p class="g-sub-title">Multi</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-list-multi">Multi 열기</button>
+	</div>
+	<p class="g-sub-title">Currency</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-list-currency">Currency 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — FINANCE ===================== -->
+  <section class="g-section" id="secBsFinance">
+	<h3 class="g-section-title">Bottomsheet — Finance</h3>
+	<p class="g-sub-title">Bank</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-finance-bank">Bank 열기</button>
+	</div>
+	<p class="g-sub-title">Stock</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-finance-stock">Stock 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — KEYPAD ===================== -->
+  <section class="g-section" id="secBsKeypad">
+	<h3 class="g-section-title">Bottomsheet — Keypad</h3>
+	<p class="g-sub-title">Basic</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-keypad-basic">Basic 열기</button>
+	</div>
+	<p class="g-sub-title">Point</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-keypad-point">Point 열기</button>
+	</div>
+	<p class="g-sub-title">Price</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-keypad-price">Price 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — ACCOUNT ===================== -->
+  <section class="g-section" id="secBsAccount">
+	<h3 class="g-section-title">Bottomsheet — Account</h3>
+	<p class="g-sub-title">Other</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-account-other">Other 열기</button>
+	</div>
+	<p class="g-sub-title">NH</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-account-nh">NH 열기</button>
+	</div>
+	<p class="g-sub-title">NH-No-Data</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-account-nh-nodata">NH-No-Data 열기</button>
+	</div>
+	<p class="g-sub-title">Accordion</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-account-accordion">Accordion 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — SHARE ===================== -->
+  <section class="g-section" id="secBsShare">
+	<h3 class="g-section-title">Bottomsheet — Share</h3>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-share">Share 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — CS ===================== -->
+  <section class="g-section" id="secBsCS">
+	<h3 class="g-section-title">Bottomsheet — CS</h3>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-cs">CS 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — OPTION ===================== -->
+  <section class="g-section" id="secBsOption">
+	<h3 class="g-section-title">Bottomsheet — Option</h3>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-option">Option 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — PICKER WHEEL ===================== -->
+  <section class="g-section" id="secBsPickerWheel">
+	<h3 class="g-section-title">Bottomsheet — Picker-Wheel</h3>
+	<p class="g-sub-title">Year-Month-Day</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-pw-ymd">Year-Month-Day 열기</button>
+	</div>
+	<p class="g-sub-title">Day</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-pw-day">Day 열기</button>
+	</div>
+	<p class="g-sub-title">Hour-Minute</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-pw-hm">Hour-Minute 열기</button>
+	</div>
+	<p class="g-sub-title">Period</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-pw-period">Period 열기</button>
+	</div>
+  </section>
+
+  <!-- ===================== BS — PICKER CALENDAR ===================== -->
+  <section class="g-section" id="secBsPickerCal">
+	<h3 class="g-section-title">Bottomsheet — Picker-Calendar</h3>
+	<p class="g-sub-title">Year-Month-Day</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-pc-ymd">Year-Month-Day 열기</button>
+	</div>
+	<p class="g-sub-title">Month-Day</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-pc-md">Month-Day 열기</button>
+	</div>
+	<p class="g-sub-title">Year-Month</p>
+	<div class="g-example">
+	  <button class="btn btn--md btn--primary" data-bs-open="bs-pc-ym">Year-Month 열기</button>
+	</div>
   </section>
 
   <!-- ===================== BULLET ===================== -->
   <section class="g-section" id="secBullet">
 	<h3 class="g-section-title">Bullet</h3>
-	<p class="g-sub-title">Dot</p>
+	<p class="g-desc">Page에서 항목 구분이 필요한 텍스트에 사용합니다.</p>
+
+	<p class="g-sub-title">Body</p>
 	<div class="g-example col">
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--dot"></span>NH농협 계좌를 보유한 개인 고객</div>
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--dot"></span>만 14세 이상 내국인</div>
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--dot"></span>기본 수수료 무료</div>
+	  <ul class="bullet bullet--body">
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>NH농협 계좌를 보유한 개인 고객</span>
+		</li>
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>만 14세 이상 내국인
+			<ul class="bullet__depth2">
+			  <li class="bullet__item">
+				<span class="bullet__marker bullet__marker--dash"></span>
+				<span>단, 미성년자의 경우 법정대리인 동의 필요</span>
+			  </li>
+			  <li class="bullet__item">
+				<span class="bullet__marker bullet__marker--dash"></span>
+				<span>외국인 등록증 보유 외국인 포함</span>
+			  </li>
+			</ul>
+		  </span>
+		</li>
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>기본 수수료 무료</span>
+		</li>
+	  </ul>
 	</div>
-	<p class="g-sub-title">Dash</p>
+
+	<p class="g-sub-title">Caption</p>
 	<div class="g-example col">
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--dash"></span>타행 이체 수수료 면제</div>
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--dash"></span>모바일 뱅킹 전용 금리 우대</div>
+	  <ul class="bullet bullet--caption">
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>타행 이체 수수료 면제</span>
+		</li>
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>모바일 뱅킹 전용 금리 우대</span>
+		</li>
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>이벤트 기간 내 가입 고객 한정</span>
+		</li>
+	  </ul>
 	</div>
-	<p class="g-sub-title">Numbered</p>
+
+	<p class="g-sub-title">Notice</p>
 	<div class="g-example col">
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--number">1.</span>신청서 작성 및 제출</div>
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--number">2.</span>본인 인증 진행</div>
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--number">3.</span>계좌 개설 완료</div>
+	  <ul class="bullet bullet--notice">
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>본 상품은 예금자 보호 대상입니다</span>
+		</li>
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>금리는 가입 시점에 따라 변동될 수 있습니다
+			<ul class="bullet__depth2">
+			  <li class="bullet__item">
+				<span class="bullet__marker bullet__marker--dash"></span>
+				<span>우대금리 조건 충족 시 최대 연 0.5% 추가</span>
+			  </li>
+			  <li class="bullet__item">
+				<span class="bullet__marker bullet__marker--dash"></span>
+				<span>만기 후 이자는 보통예금 금리 적용</span>
+			  </li>
+			</ul>
+		  </span>
+		</li>
+		<li class="bullet__item">
+		  <span class="bullet__marker bullet__marker--dot"></span>
+		  <span>중도해지 시 약정 이율의 50% 적용</span>
+		</li>
+	  </ul>
 	</div>
-	<p class="g-sub-title">Icon</p>
-	<div class="g-example col">
-	  <div class="bullet__item">
-		<span class="bullet__marker bullet__marker--icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20,6 9,17 4,12"/></svg></span>
-		신청이 완료되었습니다
-	  </div>
-	  <div class="bullet__item">
-		<span class="bullet__marker bullet__marker--icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20,6 9,17 4,12"/></svg></span>
-		서류가 확인되었습니다
-	  </div>
-	</div>
-	<p class="g-sub-title">Secondary (하위 레벨)</p>
-	<div class="g-example col">
-	  <div class="bullet__item"><span class="bullet__marker bullet__marker--dot"></span>메인 항목</div>
-	  <div class="bullet--secondary">
-		<div class="bullet__item"><span class="bullet__marker bullet__marker--dot" style="background:var(--color-text-tertiary)"></span>서브 항목 1</div>
-		<div class="bullet__item"><span class="bullet__marker bullet__marker--dot" style="background:var(--color-text-tertiary)"></span>서브 항목 2</div>
-	  </div>
-	</div>
+
 	<table class="g-table">
-	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.bullet__marker--dot</code></td><td>점 마커 (4×4px)</td></tr>
-	  <tr><td><code>.bullet__marker--dash</code></td><td>대시 마커 (8×1px)</td></tr>
-	  <tr><td><code>.bullet__marker--number</code></td><td>숫자 마커</td></tr>
-	  <tr><td><code>.bullet__marker--icon</code></td><td>아이콘 마커</td></tr>
-	  <tr><td><code>.bullet--secondary</code></td><td>하위 레벨 (들여쓰기)</td></tr>
+	  <tr><th>클래스</th><th>Font Size</th><th>Color</th><th>설명</th></tr>
+	  <tr><td><code>.bullet--body</code></td><td>15px</td><td>#505050</td><td>본문 영역 항목 나열</td></tr>
+	  <tr><td><code>.bullet--caption</code></td><td>13px</td><td>#767676</td><td>보조 설명, 캡션 영역</td></tr>
+	  <tr><td><code>.bullet--notice</code></td><td>14px</td><td>#505050</td><td>유의사항, 안내 영역</td></tr>
+	  <tr><td><code>.bullet__depth2</code></td><td>-</td><td>-</td><td>2depth 들여쓰기 (dash 마커)</td></tr>
 	</table>
   </section>
 
   <!-- ===================== BUTTON ===================== -->
   <section class="g-section" id="secButton">
 	<h3 class="g-section-title">Button</h3>
-	<p class="g-sub-title">Type — Primary / Secondary / Tertiary</p>
+
+	<!-- Primary -->
+	<p class="g-sub-title">Primary — <code>.btn.btn--primary</code></p>
+	<p class="g-desc">가장 중요한 작업을 실행할 경우 사용되며, 현재 화면에서 사용자 행동을 유도하기 위한 CTA 버튼으로 활용합니다.</p>
+
+	<p class="g-sub-title">lg</p>
 	<div class="g-example">
-	  <button class="btn btn--md btn--primary">Primary</button>
-	  <button class="btn btn--md btn--secondary">Secondary</button>
-	  <button class="btn btn--md btn--tertiary">Tertiary</button>
-	  <button class="btn btn--md btn--primary" disabled>Disabled</button>
-	  <button class="btn btn--md btn--secondary" disabled>Disabled</button>
+	  <button class="btn btn--primary btn--lg">버튼명</button>
+	  <button class="btn btn--primary btn--lg is-pressed">버튼명</button>
+	  <button class="btn btn--primary btn--lg" disabled>버튼명</button>
 	</div>
-	<p class="g-sub-title">Size — sm / md / lg / xl</p>
+
+	<p class="g-sub-title">md</p>
 	<div class="g-example">
-	  <button class="btn btn--sm btn--primary">SM</button>
-	  <button class="btn btn--md btn--primary">MD</button>
-	  <button class="btn btn--lg btn--primary">LG</button>
-	  <button class="btn btn--xl btn--primary">XL</button>
+	  <button class="btn btn--primary btn--md">버튼명</button>
+	  <button class="btn btn--primary btn--md is-pressed">버튼명</button>
+	  <button class="btn btn--primary btn--md" disabled>버튼명</button>
 	</div>
-	<p class="g-sub-title">With Icon</p>
+
+	<p class="g-sub-title">rg</p>
 	<div class="g-example">
-	  <button class="btn btn--md btn--primary">
-		<svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>추가
-	  </button>
-	  <button class="btn btn--md btn--secondary">
-		다운로드<svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-	  </button>
-	  <button class="btn btn--md btn--tertiary">
-		<svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>검색
-	  </button>
+	  <button class="btn btn--primary btn--rg">버튼명</button>
+	  <button class="btn btn--primary btn--rg is-pressed">버튼명</button>
+	  <button class="btn btn--primary btn--rg" disabled>버튼명</button>
 	</div>
-	<p class="g-sub-title">Icon Only — <code>.btn--icon-only</code></p>
+
+	<p class="g-sub-title">sm</p>
 	<div class="g-example">
-	  <button class="btn btn--sm btn--tertiary btn--icon-only" title="편집">
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+	  <button class="btn btn--primary btn--sm">버튼</button>
+	  <button class="btn btn--primary btn--sm is-pressed">버튼</button>
+	  <button class="btn btn--primary btn--sm" disabled>버튼</button>
+	</div>
+
+	<table class="g-table">
+	  <tr><th>Size</th><th>Height</th><th>Radius</th><th>Font</th><th>BG Default / Pressed / Disabled</th></tr>
+	  <tr><td><code>lg</code></td><td>56px</td><td>12</td><td>18 / Medium</td><td>#19973C / #0D5722 / #F0F0F0</td></tr>
+	  <tr><td><code>md</code></td><td>52px</td><td>10</td><td>16 / Medium</td><td>#19973C / #0D5722 / #F0F0F0</td></tr>
+	  <tr><td><code>rg</code></td><td>48px</td><td>10</td><td>16 / Medium</td><td>#19973C / #0D5722 / #F0F0F0</td></tr>
+	  <tr><td><code>sm</code></td><td>44px</td><td>8</td><td>14 / Medium</td><td>#19973C / #0D5722 / #F0F0F0</td></tr>
+	</table>
+
+	<!-- Secondary -->
+	<p class="g-sub-title">Secondary — <code>.btn.btn--secondary</code></p>
+	<p class="g-desc">Primary 버튼보다 시각적으로 덜 중요한 작업을 실행할 때 사용합니다.</p>
+
+	<p class="g-sub-title">md</p>
+	<div class="g-example">
+	  <button class="btn btn--secondary btn--md">버튼명</button>
+	  <button class="btn btn--secondary btn--md is-pressed">버튼명</button>
+	  <button class="btn btn--secondary btn--md" disabled>버튼명</button>
+	</div>
+
+	<p class="g-sub-title">rg</p>
+	<div class="g-example">
+	  <button class="btn btn--secondary btn--rg">버튼명</button>
+	  <button class="btn btn--secondary btn--rg is-pressed">버튼명</button>
+	  <button class="btn btn--secondary btn--rg" disabled>버튼명</button>
+	</div>
+
+	<p class="g-sub-title">sm</p>
+	<div class="g-example">
+	  <button class="btn btn--secondary btn--sm">버튼</button>
+	  <button class="btn btn--secondary btn--sm is-pressed">버튼</button>
+	  <button class="btn btn--secondary btn--sm" disabled>버튼</button>
+	</div>
+
+	<p class="g-sub-title">xs</p>
+	<div class="g-example">
+	  <button class="btn btn--secondary btn--xs">버튼</button>
+	  <button class="btn btn--secondary btn--xs is-pressed">버튼</button>
+	  <button class="btn btn--secondary btn--xs" disabled>버튼</button>
+	</div>
+
+	<table class="g-table">
+	  <tr><th>Size</th><th>Height</th><th>Radius</th><th>Font</th><th>Border Default / Pressed / Disabled</th></tr>
+	  <tr><td><code>md</code></td><td>52px</td><td>10</td><td>16 / Medium</td><td>#19973C / #0D5722 / #E1E1E1</td></tr>
+	  <tr><td><code>rg</code></td><td>48px</td><td>10</td><td>15 / Medium</td><td>#19973C / #0D5722 / #E1E1E1</td></tr>
+	  <tr><td><code>sm</code></td><td>44px</td><td>8</td><td>14 / Medium</td><td>#19973C / #0D5722 / #E1E1E1</td></tr>
+	  <tr><td><code>xs</code></td><td>40px</td><td>8</td><td>13 / Regular</td><td>#19973C / #0D5722 / #E1E1E1</td></tr>
+	</table>
+
+	<!-- Tertiary -->
+	<p class="g-sub-title">Tertiary — <code>.btn.btn--tertiary</code></p>
+	<p class="g-desc">Primary, Secondary 보다 덜 중요한 작업을 실행할 때 사용합니다.</p>
+
+	<p class="g-sub-title">lg</p>
+	<div class="g-example">
+	  <button class="btn btn--tertiary btn--lg">버튼명</button>
+	  <button class="btn btn--tertiary btn--lg is-pressed">버튼명</button>
+	  <button class="btn btn--tertiary btn--lg" disabled>버튼명</button>
+	</div>
+
+	<p class="g-sub-title">md</p>
+	<div class="g-example">
+	  <button class="btn btn--tertiary btn--md">버튼명</button>
+	  <button class="btn btn--tertiary btn--md is-pressed">버튼명</button>
+	  <button class="btn btn--tertiary btn--md" disabled>버튼명</button>
+	</div>
+
+	<p class="g-sub-title">rg</p>
+	<div class="g-example">
+	  <button class="btn btn--tertiary btn--rg">버튼명</button>
+	  <button class="btn btn--tertiary btn--rg is-pressed">버튼명</button>
+	  <button class="btn btn--tertiary btn--rg" disabled>버튼명</button>
+	</div>
+
+	<p class="g-sub-title">sm</p>
+	<div class="g-example">
+	  <button class="btn btn--tertiary btn--sm">버튼</button>
+	  <button class="btn btn--tertiary btn--sm is-pressed">버튼</button>
+	  <button class="btn btn--tertiary btn--sm" disabled>버튼</button>
+	</div>
+
+	<p class="g-sub-title">xs</p>
+	<div class="g-example">
+	  <button class="btn btn--tertiary btn--xs">버튼</button>
+	  <button class="btn btn--tertiary btn--xs is-pressed">버튼</button>
+	  <button class="btn btn--tertiary btn--xs" disabled>버튼</button>
+	</div>
+
+	<table class="g-table">
+	  <tr><th>Size</th><th>Height</th><th>Radius</th><th>Font</th><th>Border Default / Pressed / Disabled</th></tr>
+	  <tr><td><code>lg</code></td><td>56px</td><td>12</td><td>18 / Medium</td><td>#D3D3D3 / #D3D3D3 / #E1E1E1</td></tr>
+	  <tr><td><code>md</code></td><td>52px</td><td>10</td><td>16 / Medium</td><td>#D3D3D3 / #D3D3D3 / #E1E1E1</td></tr>
+	  <tr><td><code>rg</code></td><td>48px</td><td>10</td><td>15 / Medium</td><td>#D3D3D3 / #D3D3D3 / #E1E1E1</td></tr>
+	  <tr><td><code>sm</code></td><td>44px</td><td>8</td><td>14 / Medium</td><td>#D3D3D3 / #D3D3D3 / #E1E1E1</td></tr>
+	  <tr><td><code>xs</code></td><td>40px</td><td>8</td><td>13 / Regular</td><td>#D3D3D3 / #D3D3D3 / #E1E1E1</td></tr>
+	</table>
+
+	<!-- Text -->
+	<p class="g-sub-title">Text — <code>.btn.btn--text</code></p>
+	<p class="g-desc">화면에서 가장 주목도가 낮은 작업으로 페이지 이동, 비동작적 작업, 또는 추가적인 선택을 제공할 때 적용합니다.</p>
+
+	<p class="g-sub-title">Icon</p>
+	<div class="g-example">
+	  <button class="btn btn--text">
+		<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><polyline points="10,4 6,8 10,12"/></svg>버튼
 	  </button>
-	  <button class="btn btn--md btn--tertiary btn--icon-only" title="삭제">
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3,6 5,6 21,6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+	  <button class="btn btn--text">
+		버튼<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><polyline points="6,4 10,8 6,12"/></svg>
 	  </button>
-	  <button class="btn btn--lg btn--primary btn--icon-only" title="추가">
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+	  <button class="btn btn--text" disabled>
+		<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><polyline points="10,4 6,8 10,12"/></svg>버튼
 	  </button>
 	</div>
-	<p class="g-sub-title">Full Width — <code>.btn--full</code></p>
-	<div class="g-example block" style="max-width:320px">
-	  <button class="btn btn--md btn--primary btn--full">전체 너비 버튼</button>
+
+	<p class="g-sub-title">Link</p>
+	<div class="g-example">
+	  <button class="btn btn--link">버튼</button>
+	  <button class="btn btn--link" disabled>버튼</button>
+	</div>
+
+	<table class="g-table">
+	  <tr><th>클래스</th><th>Font</th><th>Color</th><th>설명</th></tr>
+	  <tr><td><code>.btn--text</code></td><td>14 / Medium</td><td>#505050</td><td>아이콘과 텍스트 조합, 최소 두 글자 이상</td></tr>
+	  <tr><td><code>.btn--link</code></td><td>14 / Medium</td><td>#505050</td><td>텍스트 언더라인</td></tr>
+	</table>
+
+	<!-- Icon -->
+	<p class="g-sub-title">Icon — <code>.btn-icon</code></p>
+	<p class="g-desc">특정 기능을 나타내는 작은 이미지 요소와 레이블을 조합하여 사용합니다.</p>
+	<div class="g-example">
+	  <button class="btn-icon">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+	  </button>
+	  <button class="btn-icon is-pressed">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+	  </button>
+	  <button class="btn-icon" disabled>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+	  </button>
 	</div>
 	<table class="g-table">
+	  <tr><th>속성</th><th>값</th></tr>
+	  <tr><td>Size</td><td>56 × 56px</td></tr>
+	  <tr><td>Radius</td><td>24px</td></tr>
+	  <tr><td>Fill</td><td>#FFFFFF</td></tr>
+	  <tr><td>Border</td><td>#E1E1E1</td></tr>
+	</table>
+
+	<!-- CTA -->
+	<p class="g-sub-title">CTA — <code>.btn-cta</code></p>
+	<p class="g-desc">Page 또는 화면 하단에 고정하여 사용합니다.</p>
+
+	<p class="g-sub-title">Basic — Full</p>
+	<div class="g-example block" style="max-width:360px">
+	  <div class="btn-cta btn-cta--basic">
+		<button class="btn btn--primary btn--lg btn--full btn-cta__item">버튼명</button>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Basic — 5:5</p>
+	<div class="g-example block" style="max-width:360px">
+	  <div class="btn-cta btn-cta--basic">
+		<button class="btn btn--tertiary btn--lg btn--full btn-cta__item">버튼명</button>
+		<button class="btn btn--primary btn--lg btn--full btn-cta__item">버튼명</button>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Basic — 3:7</p>
+	<div class="g-example block" style="max-width:360px">
+	  <div class="btn-cta btn-cta--basic">
+		<button class="btn btn--tertiary btn--lg btn--full btn-cta__item btn-cta__item--3">버튼명</button>
+		<button class="btn btn--primary btn--lg btn--full btn-cta__item btn-cta__item--7">버튼명</button>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Popup — Full</p>
+	<div class="g-example block" style="max-width:360px">
+	  <div class="btn-cta btn-cta--popup">
+		<button class="btn btn--secondary btn--lg btn--full btn-cta__item">버튼명</button>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Popup — 5:5</p>
+	<div class="g-example block" style="max-width:360px">
+	  <div class="btn-cta btn-cta--popup">
+		<button class="btn btn--tertiary btn--lg btn--full btn-cta__item">버튼명버튼명</button>
+		<button class="btn btn--primary btn--lg btn--full btn-cta__item">버튼명</button>
+	  </div>
+	</div>
+
+	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.btn--primary/secondary/tertiary</code></td><td>색상 변형</td></tr>
-	  <tr><td><code>.btn--sm/md/lg/xl</code></td><td>크기 (28/36/44/52px)</td></tr>
-	  <tr><td><code>.btn--full</code></td><td>width 100%</td></tr>
-	  <tr><td><code>.btn__icon</code></td><td>아이콘 슬롯</td></tr>
-	  <tr><td><code>.btn--icon-only</code></td><td>정사각형 아이콘 전용 버튼</td></tr>
+	  <tr><td><code>.btn-cta--basic</code></td><td>Page / Full Popup 하단 고정, padding-bottom: 32px</td></tr>
+	  <tr><td><code>.btn-cta--popup</code></td><td>Bottomsheet / Popup 하단 고정, padding-bottom: 20px</td></tr>
+	  <tr><td><code>.btn-cta__item--3 / --7</code></td><td>3:7 비율 분할</td></tr>
 	</table>
   </section>
 
   <!-- ===================== CALENDAR ===================== -->
   <section class="g-section" id="secCalendar">
 	<h3 class="g-section-title">Calendar</h3>
-	<p class="g-sub-title">Preview — <code>.calendar</code></p>
-	<div class="g-example">
-	  <div class="cal-preview" style="display:inline-block">
-		<div class="cal-header">
-		  <button style="background:none;border:none;cursor:pointer;color:var(--color-text-secondary)">‹</button>
-		  <span class="cal-title">2025년 6월</span>
-		  <button style="background:none;border:none;cursor:pointer;color:var(--color-text-secondary)">›</button>
+
+	<!-- ── Day ── -->
+	<p class="g-sub-title">Day — <code>.calendar-day</code></p>
+	<p class="g-desc">연, 월, 일을 선택하는 경우 사용합니다.</p>
+
+	<p class="g-sub-title">Inactive</p>
+	<div class="g-example col">
+	  <div class="calendar-day" style="max-width:428px">
+		<span class="calendar-day__label">레이블</span>
+		<div class="calendar-day__field">
+		  <span class="calendar-day__text">선택</span>
+		  <svg class="calendar-day__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
 		</div>
-		<div class="cal-grid">
-		  <div class="cal-wd" style="color:var(--primitive-red-500)">일</div><div class="cal-wd">월</div><div class="cal-wd">화</div><div class="cal-wd">수</div><div class="cal-wd">목</div><div class="cal-wd">금</div><div class="cal-wd" style="color:var(--primitive-blue-500)">토</div>
-		  <div class="cal-day other">26</div><div class="cal-day other">27</div><div class="cal-day other">28</div><div class="cal-day other">29</div><div class="cal-day other">30</div><div class="cal-day other">31</div><div class="cal-day">1</div>
-		  <div class="cal-day" style="color:var(--primitive-red-500)">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day today">5</div><div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day" style="color:var(--primitive-blue-500)">8</div>
-		  <div class="cal-day" style="color:var(--primitive-red-500)">9</div><div class="cal-day">10</div><div class="cal-day selected">11</div><div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day" style="color:var(--primitive-blue-500)">15</div>
-		  <div class="cal-day" style="color:var(--primitive-red-500)">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div><div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day" style="color:var(--primitive-blue-500)">22</div>
-		  <div class="cal-day" style="color:var(--primitive-red-500)">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day" style="color:var(--primitive-blue-500)">29</div>
-		  <div class="cal-day" style="color:var(--primitive-red-500)">30</div>
-		</div>
+		<span class="calendar-day__message">안내 문구 입력</span>
 	  </div>
 	</div>
+
+	<p class="g-sub-title">Filled</p>
+	<div class="g-example col">
+	  <div class="calendar-day" style="max-width:428px">
+		<span class="calendar-day__label">레이블</span>
+		<div class="calendar-day__field">
+		  <span class="calendar-day__text is-filled">2024.01.01</span>
+		  <svg class="calendar-day__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-day__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Error</p>
+	<div class="g-example col">
+	  <div class="calendar-day calendar-day--error" style="max-width:428px">
+		<span class="calendar-day__label">레이블</span>
+		<div class="calendar-day__field">
+		  <span class="calendar-day__text is-filled">2024.01.01</span>
+		  <svg class="calendar-day__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-day__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Readonly</p>
+	<div class="g-example col">
+	  <div class="calendar-day calendar-day--readonly" style="max-width:428px">
+		<span class="calendar-day__label">레이블</span>
+		<div class="calendar-day__field">
+		  <span class="calendar-day__text is-filled">2024.01.01</span>
+		  <svg class="calendar-day__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-day__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Disabled</p>
+	<div class="g-example col">
+	  <div class="calendar-day calendar-day--disabled" style="max-width:428px">
+		<span class="calendar-day__label">레이블</span>
+		<div class="calendar-day__field">
+		  <span class="calendar-day__text is-filled">2024.01.01</span>
+		  <svg class="calendar-day__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-day__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.cal-day.today</code></td><td>오늘 날짜 (초록 텍스트)</td></tr>
-	  <tr><td><code>.cal-day.selected</code></td><td>선택된 날짜 (초록 채움)</td></tr>
-	  <tr><td><code>.cal-day.other</code></td><td>다른 달 날짜 (연한 색)</td></tr>
-	  <tr><td><code>.cal-day--in-range</code></td><td>기간 선택 중간 구간</td></tr>
+	  <tr><td><code>.calendar-day</code></td><td>단일 날짜 선택 입력 필드</td></tr>
+	  <tr><td><code>.calendar-day__text.is-filled</code></td><td>날짜가 선택된 상태 (진한 텍스트)</td></tr>
+	  <tr><td><code>.calendar-day--error</code></td><td>오류 상태 (빨간 테두리 + 메세지)</td></tr>
+	  <tr><td><code>.calendar-day--readonly</code></td><td>읽기 전용 (회색 배경)</td></tr>
+	  <tr><td><code>.calendar-day--disabled</code></td><td>비활성 (회색 배경, 클릭 불가)</td></tr>
+	</table>
+
+	<!-- ── Period ── -->
+	<p class="g-sub-title">Period — <code>.calendar-period</code></p>
+	<p class="g-desc">기간을 선택하는 경우 사용합니다.</p>
+
+	<p class="g-sub-title">Inactive</p>
+	<div class="g-example col">
+	  <div class="calendar-period" style="max-width:428px">
+		<span class="calendar-period__label">레이블</span>
+		<div class="calendar-period__field">
+		  <span class="calendar-period__text">선택</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		  <span class="calendar-period__sep">~</span>
+		  <span class="calendar-period__text">선택</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-period__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Filled</p>
+	<div class="g-example col">
+	  <div class="calendar-period" style="max-width:428px">
+		<span class="calendar-period__label">레이블</span>
+		<div class="calendar-period__field">
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		  <span class="calendar-period__sep">~</span>
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-period__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Error</p>
+	<div class="g-example col">
+	  <div class="calendar-period calendar-period--error" style="max-width:428px">
+		<span class="calendar-period__label">레이블</span>
+		<div class="calendar-period__field">
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		  <span class="calendar-period__sep">~</span>
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-period__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Readonly</p>
+	<div class="g-example col">
+	  <div class="calendar-period calendar-period--readonly" style="max-width:428px">
+		<span class="calendar-period__label">레이블</span>
+		<div class="calendar-period__field">
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		  <span class="calendar-period__sep">~</span>
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-period__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<p class="g-sub-title">Disabled</p>
+	<div class="g-example col">
+	  <div class="calendar-period calendar-period--disabled" style="max-width:428px">
+		<span class="calendar-period__label">레이블</span>
+		<div class="calendar-period__field">
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		  <span class="calendar-period__sep">~</span>
+		  <span class="calendar-period__text is-filled">2024.01.01</span>
+		  <svg class="calendar-period__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v3M11 1v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+		</div>
+		<span class="calendar-period__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<table class="g-table">
+	  <tr><th>클래스</th><th>설명</th></tr>
+	  <tr><td><code>.calendar-period</code></td><td>기간 선택 입력 필드 (start ~ end)</td></tr>
+	  <tr><td><code>.calendar-period__text.is-filled</code></td><td>날짜가 선택된 상태</td></tr>
+	  <tr><td><code>.calendar-period__sep</code></td><td>구분자 (~)</td></tr>
+	  <tr><td><code>.calendar-period--error</code></td><td>오류 상태</td></tr>
+	  <tr><td><code>.calendar-period--readonly</code></td><td>읽기 전용</td></tr>
+	  <tr><td><code>.calendar-period--disabled</code></td><td>비활성</td></tr>
 	</table>
   </section>
 
@@ -4331,19 +4793,16 @@
 
     <!-- Basic Toast -->
     <p class="g-sub-title">Basic — <code>.toast</code></p>
-    <p style="font-size:13px;color:#767676;margin:0 0 12px">BG #111111 / Radius 12 / Shadow y3 blur6 5% / 14/Regular/#FFFFFF / Height 48px</p>
+    <p style="font-size:13px;color:#767676;margin:0 0 12px">BG #111111 / Radius 12 /
     <div class="g-example block" style="background:#F3F5F8;padding:40px 24px;display:flex;gap:24px;flex-wrap:wrap;align-items:center">
-      <!-- 기본 (텍스트만) -->
       <div class="toast" style="max-width:240px">
         <span class="toast__text">텍스트를 입력해 주세요.</span>
       </div>
-      <!-- Close 버튼 포함 -->
       <div class="toast" style="max-width:280px">
         <span class="toast__text">텍스트를 입력해 주세요.</span>
         <button class="toast__close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
     </div>
-
     <table class="g-table">
       <tr><th>속성</th><th>값</th></tr>
       <tr><td>Background</td><td>#111111 / Radius 12</td></tr>
@@ -4355,17 +4814,13 @@
     </table>
   </section>
 
-    <section class="g-section" id="secTooltip">
+  <section class="g-section" id="secTooltip">
     <h3 class="g-section-title">Tooltip</h3>
     <p style="font-size:14px;color:#767676;margin:0 0 4px">특정 콘텐츠 요소를 선택하면 노출되고, 닫기 기능의 [X] 아이콘 버튼을 함께 제공해야 합니다.</p>
     <p style="font-size:14px;color:#767676;margin:0 0 24px">트리거 요소 가까이에 위치하여 사용자의 작업을 돕도록 설계합니다.</p>
-
-    <!-- Basic Tooltip Card -->
     <p class="g-sub-title">Basic — <code>.tooltip-card</code></p>
     <p style="font-size:13px;color:#767676;margin:0 0 12px">Radius 16 / BG #FFFFFF / Border #F0F0F0 / Shadow y3 blur6 5% / Padding 20px</p>
     <div class="g-example block" style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
-
-      <!-- 기본 (타이틀 + 서브타이틀 + 본문 + 리스트) -->
       <div class="tooltip-card" style="max-width:260px">
         <div class="tooltip-card__header">
           <span class="tooltip-card__title">타이틀</span>
@@ -4378,8 +4833,6 @@
           <li class="tooltip-card__item">리스트 내용을 입력해 주세요.</li>
         </ul>
       </div>
-
-      <!-- 컴팩트 (타이틀 + 서브타이틀 + 본문 + 리스트 3개) -->
       <div class="tooltip-card" style="max-width:260px">
         <div class="tooltip-card__header">
           <span class="tooltip-card__title">타이틀</span>
@@ -4393,9 +4846,7 @@
           <li class="tooltip-card__item">리스트 내용을 입력해 주세요.</li>
         </ul>
       </div>
-
     </div>
-
     <table class="g-table">
       <tr><th>클래스</th><th>설명</th></tr>
       <tr><td><code>.tooltip-card</code></td><td>카드 래퍼 · Radius 16 / Border #F0F0F0 / Shadow / Padding 20px</td></tr>
@@ -4407,6 +4858,744 @@
       <tr><td><code>.tooltip-card__item</code></td><td>14 / Regular / #505050</td></tr>
     </table>
   </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- BOTTOMSHEET OVERLAYS                                                   -->
+  <!-- ===================================================================== -->
+
+  <!-- BS: Basic — With-Header -->
+  <div class="bottomsheet" id="bs-basic-header">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">타이틀</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <p style="color:var(--color-text-secondary);font-size:15px">텍스트를 입력해 주세요.</p>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>버튼명</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Basic — None-Header -->
+  <div class="bottomsheet" id="bs-basic-none">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__body">
+        <p style="font-size:20px;font-weight:600;color:var(--color-text-primary);margin-bottom:8px">타이틀</p>
+        <p style="color:var(--color-text-secondary);font-size:15px">텍스트를 입력해 주세요.</p>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>버튼명</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: List — Single -->
+  <div class="bottomsheet" id="bs-list-single">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">타이틀</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body" style="padding:0">
+        <ul style="list-style:none;margin:0;padding:0">
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle);color:var(--color-text-secondary)">항목1</li>
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle);color:var(--color-text-brand);font-weight:600">항목2</li>
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle)">항목3</li>
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle);background:var(--color-bg-subtle)">항목4</li>
+          <li style="padding:16px 24px;font-size:16px">항목5</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: List — Multi -->
+  <div class="bottomsheet" id="bs-list-multi">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">타이틀</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body" style="padding:0">
+        <ul style="list-style:none;margin:0;padding:0">
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle)">항목1</li>
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle);color:var(--color-text-brand);font-weight:600;display:flex;justify-content:space-between">항목2 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></li>
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle)">항목3</li>
+          <li style="padding:16px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle);color:var(--color-text-brand);font-weight:600;display:flex;justify-content:space-between">항목4 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></li>
+          <li style="padding:16px 24px;font-size:16px">항목5</li>
+        </ul>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: List — Currency -->
+  <div class="bottomsheet" id="bs-list-currency">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">통화를 선택해 주세요</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body" style="padding:0">
+        <ul style="list-style:none;margin:0;padding:0">
+          <li style="padding:14px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle)">🇺🇸 USD(미국 달러)</li>
+          <li style="padding:14px 24px;font-size:16px;border-bottom:1px solid var(--color-border-subtle)">🇦🇺 AUD(호주 달러)</li>
+          <li style="padding:14px 24px;font-size:16px">🇨🇳 CNY(중국 위안)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Finance — Bank -->
+  <div class="bottomsheet" id="bs-finance-bank">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">금융기관</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <button class="btn btn--sm btn--secondary" style="flex:1">은행</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">증권사</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px 8px;text-align:center">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px">NH</div>농협</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#0066B3;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px">KB</div>국민</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#EB2030;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px">신한</div>신한</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#0095D9;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px">우리</div>우리</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#F06400;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px">하나</div>하나</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#004B9B;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px">기업</div>기업</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#00AAEF;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:10px">SC제일</div>SC제일</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#F5B400;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:10px">카카오</div>카카오뱅크</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Finance — Stock -->
+  <div class="bottomsheet" id="bs-finance-stock">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">금융기관</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <button class="btn btn--sm btn--outline" style="flex:1">은행</button>
+          <button class="btn btn--sm btn--secondary" style="flex:1">증권사</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px 8px;text-align:center">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px">NH</div>NH투자증권</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#E31C3D;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px">삼성</div>삼성증권</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#EB2030;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px">신한</div>신한투자증권</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px"><div style="width:40px;height:40px;border-radius:50%;background:#F06400;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px">KB</div>KB증권</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Keypad — Basic -->
+  <div class="bottomsheet" id="bs-keypad-basic">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">타이틀</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <p style="color:var(--color-text-tertiary);font-size:14px;margin-bottom:16px">플레이스홀더</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--color-border-subtle);border-radius:8px;overflow:hidden">
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">1</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">2</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">3</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">4</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">5</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">6</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">7</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">8</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">9</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle)">날이</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle)">0</button><button class="btn btn--lg btn--ghost" style="border-radius:0">&#8592;</button>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Keypad — Point -->
+  <div class="bottomsheet" id="bs-keypad-point">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">타이틀</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <p style="color:var(--color-text-tertiary);font-size:14px;margin-bottom:16px">플레이스홀더</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--color-border-subtle);border-radius:8px;overflow:hidden">
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">1</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">2</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">3</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">4</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">5</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">6</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">7</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">8</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">9</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle)">.</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle)">0</button><button class="btn btn--lg btn--ghost" style="border-radius:0">&#8592;</button>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Keypad — Price -->
+  <div class="bottomsheet" id="bs-keypad-price">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">타이틀</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <p style="font-size:28px;font-weight:600;text-align:center;margin-bottom:4px">0원</p>
+        <p style="color:var(--color-text-tertiary);font-size:13px;text-align:center;margin-bottom:12px">이체하실 금액을 입력해 주세요</p>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:16px">
+          <button class="btn btn--sm btn--outline">+천원</button>
+          <button class="btn btn--sm btn--outline">+만원</button>
+          <button class="btn btn--sm btn--outline">+10만원</button>
+          <button class="btn btn--sm btn--outline">+100만원</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--color-border-subtle);border-radius:8px;overflow:hidden">
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">1</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">2</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">3</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">4</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">5</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">6</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">7</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">8</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-bottom:1px solid var(--color-border-subtle)">9</button>
+          <button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle)">00</button><button class="btn btn--lg btn--ghost" style="border-radius:0;border-right:1px solid var(--color-border-subtle)">0</button><button class="btn btn--lg btn--ghost" style="border-radius:0">&#8592;</button>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Account — Other -->
+  <div class="bottomsheet" id="bs-account-other">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">계좌를 선택해 주세요</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body" style="padding:0">
+        <div style="display:flex;gap:8px;padding:12px 24px">
+          <button class="btn btn--sm btn--secondary" style="flex:1">NH농협</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">다른금융</button>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0">
+          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle);display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
+            <div><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#767676">출금가능금액조회 <span style="color:var(--color-text-brand)">&#8250;</span></div></div>
+          </li>
+          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle);display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:50%;background:#F5B400;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">B</div>
+            <div><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
+          </li>
+          <li style="padding:14px 24px;display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:50%;background:#0095D9;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">S</div>
+            <div><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#E24949">조회불가</div></div>
+          </li>
+        </ul>
+        <p style="text-align:center;padding:14px;font-size:14px;color:var(--color-text-brand);border-top:1px solid var(--color-border-subtle)">다른금융 계좌등록 &#8250;</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Account — NH -->
+  <div class="bottomsheet" id="bs-account-nh">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">계좌를 선택해 주세요</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body" style="padding:0">
+        <div style="display:flex;gap:8px;padding:12px 24px">
+          <button class="btn btn--sm btn--secondary" style="flex:1">NH농협</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">다른금융</button>
+        </div>
+        <p style="text-align:right;padding:0 24px 8px;font-size:14px;color:var(--color-text-brand)">직접 입력</p>
+        <ul style="list-style:none;margin:0;padding:0">
+          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle);display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
+            <div><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
+          </li>
+          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle);display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
+            <div><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
+          </li>
+        </ul>
+        <p style="text-align:center;padding:14px;font-size:14px;color:var(--color-text-brand);border-top:1px solid var(--color-border-subtle)">NH농협 계좌등록 &#8250;</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Account — NH-No-Data -->
+  <div class="bottomsheet" id="bs-account-nh-nodata">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">계좌를 선택해 주세요</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;gap:8px;margin-bottom:12px">
+          <button class="btn btn--sm btn--secondary" style="flex:1">NH농협</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">다른금융</button>
+        </div>
+        <p style="text-align:right;font-size:14px;color:var(--color-text-brand);margin-bottom:16px">직접 입력</p>
+        <div style="text-align:center;padding:32px 0;color:var(--color-text-tertiary)">
+          <p style="font-size:15px;margin-bottom:4px">등록된 계좌가 없습니다</p>
+          <p style="font-size:14px">계좌를 등록하고 이용해 주세요</p>
+        </div>
+        <p style="text-align:center;padding-top:16px;font-size:14px;color:var(--color-text-brand);border-top:1px solid var(--color-border-subtle)">NH농협 계좌등록 &#8250;</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Account — Accordion -->
+  <div class="bottomsheet" id="bs-account-accordion">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">계좌를 선택해 주세요</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body" style="padding:0">
+        <div style="display:flex;gap:8px;padding:12px 24px">
+          <button class="btn btn--sm btn--outline" style="flex:1">NH농협(외화)</button>
+          <button class="btn btn--sm btn--secondary" style="flex:1">NH농협(외화)</button>
+        </div>
+        <p style="text-align:right;padding:0 24px 8px;font-size:14px;color:var(--color-text-brand)">직접 입력</p>
+        <ul style="list-style:none;margin:0;padding:0">
+          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle)">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+              <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
+              <div style="flex:1"><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+            </div>
+            <div style="padding-left:48px;font-size:14px;color:#505050">
+              <div style="margin-bottom:4px">&#127482;&#127480; USD 100,500.00</div>
+              <div>&#127466;&#127482; EUR 80,500.00</div>
+            </div>
+          </li>
+          <li style="padding:14px 24px;display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
+            <div style="flex:1"><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Share -->
+  <div class="bottomsheet" id="bs-share">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">공유하기</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;gap:24px;justify-content:center;padding:8px 0">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px">
+            <div style="width:52px;height:52px;border-radius:50%;background:#FAE100;display:flex;align-items:center;justify-content:center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B1E08" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>카카오톡
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px">
+            <div style="width:52px;height:52px;border-radius:50%;background:#3FBF72;display:flex;align-items:center;justify-content:center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>문자메시지
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px">
+            <div style="width:52px;height:52px;border-radius:50%;background:#3D9EE3;display:flex;align-items:center;justify-content:center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>링크복사
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: CS -->
+  <div class="bottomsheet" id="bs-cs">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">상담 방법을 선택해 주세요</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17v-.08z"/></svg>
+            전화 상담 예약
+          </button>
+          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            채팅 상담
+          </button>
+          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            이메일 상담
+          </button>
+          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            화상 상담
+          </button>
+          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start;grid-column:1/-1">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            영업점 방문 예약
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Option -->
+  <div class="bottomsheet" id="bs-option">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">조회 설정</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <p style="font-size:14px;font-weight:600;margin-bottom:8px">조회기간</p>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <button class="btn btn--sm btn--primary" style="flex:1">12개월</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">24개월</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">36개월</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">직접입력</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:14px">
+          <span style="border:1px solid var(--color-border-default);border-radius:8px;padding:10px 12px;flex:1">2024.01.01</span>
+          <span>~</span>
+          <span style="border:1px solid var(--color-border-default);border-radius:8px;padding:10px 12px;flex:1">2024.01.01</span>
+        </div>
+        <p style="font-size:14px;font-weight:600;margin-bottom:8px">조회간격</p>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <button class="btn btn--sm btn--primary" style="flex:1">최신순</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">과거순</button>
+        </div>
+        <p style="font-size:14px;font-weight:600;margin-bottom:8px">조회유형</p>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn--sm btn--primary" style="flex:1">전체</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">입금</button>
+          <button class="btn btn--sm btn--outline" style="flex:1">출금</button>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Picker-Wheel — Year-Month-Day -->
+  <div class="bottomsheet" id="bs-pw-ymd">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">년월일 선택</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="position:relative;padding:8px 0">
+          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none;z-index:0"></div>
+          <div style="display:flex;position:relative;z-index:1">
+            <div style="flex:1;text-align:center;font-size:16px">
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">2018년</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">2019년</div>
+              <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">2020년</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">2021년</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">2022년</div>
+            </div>
+            <div style="flex:1;text-align:center;font-size:16px">
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">8월</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">9월</div>
+              <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">10월</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">11월</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">12월</div>
+            </div>
+            <div style="flex:1;text-align:center;font-size:16px">
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">16일</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">17일</div>
+              <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">18일</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">19일</div>
+              <div style="padding:10px 0;color:var(--color-text-tertiary)">20일</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Picker-Wheel — Day -->
+  <div class="bottomsheet" id="bs-pw-day">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">일 선택</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;gap:16px;position:relative;padding:8px 0">
+          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none"></div>
+          <div style="flex:1;text-align:center;font-size:16px">
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">매일</div>
+            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">매주</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">매월</div>
+          </div>
+          <div style="flex:1;text-align:center;font-size:16px">
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">월요일</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">화요일</div>
+            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">수요일</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">목요일</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">금요일</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Picker-Wheel — Hour-Minute -->
+  <div class="bottomsheet" id="bs-pw-hm">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">시분 선택</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;position:relative;padding:8px 0">
+          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none"></div>
+          <div style="flex:1;text-align:center;font-size:16px">
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">3시</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">4시</div>
+            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">5시</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">6시</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">7시</div>
+          </div>
+          <div style="flex:1;text-align:center;font-size:16px">
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">19분</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">20분</div>
+            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">21분</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">22분</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">23분</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Picker-Wheel — Period -->
+  <div class="bottomsheet" id="bs-pw-period">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">기간 선택</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;position:relative;padding:8px 0">
+          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none"></div>
+          <div style="flex:1;text-align:center;font-size:16px">
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">3년</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">4년</div>
+            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">5년</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">6년</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">7년</div>
+          </div>
+          <div style="flex:1;text-align:center;font-size:16px">
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">1개월</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">2개월</div>
+            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">3개월</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">4개월</div>
+            <div style="padding:10px 0;color:var(--color-text-tertiary)">5개월</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Picker-Calendar — Year-Month-Day -->
+  <div class="bottomsheet" id="bs-pc-ymd">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">날짜 선택</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+          <button class="btn btn--sm btn--ghost">오늘</button>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>2023<button class="btn btn--sm btn--ghost">&#8250;</button></div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>12<button class="btn btn--sm btn--ghost">&#8250;</button></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);text-align:center;gap:6px 2px">
+          <span style="font-size:13px;color:#E24949">일</span><span style="font-size:13px">월</span><span style="font-size:13px">화</span><span style="font-size:13px">수</span><span style="font-size:13px">목</span><span style="font-size:13px">금</span><span style="font-size:13px;color:var(--color-text-brand)">토</span>
+          <span style="font-size:14px;color:#E24949">29</span><span style="font-size:14px">30</span><span style="font-size:14px">31</span><span style="font-size:14px">1</span><span style="font-size:14px">2</span><span style="font-size:14px">3</span><span style="font-size:14px;color:var(--color-text-brand)">4</span>
+          <span style="font-size:14px;color:#E24949">5</span><span style="font-size:14px">6</span><span style="font-size:14px">7</span><span style="font-size:14px">8</span><span style="font-size:14px">9</span><span style="font-size:14px">10</span><span style="font-size:14px;color:var(--color-text-brand)">11</span>
+          <span style="font-size:14px;color:#E24949">12</span><span style="font-size:14px">13</span><span style="font-size:14px">14</span><span style="font-size:14px">15</span><span style="font-size:14px;width:28px;height:28px;background:#121212;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">16</span><span style="font-size:14px">17</span><span style="font-size:14px;color:var(--color-text-brand)">18</span>
+          <span style="font-size:14px;color:#E24949">19</span><span style="font-size:14px">20</span><span style="font-size:14px">21</span><span style="font-size:14px">22</span><span style="font-size:14px">23</span><span style="font-size:14px">24</span><span style="font-size:14px;color:var(--color-text-brand)">25</span>
+          <span style="font-size:14px;color:#E24949">26</span><span style="font-size:14px;width:28px;height:28px;background:var(--color-text-brand);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">27</span><span style="font-size:14px">28</span><span style="font-size:14px">29</span><span style="font-size:14px">30</span><span style="font-size:14px">1</span><span style="font-size:14px;color:var(--color-text-brand)">2</span>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Picker-Calendar — Month-Day -->
+  <div class="bottomsheet" id="bs-pc-md">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">날짜 선택</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+          <button class="btn btn--sm btn--ghost">오늘</button>
+          <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>2023. 10<button class="btn btn--sm btn--ghost">&#8250;</button></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);text-align:center;gap:6px 2px">
+          <span style="font-size:13px;color:#E24949">일</span><span style="font-size:13px">월</span><span style="font-size:13px">화</span><span style="font-size:13px">수</span><span style="font-size:13px">목</span><span style="font-size:13px">금</span><span style="font-size:13px;color:var(--color-text-brand)">토</span>
+          <span style="font-size:14px;color:#E24949">1</span><span style="font-size:14px">2</span><span style="font-size:14px">3</span><span style="font-size:14px">4</span><span style="font-size:14px">5</span><span style="font-size:14px">6</span><span style="font-size:14px;color:var(--color-text-brand)">7</span>
+          <span style="font-size:14px;color:#E24949">8</span><span style="font-size:14px">9</span><span style="font-size:14px">10</span><span style="font-size:14px">11</span><span style="font-size:14px">12</span><span style="font-size:14px">13</span><span style="font-size:14px;color:var(--color-text-brand)">14</span>
+          <span style="font-size:14px;color:#E24949">15</span><span style="font-size:14px;width:28px;height:28px;background:#121212;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">16</span><span style="font-size:14px">17</span><span style="font-size:14px">18</span><span style="font-size:14px">19</span><span style="font-size:14px">20</span><span style="font-size:14px;color:var(--color-text-brand)">21</span>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BS: Picker-Calendar — Year-Month -->
+  <div class="bottomsheet" id="bs-pc-ym">
+    <div class="bottomsheet__backdrop"></div>
+    <div class="bottomsheet__container">
+      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
+      <div class="bottomsheet__header">
+        <span class="bottomsheet__title">년월 선택</span>
+        <button class="bottomsheet__close" type="button" data-bs-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="bottomsheet__body">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+          <button class="btn btn--sm btn--ghost">당월</button>
+          <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>2023<button class="btn btn--sm btn--ghost">&#8250;</button></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center">
+          <span style="padding:12px;font-size:19px">1</span><span style="padding:12px;font-size:19px">2</span><span style="padding:12px;font-size:19px">3</span><span style="padding:12px;font-size:19px">4</span>
+          <span style="padding:12px;font-size:19px">5</span><span style="padding:12px;font-size:19px">6</span><span style="padding:12px;font-size:19px;background:#121212;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:auto">7</span><span style="padding:12px;font-size:19px">8</span>
+          <span style="padding:12px;font-size:19px">9</span><span style="padding:12px;font-size:19px;background:var(--color-text-brand);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:auto">10</span><span style="padding:12px;font-size:19px">11</span><span style="padding:12px;font-size:19px">12</span>
+        </div>
+      </div>
+      <div class="bottomsheet__footer">
+        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
+      </div>
+    </div>
+  </div>
 
   <script src="../assets/js/main.js"></script>
 </body>

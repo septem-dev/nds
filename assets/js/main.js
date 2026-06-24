@@ -143,30 +143,40 @@ document.addEventListener('DOMContentLoaded', function () {
   window.openBottomsheet = function (id) {
     var el = document.getElementById(id);
     if (!el) return;
-    el.classList.add('bs--open');
+    el.classList.add('bottomsheet--open');
     document.body.style.overflow = 'hidden';
   };
 
   window.closeBottomsheet = function (el) {
     if (typeof el === 'string') el = document.getElementById(el);
     if (!el) return;
-    el.classList.remove('bs--open');
-    document.body.style.overflow = '';
+    el.classList.remove('bottomsheet--open');
+    if (!document.querySelector('.bottomsheet--open')) {
+      document.body.style.overflow = '';
+    }
   };
 
   document.querySelectorAll('[data-bs-open]').forEach(function (btn) {
     btn.addEventListener('click', function () { window.openBottomsheet(btn.dataset.bsOpen); });
   });
 
-  document.querySelectorAll('.bs, .bottomsheet').forEach(function (bs) {
+  document.querySelectorAll('.bottomsheet').forEach(function (bs) {
     bs.addEventListener('click', function (e) {
-      if (e.target === bs || e.target.classList.contains('bs__backdrop')) {
+      if (e.target.classList.contains('bottomsheet__backdrop')) {
         window.closeBottomsheet(bs);
       }
     });
     bs.querySelectorAll('[data-bs-close]').forEach(function (btn) {
       btn.addEventListener('click', function () { window.closeBottomsheet(bs); });
     });
+  });
+
+  // ESC 키
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      var open = document.querySelector('.bottomsheet--open');
+      if (open) window.closeBottomsheet(open);
+    }
   });
 
   /* ── Toast ────────────────────────────────────────────────── */

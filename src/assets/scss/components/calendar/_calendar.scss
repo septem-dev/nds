@@ -1,133 +1,144 @@
 // =============================================================================
-// Calendar — NDS Design Library v1.0
+// Calendar Field -- NDS Design Library v1.0
 // =============================================================================
 
-@use '../../styles/mixins/mixins' as *;
-
-.calendar {
+// calendar-day (single date)
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   width: 100%;
-  max-width: 320px;
-  background-color: var(--color-bg-default);
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-6);
+  max-width: 428px;
 
-  // Header
-  &__header {
-    @include flex-between;
-    margin-bottom: var(--spacing-6);
-  }
-
-  &__nav {
-    @include reset-button;
-    @include flex-center;
-    width: 32px;
-    height: 32px;
-    border-radius: var(--radius-sm);
-    color: var(--color-icon-secondary);
-    transition: background-color var(--transition-base);
-
-    &:hover { background-color: var(--color-bg-subtle); }
-  }
-
-  &__title {
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text-primary);
-    cursor: pointer;
-
-    &:hover { color: var(--color-text-brand); }
-  }
-
-  // Weekday labels
-  &__weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    margin-bottom: var(--spacing-2);
-  }
-
-  &__weekday {
-    @include flex-center;
-    height: 32px;
-    font-size: var(--font-size-xs);
+  &__label {
+    font-size: 14px;
     font-weight: var(--font-weight-medium);
-    color: var(--color-text-tertiary);
-
-    &--sunday { color: var(--color-text-danger); }
-    &--saturday { color: var(--color-text-info); }
+    letter-spacing: -0.02em;
+    color: #505050;
   }
 
-  // Days grid
-  &__days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: var(--spacing-1);
+  &__field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 54px;
+    padding: 0 16px 0 20px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color var(--transition-base);
   }
 
-  &__day {
-    @include reset-button;
-    @include flex-center;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-sm);
-    color: var(--color-text-primary);
-    transition: background-color var(--transition-base), color var(--transition-base);
-    margin: 0 auto;
+  &__text {
+    flex: 1;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #929292;
 
-    &:hover:not(:disabled) {
-      background-color: var(--color-bg-subtle);
-    }
-
-    &--today {
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-text-brand);
-    }
-
-    &--selected {
-      background-color: var(--primitive-green-500);
-      color: var(--primitive-gray-50);
-      font-weight: var(--font-weight-semibold);
-
-      &:hover { background-color: var(--primitive-green-600); }
-    }
-
-    &--in-range {
-      background-color: var(--primitive-green-50);
-      border-radius: 0;
-    }
-
-    &--range-start,
-    &--range-end {
-      background-color: var(--primitive-green-500);
-      color: var(--primitive-gray-50);
-    }
-
-    &--other-month { color: var(--color-text-tertiary); }
-
-    &--sunday { color: var(--color-text-danger); }
-    &--saturday { color: var(--color-text-info); }
-
-    &:disabled {
-      color: var(--color-text-disabled);
-      cursor: not-allowed;
-    }
-
-    &--has-event::after {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 4px;
-      border-radius: var(--radius-full);
-      background-color: var(--primitive-green-500);
-      margin: 1px auto 0;
-    }
+    &.is-filled { color: #121212; }
   }
 
-  // Footer
-  &__footer {
-    @include flex-between;
-    margin-top: var(--spacing-6);
-    padding-top: var(--spacing-4);
-    border-top: 1px solid var(--color-border-subtle);
+  &__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--color-icon-secondary);
+  }
+
+  &__message {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+  }
+
+  &--error {
+    .calendar-day__field   { border-color: #e24949; }
+    .calendar-day__message { color: #e24949; }
+  }
+
+  &--readonly {
+    .calendar-day__field { background: #f0f0f0; cursor: default; }
+  }
+
+  &--disabled {
+    .calendar-day__field { background: #f0f0f0; cursor: not-allowed; }
+  }
+}
+
+// calendar-period (date range)
+.calendar-period {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 428px;
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 54px;
+    padding: 0 16px 0 20px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color var(--transition-base);
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #929292;
+
+    &.is-filled { color: #121212; }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--color-icon-secondary);
+  }
+
+  &__sep {
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    color: #929292;
+    padding: 0 4px;
+  }
+
+  &__message {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+  }
+
+  &--error {
+    .calendar-period__field   { border-color: #e24949; }
+    .calendar-period__message { color: #e24949; }
+  }
+
+  &--readonly {
+    .calendar-period__field { background: #f0f0f0; cursor: default; }
+  }
+
+  &--disabled {
+    .calendar-period__field { background: #f0f0f0; cursor: not-allowed; }
   }
 }

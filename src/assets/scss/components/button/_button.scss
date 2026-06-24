@@ -1,7 +1,5 @@
 // =============================================================================
-// Button Component
-// NDS Design Library v1.0
-// node: 9781-75830
+// Button -- NDS Design Library v1.0
 // =============================================================================
 
 @use 'sass:map';
@@ -9,189 +7,198 @@
 
 // -----------------------------------------------------------------------------
 // Size Tokens
+// lg:56 md:52 rg:48 sm:44 xs:40
 // -----------------------------------------------------------------------------
-
 $btn-sizes: (
-  'xl': (
-    height:       52px,
-    padding-h:    20px,
-    font-size:    16px,
-    font-weight:  600,
-    line-height:  24px,
-    border-radius: 8px,
-    icon-size:    24px,
-    gap:          6px,
-  ),
-  'lg': (
-    height:       44px,
-    padding-h:    16px,
-    font-size:    15px,
-    font-weight:  600,
-    line-height:  22px,
-    border-radius: 8px,
-    icon-size:    24px,
-    gap:          4px,
-  ),
-  'md': (
-    height:       36px,
-    padding-h:    14px,
-    font-size:    14px,
-    font-weight:  500,
-    line-height:  20px,
-    border-radius: 6px,
-    icon-size:    18px,
-    gap:          4px,
-  ),
-  'sm': (
-    height:       28px,
-    padding-h:    10px,
-    font-size:    13px,
-    font-weight:  500,
-    line-height:  18px,
-    border-radius: 4px,
-    icon-size:    16px,
-    gap:          2px,
-  ),
+  'lg': (height: 56px, padding-h: 16px, font-size: 18px, border-radius: 12px, min-width: 78px),
+  'md': (height: 52px, padding-h: 16px, font-size: 16px, border-radius: 10px, min-width: 73px),
+  'rg': (height: 48px, padding-h: 16px, font-size: 16px, border-radius: 10px, min-width: 71px),
+  'sm': (height: 44px, padding-h: 12px, font-size: 14px, border-radius: 8px,  min-width: 48px),
+  'xs': (height: 40px, padding-h: 12px, font-size: 13px, border-radius: 8px,  min-width: 47px),
 );
 
 // -----------------------------------------------------------------------------
-// Base Button
+// Base
 // -----------------------------------------------------------------------------
-
 .btn {
-  display:         inline-flex;
-  align-items:     center;
+  @include reset-button;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap:             4px;
-  border:          1px solid transparent;
-  cursor:          pointer;
-  white-space:     nowrap;
-  text-decoration: none;
-  transition:      background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  box-sizing:      border-box;
+  gap: 4px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
 
-  // Icon
-  &__icon {
-    display:     inline-flex;
-    align-items: center;
-    flex-shrink: 0;
+  // Size variants
+  @each $size, $tokens in $btn-sizes {
+    &--#{$size} {
+      height:        map.get($tokens, height);
+      padding:       0 map.get($tokens, padding-h);
+      font-size:     map.get($tokens, font-size);
+      border-radius: map.get($tokens, border-radius);
+      min-width:     map.get($tokens, min-width);
+    }
+  }
+
+  // xs font-weight override (Regular)
+  &--xs {
+    font-weight: var(--font-weight-regular);
   }
 
   // Full width
-  &--full {
-    width: 100%;
+  &--full { width: 100%; }
+
+  // Icon slot
+  &__icon {
+    flex-shrink: 0;
+    width: 1.1em;
+    height: 1.1em;
   }
 
-  // Loading state
-  &--loading {
-    pointer-events: none;
-    opacity: 0.8;
-  }
+  // -------------------------------------------------------------------------
+  // Primary
+  // -------------------------------------------------------------------------
+  &--primary {
+    background-color: #19973c;
+    color: #ffffff;
+    border: none;
 
-  // Disabled (global)
-  &:disabled,
-  &[aria-disabled="true"] {
-    cursor:         not-allowed;
-    pointer-events: none;
-  }
-}
-
-// -----------------------------------------------------------------------------
-// Size Variants  (.btn--xl / --lg / --md / --sm)
-// -----------------------------------------------------------------------------
-
-@each $size, $values in $btn-sizes {
-  .btn--#{$size} {
-    height:        map.get($values, height);
-    padding:       0 map.get($values, padding-h);
-    font-size:     map.get($values, font-size);
-    font-weight:   map.get($values, font-weight);
-    line-height:   map.get($values, line-height);
-    border-radius: map.get($values, border-radius);
-    gap:           map.get($values, gap);
-
-    .btn__icon {
-      width:  map.get($values, icon-size);
-      height: map.get($values, icon-size);
+    &:not(:disabled):active,
+    &.is-pressed {
+      background-color: #0d5722;
     }
 
-    // Icon-only (square)
-    &.btn--icon-only {
-      width:   map.get($values, height);
-      padding: 0;
+    &:disabled {
+      background-color: #f0f0f0;
+      color: #929292;
+      cursor: not-allowed;
     }
   }
+
+  // -------------------------------------------------------------------------
+  // Secondary
+  // -------------------------------------------------------------------------
+  &--secondary {
+    background-color: #ffffff;
+    color: #19973c;
+    border: 1px solid #19973c;
+
+    &:not(:disabled):active,
+    &.is-pressed {
+      background-color: #ddf2e4;
+      border-color: #0d5722;
+      color: #0d5722;
+    }
+
+    &:disabled {
+      background-color: #ffffff;
+      border-color: #e1e1e1;
+      color: #929292;
+      cursor: not-allowed;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Tertiary
+  // -------------------------------------------------------------------------
+  &--tertiary {
+    background-color: #ffffff;
+    color: #121212;
+    border: 1px solid #d3d3d3;
+
+    &:not(:disabled):active,
+    &.is-pressed {
+      background-color: #f6f6f6;
+      border-color: #d3d3d3;
+    }
+
+    &:disabled {
+      background-color: #ffffff;
+      border-color: #e1e1e1;
+      color: #929292;
+      cursor: not-allowed;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Text -- Icon / Link
+  // -------------------------------------------------------------------------
+  &--text {
+    background: none;
+    border: none;
+    color: #505050;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    padding: 0;
+    min-width: 0;
+    height: auto;
+    gap: 2px;
+
+    &:disabled { color: #929292; cursor: not-allowed; }
+  }
+
+  &--link {
+    background: none;
+    border: none;
+    color: #505050;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    padding: 0;
+    min-width: 0;
+    height: auto;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:disabled { color: #929292; cursor: not-allowed; }
+  }
 }
 
 // -----------------------------------------------------------------------------
-// Color Variants
+// Icon button (circle, 56px)
 // -----------------------------------------------------------------------------
+.btn-icon {
+  @include reset-button;
+  @include flex-center;
+  width: 56px;
+  height: 56px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
 
-// Primary -----------------------------------------------
-.btn--primary {
-  background-color: var(--color-bg-button-primary-default);
-  color:            var(--color-text-button-primary-default);
-  border-color:     transparent;
-
-  &:hover {
-    background-color: var(--color-bg-button-primary-pressed);
+  &:not(:disabled):active,
+  &.is-pressed {
+    background-color: #f6f6f6;
   }
 
-  &:active {
-    background-color: var(--color-bg-button-primary-pressed);
-  }
-
-  &:disabled,
-  &[aria-disabled="true"] {
-    background-color: var(--color-bg-button-primary-disabled);
-    color:            var(--color-text-button-primary-disabled);
-  }
-}
-
-// Secondary ---------------------------------------------
-.btn--secondary {
-  background-color: var(--color-bg-button-secondary-default);
-  color:            var(--color-text-button-secondary-default);
-  border-color:     var(--color-border-button-secondary-default);
-
-  &:hover {
-    background-color: var(--color-bg-button-secondary-pressed);
-  }
-
-  &:active {
-    background-color: var(--color-bg-button-secondary-pressed);
-  }
-
-  &:disabled,
-  &[aria-disabled="true"] {
-    background-color: var(--color-bg-button-secondary-disabled);
-    color:            var(--color-text-button-secondary-disabled);
-    border-color:     var(--color-border-button-secondary-disabled);
+  &:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
   }
 }
 
-// Tertiary ----------------------------------------------
-.btn--tertiary {
-  background-color: var(--color-bg-button-tertiary-default);
-  color:            var(--color-text-button-tertiary-default);
-  border-color:     var(--color-border-button-tertiary-default);
+// -----------------------------------------------------------------------------
+// CTA (footer button container)
+// -----------------------------------------------------------------------------
+.btn-cta {
+  display: flex;
+  gap: 8px;
+  padding-top: 10px;
 
-  .btn__icon {
-    color: var(--color-icon-gray900);
+  &--basic  { padding-bottom: 32px; }
+  &--popup  { padding-bottom: 20px; }
+
+  &__item {
+    flex: 1;
   }
 
-  &:hover {
-    background-color: var(--color-bg-button-tertiary-pressed);
-  }
-
-  &:active {
-    background-color: var(--color-bg-button-tertiary-pressed);
-  }
-
-  &:disabled,
-  &[aria-disabled="true"] {
-    background-color: var(--color-bg-button-tertiary-disabled);
-    color:            var(--color-text-button-tertiary-disabled);
-    border-color:     var(--color-border-button-tertiary-disabled);
-  }
+  &__item--3 { flex: 3; }
+  &__item--7 { flex: 7; }
 }

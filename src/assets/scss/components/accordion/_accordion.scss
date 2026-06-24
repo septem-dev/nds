@@ -165,7 +165,7 @@
   }
 
   &__title {
-    flex: 1;
+    //flex: 1;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -232,7 +232,7 @@
 
   // 리스트 행 (list 타입)
   &__list {
-    border-top: 1px solid #E1E1E1;
+    //border-top: 1px solid #E1E1E1;
     padding: 0 20px 8px;
   }
 
@@ -241,7 +241,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 12px 0;
-    border-bottom: 1px solid #F0F0F0;
+    //border-bottom: 1px solid #F0F0F0;
 
     &:last-child { border-bottom: none; }
   }
