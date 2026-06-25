@@ -3681,7 +3681,7 @@
 }
 .popover--arrow-left::before {
   top: 50%;
-  left: -9px;
+  left: -6px;
   transform: translateY(-50%);
   border-bottom: 6px solid transparent;
   border-top: 6px solid transparent;
@@ -3691,7 +3691,7 @@
 .popover--arrow-right::before {
   top: 50%;
   left: auto;
-  right: -9px;
+  right: -6px;
   transform: translateY(-50%);
   border-bottom: 6px solid transparent;
   border-top: 6px solid transparent;
