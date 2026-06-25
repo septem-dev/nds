@@ -266,4 +266,77 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ── g-example HTML 복사 ──────────────────────────────────── */
+  var COPY_ICON = '<svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<rect x="0.6" y="3.6" width="7.8" height="7.8" rx="1.2" stroke="currentColor" stroke-width="1.2"/>'
+    + '<path d="M3.6 3V2.4A1.2 1.2 0 014.8 1.2h4.8A1.2 1.2 0 0110.8 2.4v4.8A1.2 1.2 0 019.6 8.4H9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>'
+    + '</svg>';
+
+  function indentHtml(raw) {
+    var lines = raw.split(/\n/).map(function (l) { return l.trim(); }).filter(Boolean);
+    var out = [];
+    var depth = 0;
+    var PAD = '  ';
+    lines.forEach(function (line) {
+      if (/^<\//.test(line) && !/<[^/]/.test(line)) depth = Math.max(0, depth - 1);
+      out.push(PAD.repeat(depth) + line);
+      var opens     = (line.match(/<[^/!][^>]*>/g) || []).length;
+      var closes    = (line.match(/<\/[^>]+>/g) || []).length;
+      var selfClose = (line.match(/<[^>]+\/>/g) || []).length;
+      depth += Math.max(0, (opens - selfClose) - closes);
+    });
+    return out.join('\n');
+  }
+
+  function showCopied(btn) {
+    btn.innerHTML = COPY_ICON + 'Copied!';
+    btn.classList.add('is-copied');
+    setTimeout(function () {
+      btn.innerHTML = COPY_ICON + 'Copy';
+      btn.classList.remove('is-copied');
+    }, 2000);
+  }
+
+  function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); showCopied(btn); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  document.querySelectorAll('.g-example').forEach(function (ex) {
+    var btn = document.createElement('button');
+    btn.className = 'g-copy-btn';
+    btn.type = 'button';
+    btn.innerHTML = COPY_ICON + 'Copy';
+    ex.appendChild(btn);
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var clone = ex.cloneNode(true);
+      var cloneBtn = clone.querySelector('.g-copy-btn');
+      if (cloneBtn) cloneBtn.remove();
+
+      var raw = clone.innerHTML
+        .replace(/^\s+|\s+$/g, '')
+        .replace(/[ \t]+\n/g, '\n')
+        .replace(/\n{3,}/g, '\n\n');
+
+      var formatted = indentHtml(raw);
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(formatted).then(function () {
+          showCopied(btn);
+        }).catch(function () {
+          fallbackCopy(formatted, btn);
+        });
+      } else {
+        fallbackCopy(formatted, btn);
+      }
+    });
+  });
+
 }); // DOMContentLoaded
