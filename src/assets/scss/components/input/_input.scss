@@ -1,127 +1,352 @@
 // =============================================================================
-// Input — NDS Design Library v1.0
+// Input -- NDS Design Library v1.0
+// Label  : 14/Medium/-2%/#505050  |  Input : 18/Medium/-2%/#121212
+// Placeholder : 18/Medium/-2%/#929292
+// Box    : height 54, radius 12, border #E1E1E1, BG #FFFFFF
+// Focus  : border #19973C  |  Error : border #E24949
+// Readonly/Disabled BG : #F0F0F0
+// Message: 13/Regular/-2%/#767676  |  Line : border-bottom only
 // =============================================================================
 
 @use '../../styles/mixins/mixins' as *;
 
-.input {
-  position: relative;
+// =============================================================================
+// Box Input (.input-box)
+// =============================================================================
+.input-box {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 428px;
 
-  // Native input element
+  // Label
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  // Field container (border box)
   &__field {
-    width: 100%;
-    border: 1px solid var(--color-border-input-default);
-    border-radius: var(--radius-lg);
-    background-color: var(--color-bg-input-default);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-md);
-    font-family: var(--font-family-base);
-    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 54px;
+    padding: 0 12px 0 20px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    gap: 8px;
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+  }
+
+  // Multi-field row (Unit2, RRN, Serial, Address)
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > .input-box__field { flex: 1; min-width: 0; }
+  }
+
+  // Native <input>
+  &__input {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    background: none;
+    border: none;
     outline: none;
-    box-sizing: border-box;
 
-    &::placeholder { color: var(--color-text-tertiary); }
-
-    &:focus {
-      border-color: var(--color-border-input-focus);
-      box-shadow: 0 0 0 3px rgba(0, 122, 252, 0.12);
-    }
-
-    &:disabled {
-      background-color: var(--color-bg-input-disabled);
-      color: var(--color-text-disabled);
-      cursor: not-allowed;
-    }
+    &::placeholder { color: #929292; }
+    &--right  { text-align: right; }
+    &--center { text-align: center; }
   }
 
-  // Size variants
-  &--sm .input__field {
-    height: 32px;
-    padding: 0 var(--spacing-4);
-    font-size: var(--font-size-sm);
-    border-radius: var(--radius-md);
-  }
-
-  &--md .input__field {
-    height: 40px;
-    padding: 0 var(--spacing-5);
-  }
-
-  &--lg .input__field {
-    height: 48px;
-    padding: 0 var(--spacing-6);
-    font-size: var(--font-size-lg);
-  }
-
-  // Prefix / Suffix slot
-  &__prefix,
-  &__suffix {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--color-icon-secondary);
-    pointer-events: none;
-  }
-
-  &__prefix {
-    left: var(--spacing-4);
-    ~ .input__field { padding-left: calc(var(--spacing-4) * 2 + 18px); }
-  }
-
-  &__suffix {
-    right: var(--spacing-4);
-    ~ .input__field { padding-right: calc(var(--spacing-4) * 2 + 18px); }
-  }
-
-  // Clear button
+  // Clear (x) round button
   &__clear {
-    @include reset-button;
-    position: absolute;
-    right: var(--spacing-4);
     display: flex;
     align-items: center;
-    color: var(--color-icon-tertiary);
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c0c0c0;
+    border: none;
     cursor: pointer;
+    color: #ffffff;
+    flex-shrink: 0;
+    padding: 0;
 
-    &:hover { color: var(--color-icon-primary); }
+    svg { width: 10px; height: 10px; display: block; }
   }
 
-  // States
-  &--error .input__field {
-    border-color: var(--color-border-input-error);
-
-    &:focus {
-      box-shadow: 0 0 0 3px rgba(240, 62, 62, 0.12);
-    }
+  // Unit text (원, %, 동, 호 etc.)
+  &__unit {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
-  &--disabled {
-    pointer-events: none;
-    .input__prefix,
-    .input__suffix { opacity: 0.5; }
+  // Vertical separator line between prefix and input
+  &__prefix-sep {
+    width: 1px;
+    height: 20px;
+    background: #e1e1e1;
+    flex-shrink: 0;
   }
 
-  // Textarea variant
-  &--textarea {
-    .input__field {
-      height: auto;
-      padding: var(--spacing-4) var(--spacing-5);
-      resize: vertical;
-      min-height: 80px;
-      line-height: var(--line-height-normal);
-    }
+  // Left prefix text (USD etc.)
+  &__prefix-text {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
-  // Search variant
-  &--search {
-    .input__field {
-      border-radius: var(--radius-full);
-      padding-left: calc(var(--spacing-5) + 20px + var(--spacing-2));
-    }
-    .input__prefix { left: var(--spacing-5); }
+  // + icon (Unit3)
+  &__plus {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    color: #929292;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  // Dropdown select inside field
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23767676' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 2px center / 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    cursor: pointer;
+    padding-right: 18px;
+    flex-shrink: 0;
+    min-width: 48px;
+  }
+
+  // Action button inside field (요청, 시간연장, 버튼)
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 10px;
+    background: none;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+    cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: background-color var(--transition-base);
+
+    &:hover { background: #f6f6f6; }
+  }
+
+  // Countdown timer (Code type)
+  &__timer {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #e24949;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  // "-" separator between sub-fields
+  &__sep {
+    font-size: 18px;
+    font-weight: var(--font-weight-regular);
+    color: #505050;
+    flex-shrink: 0;
+  }
+
+  // Success checkmark
+  &__check {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: #19973c;
+  }
+
+  // Helper/error message
+  &__message {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+
+    &--success { color: #19973c; }
+  }
+
+  // ---- State modifiers ----
+  &--focus .input-box__field    { border-color: #19973c; }
+
+  &--error {
+    .input-box__field   { border-color: #e24949; }
+    .input-box__message { color: #e24949; }
+  }
+
+  &--success {
+    .input-box__field   { border-color: #19973c; }
+    .input-box__message { color: #19973c; }
+  }
+
+  &--readonly .input-box__field { background: #f0f0f0; cursor: default; }
+  &--disabled .input-box__field { background: #f0f0f0; cursor: not-allowed; }
+}
+
+// =============================================================================
+// Line Input (.input-line) - underline style
+// =============================================================================
+.input-line {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 428px;
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    padding: 4px 0 10px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e1e1;
+    gap: 8px;
+    transition: border-color var(--transition-base);
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+
+    > .input-line__field { flex: 1; min-width: 0; }
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    background: none;
+    border: none;
+    outline: none;
+
+    &::placeholder { color: #929292; }
+    &--right { text-align: right; }
+  }
+
+  &__clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c0c0c0;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    flex-shrink: 0;
+    padding: 0;
+
+    svg { width: 10px; height: 10px; display: block; }
+  }
+
+  &__unit {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    flex-shrink: 0;
+  }
+
+  &__sep {
+    font-size: 18px;
+    font-weight: var(--font-weight-regular);
+    color: #505050;
+    flex-shrink: 0;
+    padding-bottom: 10px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 8px;
+    background: none;
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+    cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: background-color var(--transition-base);
+
+    &:hover { background: #f6f6f6; }
+  }
+
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23767676' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 2px center / 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    cursor: pointer;
+    padding-right: 18px;
+    flex-shrink: 0;
+    min-width: 48px;
+  }
+
+  &__message {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+  }
+
+  // ---- States ----
+  &--focus .input-line__field    { border-color: #19973c; }
+
+  &--error {
+    .input-line__field   { border-color: #e24949; }
+    .input-line__message { color: #e24949; }
   }
 }

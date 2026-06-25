@@ -1,66 +1,137 @@
 // =============================================================================
-// Controls (Form Controls wrapper) — NDS Design Library v1.0
+// Controls -- NDS Design Library v1.0
 // =============================================================================
 
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2);
+// =============================================================================
+// Stepper (.controls-stepper) -- [−] [value] [+]
+// =============================================================================
+.controls-stepper {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
 
-  // Label
-  &__label {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text-primary);
-
-    &--required::after {
-      content: ' *';
-      color: var(--color-text-danger);
-    }
-  }
-
-  // Helper / Description text
-  &__helper {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-secondary);
-  }
-
-  // Error message
-  &__error {
+  &__btn {
     display: flex;
     align-items: center;
-    gap: var(--spacing-1);
-    font-size: var(--font-size-xs);
-    color: var(--color-text-danger);
+    justify-content: center;
+    width: 32px;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #121212;
+    flex-shrink: 0;
+    transition: background-color var(--transition-base);
 
-    &-icon {
+    svg {
       width: 14px;
       height: 14px;
-      flex-shrink: 0;
+      display: block;
+    }
+
+    &:hover { background: #f6f6f6; }
+
+    &:disabled {
+      color: #c0c0c0;
+      cursor: not-allowed;
+      &:hover { background: none; }
     }
   }
 
-  // Count / Max length indicator
-  &__count {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-tertiary);
-    text-align: right;
-
-    &--exceeded { color: var(--color-text-danger); }
+  &__sep {
+    width: 1px;
+    height: 100%;
+    background: #d3d3d3;
+    flex-shrink: 0;
   }
 
-  // Row layout (label + control side by side)
-  &--horizontal {
-    flex-direction: row;
+  &__value {
+    flex: 1;
+    min-width: 36px;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #121212;
+    text-align: center;
+    padding: 0 4px;
+    border: none;
+    background: none;
+    outline: none;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button { -webkit-appearance: none; }
+  }
+
+  // Disabled state
+  &--disabled {
+    background: #f0f0f0;
+
+    .controls-stepper__btn {
+      color: #c0c0c0;
+      cursor: not-allowed;
+      &:hover { background: none; }
+    }
+    .controls-stepper__sep { background: #d3d3d3; }
+    .controls-stepper__value { color: #c0c0c0; }
+  }
+}
+
+// =============================================================================
+// Controller (.controls-controller) -- [‹] [label] [›]
+// =============================================================================
+.controls-controller {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 4px;
+  gap: 2px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+
+  &__btn {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #121212;
+    flex-shrink: 0;
 
-    .controls__label {
-      flex-shrink: 0;
-      min-width: 100px;
+    svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+    }
+
+    &:disabled {
+      color: #c0c0c0;
+      cursor: not-allowed;
     }
   }
 
-  // States
-  &--error .controls__label   { color: var(--color-text-danger); }
-  &--disabled .controls__label { color: var(--color-text-disabled); }
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #121212;
+    white-space: nowrap;
+    padding: 0 4px;
+  }
+
+  // Disabled state
+  &--disabled {
+    .controls-controller__btn  { color: #c0c0c0; cursor: not-allowed; }
+    .controls-controller__label { color: #c0c0c0; }
+  }
 }

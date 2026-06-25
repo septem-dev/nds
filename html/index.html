@@ -1827,275 +1827,683 @@
   <!-- ===================== CARD ===================== -->
   <section class="g-section" id="secCard">
 	<h3 class="g-section-title">Card</h3>
-	<p class="g-sub-title">Default / Elevated — <code>.card</code></p>
+
+	<!-- General List -->
+	<p class="g-sub-title">General — List <code>card-general-list</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div class="card__header">
+		  <span class="card__label">라벨</span>
+		  <button class="card__close">✕</button>
+		</div>
+		<div class="card__title">상품명</div>
+		<div class="card__sub">부가성명</div>
+		<div class="card__rows">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		</div>
+		<div class="card__footer">
+		  <button class="btn btn--tertiary btn--rg btn--full">버튼</button>
+		</div>
+		<div class="card__message">메세지를 입력해 주세요.</div>
+	  </div>
+	</div>
+
+	<!-- General Input -->
+	<p class="g-sub-title">General — Input <code>card-general-input</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div class="card__header">
+		  <span class="card__label">기본</span>
+		  <button class="card__close">✕</button>
+		</div>
+		<div class="card__title">상품명</div>
+		<div class="card__sub">부가설명</div>
+		<div class="card__rows">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<input class="card__row-input" placeholder="신청금액 입력" style="max-width:100px">
+			<span style="font-size:13px;color:#505050;flex-shrink:0">원</span>
+		  </div>
+		</div>
+		<div class="card__footer">
+		  <button class="btn btn--tertiary btn--rg btn--full">버튼</button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- General Rate -->
+	<p class="g-sub-title">General — Rate <code>card-general-rate</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div class="card__header">
+		  <span class="card__label">라벨</span>
+		  <span class="card__label card__label--brand" style="margin-left:4px">기본</span>
+		</div>
+		<div class="card__title">상품명</div>
+		<div class="card__sub">부가테스트</div>
+		<div class="card__tags">#태그명 &nbsp;#태그명</div>
+		<div style="text-align:right;font-size:13px;color:#505050;margin:4px 0">
+		  텍스트 <strong style="font-size:18px;color:#19973c">0%</strong> 추가정보
+		</div>
+		<div class="card__rows">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- General Date -->
+	<p class="g-sub-title">General — Date <code>card-general-date</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div style="font-size:13px;color:#929292;margin-bottom:8px">2025.01.01</div>
+		<div class="card__rows" style="margin-top:0;border-top:none">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- General Accordion -->
+	<p class="g-sub-title">General — Accordion <code>card-general-accordion</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div class="card__header">
+		  <span class="card__label">라벨</span>
+		</div>
+		<div class="card__title">상품명</div>
+		<div class="card__rows">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		</div>
+		<button class="card__accordion-trigger">
+		  타이틀
+		  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><polyline points="4,6 8,10 12,6"/></svg>
+		</button>
+	  </div>
+	</div>
+
+	<!-- General Grip -->
+	<p class="g-sub-title">General — Grip <code>card-general-grip</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+		  <span style="font-size:15px;font-weight:600;color:#121212">타이틀</span>
+		  <div style="display:flex;align-items:center;gap:8px">
+			<button class="btn btn--tertiary btn--xs">버튼</button>
+			<span style="font-size:20px;color:#c0c0c0;cursor:grab">&#9776;</span>
+		  </div>
+		</div>
+		<div style="font-size:13px;color:#929292;margin-top:4px">계좌번호</div>
+	  </div>
+	</div>
+
+	<!-- Account List -->
+	<p class="g-sub-title">Account — List <code>card-account-list</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div class="card__header">
+		  <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0">
+			<div class="card__thumb">NH</div>
+			<div class="card__info">
+			  <div style="font-size:15px;font-weight:600;color:#121212">금융사명</div>
+			  <div class="card__sub">계좌번호</div>
+			</div>
+		  </div>
+		  <button class="card__menu">&#8942;</button>
+		</div>
+		<div class="card__rows">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		</div>
+		<div class="card__footer">
+		  <button class="btn btn--tertiary btn--rg btn--full">버튼</button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Account Price -->
+	<p class="g-sub-title">Account — Price <code>card-account-price</code></p>
+	<div class="g-example">
+	  <div class="card" style="width:200px">
+		<div class="card__header">
+		  <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0">
+			<div class="card__thumb">NH</div>
+			<div class="card__info">
+			  <div style="font-size:15px;font-weight:600;color:#121212">금융사명</div>
+			  <div class="card__sub">계좌번호</div>
+			</div>
+		  </div>
+		  <button class="card__menu">&#8942;</button>
+		</div>
+		<div class="card__price">
+		  <div class="card__price-label">금액</div>
+		  <div class="card__price-value">&#8635; 5,000,000원</div>
+		</div>
+		<div class="card__footer">
+		  <button class="btn btn--tertiary btn--rg btn--full">버튼</button>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Data Highlight -->
+	<p class="g-sub-title">Data — Highlight <code>card-data-highlight</code></p>
 	<div class="g-example">
 	  <div class="card" style="width:220px">
-		<div class="card__body">
-		  <div class="card__title">입출금 통장</div>
-		  <div class="card__sub">NH농협 111-1234-5678</div>
-		  <div style="margin-top:12px;font-size:var(--font-size-2xl);font-weight:700">50,000,000원</div>
+		<div class="card__header">
+		  <div>
+			<span class="card__label">라벨</span>
+			<span class="card__label" style="margin-left:4px">라벨</span>
+		  </div>
+		  <span style="font-size:13px;color:#505050">비교하기 &#10003;</span>
 		</div>
-	  </div>
-	  <div class="card card--elevated" style="width:220px">
-		<div class="card__body">
-		  <div class="card__title">Elevated Card</div>
-		  <div class="card__sub">그림자 스타일 카드</div>
-		  <div style="margin-top:8px;font-size:var(--font-size-sm);color:var(--primitive-gray-500);line-height:1.5">추가 정보를 여기에 작성합니다.</div>
+		<div class="card__sub">부가텍스트</div>
+		<div class="card__title" style="font-size:16px">상품명</div>
+		<div class="card__tags">#태그명 &nbsp;#태그명 &nbsp;#태그명</div>
+		<div class="card__rows">
+		  <div class="card__row" style="flex-direction:column;align-items:flex-start;gap:2px">
+			<span class="card__row-label">타이틀</span>
+			<div style="display:flex;gap:8px">
+			  <strong style="font-size:18px;color:#121212">데이터</strong>
+			  <span style="font-size:13px;color:#929292;align-self:flex-end">데이터</span>
+			</div>
+		  </div>
+		  <div class="card__row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;flex-direction:row;align-items:unset">
+			<div><div class="card__row-label" style="font-size:12px">타이틀</div><div class="card__row-data">데이터</div></div>
+			<div><div class="card__row-label" style="font-size:12px">타이틀</div><div class="card__row-data">데이터</div></div>
+			<div><div class="card__row-label" style="font-size:12px">타이틀</div><div class="card__row-data">데이터</div></div>
+		  </div>
 		</div>
 	  </div>
 	</div>
-	<p class="g-sub-title">Flat / Clickable</p>
+
+	<!-- Summary basic -->
+	<p class="g-sub-title">Summary — basic <code>card-summary-basic</code></p>
 	<div class="g-example">
-	  <div class="card card--flat" style="width:200px">
-		<div class="card__body">
-		  <div class="card__title">Flat Card</div>
-		  <div class="card__sub">회색 배경, 테두리 없음</div>
-		</div>
-	  </div>
-	  <div class="card card--clickable" style="width:200px;cursor:pointer">
-		<div class="card__body">
-		  <div class="card__title">Clickable Card</div>
-		  <div class="card__sub">호버 시 그림자 + 이동</div>
+	  <div class="card" style="width:200px">
+		<span class="card__label">라벨</span>
+		<div class="card__title" style="font-size:16px;margin-top:4px">타이틀</div>
+		<div class="card__sub">부가설명</div>
+		<div class="card__rows">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
 		</div>
 	  </div>
 	</div>
+
+	<!-- Summary 2column -->
+	<p class="g-sub-title">Summary — 2column <code>card-summary-2column</code></p>
+	<div class="g-example">
+	  <div class="card__grid-2" style="width:240px">
+		<div>
+		  <div class="card__grid-label">타이틀 &#8250;</div>
+		  <div class="card__grid-value">데이터</div>
+		</div>
+		<div>
+		  <div class="card__grid-label">타이틀 &#8250;</div>
+		  <div class="card__grid-value">데이터</div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Summary Price-Single -->
+	<p class="g-sub-title">Summary — Price-Single <code>card-summary-price</code></p>
+	<div class="g-example">
+	  <div class="card card--highlight" style="width:200px">
+		<div style="display:flex;justify-content:space-between;align-items:flex-start">
+		  <div>
+			<div style="font-size:14px;color:#767676">타이틀</div>
+			<div style="font-size:13px;color:#929292;margin-top:2px">부가설명</div>
+		  </div>
+		  <div style="text-align:right">
+			<div style="font-size:13px;color:#929292">매월</div>
+			<div style="font-size:18px;font-weight:700;color:#19973c">0원</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Summary Highlight -->
+	<p class="g-sub-title">Summary — Highlight <code>card-summary-highlight</code></p>
+	<div class="g-example">
+	  <div class="card card--highlight" style="width:200px">
+		<div class="card__rows" style="margin-top:0;border-top:none">
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		  <div class="card__row">
+			<span class="card__row-label">타이틀</span>
+			<span class="card__row-data">데이터</span>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.card</code></td><td>기본 카드 (border)</td></tr>
-	  <tr><td><code>.card--elevated</code></td><td>그림자 카드</td></tr>
-	  <tr><td><code>.card--flat</code></td><td>회색 배경, 테두리 없음</td></tr>
-	  <tr><td><code>.card--clickable</code></td><td>호버 시 shadow + translateY</td></tr>
-	  <tr><td><code>.card__body</code></td><td>내용 영역 (16px padding)</td></tr>
+	  <tr><td><code>.card</code></td><td>기본 카드 (흰 배경, 회색 테두리, radius 16)</td></tr>
+	  <tr><td><code>.card--highlight</code></td><td>회색 배경 카드</td></tr>
+	  <tr><td><code>.card--selected</code></td><td>선택 상태 (초록 테두리)</td></tr>
+	  <tr><td><code>.card__label</code></td><td>뱃지 태그</td></tr>
+	  <tr><td><code>.card__label--brand / --warn</code></td><td>초록 / 빨간 뱃지</td></tr>
+	  <tr><td><code>.card__title / __sub</code></td><td>제목 / 부가 텍스트</td></tr>
+	  <tr><td><code>.card__thumb</code></td><td>아바타 (Account 카드)</td></tr>
+	  <tr><td><code>.card__row / __row-label / __row-data</code></td><td>키-값 행</td></tr>
+	  <tr><td><code>.card__row-data--up / --down / --brand</code></td><td>수익률 색상</td></tr>
+	  <tr><td><code>.card__price / __price-value</code></td><td>금액 표시</td></tr>
+	  <tr><td><code>.card__accordion-trigger / __accordion-body</code></td><td>접기/펼치기</td></tr>
+	  <tr><td><code>.card__grid-2</code></td><td>2열 그리드 (Summary 2column)</td></tr>
+	  <tr><td><code>.card__message / __message--error</code></td><td>안내/오류 메세지</td></tr>
 	</table>
   </section>
 
   <!-- ===================== CHECK ===================== -->
   <section class="g-section" id="secCheck">
 	<h3 class="g-section-title">Check</h3>
-	<p class="g-sub-title">Default / Checked / Indeterminate / Disabled</p>
+
+	<!-- Box lg -->
+	<p class="g-sub-title">Box — lg</p>
 	<div class="g-example">
-	  <label class="check">
-		<input class="check__input" type="checkbox">
-		<span class="check__box"></span>
-		<span class="check__label">Default</span>
+	  <label class="check-box">
+		<input class="check-box__input" type="checkbox">
+		<span class="check-box__label">Default</span>
 	  </label>
-	  <label class="check">
-		<input class="check__input" type="checkbox" checked>
-		<span class="check__box"></span>
-		<span class="check__label">Checked</span>
+	  <label class="check-box">
+		<input class="check-box__input" type="checkbox" checked>
+		<span class="check-box__label">Selected</span>
 	  </label>
-	  <label class="check" id="checkIndet">
-		<input class="check__input" type="checkbox" id="cbIndet">
-		<span class="check__box"></span>
-		<span class="check__label">Indeterminate</span>
-	  </label>
-	  <label class="check">
-		<input class="check__input" type="checkbox" disabled>
-		<span class="check__box"></span>
-		<span class="check__label">Disabled</span>
-	  </label>
-	  <label class="check">
-		<input class="check__input" type="checkbox" checked disabled>
-		<span class="check__box"></span>
-		<span class="check__label">Disabled Checked</span>
+	  <label class="check-box">
+		<input class="check-box__input" type="checkbox" disabled>
+		<span class="check-box__label">Disabled</span>
 	  </label>
 	</div>
-	<p class="g-sub-title">Error 상태</p>
+
+	<!-- Box sm -->
+	<p class="g-sub-title">Box — sm</p>
 	<div class="g-example">
-	  <label class="check check--error">
-		<input class="check__input" type="checkbox">
-		<span class="check__box"></span>
-		<span class="check__label">Error</span>
+	  <label class="check-box check-box--sm">
+		<input class="check-box__input" type="checkbox">
+		<span class="check-box__label">Default</span>
+	  </label>
+	  <label class="check-box check-box--sm">
+		<input class="check-box__input" type="checkbox" checked>
+		<span class="check-box__label">Selected</span>
+	  </label>
+	  <label class="check-box check-box--sm">
+		<input class="check-box__input" type="checkbox" disabled>
+		<span class="check-box__label">Disabled</span>
 	  </label>
 	</div>
-	<p class="g-sub-title">Box 스타일 — <code>.check--box</code> (피그마 Box 타입)</p>
+
+	<!-- Basic sm -->
+	<p class="g-sub-title">Basic — sm</p>
+	<div class="g-example">
+	  <label class="check-basic">
+		<input class="check-basic__input" type="checkbox">
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Default</span>
+	  </label>
+	  <label class="check-basic">
+		<input class="check-basic__input" type="checkbox" checked>
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Selected</span>
+	  </label>
+	  <label class="check-basic">
+		<input class="check-basic__input" type="checkbox" disabled>
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Disabled</span>
+	  </label>
+	  <label class="check-basic">
+		<input class="check-basic__input" type="checkbox" checked disabled>
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Select-Disabled</span>
+	  </label>
+	</div>
+
+	<!-- Basic xs -->
+	<p class="g-sub-title">Basic — xs</p>
+	<div class="g-example">
+	  <label class="check-basic check-basic--xs">
+		<input class="check-basic__input" type="checkbox">
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Default</span>
+	  </label>
+	  <label class="check-basic check-basic--xs">
+		<input class="check-basic__input" type="checkbox" checked>
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Selected</span>
+	  </label>
+	  <label class="check-basic check-basic--xs">
+		<input class="check-basic__input" type="checkbox" disabled>
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Disabled</span>
+	  </label>
+	  <label class="check-basic check-basic--xs">
+		<input class="check-basic__input" type="checkbox" checked disabled>
+		<span class="check-basic__icon"></span>
+		<span class="check-basic__label">Select-Disabled</span>
+	  </label>
+	</div>
+
+	<!-- Survey -->
+	<p class="g-sub-title">Survey — Default / Selected / Error</p>
 	<div class="g-example col" style="max-width:360px">
-	  <label class="check check--box">
-		<input class="check__input" type="checkbox">
-		<span class="check__box"></span>
-		<span class="check__label">Default</span>
+	  <label class="check-survey">
+		<input class="check-survey__input" type="checkbox">
+		<span class="check-survey__icon"></span>
+		<span class="check-survey__label">설문 항목 텍스트가 이곳에 표시됩니다</span>
 	  </label>
-	  <label class="check check--box">
-		<input class="check__input" type="checkbox" checked>
-		<span class="check__box"></span>
-		<span class="check__label">Selected</span>
+	  <label class="check-survey">
+		<input class="check-survey__input" type="checkbox" checked>
+		<span class="check-survey__icon"></span>
+		<span class="check-survey__label">설문 항목 텍스트가 이곳에 표시됩니다</span>
 	  </label>
-	  <label class="check check--box">
-		<input class="check__input" type="checkbox" disabled>
-		<span class="check__box"></span>
-		<span class="check__label">Disabled</span>
-	  </label>
-	</div>
-	<p class="g-sub-title">Box SM 크기</p>
-	<div class="g-example col" style="max-width:280px">
-	  <label class="check check--box check--sm">
-		<input class="check__input" type="checkbox"><span class="check__box"></span>
-		<span class="check__label">Default SM</span>
-	  </label>
-	  <label class="check check--box check--sm">
-		<input class="check__input" type="checkbox" checked><span class="check__box"></span>
-		<span class="check__label">Selected SM</span>
-	  </label>
-	</div>
-	<p class="g-sub-title">With Description</p>
-	<div class="g-example">
-	  <label class="check check--with-desc">
-		<input class="check__input" type="checkbox" checked>
-		<span class="check__box"></span>
-		<div>
-		  <span class="check__label">서비스 이용약관 동의</span>
-		  <div class="check__description">서비스 이용에 필요한 필수 약관입니다.</div>
-		</div>
-	  </label>
-	</div>
-	<p class="g-sub-title">With Description</p>
-	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">SMS 만기 안내</span>
-		  <span class="switch__description">만기일 7일 전 SMS로 알림을 보내드립니다</span>
-		</div>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">마케팅 수신 동의</span>
-		  <span class="switch__description">이벤트 및 혜택 정보를 받아보실 수 있습니다</span>
-		</div>
-	  </label>
-	</div>
-	<p class="g-sub-title">Size — sm / md / lg</p>
-	<div class="g-example">
-	  <label class="check check--sm">
-		<input class="check__input" type="checkbox" checked>
-		<span class="check__box"></span>
-		<span class="check__label">SM (16px)</span>
-	  </label>
-	  <label class="check">
-		<input class="check__input" type="checkbox" checked>
-		<span class="check__box"></span>
-		<span class="check__label">MD (18px)</span>
-	  </label>
-	  <label class="check check--lg">
-		<input class="check__input" type="checkbox" checked>
-		<span class="check__box"></span>
-		<span class="check__label">LG (20px)</span>
-	  </label>
-	</div>
-	<p class="g-sub-title">Group — Vertical / Horizontal</p>
-	<div class="g-example">
-	  <div class="check-group">
-		<label class="check"><input class="check__input" type="checkbox" checked><span class="check__box"></span><span class="check__label">항목 1</span></label>
-		<label class="check"><input class="check__input" type="checkbox"><span class="check__box"></span><span class="check__label">항목 2</span></label>
-		<label class="check"><input class="check__input" type="checkbox"><span class="check__box"></span><span class="check__label">항목 3</span></label>
-	  </div>
-	  <div class="check-group check-group--horizontal">
-		<label class="check"><input class="check__input" type="checkbox" checked><span class="check__box"></span><span class="check__label">가로 1</span></label>
-		<label class="check"><input class="check__input" type="checkbox"><span class="check__box"></span><span class="check__label">가로 2</span></label>
-		<label class="check"><input class="check__input" type="checkbox"><span class="check__box"></span><span class="check__label">가로 3</span></label>
+	  <div>
+		<label class="check-survey check-survey--error">
+		  <input class="check-survey__input" type="checkbox">
+		  <span class="check-survey__icon"></span>
+		  <span class="check-survey__label">설문 항목 텍스트가 이곳에 표시됩니다</span>
+		</label>
+		<p class="check-survey__guide check-survey__guide--error">필수 선택 항목입니다.</p>
+		<p class="check-survey__guide check-survey__guide--sub">1개 이상 선택해주세요.</p>
 	  </div>
 	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.check__input</code></td><td>숨겨진 네이티브 input</td></tr>
-	  <tr><td><code>.check__box</code></td><td>커스텀 체크박스 UI</td></tr>
-	  <tr><td><code>.check__label</code></td><td>레이블 텍스트</td></tr>
-	  <tr><td><code>.check__input:checked</code></td><td>선택 상태 (초록 배경)</td></tr>
-	  <tr><td><code>.check__input:indeterminate</code></td><td>인디터미네이트 상태 (가로선)</td></tr>
-	  <tr><td><code>.check__input:disabled</code></td><td>비활성 (박스 회색, 레이블 연하게)</td></tr>
-	  <tr><td><code>.check--error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
-	  <tr><td><code>.check--sm / --lg</code></td><td>크기 변형 (16px / 20px)</td></tr>
-	  <tr><td><code>.check-group</code></td><td>수직 그룹</td></tr>
-	  <tr><td><code>.check-group--horizontal</code></td><td>수평 그룹</td></tr>
+	  <tr><td><code>.check-box</code></td><td>Box 타입 (lg 기본)</td></tr>
+	  <tr><td><code>.check-box--sm</code></td><td>Box 소형 (sm)</td></tr>
+	  <tr><td><code>.check-box__input:checked</code></td><td>선택 상태 (테두리·텍스트 초록)</td></tr>
+	  <tr><td><code>.check-basic</code></td><td>Basic 타입 (sm 기본)</td></tr>
+	  <tr><td><code>.check-basic--xs</code></td><td>Basic 소형 (xs)</td></tr>
+	  <tr><td><code>.check-basic__icon</code></td><td>원형 체크 아이콘</td></tr>
+	  <tr><td><code>.check-survey</code></td><td>Survey 타입 전체너비 박스</td></tr>
+	  <tr><td><code>.check-survey--error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
+	  <tr><td><code>.check-survey__guide--error</code></td><td>오류 안내 메시지</td></tr>
+	  <tr><td><code>.check-survey__guide--sub</code></td><td>보조 안내 메시지</td></tr>
 	</table>
   </section>
 
   <!-- ===================== CHIP ===================== -->
   <section class="g-section" id="secChip">
 	<h3 class="g-section-title">Chip</h3>
-	<p class="g-sub-title">Default / Selected / Disabled</p>
+
+	<!-- Basic -->
+	<p class="g-sub-title">Basic</p>
 	<div class="g-example">
-	  <span class="chip chip--md">전체</span>
-	  <span class="chip chip--md chip--selected">입금</span>
-	  <span class="chip chip--md">출금</span>
-	  <span class="chip chip--md chip--disabled">비활성</span>
+	  <div class="chip-basic">
+		<span class="chip-basic__text">버튼</span>
+		<button class="chip-basic__close" type="button">
+		  <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+		  </svg>
+		</button>
+	  </div>
+	  <div class="chip-basic">
+		<span class="chip-basic__text">선택된 항목</span>
+		<button class="chip-basic__close" type="button">
+		  <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+		  </svg>
+		</button>
+	  </div>
 	</div>
-	<p class="g-sub-title">With Description</p>
-	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">SMS 만기 안내</span>
-		  <span class="switch__description">만기일 7일 전 SMS로 알림을 보내드립니다</span>
-		</div>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">마케팅 수신 동의</span>
-		  <span class="switch__description">이벤트 및 혜택 정보를 받아보실 수 있습니다</span>
-		</div>
-	  </label>
-	</div>
-	<p class="g-sub-title">Size — sm / md / lg</p>
+
+	<!-- Single -->
+	<p class="g-sub-title">Single</p>
 	<div class="g-example">
-	  <span class="chip chip--sm chip--selected">SM</span>
-	  <span class="chip chip--md chip--selected">MD</span>
-	  <span class="chip chip--lg chip--selected">LG</span>
+	  <span class="chip-single">메뉴</span>
+	  <span class="chip-single">항목</span>
+	  <span class="chip-single">카테고리</span>
 	</div>
+
+	<!-- Accordion -->
+	<p class="g-sub-title">Accordion — Collapsed / Collapsed+More / Expanded</p>
+	<div class="g-example col" style="max-width:440px">
+	  <!-- Collapsed: 2 items -->
+	  <div class="chip-accordion">
+		<div class="chip-accordion__chips">
+		  <span class="chip-accordion__item is-active">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		</div>
+		<button class="chip-accordion__toggle js-chip-acc-toggle" type="button">
+		  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		  </svg>
+		</button>
+	  </div>
+	  <!-- Collapsed: many items + overflow badge -->
+	  <div class="chip-accordion">
+		<div class="chip-accordion__chips">
+		  <span class="chip-accordion__item is-active">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__more">+4</span>
+		</div>
+		<button class="chip-accordion__toggle js-chip-acc-toggle" type="button">
+		  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		  </svg>
+		</button>
+	  </div>
+	  <!-- Expanded -->
+	  <div class="chip-accordion">
+		<div class="chip-accordion__chips is-open">
+		  <span class="chip-accordion__item is-active">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		  <span class="chip-accordion__item">메뉴</span>
+		</div>
+		<button class="chip-accordion__toggle js-chip-acc-toggle is-open" type="button">
+		  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		  </svg>
+		</button>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.chip</code></td><td>기본 칩 (회색 배경)</td></tr>
-	  <tr><td><code>.chip--selected</code></td><td>선택 상태 (초록 테두리/배경)</td></tr>
-	  <tr><td><code>.chip--disabled</code></td><td>비활성 상태</td></tr>
-	  <tr><td><code>.chip--sm/md/lg</code></td><td>크기 (28/32/36px)</td></tr>
+	  <tr><td><code>.chip-basic</code></td><td>텍스트 + 닫기 버튼 칩</td></tr>
+	  <tr><td><code>.chip-basic__close</code></td><td>닫기(×) 버튼</td></tr>
+	  <tr><td><code>.chip-single</code></td><td>텍스트 전용 칩</td></tr>
+	  <tr><td><code>.chip-accordion</code></td><td>아코디언 그룹 wrapper</td></tr>
+	  <tr><td><code>.chip-accordion__chips</code></td><td>칩 목록, <code>.is-open</code>시 flex-wrap</td></tr>
+	  <tr><td><code>.chip-accordion__item</code></td><td>아코디언 칩, <code>.is-active</code>시 검정 배경</td></tr>
+	  <tr><td><code>.chip-accordion__more</code></td><td>+N 오버플로우 배지</td></tr>
+	  <tr><td><code>.chip-accordion__toggle</code></td><td>펼침/접힘 토글 버튼</td></tr>
 	</table>
   </section>
 
   <!-- ===================== CONTROLS ===================== -->
   <section class="g-section" id="secControls">
 	<h3 class="g-section-title">Controls</h3>
-	<p class="g-sub-title">Form Field Wrapper — <code>.controls-wrap</code></p>
+
+	<!-- Stepper -->
+	<p class="g-sub-title">Stepper</p>
 	<div class="g-example">
-	  <div class="controls-wrap">
-		<span class="ctrl-label required">이름</span>
-		<div class="input-wrap"><input type="text" placeholder="이름을 입력하세요"></div>
-		<span class="ctrl-helper">본인의 실명을 입력해 주세요.</span>
+	  <div class="controls-stepper">
+		<button class="controls-stepper__btn" type="button">
+		  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M2 7H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+		  </svg>
+		</button>
+		<span class="controls-stepper__sep"></span>
+		<input class="controls-stepper__value" type="number" value="0">
+		<span class="controls-stepper__sep"></span>
+		<button class="controls-stepper__btn" type="button">
+		  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+		  </svg>
+		</button>
 	  </div>
-	  <div class="controls-wrap">
-		<span class="ctrl-label required">이메일</span>
-		<div class="input-wrap error"><input type="text" placeholder="이메일 주소" value="wrong@"></div>
-		<span class="ctrl-error">올바른 이메일 형식이 아닙니다.</span>
+	  <div class="controls-stepper controls-stepper--disabled">
+		<button class="controls-stepper__btn" type="button" disabled>
+		  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M2 7H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+		  </svg>
+		</button>
+		<span class="controls-stepper__sep"></span>
+		<input class="controls-stepper__value" type="number" value="0" disabled>
+		<span class="controls-stepper__sep"></span>
+		<button class="controls-stepper__btn" type="button" disabled>
+		  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+		  </svg>
+		</button>
 	  </div>
 	</div>
+
+	<!-- Controller -->
+	<p class="g-sub-title">Controller</p>
+	<div class="g-example col">
+	  <div style="display:flex;align-items:center;gap:16px">
+		<span style="font-size:14px;color:#767676;width:72px">Default</span>
+		<div class="controls-controller">
+		  <button class="controls-controller__btn" type="button">
+			<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			  <path d="M9 11L5 7L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		  </button>
+		  <span class="controls-controller__label">항목</span>
+		  <button class="controls-controller__btn" type="button">
+			<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			  <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		  </button>
+		</div>
+	  </div>
+	  <div style="display:flex;align-items:center;gap:16px">
+		<span style="font-size:14px;color:#767676;width:72px">Disabled</span>
+		<div class="controls-controller controls-controller--disabled">
+		  <button class="controls-controller__btn" type="button" disabled>
+			<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			  <path d="M9 11L5 7L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		  </button>
+		  <span class="controls-controller__label">항목</span>
+		  <button class="controls-controller__btn" type="button" disabled>
+			<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+			  <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		  </button>
+		</div>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.ctrl-label.required</code></td><td>필수 레이블 (* 자동 추가)</td></tr>
-	  <tr><td><code>.ctrl-helper</code></td><td>설명 텍스트 (회색)</td></tr>
-	  <tr><td><code>.ctrl-error</code></td><td>오류 메시지 (빨간색)</td></tr>
+	  <tr><td><code>.controls-stepper</code></td><td>스테퍼 (−/값/+ 구성)</td></tr>
+	  <tr><td><code>.controls-stepper--disabled</code></td><td>비활성 (#F0F0F0 배경)</td></tr>
+	  <tr><td><code>.controls-stepper__btn</code></td><td>감소/증가 버튼</td></tr>
+	  <tr><td><code>.controls-stepper__value</code></td><td>숫자 값 input</td></tr>
+	  <tr><td><code>.controls-controller</code></td><td>컨트롤러 (‹ 텍스트 › 구성)</td></tr>
+	  <tr><td><code>.controls-controller--disabled</code></td><td>비활성 (아이콘/텍스트 회색)</td></tr>
+	  <tr><td><code>.controls-controller__btn</code></td><td>이전/다음 chevron 버튼</td></tr>
+	  <tr><td><code>.controls-controller__label</code></td><td>중앙 텍스트 레이블</td></tr>
 	</table>
   </section>
 
   <!-- ===================== DIVIDER ===================== -->
   <section class="g-section" id="secDivider">
 	<h3 class="g-section-title">Divider</h3>
-	<div class="g-example col" style="width:100%">
-	  <p style="font-size:var(--font-size-sm);color:var(--primitive-gray-600)">기본 구분선</p>
-	  <hr class="divider">
-	  <p style="font-size:var(--font-size-sm);color:var(--primitive-gray-600)">굵은 구분선</p>
-	  <hr class="divider divider--thick">
-	  <div class="divider--label">또는</div>
+
+	<!-- Content-8px -->
+	<p class="g-sub-title">Content-8px</p>
+	<p class="g-desc">주요 정보의 속성이나 구조화된 영역을 그룹화하여 구분</p>
+	<div class="g-example col" style="width:100%;padding:0">
+	  <div class="divider divider--content"></div>
 	</div>
+	<p class="g-desc" style="margin-top:4px">Border: 8px / #F6F6F6</p>
+
+	<!-- Page-1px -->
+	<p class="g-sub-title">Page-1px</p>
+	<p class="g-desc">같은 속성의 항목이나 옵션 메뉴에서 시각적 강조가 약한 구분에 적용</p>
+	<div class="g-example col" style="width:100%;padding:0">
+	  <div class="divider divider--page"></div>
+	</div>
+	<p class="g-desc" style="margin-top:4px">Border: 1px / #F6F6F6</p>
+
+	<!-- List1-1px -->
+	<p class="g-sub-title">List1-1px</p>
+	<p class="g-desc">그레이 배경 위 리스트 항목 구분에 적용</p>
+	<div class="g-example col" style="width:100%;padding:0">
+	  <div class="divider divider--list1"></div>
+	</div>
+	<p class="g-desc" style="margin-top:4px">Border: 1px / #E1E1E1</p>
+
+	<!-- List2-1px -->
+	<p class="g-sub-title">List2-1px</p>
+	<p class="g-desc">리스트 항목 구분에 적용</p>
+	<div class="g-example col" style="width:100%;padding:0">
+	  <div class="divider divider--list2"></div>
+	</div>
+	<p class="g-desc" style="margin-top:4px">Border: 1px / #F0F0F0</p>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.divider</code></td><td>1px 구분선</td></tr>
-	  <tr><td><code>.divider--thick</code></td><td>4px 굵은 구분선</td></tr>
-	  <tr><td><code>.divider--label</code></td><td>텍스트 포함 구분선</td></tr>
+	  <tr><td><code>.divider--content</code></td><td>8px / #F6F6F6 — 영역 그룹화 구분</td></tr>
+	  <tr><td><code>.divider--page</code></td><td>1px / #F6F6F6 — 약한 구분 (옵션/속성 메뉴)</td></tr>
+	  <tr><td><code>.divider--list1</code></td><td>1px / #E1E1E1 — 그레이 배경 리스트 구분</td></tr>
+	  <tr><td><code>.divider--list2</code></td><td>1px / #F0F0F0 — 리스트 항목 구분</td></tr>
 	</table>
   </section>
 
@@ -2284,69 +2692,813 @@
   <!-- ===================== INPUT ===================== -->
   <section class="g-section" id="secInput">
 	<h3 class="g-section-title">Input</h3>
-	<p class="g-sub-title">Default / Focus / Error / Disabled</p>
-	<div class="g-example col">
-	  <div class="input-wrap"><input type="text" placeholder="이름을 입력하세요"></div>
-	  <div class="input-wrap error"><input type="text" value="잘못된 입력"><div class="input-error-msg">입력 내용을 확인해 주세요.</div></div>
-	  <div class="input-wrap"><input type="text" disabled placeholder="비활성 상태"></div>
+
+	<!-- ===== BOX - Basic ===== -->
+	<p class="g-sub-title">Box — Basic</p>
+	<p class="g-desc">일반적인 데이터 입력 형태입니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" placeholder="플레이스홀더"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다"></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	  <div class="input-box input-box--success">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다"><svg class="input-box__check" viewBox="0 0 18 18" fill="none"><path d="M3 9L7 13L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+		<span class="input-box__message input-box__message--success">긍정적인 입력정보 확인 메세지</span>
+	  </div>
+	  <div class="input-box input-box--readonly">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다" readonly></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--disabled">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다" disabled></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
 	</div>
-	<p class="g-sub-title">With Description</p>
-	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">SMS 만기 안내</span>
-		  <span class="switch__description">만기일 7일 전 SMS로 알림을 보내드립니다</span>
+
+	<!-- ===== BOX - Price ===== -->
+	<p class="g-sub-title">Box — Price</p>
+	<p class="g-desc">금액 입력 형태로 선택 시 바텀시트를 호출합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" placeholder="플레이스홀더"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="50,000,000원"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="50,000,000원"></div>
+		<span class="input-box__message input-box__message--success">오천만원</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="1,000,000,000원"></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	  <div class="input-box input-box--readonly">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="50,000,000원" readonly></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--disabled">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="50,000,000원" disabled></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Unit1 ===== -->
+	<p class="g-sub-title">Box — Unit1</p>
+	<p class="g-desc">포인트(P), 퍼센트(%) 등 다양한 단위 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" placeholder="1 ~ 99 이내로 입력"><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="99"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="99"><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="99"><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	  <div class="input-box input-box--readonly">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" value="99" readonly><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--disabled">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input input-box__input--right" type="text" placeholder="1~99 %" disabled><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Unit2 ===== -->
+	<p class="g-sub-title">Box — Unit2</p>
+	<p class="g-desc">동/호수 등 한 개 이상에 정보를 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder=""></span><span class="input-box__unit">동</span></div>
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder=""></span><span class="input-box__unit">호</span></div>
 		</div>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">마케팅 수신 동의</span>
-		  <span class="switch__description">이벤트 및 혜택 정보를 받아보실 수 있습니다</span>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"><span class="input-box__unit">동</span></div>
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder=""><span class="input-box__unit">호</span></div>
 		</div>
-	  </label>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"><span class="input-box__unit">동</span></div>
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"><span class="input-box__unit">호</span></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"><span class="input-box__unit">동</span></div>
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"><span class="input-box__unit">호</span></div>
+		</div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	  <div class="input-box input-box--readonly">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234" readonly><span class="input-box__unit">동</span></div>
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234" readonly><span class="input-box__unit">호</span></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--disabled">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234" disabled><span class="input-box__unit">동</span></div>
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234" disabled><span class="input-box__unit">호</span></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
 	</div>
-	<p class="g-sub-title">Size — sm / md / lg</p>
-	<div class="g-example col">
-	  <div class="input-wrap input-sm"><input type="text" placeholder="SM (32px)"></div>
-	  <div class="input-wrap"><input type="text" placeholder="MD (40px)"></div>
-	  <div class="input-wrap input-lg"><input type="text" placeholder="LG (48px)"></div>
-	</div>
-	<p class="g-sub-title">Textarea</p>
-	<div class="g-example col">
-	  <div class="input-wrap" style="width:320px">
-		<textarea placeholder="내용을 입력하세요" rows="3"></textarea>
+
+	<!-- ===== BOX - Unit3 ===== -->
+	<p class="g-sub-title">Box — Unit3</p>
+	<p class="g-desc">포인트(P), 퍼센트(%) 등 다양한 단위 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__plus">+</span><input class="input-box__input input-box__input--right" type="text" placeholder="1 ~ 99 이내로 입력"><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
 	  </div>
-	  <div class="input-wrap error" style="width:320px">
-		<textarea placeholder="내용을 입력하세요" rows="3">잘못된 입력</textarea>
-		<div class="input-error-msg">입력 내용을 확인해 주세요.</div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__plus">+</span><input class="input-box__input input-box__input--right" type="text" value="99"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
 	  </div>
-	  <div class="input-wrap" style="width:320px">
-		<textarea placeholder="비활성 상태" rows="2" disabled></textarea>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__plus">+</span><input class="input-box__input input-box__input--right" type="text" value="99"><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">안내 문구 입력</span>
 	  </div>
-	</div>
-	<p class="g-sub-title">With Icon (prefix / suffix)</p>
-	<div class="g-example col">
-	  <div class="input-icon-wrap has-left" style="width:280px">
-		<span class="input-icon-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-		<input type="text" placeholder="검색어 입력">
-	  </div>
-	  <div class="input-icon-wrap has-left has-right" style="width:280px">
-		<span class="input-icon-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></span>
-		<input type="text" placeholder="아이디 입력" value="user@nds.com">
-		<span class="input-icon-right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20,6 9,17 4,12"/></svg></span>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__plus">+</span><input class="input-box__input input-box__input--right" type="text" value="99"><span class="input-box__unit">%</span></div>
+		<span class="input-box__message">오류 메세지 출력</span>
 	  </div>
 	</div>
+
+	<!-- ===== BOX - Password ===== -->
+	<p class="g-sub-title">Box — Password</p>
+	<p class="g-desc">비밀번호 등 마스킹 처리가 필요한 정보를 입력합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">비밀번호</span>
+		<div class="input-box__field"><input class="input-box__input" type="password" placeholder="비밀번호 4자리 입력"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">비밀번호</span>
+		<div class="input-box__field"><input class="input-box__input" type="password" value="1234"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">비밀번호</span>
+		<div class="input-box__field"><input class="input-box__input" type="password" value="1234"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">비밀번호</span>
+		<div class="input-box__field"><input class="input-box__input" type="password" value="1234"></div>
+		<span class="input-box__message">비밀번호가 일치하지 않습니다.</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Dollar ===== -->
+	<p class="g-sub-title">Box — Dollar</p>
+	<p class="g-desc">외화 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" placeholder="금액 입력"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000"></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	  <div class="input-box input-box--readonly">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000" readonly></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--disabled">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000" disabled></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Point ===== -->
+	<p class="g-sub-title">Box — Point</p>
+	<p class="g-desc">외화 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" placeholder="USD 10~2,000.00"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00"></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	  <div class="input-box input-box--readonly">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00" readonly></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--disabled">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><span class="input-box__prefix-text">USD</span><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00" disabled></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Currency ===== -->
+	<p class="g-sub-title">Box — Currency</p>
+	<p class="g-desc">외화 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option>선택</option><option>USD</option><option>EUR</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" placeholder="00.00"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option selected>USD</option><option>EUR</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option selected>USD</option><option>EUR</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option selected>USD</option><option>EUR</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00"></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	  <div class="input-box input-box--readonly">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select" disabled><option selected>USD</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00" readonly></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--disabled">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select" disabled><option selected>USD</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input input-box__input--right" type="text" value="50,000,000.00" disabled></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - RRN1 ===== -->
+	<p class="g-sub-title">Box — RRN1</p>
+	<p class="g-desc">주민번호 전체 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="앞 6자리" maxlength="6"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="뒤 7자리" maxlength="7"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="801212"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="뒤 7자리"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="801212"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="password" value="1234567"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="801212"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="뒤 7자리"></div>
+		</div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - RRN2 ===== -->
+	<p class="g-sub-title">Box — RRN2</p>
+	<p class="g-desc">주민번호 앞자리와 뒤자리 중 성별구분 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="앞 6자리"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="●●●●●●●" style="letter-spacing:2px"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="801212"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="●●●●●●●" style="letter-spacing:2px"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="801212"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="●●●●●●●" style="letter-spacing:2px"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">주민번호</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="801212"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="●●●●●●●" style="letter-spacing:2px"></div>
+		</div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Combination ===== -->
+	<p class="g-sub-title">Box — Combination</p>
+	<p class="g-desc">전화번호 검증 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option>선택</option><option>010</option><option>011</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input" type="text" placeholder="-없이 입력"><button class="input-box__btn" type="button">요청</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option selected>010</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input" type="text" value="01012345678"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button class="input-box__btn" type="button">요청</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option selected>010</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input" type="text" value="01012345678"><button class="input-box__btn" type="button">요청</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><select class="input-box__select"><option selected>010</option></select><span class="input-box__prefix-sep"></span><input class="input-box__input" type="text" value="01012345678"><button class="input-box__btn" type="button">요청</button></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Code ===== -->
+	<p class="g-sub-title">Box — Code</p>
+	<p class="g-desc">인증번호 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" placeholder="인증번호 6자리" maxlength="6"></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="123456"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><span class="input-box__timer">3:30</span><button class="input-box__btn" type="button">시간연장</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="123456"><span class="input-box__timer">3:30</span><button class="input-box__btn" type="button">시간연장</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="123456"><button class="input-box__btn" type="button">시간연장</button></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - 12Serial ===== -->
+	<p class="g-sub-title">Box — 12Serial</p>
+	<p class="g-desc">12자리 등록번호 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리" maxlength="4"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리" maxlength="4"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리" maxlength="4"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		</div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - 16Serial ===== -->
+	<p class="g-sub-title">Box — 16Serial</p>
+	<p class="g-desc">16자리 등록번호 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리" maxlength="4"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리" maxlength="4"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리" maxlength="4"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리" maxlength="4"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" placeholder="4자리"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input input-box__input--center" type="text" value="1234"></div>
+		</div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Inner ===== -->
+	<p class="g-sub-title">Box — Inner</p>
+	<p class="g-desc">필드 안에 버튼이 필요할 경우 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" placeholder="플레이스홀더"><button class="input-box__btn" type="button">버튼</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다"><button class="input-box__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button class="input-box__btn" type="button">버튼</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다"><button class="input-box__btn" type="button">버튼</button></div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__field"><input class="input-box__input" type="text" value="입력된 텍스트 입니다"><button class="input-box__btn" type="button">버튼</button></div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== BOX - Address ===== -->
+	<p class="g-sub-title">Box — Address</p>
+	<p class="g-desc">번지 수 입력 시 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="번지수 앞자리"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="번지수 뒷자리"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--focus">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="text" placeholder="번지수 뒷자리"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="4567"></div>
+		</div>
+		<span class="input-box__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-box input-box--error">
+		<span class="input-box__label">레이블</span>
+		<div class="input-box__row">
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="1234"></div>
+		  <span class="input-box__sep">-</span>
+		  <div class="input-box__field"><input class="input-box__input" type="text" value="4567"></div>
+		</div>
+		<span class="input-box__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== LINE - Basic ===== -->
+	<p class="g-sub-title">Line — Basic</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input" type="text" placeholder="플레이스홀더"></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--focus">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input" type="text" value="입력된 텍스트 입니다"><button class="input-line__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input" type="text" value="입력된 텍스트 입니다"></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--error">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input" type="text" value="입력된 텍스트 입니다"></div>
+		<span class="input-line__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== LINE - Price ===== -->
+	<p class="g-sub-title">Line — Price</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" placeholder="금액 입력"><span class="input-line__unit">원</span></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--focus">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" value="5,000,000,000"><button class="input-line__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><span class="input-line__unit">원</span></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" value="5,000,000,000"><span class="input-line__unit">원</span></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--error">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" value="5,000,000,000"><span class="input-line__unit">원</span></div>
+		<span class="input-line__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== LINE - RRN ===== -->
+	<p class="g-sub-title">Line — RRN</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__row">
+		  <div class="input-line__field"><input class="input-line__input" type="text" placeholder="앞 6자리"></div>
+		  <span class="input-line__sep">-</span>
+		  <div class="input-line__field"><input class="input-line__input" type="text" placeholder="뒤 7자리"></div>
+		  <button class="input-line__btn" type="button">인증</button>
+		</div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--focus">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__row">
+		  <div class="input-line__field"><input class="input-line__input" type="text" value="801212"></div>
+		  <span class="input-line__sep">-</span>
+		  <div class="input-line__field"><input class="input-line__input" type="text" placeholder="뒤 7자리"></div>
+		  <button class="input-line__btn" type="button">인증</button>
+		</div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__row">
+		  <div class="input-line__field"><input class="input-line__input" type="text" value="801212"></div>
+		  <span class="input-line__sep">-</span>
+		  <div class="input-line__field"><input class="input-line__input" type="password" value="1234567"></div>
+		  <button class="input-line__btn" type="button">인증</button>
+		</div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--error">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__row">
+		  <div class="input-line__field"><input class="input-line__input" type="text" value="801212"></div>
+		  <span class="input-line__sep">-</span>
+		  <div class="input-line__field"><input class="input-line__input" type="password" value="1234567"></div>
+		  <button class="input-line__btn" type="button">인증</button>
+		</div>
+		<span class="input-line__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== LINE - Unit ===== -->
+	<p class="g-sub-title">Line — Unit</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" placeholder="1~99"><span class="input-line__unit">%</span></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--focus">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" value="99"><button class="input-line__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><span class="input-line__unit">%</span></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" value="99"><span class="input-line__unit">%</span></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--error">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><input class="input-line__input input-line__input--right" type="text" value="99"><span class="input-line__unit">%</span></div>
+		<span class="input-line__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
+	<!-- ===== LINE - Combination ===== -->
+	<p class="g-sub-title">Line — Combination</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><select class="input-line__select"><option>선택</option><option>010</option></select><input class="input-line__input" type="text" placeholder="-없이 입력"><button class="input-line__btn" type="button">요청</button></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--focus">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><select class="input-line__select"><option selected>010</option></select><input class="input-line__input" type="text" value="01012345678"><button class="input-line__clear" type="button"><svg viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button class="input-line__btn" type="button">요청</button></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><select class="input-line__select"><option selected>010</option></select><input class="input-line__input" type="text" value="01012345678"><button class="input-line__btn" type="button">요청</button></div>
+		<span class="input-line__message">안내 문구 입력</span>
+	  </div>
+	  <div class="input-line input-line--error">
+		<span class="input-line__label">레이블</span>
+		<div class="input-line__field"><select class="input-line__select"><option selected>010</option></select><input class="input-line__input" type="text" value="01012345678"><button class="input-line__btn" type="button">요청</button></div>
+		<span class="input-line__message">오류 메세지 출력</span>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.input-wrap</code></td><td>인풋 래퍼</td></tr>
-	  <tr><td><code>.input-wrap.error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
-	  <tr><td><code>.input-sm/lg</code></td><td>크기 변형 (32/48px)</td></tr>
-	  <tr><td><code>.input-icon-wrap.has-left</code></td><td>좌측 아이콘 슬롯</td></tr>
-	  <tr><td><code>.input-icon-wrap.has-right</code></td><td>우측 아이콘 슬롯</td></tr>
+	  <tr><td><code>.input-box</code></td><td>Box 타입 wrapper</td></tr>
+	  <tr><td><code>.input-box--focus</code></td><td>포커스 (초록 테두리)</td></tr>
+	  <tr><td><code>.input-box--error</code></td><td>오류 (빨간 테두리 + 빨간 메세지)</td></tr>
+	  <tr><td><code>.input-box--success</code></td><td>성공 (초록 테두리 + 초록 메세지)</td></tr>
+	  <tr><td><code>.input-box--readonly</code></td><td>읽기전용 (#F0F0F0 배경)</td></tr>
+	  <tr><td><code>.input-box--disabled</code></td><td>비활성 (#F0F0F0 배경)</td></tr>
+	  <tr><td><code>.input-box__row</code></td><td>복수 필드 수평 배치</td></tr>
+	  <tr><td><code>.input-box__input--right</code></td><td>우측 정렬 (금액/단위)</td></tr>
+	  <tr><td><code>.input-box__input--center</code></td><td>중앙 정렬 (시리얼)</td></tr>
+	  <tr><td><code>.input-box__unit</code></td><td>단위 텍스트 (원/% 등)</td></tr>
+	  <tr><td><code>.input-box__prefix-text</code></td><td>좌측 접두 텍스트 (USD)</td></tr>
+	  <tr><td><code>.input-box__prefix-sep</code></td><td>접두 구분선</td></tr>
+	  <tr><td><code>.input-box__clear</code></td><td>지우기(×) 버튼</td></tr>
+	  <tr><td><code>.input-box__check</code></td><td>성공 체크 아이콘</td></tr>
+	  <tr><td><code>.input-box__btn</code></td><td>필드 내 액션 버튼</td></tr>
+	  <tr><td><code>.input-box__timer</code></td><td>카운트다운 타이머</td></tr>
+	  <tr><td><code>.input-box__sep</code></td><td>필드 간 구분자 (-)</td></tr>
+	  <tr><td><code>.input-line</code></td><td>Line 타입 wrapper</td></tr>
+	  <tr><td><code>.input-line--focus</code></td><td>포커스 (초록 하단선)</td></tr>
+	  <tr><td><code>.input-line--error</code></td><td>오류 (빨간 하단선)</td></tr>
 	</table>
   </section>
 
@@ -3492,133 +4644,295 @@
     <!-- ===================== RADIO ===================== -->
   <section class="g-section" id="secRadio">
 	<h3 class="g-section-title">Radio</h3>
-	<p class="g-sub-title">Default / Selected / Disabled</p>
-	<div class="g-example">
-	  <label class="radio">
-		<input class="radio__input" type="radio" name="r1">
-		<span class="radio__circle"></span>
-		<span class="radio__label">Default</span>
-	  </label>
-	  <label class="radio">
-		<input class="radio__input" type="radio" name="r1" checked>
-		<span class="radio__circle"></span>
-		<span class="radio__label">Selected</span>
-	  </label>
-	  <label class="radio">
-		<input class="radio__input" type="radio" disabled>
-		<span class="radio__circle"></span>
-		<span class="radio__label">Disabled</span>
-	  </label>
-	</div>
-	<p class="g-sub-title">Error 상태</p>
-	<div class="g-example">
-	  <label class="radio radio--error">
-		<input class="radio__input" type="radio" name="r_err">
-		<span class="radio__circle"></span>
-		<span class="radio__label">Error</span>
-	  </label>
-	</div>
-	<p class="g-sub-title">With Description</p>
+
+	<!-- ===== Box - Center ===== -->
+	<p class="g-sub-title">Box — Center</p>
+	<p class="g-desc">시각적 일관성과 사용성을 고려하여 박스형을 기본(Default) 적용 방식으로 사용해야 합니다.</p>
 	<div class="g-example col">
-	  <label class="switch">
-		<input class="switch__input" type="checkbox" checked>
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">SMS 만기 안내</span>
-		  <span class="switch__description">만기일 7일 전 SMS로 알림을 보내드립니다</span>
-		</div>
-	  </label>
-	  <label class="switch">
-		<input class="switch__input" type="checkbox">
-		<span class="switch__track"></span>
-		<div class="switch__content">
-		  <span class="switch__label">마케팅 수신 동의</span>
-		  <span class="switch__description">이벤트 및 혜택 정보를 받아보실 수 있습니다</span>
-		</div>
-	  </label>
-	</div>
-	<p class="g-sub-title">Size — sm / md / lg</p>
-	<div class="g-example">
-	  <label class="radio radio--sm">
-		<input class="radio__input" type="radio" name="rsz" checked>
-		<span class="radio__circle"></span>
-		<span class="radio__label">SM (16px)</span>
-	  </label>
-	  <label class="radio">
-		<input class="radio__input" type="radio" name="rsz">
-		<span class="radio__circle"></span>
-		<span class="radio__label">MD (18px)</span>
-	  </label>
-	  <label class="radio radio--lg">
-		<input class="radio__input" type="radio" name="rsz">
-		<span class="radio__circle"></span>
-		<span class="radio__label">LG (20px)</span>
-	  </label>
-	</div>
-	<p class="g-sub-title">Group — Horizontal</p>
-	<div class="g-example">
-	  <div class="radio-group radio-group--horizontal">
-		<label class="radio"><input class="radio__input" type="radio" name="rg" checked><span class="radio__circle"></span><span class="radio__label">전체</span></label>
-		<label class="radio"><input class="radio__input" type="radio" name="rg"><span class="radio__circle"></span><span class="radio__label">입금</span></label>
-		<label class="radio"><input class="radio__input" type="radio" name="rg"><span class="radio__circle"></span><span class="radio__label">출금</span></label>
+	  <p class="g-label">lg</p>
+	  <div class="g-example">
+		<label class="radio-box-center">
+		  <input class="radio-box-center__input" type="radio" name="rbc-lg">
+		  <span class="radio-box-center__label">라디오</span>
+		</label>
+		<label class="radio-box-center">
+		  <input class="radio-box-center__input" type="radio" name="rbc-lg" checked>
+		  <span class="radio-box-center__label">라디오</span>
+		</label>
+		<label class="radio-box-center">
+		  <input class="radio-box-center__input" type="radio" name="rbc-lg-dis" disabled>
+		  <span class="radio-box-center__label">라디오</span>
+		</label>
+	  </div>
+	  <p class="g-label">sm</p>
+	  <div class="g-example">
+		<label class="radio-box-center radio-box-center--sm">
+		  <input class="radio-box-center__input" type="radio" name="rbc-sm">
+		  <span class="radio-box-center__label">라디오</span>
+		</label>
+		<label class="radio-box-center radio-box-center--sm">
+		  <input class="radio-box-center__input" type="radio" name="rbc-sm" checked>
+		  <span class="radio-box-center__label">라디오</span>
+		</label>
+		<label class="radio-box-center radio-box-center--sm">
+		  <input class="radio-box-center__input" type="radio" name="rbc-sm-dis" disabled>
+		  <span class="radio-box-center__label">라디오</span>
+		</label>
 	  </div>
 	</div>
-	<p class="g-sub-title">Card 스타일 — <code>.radio--card</code></p>
-	<div class="g-example col" style="max-width:360px">
-	  <label class="radio radio--card radio--with-desc">
-		<input class="radio__input" type="radio" name="rc">
-		<span class="radio__circle"></span>
-		<div>
-		  <span class="radio__label">일반 입금</span>
-		  <div class="radio__description">실시간 이체, 수수료 무료</div>
-		</div>
+
+	<!-- ===== Box - Left ===== -->
+	<p class="g-sub-title">Box — Left</p>
+	<p class="g-desc">라디오 텍스트가 좌측 정렬로 표시됩니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <label class="radio-box-left">
+		<input class="radio-box-left__input" type="radio" name="rbl">
+		<span class="radio-box-left__label">라디오</span>
 	  </label>
-	  <label class="radio radio--card">
-		<input class="radio__input" type="radio" name="rc" checked>
-		<span class="radio__circle"></span>
-		<div>
-		  <span class="radio__label">빠른 입금 (선택됨)</span>
-		  <div class="radio__description">1분 이내 처리, 수수료 500원</div>
-		</div>
+	  <label class="radio-box-left">
+		<input class="radio-box-left__input" type="radio" name="rbl" checked>
+		<span class="radio-box-left__label">라디오</span>
 	  </label>
-	  <label class="radio radio--card">
-		<input class="radio__input" type="radio" name="rc" disabled>
-		<span class="radio__circle"></span>
-		<div>
-		  <span class="radio__label">예약 입금 (비활성)</span>
-		  <div class="radio__description">현재 사용 불가 서비스</div>
-		</div>
+	  <label class="radio-box-left">
+		<input class="radio-box-left__input" type="radio" name="rbl-dis" disabled>
+		<span class="radio-box-left__label">라디오</span>
+	  </label>
+	  <label class="radio-box-left radio-box-left--error">
+		<input class="radio-box-left__input" type="radio" name="rbl-err">
+		<span class="radio-box-left__label">라디오</span>
 	  </label>
 	</div>
-	<p class="g-sub-title">With Description</p>
+
+	<!-- ===== Basic ===== -->
+	<p class="g-sub-title">Basic</p>
+	<p class="g-desc">옵션을 텍스트 기반으로 선택할 수 있도록 제공하는 일반 형태입니다.</p>
 	<div class="g-example col">
-	  <label class="radio radio--with-desc">
-		<input class="radio__input" type="radio" name="rd" checked>
-		<span class="radio__circle"></span>
-		<div>
-		  <span class="radio__label">NH 농협 계좌</span>
-		  <div class="radio__description">111-1234-5678 · 잔액 5,000,000원</div>
-		</div>
-	  </label>
-	  <label class="radio radio--with-desc">
-		<input class="radio__input" type="radio" name="rd">
-		<span class="radio__circle"></span>
-		<div>
-		  <span class="radio__label">KB 국민 계좌</span>
-		  <div class="radio__description">222-5678-9012 · 잔액 1,200,000원</div>
-		</div>
-	  </label>
+	  <p class="g-label">lg</p>
+	  <div class="g-example">
+		<label class="radio-basic">
+		  <input class="radio-basic__input" type="radio" name="rb-lg">
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+		<label class="radio-basic">
+		  <input class="radio-basic__input" type="radio" name="rb-lg" checked>
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+		<label class="radio-basic">
+		  <input class="radio-basic__input" type="radio" name="rb-lg-dis" disabled>
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+		<label class="radio-basic">
+		  <input class="radio-basic__input" type="radio" name="rb-lg-dis" checked disabled>
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+	  </div>
+	  <p class="g-label">sm</p>
+	  <div class="g-example">
+		<label class="radio-basic radio-basic--sm">
+		  <input class="radio-basic__input" type="radio" name="rb-sm">
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+		<label class="radio-basic radio-basic--sm">
+		  <input class="radio-basic__input" type="radio" name="rb-sm" checked>
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+		<label class="radio-basic radio-basic--sm">
+		  <input class="radio-basic__input" type="radio" name="rb-sm-dis" disabled>
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+		<label class="radio-basic radio-basic--sm">
+		  <input class="radio-basic__input" type="radio" name="rb-sm-dis" checked disabled>
+		  <span class="radio-basic__icon"></span>
+		  <span class="radio-basic__label">라디오</span>
+		</label>
+	  </div>
 	</div>
+
+	<!-- ===== Explain - None ===== -->
+	<p class="g-sub-title">Explain — None</p>
+	<p class="g-desc">설명형 문구가 들어갈 때 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="radio-explain">
+		<input class="radio-explain__input" type="radio" name="re-none" id="re-none-1">
+		<label class="radio-explain__label" for="re-none-1">
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">라디오-타이틀</span>
+			<span class="radio-explain__sub">서브텍스트</span>
+		  </div>
+		</label>
+	  </div>
+	  <div class="radio-explain">
+		<input class="radio-explain__input" type="radio" name="re-none" id="re-none-2" checked>
+		<label class="radio-explain__label" for="re-none-2">
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">라디오-타이틀</span>
+			<span class="radio-explain__sub">서브텍스트</span>
+		  </div>
+		</label>
+	  </div>
+	</div>
+
+	<!-- ===== Explain - Icon ===== -->
+	<p class="g-sub-title">Explain — Icon</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="radio-explain">
+		<input class="radio-explain__input" type="radio" name="re-icon" id="re-icon-1">
+		<label class="radio-explain__label" for="re-icon-1">
+		  <span class="radio-explain__icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">라디오-타이틀</span>
+			<span class="radio-explain__sub">서브텍스트</span>
+		  </div>
+		</label>
+	  </div>
+	  <div class="radio-explain">
+		<input class="radio-explain__input" type="radio" name="re-icon" id="re-icon-2" checked>
+		<label class="radio-explain__label" for="re-icon-2">
+		  <span class="radio-explain__icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">라디오-타이틀</span>
+			<span class="radio-explain__sub">서브텍스트</span>
+		  </div>
+		</label>
+	  </div>
+	  <div class="radio-explain radio-explain--error">
+		<input class="radio-explain__input" type="radio" name="re-icon-e" id="re-icon-3">
+		<label class="radio-explain__label" for="re-icon-3">
+		  <span class="radio-explain__icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">라디오-텍스트</span>
+			<span class="radio-explain__sub">서브텍스트</span>
+		  </div>
+		</label>
+		<span class="radio-explain__guide radio-explain__guide--error">다시 확인해 주세요.</span>
+		<span class="radio-explain__guide">내용을 입력해 주세요.</span>
+	  </div>
+	</div>
+
+	<!-- ===== Explain - Text ===== -->
+	<p class="g-sub-title">Explain — Text</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="radio-explain">
+		<input class="radio-explain__input" type="radio" name="re-text" id="re-text-1">
+		<label class="radio-explain__label" for="re-text-1">
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">라디오 텍스트</span>
+		  </div>
+		</label>
+	  </div>
+	  <div class="radio-explain">
+		<input class="radio-explain__input" type="radio" name="re-text" id="re-text-2" checked>
+		<label class="radio-explain__label" for="re-text-2">
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">아니요</span>
+		  </div>
+		</label>
+		<span class="radio-explain__guide radio-explain__guide--selected">정답 입니다.</span>
+		<span class="radio-explain__guide">내용을 입력해 주세요.</span>
+	  </div>
+	  <div class="radio-explain radio-explain--error">
+		<input class="radio-explain__input" type="radio" name="re-text-e" id="re-text-3">
+		<label class="radio-explain__label" for="re-text-3">
+		  <div class="radio-explain__content">
+			<span class="radio-explain__title">아니요</span>
+		  </div>
+		</label>
+		<span class="radio-explain__guide radio-explain__guide--error">다시 확인해 주세요.</span>
+		<span class="radio-explain__guide">내용을 입력해 주세요.</span>
+	  </div>
+	</div>
+
+	<!-- ===== Survey - yn ===== -->
+	<p class="g-sub-title">Survey — yn</p>
+	<p class="g-desc">투자성향분석, 자가진단표 등 설문에서 사용합니다.</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="radio-survey">
+		<div class="radio-survey__options">
+		  <input class="radio-survey__input" type="radio" name="rs-yn-1" id="rs-yn-no1">
+		  <label class="radio-survey__label" for="rs-yn-no1">아니요</label>
+		  <input class="radio-survey__input" type="radio" name="rs-yn-1" id="rs-yn-yes1">
+		  <label class="radio-survey__label" for="rs-yn-yes1">예</label>
+		</div>
+	  </div>
+	  <div class="radio-survey">
+		<div class="radio-survey__options">
+		  <input class="radio-survey__input" type="radio" name="rs-yn-2" id="rs-yn-no2">
+		  <label class="radio-survey__label" for="rs-yn-no2">아니요</label>
+		  <input class="radio-survey__input" type="radio" name="rs-yn-2" id="rs-yn-yes2" checked>
+		  <label class="radio-survey__label" for="rs-yn-yes2">예</label>
+		</div>
+		<span class="radio-survey__guide radio-survey__guide--selected">정답 입니다.</span>
+		<span class="radio-survey__guide">내용을 입력해 주세요.</span>
+	  </div>
+	  <div class="radio-survey radio-survey--error">
+		<div class="radio-survey__options">
+		  <input class="radio-survey__input" type="radio" name="rs-yn-3" id="rs-yn-no3">
+		  <label class="radio-survey__label" for="rs-yn-no3">아니요</label>
+		  <input class="radio-survey__input" type="radio" name="rs-yn-3" id="rs-yn-yes3">
+		  <label class="radio-survey__label" for="rs-yn-yes3">예</label>
+		</div>
+		<span class="radio-survey__guide radio-survey__guide--error">다시 확인해 주세요.</span>
+		<span class="radio-survey__guide">내용을 입력해 주세요.</span>
+	  </div>
+	</div>
+
+	<!-- ===== Survey - ox ===== -->
+	<p class="g-sub-title">Survey — ox</p>
+	<div class="g-example col" style="max-width:440px">
+	  <div class="radio-survey">
+		<div class="radio-survey__options">
+		  <input class="radio-survey__input" type="radio" name="rs-ox-1" id="rs-ox-o1">
+		  <label class="radio-survey__label" for="rs-ox-o1">O</label>
+		  <input class="radio-survey__input" type="radio" name="rs-ox-1" id="rs-ox-x1">
+		  <label class="radio-survey__label" for="rs-ox-x1">X</label>
+		</div>
+	  </div>
+	  <div class="radio-survey">
+		<div class="radio-survey__options">
+		  <input class="radio-survey__input" type="radio" name="rs-ox-2" id="rs-ox-o2" checked>
+		  <label class="radio-survey__label" for="rs-ox-o2">O</label>
+		  <input class="radio-survey__input" type="radio" name="rs-ox-2" id="rs-ox-x2">
+		  <label class="radio-survey__label" for="rs-ox-x2">X</label>
+		</div>
+		<span class="radio-survey__guide radio-survey__guide--selected">정답 입니다.</span>
+		<span class="radio-survey__guide">내용을 입력해 주세요.</span>
+	  </div>
+	  <div class="radio-survey radio-survey--error">
+		<div class="radio-survey__options">
+		  <input class="radio-survey__input" type="radio" name="rs-ox-3" id="rs-ox-o3">
+		  <label class="radio-survey__label" for="rs-ox-o3">O</label>
+		  <input class="radio-survey__input" type="radio" name="rs-ox-3" id="rs-ox-x3">
+		  <label class="radio-survey__label" for="rs-ox-x3">X</label>
+		</div>
+		<span class="radio-survey__guide radio-survey__guide--error">다시 확인해 주세요.</span>
+		<span class="radio-survey__guide">내용을 입력해 주세요.</span>
+	  </div>
+	</div>
+
 	<table class="g-table">
 	  <tr><th>클래스</th><th>설명</th></tr>
-	  <tr><td><code>.radio__input</code></td><td>숨겨진 네이티브 input</td></tr>
-	  <tr><td><code>.radio__circle</code></td><td>커스텀 원형 인디케이터</td></tr>
-	  <tr><td><code>.radio__label</code></td><td>레이블 텍스트</td></tr>
-	  <tr><td><code>.radio__input:checked</code></td><td>선택 상태 (초록 채움)</td></tr>
-	  <tr><td><code>.radio__input:disabled</code></td><td>비활성 (회색, 레이블 연하게)</td></tr>
-	  <tr><td><code>.radio--error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
-	  <tr><td><code>.radio--sm / --lg</code></td><td>크기 변형 (16px / 20px)</td></tr>
-	  <tr><td><code>.radio-group--horizontal</code></td><td>가로 나열 그룹</td></tr>
+	  <tr><td><code>.radio-box-center</code></td><td>Box Center 타입 (기본 lg)</td></tr>
+	  <tr><td><code>.radio-box-center--sm</code></td><td>sm 크기 (36px / 14px)</td></tr>
+	  <tr><td><code>.radio-box-left</code></td><td>Box Left 타입 (full-width)</td></tr>
+	  <tr><td><code>.radio-box-left--error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
+	  <tr><td><code>.radio-basic</code></td><td>Circle 라디오 기본 (lg)</td></tr>
+	  <tr><td><code>.radio-basic--sm</code></td><td>sm 크기 (18px)</td></tr>
+	  <tr><td><code>.radio-explain</code></td><td>타이틀+서브 설명형</td></tr>
+	  <tr><td><code>.radio-explain__icon</code></td><td>아이콘 원형 컨테이너 (옵션)</td></tr>
+	  <tr><td><code>.radio-explain--error</code></td><td>오류 상태</td></tr>
+	  <tr><td><code>.radio-explain__guide--selected</code></td><td>정답 안내 (초록)</td></tr>
+	  <tr><td><code>.radio-explain__guide--error</code></td><td>오류 안내 (빨강)</td></tr>
+	  <tr><td><code>.radio-survey</code></td><td>인라인 버튼쌍 설문형</td></tr>
+	  <tr><td><code>.radio-survey--error</code></td><td>오류 상태 (빨간 테두리)</td></tr>
+	  <tr><td><code>.radio-survey__guide--selected</code></td><td>정답 안내 (초록)</td></tr>
+	  <tr><td><code>.radio-survey__guide--error</code></td><td>오류 안내 (빨강)</td></tr>
 	</table>
   </section>
 
@@ -5157,446 +6471,4 @@
         </button>
       </div>
       <div class="bottomsheet__body" style="padding:0">
-        <div style="display:flex;gap:8px;padding:12px 24px">
-          <button class="btn btn--sm btn--secondary" style="flex:1">NH농협</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">다른금융</button>
-        </div>
-        <p style="text-align:right;padding:0 24px 8px;font-size:14px;color:var(--color-text-brand)">직접 입력</p>
-        <ul style="list-style:none;margin:0;padding:0">
-          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle);display:flex;align-items:center;gap:12px">
-            <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
-            <div><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
-          </li>
-          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle);display:flex;align-items:center;gap:12px">
-            <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
-            <div><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
-          </li>
-        </ul>
-        <p style="text-align:center;padding:14px;font-size:14px;color:var(--color-text-brand);border-top:1px solid var(--color-border-subtle)">NH농협 계좌등록 &#8250;</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Account — NH-No-Data -->
-  <div class="bottomsheet" id="bs-account-nh-nodata">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">계좌를 선택해 주세요</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;gap:8px;margin-bottom:12px">
-          <button class="btn btn--sm btn--secondary" style="flex:1">NH농협</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">다른금융</button>
-        </div>
-        <p style="text-align:right;font-size:14px;color:var(--color-text-brand);margin-bottom:16px">직접 입력</p>
-        <div style="text-align:center;padding:32px 0;color:var(--color-text-tertiary)">
-          <p style="font-size:15px;margin-bottom:4px">등록된 계좌가 없습니다</p>
-          <p style="font-size:14px">계좌를 등록하고 이용해 주세요</p>
-        </div>
-        <p style="text-align:center;padding-top:16px;font-size:14px;color:var(--color-text-brand);border-top:1px solid var(--color-border-subtle)">NH농협 계좌등록 &#8250;</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Account — Accordion -->
-  <div class="bottomsheet" id="bs-account-accordion">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">계좌를 선택해 주세요</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body" style="padding:0">
-        <div style="display:flex;gap:8px;padding:12px 24px">
-          <button class="btn btn--sm btn--outline" style="flex:1">NH농협(외화)</button>
-          <button class="btn btn--sm btn--secondary" style="flex:1">NH농협(외화)</button>
-        </div>
-        <p style="text-align:right;padding:0 24px 8px;font-size:14px;color:var(--color-text-brand)">직접 입력</p>
-        <ul style="list-style:none;margin:0;padding:0">
-          <li style="padding:14px 24px;border-bottom:1px solid var(--color-border-subtle)">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-              <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
-              <div style="flex:1"><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
-            </div>
-            <div style="padding-left:48px;font-size:14px;color:#505050">
-              <div style="margin-bottom:4px">&#127482;&#127480; USD 100,500.00</div>
-              <div>&#127466;&#127482; EUR 80,500.00</div>
-            </div>
-          </li>
-          <li style="padding:14px 24px;display:flex;align-items:center;gap:12px">
-            <div style="width:36px;height:36px;border-radius:50%;background:#19973C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0">NH</div>
-            <div style="flex:1"><div style="font-size:16px;font-weight:500">금융사명</div><div style="font-size:14px;color:#767676">계좌번호</div><div style="font-size:14px;color:#505050">출금가능금액 <strong>10,000원</strong></div></div>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Share -->
-  <div class="bottomsheet" id="bs-share">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">공유하기</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;gap:24px;justify-content:center;padding:8px 0">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px">
-            <div style="width:52px;height:52px;border-radius:50%;background:#FAE100;display:flex;align-items:center;justify-content:center">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B1E08" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>카카오톡
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px">
-            <div style="width:52px;height:52px;border-radius:50%;background:#3FBF72;display:flex;align-items:center;justify-content:center">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>문자메시지
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px">
-            <div style="width:52px;height:52px;border-radius:50%;background:#3D9EE3;display:flex;align-items:center;justify-content:center">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </div>링크복사
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: CS -->
-  <div class="bottomsheet" id="bs-cs">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">상담 방법을 선택해 주세요</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17v-.08z"/></svg>
-            전화 상담 예약
-          </button>
-          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            채팅 상담
-          </button>
-          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            이메일 상담
-          </button>
-          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            화상 상담
-          </button>
-          <button class="btn btn--lg btn--outline" style="display:flex;align-items:center;gap:8px;justify-content:flex-start;grid-column:1/-1">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            영업점 방문 예약
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Option -->
-  <div class="bottomsheet" id="bs-option">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">조회 설정</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <p style="font-size:14px;font-weight:600;margin-bottom:8px">조회기간</p>
-        <div style="display:flex;gap:8px;margin-bottom:16px">
-          <button class="btn btn--sm btn--primary" style="flex:1">12개월</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">24개월</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">36개월</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">직접입력</button>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:14px">
-          <span style="border:1px solid var(--color-border-default);border-radius:8px;padding:10px 12px;flex:1">2024.01.01</span>
-          <span>~</span>
-          <span style="border:1px solid var(--color-border-default);border-radius:8px;padding:10px 12px;flex:1">2024.01.01</span>
-        </div>
-        <p style="font-size:14px;font-weight:600;margin-bottom:8px">조회간격</p>
-        <div style="display:flex;gap:8px;margin-bottom:16px">
-          <button class="btn btn--sm btn--primary" style="flex:1">최신순</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">과거순</button>
-        </div>
-        <p style="font-size:14px;font-weight:600;margin-bottom:8px">조회유형</p>
-        <div style="display:flex;gap:8px">
-          <button class="btn btn--sm btn--primary" style="flex:1">전체</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">입금</button>
-          <button class="btn btn--sm btn--outline" style="flex:1">출금</button>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Picker-Wheel — Year-Month-Day -->
-  <div class="bottomsheet" id="bs-pw-ymd">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">년월일 선택</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="position:relative;padding:8px 0">
-          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none;z-index:0"></div>
-          <div style="display:flex;position:relative;z-index:1">
-            <div style="flex:1;text-align:center;font-size:16px">
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">2018년</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">2019년</div>
-              <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">2020년</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">2021년</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">2022년</div>
-            </div>
-            <div style="flex:1;text-align:center;font-size:16px">
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">8월</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">9월</div>
-              <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">10월</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">11월</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">12월</div>
-            </div>
-            <div style="flex:1;text-align:center;font-size:16px">
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">16일</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">17일</div>
-              <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">18일</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">19일</div>
-              <div style="padding:10px 0;color:var(--color-text-tertiary)">20일</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Picker-Wheel — Day -->
-  <div class="bottomsheet" id="bs-pw-day">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">일 선택</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;gap:16px;position:relative;padding:8px 0">
-          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none"></div>
-          <div style="flex:1;text-align:center;font-size:16px">
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">매일</div>
-            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">매주</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">매월</div>
-          </div>
-          <div style="flex:1;text-align:center;font-size:16px">
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">월요일</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">화요일</div>
-            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">수요일</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">목요일</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">금요일</div>
-          </div>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Picker-Wheel — Hour-Minute -->
-  <div class="bottomsheet" id="bs-pw-hm">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">시분 선택</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;position:relative;padding:8px 0">
-          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none"></div>
-          <div style="flex:1;text-align:center;font-size:16px">
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">3시</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">4시</div>
-            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">5시</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">6시</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">7시</div>
-          </div>
-          <div style="flex:1;text-align:center;font-size:16px">
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">19분</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">20분</div>
-            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">21분</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">22분</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">23분</div>
-          </div>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Picker-Wheel — Period -->
-  <div class="bottomsheet" id="bs-pw-period">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">기간 선택</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;position:relative;padding:8px 0">
-          <div style="position:absolute;top:50%;left:0;right:0;height:44px;background:var(--color-bg-subtle);border-radius:8px;transform:translateY(-50%);pointer-events:none"></div>
-          <div style="flex:1;text-align:center;font-size:16px">
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">3년</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">4년</div>
-            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">5년</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">6년</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">7년</div>
-          </div>
-          <div style="flex:1;text-align:center;font-size:16px">
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">1개월</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">2개월</div>
-            <div style="padding:10px 0;font-weight:600;color:var(--color-text-brand)">3개월</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">4개월</div>
-            <div style="padding:10px 0;color:var(--color-text-tertiary)">5개월</div>
-          </div>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Picker-Calendar — Year-Month-Day -->
-  <div class="bottomsheet" id="bs-pc-ymd">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">날짜 선택</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-          <button class="btn btn--sm btn--ghost">오늘</button>
-          <div style="display:flex;align-items:center;gap:12px">
-            <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>2023<button class="btn btn--sm btn--ghost">&#8250;</button></div>
-            <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>12<button class="btn btn--sm btn--ghost">&#8250;</button></div>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(7,1fr);text-align:center;gap:6px 2px">
-          <span style="font-size:13px;color:#E24949">일</span><span style="font-size:13px">월</span><span style="font-size:13px">화</span><span style="font-size:13px">수</span><span style="font-size:13px">목</span><span style="font-size:13px">금</span><span style="font-size:13px;color:var(--color-text-brand)">토</span>
-          <span style="font-size:14px;color:#E24949">29</span><span style="font-size:14px">30</span><span style="font-size:14px">31</span><span style="font-size:14px">1</span><span style="font-size:14px">2</span><span style="font-size:14px">3</span><span style="font-size:14px;color:var(--color-text-brand)">4</span>
-          <span style="font-size:14px;color:#E24949">5</span><span style="font-size:14px">6</span><span style="font-size:14px">7</span><span style="font-size:14px">8</span><span style="font-size:14px">9</span><span style="font-size:14px">10</span><span style="font-size:14px;color:var(--color-text-brand)">11</span>
-          <span style="font-size:14px;color:#E24949">12</span><span style="font-size:14px">13</span><span style="font-size:14px">14</span><span style="font-size:14px">15</span><span style="font-size:14px;width:28px;height:28px;background:#121212;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">16</span><span style="font-size:14px">17</span><span style="font-size:14px;color:var(--color-text-brand)">18</span>
-          <span style="font-size:14px;color:#E24949">19</span><span style="font-size:14px">20</span><span style="font-size:14px">21</span><span style="font-size:14px">22</span><span style="font-size:14px">23</span><span style="font-size:14px">24</span><span style="font-size:14px;color:var(--color-text-brand)">25</span>
-          <span style="font-size:14px;color:#E24949">26</span><span style="font-size:14px;width:28px;height:28px;background:var(--color-text-brand);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">27</span><span style="font-size:14px">28</span><span style="font-size:14px">29</span><span style="font-size:14px">30</span><span style="font-size:14px">1</span><span style="font-size:14px;color:var(--color-text-brand)">2</span>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Picker-Calendar — Month-Day -->
-  <div class="bottomsheet" id="bs-pc-md">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">날짜 선택</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-          <button class="btn btn--sm btn--ghost">오늘</button>
-          <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>2023. 10<button class="btn btn--sm btn--ghost">&#8250;</button></div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(7,1fr);text-align:center;gap:6px 2px">
-          <span style="font-size:13px;color:#E24949">일</span><span style="font-size:13px">월</span><span style="font-size:13px">화</span><span style="font-size:13px">수</span><span style="font-size:13px">목</span><span style="font-size:13px">금</span><span style="font-size:13px;color:var(--color-text-brand)">토</span>
-          <span style="font-size:14px;color:#E24949">1</span><span style="font-size:14px">2</span><span style="font-size:14px">3</span><span style="font-size:14px">4</span><span style="font-size:14px">5</span><span style="font-size:14px">6</span><span style="font-size:14px;color:var(--color-text-brand)">7</span>
-          <span style="font-size:14px;color:#E24949">8</span><span style="font-size:14px">9</span><span style="font-size:14px">10</span><span style="font-size:14px">11</span><span style="font-size:14px">12</span><span style="font-size:14px">13</span><span style="font-size:14px;color:var(--color-text-brand)">14</span>
-          <span style="font-size:14px;color:#E24949">15</span><span style="font-size:14px;width:28px;height:28px;background:#121212;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">16</span><span style="font-size:14px">17</span><span style="font-size:14px">18</span><span style="font-size:14px">19</span><span style="font-size:14px">20</span><span style="font-size:14px;color:var(--color-text-brand)">21</span>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BS: Picker-Calendar — Year-Month -->
-  <div class="bottomsheet" id="bs-pc-ym">
-    <div class="bottomsheet__backdrop"></div>
-    <div class="bottomsheet__container">
-      <div class="bottomsheet__handle"><div class="bottomsheet__handle-bar"></div></div>
-      <div class="bottomsheet__header">
-        <span class="bottomsheet__title">년월 선택</span>
-        <button class="bottomsheet__close" type="button" data-bs-close>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="bottomsheet__body">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-          <button class="btn btn--sm btn--ghost">당월</button>
-          <div style="display:flex;align-items:center;gap:4px;font-size:20px;font-weight:600"><button class="btn btn--sm btn--ghost">&#8249;</button>2023<button class="btn btn--sm btn--ghost">&#8250;</button></div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center">
-          <span style="padding:12px;font-size:19px">1</span><span style="padding:12px;font-size:19px">2</span><span style="padding:12px;font-size:19px">3</span><span style="padding:12px;font-size:19px">4</span>
-          <span style="padding:12px;font-size:19px">5</span><span style="padding:12px;font-size:19px">6</span><span style="padding:12px;font-size:19px;background:#121212;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:auto">7</span><span style="padding:12px;font-size:19px">8</span>
-          <span style="padding:12px;font-size:19px">9</span><span style="padding:12px;font-size:19px;background:var(--color-text-brand);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:auto">10</span><span style="padding:12px;font-size:19px">11</span><span style="padding:12px;font-size:19px">12</span>
-        </div>
-      </div>
-      <div class="bottomsheet__footer">
-        <button class="btn btn--md btn--primary btn--full" data-bs-close>확인</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="../assets/js/main.js"></script>
-</body>
-</html>
+        <div sty

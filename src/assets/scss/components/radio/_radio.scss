@@ -1,61 +1,154 @@
 // =============================================================================
-// Radio — NDS Design Library v1.0
+// Radio -- NDS Design Library v1.0
 // =============================================================================
 
 @use '../../styles/mixins/mixins' as *;
 
-.radio {
+// =============================================================================
+// radio-box-center -- Box type, center-aligned text
+// =============================================================================
+.radio-box-center {
   display: inline-flex;
-  align-items: flex-start;
-  gap: var(--spacing-3);
+  align-items: center;
+  justify-content: center;
+
+  &__input { @include visually-hidden; }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    padding: 0 20px;
+    min-width: 80px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      border-color var(--transition-base),
+      color var(--transition-base);
+  }
+
+  &__input:checked + .radio-box-center__label {
+    border-color: #19973c;
+    color: #19973c;
+  }
+
+  &__input:disabled + .radio-box-center__label {
+    color: #929292;
+    cursor: not-allowed;
+  }
+
+  // sm size
+  &--sm .radio-box-center__label {
+    height: 36px;
+    padding: 0 16px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+}
+
+// =============================================================================
+// radio-box-left -- Box type, full-width, left-aligned text
+// =============================================================================
+.radio-box-left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__input { @include visually-hidden; }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 54px;
+    padding: 0 16px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      border-color var(--transition-base),
+      color var(--transition-base),
+      background-color var(--transition-base);
+  }
+
+  &__input:checked + .radio-box-left__label {
+    border-color: #19973c;
+    color: #19973c;
+  }
+
+  &__input:disabled + .radio-box-left__label {
+    background: #f0f0f0;
+    cursor: not-allowed;
+  }
+
+  &--error .radio-box-left__label {
+    border-color: #e24949;
+  }
+}
+
+// =============================================================================
+// radio-basic -- Circle indicator + label
+// =============================================================================
+.radio-basic {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
   user-select: none;
 
-  &__input {
-    @include visually-hidden;
-  }
+  &__input { @include visually-hidden; }
 
-  &__circle {
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    border: 1.5px solid var(--color-border-default);
-    border-radius: var(--radius-full);
-    background-color: var(--color-bg-control-default);
+  &__icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #d3d3d3;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2px;
-    transition: border-color var(--transition-base), background-color var(--transition-base);
+    flex-shrink: 0;
+    transition:
+      border-color var(--transition-base),
+      background-color var(--transition-base);
 
     &::after {
       content: '';
       width: 8px;
       height: 8px;
-      border-radius: var(--radius-full);
-      background-color: var(--primitive-gray-50);
+      border-radius: 50%;
+      background: #ffffff;
       opacity: 0;
-      transition: opacity var(--transition-base), transform var(--transition-base);
       transform: scale(0.5);
+      transition:
+        opacity var(--transition-base),
+        transform var(--transition-base);
     }
   }
 
   &__label {
-    font-size: var(--font-size-md);
-    color: var(--color-text-primary);
-    line-height: var(--line-height-normal);
-  }
-
-  &__description {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-    margin-top: var(--spacing-1);
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
   }
 
   // Checked
-  &__input:checked + .radio__circle {
-    border-color: var(--primitive-green-500);
-    background-color: var(--primitive-green-500);
+  &__input:checked + .radio-basic__icon {
+    border-color: #19973c;
+    background: #19973c;
 
     &::after {
       opacity: 1;
@@ -64,64 +157,187 @@
   }
 
   // Disabled
-  &__input:disabled + .radio__circle {
-    border-color: var(--color-border-default);
-    background-color: var(--color-bg-control-disabled);
+  &__input:disabled + .radio-basic__icon {
+    border-color: #e1e1e1;
+    background: #f6f6f6;
     cursor: not-allowed;
   }
 
-  &__input:disabled ~ .radio__label {
-    color: var(--color-text-disabled);
+  &__input:disabled ~ .radio-basic__label {
+    color: #929292;
   }
 
-  // Focus
-  &__input:focus-visible + .radio__circle {
-    @include focus-ring;
+  // Selected + Disabled
+  &__input:checked:disabled + .radio-basic__icon {
+    border-color: #b3b3b3;
+    background: #b3b3b3;
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  // sm size
+  &--sm {
+    gap: 6px;
+
+    .radio-basic__icon {
+      width: 18px;
+      height: 18px;
+
+      &::after {
+        width: 6px;
+        height: 6px;
+      }
+    }
+
+    .radio-basic__label {
+      font-size: 15px;
+    }
+  }
+}
+
+// =============================================================================
+// radio-explain -- Full-width card with title + subtitle, optional icon
+// =============================================================================
+.radio-explain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__input { @include visually-hidden; }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      border-color var(--transition-base);
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #767676;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    transition: color var(--transition-base);
+  }
+
+  &__sub {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  // Checked
+  &__input:checked + .radio-explain__label {
+    border-color: #19973c;
+
+    .radio-explain__title { color: #19973c; }
   }
 
   // Error
-  &--error .radio__circle {
-    border-color: var(--color-border-danger);
+  &--error .radio-explain__label {
+    border-color: #e24949;
   }
 
-  // Sizes
-  &--sm {
-    .radio__circle { width: 16px; height: 16px; }
-    .radio__circle::after { width: 6px; height: 6px; }
-    .radio__label { font-size: var(--font-size-sm); }
+  // Guide message
+  &__guide {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+    margin-top: 4px;
+
+    &--error   { color: #e24949; }
+    &--selected { color: #19973c; }
   }
+}
 
-  &--lg {
-    .radio__circle { width: 20px; height: 20px; }
-    .radio__circle::after { width: 10px; height: 10px; }
-    .radio__label { font-size: var(--font-size-lg); }
-  }
+// =============================================================================
+// radio-survey -- Inline button-pair survey (yn / ox)
+// =============================================================================
+.radio-survey {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 
-  // Card style radio
-  &--card {
-    border: 1.5px solid var(--color-border-default);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-5) var(--spacing-6);
-    transition: border-color var(--transition-base), background-color var(--transition-base);
-
-    &:hover { border-color: var(--color-border-emphasis); }
-
-    .radio__input:checked ~ & {
-      border-color: var(--primitive-green-500);
-      background-color: var(--primitive-green-50);
-    }
-  }
-
-  // Group
-  &-group {
+  &__options {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-4);
+    gap: 8px;
+  }
 
-    &--horizontal {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: var(--spacing-6);
-    }
+  &__input { @include visually-hidden; }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 50px;
+	min-width: 152px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      border-color var(--transition-base),
+      color var(--transition-base);
+  }
+
+  &__input:checked + .radio-survey__label {
+    border-color: #19973c;
+    color: #19973c;
+  }
+
+  &--error .radio-survey__label {
+    border-color: #e24949;
+  }
+
+  &__guide {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+
+    &--error    { color: #e24949; }
+    &--selected { color: #19973c; }
   }
 }

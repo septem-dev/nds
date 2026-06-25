@@ -1,98 +1,163 @@
 // =============================================================================
-// Chip — NDS Design Library v1.0
+// Chip -- NDS Design Library v1.0
 // =============================================================================
 
-@use '../../styles/mixins/mixins' as *;
-
-.chip {
+// =============================================================================
+// Basic chip (.chip-basic) -- text + close button
+// =============================================================================
+.chip-basic {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-2);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-full);
-  cursor: pointer;
+  height: 30px;
+  padding: 0 8px 0 12px;
+  gap: 4px;
+  background: #f6f6f6;
+  border-radius: 6px;
+  flex-shrink: 0;
+
+  &__text {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+    white-space: nowrap;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #929292;
+    flex-shrink: 0;
+
+    svg {
+      width: 10px;
+      height: 10px;
+      display: block;
+    }
+
+    &:hover { color: #505050; }
+  }
+}
+
+// =============================================================================
+// Single chip (.chip-single) -- text only
+// =============================================================================
+.chip-single {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  background: #f6f6f6;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.02em;
+  color: #505050;
   white-space: nowrap;
-  transition:
-    background-color var(--transition-base),
-    border-color var(--transition-base),
-    color var(--transition-base);
-  user-select: none;
+  flex-shrink: 0;
+}
 
-  // Size
-  &--sm {
-    height: 28px;
-    padding: 0 var(--spacing-4);
-    font-size: var(--font-size-xs);
-    gap: var(--spacing-1);
-  }
+// =============================================================================
+// Accordion chip group (.chip-accordion)
+// =============================================================================
+.chip-accordion {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
 
-  &--md {
-    height: 32px;
-    padding: 0 var(--spacing-5);
-    font-size: var(--font-size-sm);
-  }
+  // Chip list wrapper
+  &__chips {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
 
-  &--lg {
-    height: 36px;
-    padding: 0 var(--spacing-6);
-    font-size: var(--font-size-md);
-  }
-
-  // Default state
-  background-color: var(--color-bg-chip-default);
-  color: var(--color-text-primary);
-
-  &:hover {
-    background-color: var(--color-bg-muted);
-  }
-
-  // Selected
-  &--selected {
-    background-color: var(--color-bg-chip-selected);
-    border-color: var(--color-border-brand);
-    color: var(--color-text-brand);
-
-    &:hover {
-      background-color: var(--primitive-green-100);
+    &.is-open {
+      flex-wrap: wrap;
     }
   }
 
-  // Disabled
-  &--disabled,
-  &:disabled {
-    background-color: var(--color-bg-chip-disabled);
-    color: var(--color-text-disabled);
-    border-color: var(--color-border-default);
-    cursor: not-allowed;
-    pointer-events: none;
+  // Individual chip item
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding: 0 12px;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #121212;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+    user-select: none;
+    transition:
+      background-color var(--transition-base),
+      color var(--transition-base),
+      border-color var(--transition-base);
+
+    &.is-active {
+      background: #111111;
+      border-color: #111111;
+      color: #ffffff;
+      font-weight: var(--font-weight-medium);
+    }
   }
 
-  // Icon
-  &__icon {
+  // Overflow count badge (+N)
+  &__more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding: 0 8px;
+    background: #e8f0fe;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #1b74e4;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  // Toggle chevron
+  &__toggle {
     display: flex;
     align-items: center;
-    width: 16px;
-    height: 16px;
-    color: inherit;
-  }
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #767676;
+    flex-shrink: 0;
 
-  // Remove button
-  &__remove {
-    @include reset-button;
-    display: flex;
-    align-items: center;
-    width: 14px;
-    height: 14px;
-    color: var(--color-icon-tertiary);
-    margin-left: var(--spacing-1);
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      transition: transform var(--transition-base);
+    }
 
-    &:hover { color: var(--color-icon-primary); }
-  }
-
-  // Group
-  &-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-2);
+    &.is-open svg {
+      transform: rotate(180deg);
+    }
   }
 }

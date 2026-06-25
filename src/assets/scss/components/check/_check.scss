@@ -1,43 +1,95 @@
 // =============================================================================
-// Check (Checkbox) — NDS Design Library v1.0
+// Check -- NDS Design Library v1.0
 // =============================================================================
 
 @use '../../styles/mixins/mixins' as *;
 
-.check {
+// =============================================================================
+// Box type (.check-box)
+// 상자 형태, 선택 시 테두리/텍스트 초록 강조
+// =============================================================================
+.check-box {
+  position: relative;
   display: inline-flex;
-  align-items: flex-start;
-  gap: var(--spacing-3);
-  cursor: pointer;
-  user-select: none;
 
-  // Hidden native input
   &__input {
     @include visually-hidden;
   }
 
-  // Custom checkbox box
-  &__box {
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 46px;
+    padding: 0 16px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color var(--transition-base), color var(--transition-base);
+    white-space: nowrap;
+  }
+
+  // Selected
+  &__input:checked + .check-box__label {
+    border-color: #19973c;
+    color: #19973c;
+  }
+
+  // Disabled
+  &__input:disabled + .check-box__label {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  // sm size
+  &--sm .check-box__label {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+}
+
+// =============================================================================
+// Basic type (.check-basic)
+// 원형 체크 아이콘 + 텍스트
+// =============================================================================
+.check-basic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__icon {
     flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    border: 1.5px solid var(--color-border-default);
-    border-radius: var(--radius-xs);
-    background-color: var(--color-bg-control-default);
-    transition:
-      background-color var(--transition-base),
-      border-color var(--transition-base);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid #d3d3d3;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2px;
+    transition: background-color var(--transition-base), border-color var(--transition-base);
 
     &::after {
       content: '';
       display: block;
-      width: 11px;
-      height: 8px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 8' fill='none'%3E%3Cpath d='M1.5 4L3.5 6.5L9.5 1.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      width: 10px;
+      height: 7px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 7' fill='none'%3E%3Cpath d='M1 3.5L3.5 6L9 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -47,89 +99,136 @@
   }
 
   &__label {
-    font-size: var(--font-size-md);
-    color: var(--color-text-primary);
-    line-height: var(--line-height-normal);
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #121212;
+    line-height: 1.4;
   }
 
-  &__description {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-    margin-top: var(--spacing-1);
-  }
-
-  // Checked state
-  &__input:checked + .check__box {
-    background-color: var(--color-bg-control-selected);
-    border-color: var(--color-bg-control-selected);
+  // Selected
+  &__input:checked + .check-basic__icon {
+    background: #19973c;
+    border-color: #19973c;
 
     &::after { opacity: 1; }
   }
 
-  // Indeterminate state
-  &__input:indeterminate + .check__box {
-    background-color: var(--color-bg-control-selected);
-    border-color: var(--color-bg-control-selected);
-
-    &::after {
-      width: 10px;
-      height: 2px;
-      background-image: none;
-      background-color: var(--primitive-gray-50);
-      border-radius: 1px;
-      transform: none;
-      opacity: 1;
-    }
-  }
-
-  // Disabled
-  &__input:disabled + .check__box {
-    background-color: var(--color-bg-control-disabled);
-    border-color: var(--color-border-default);
+  // Disabled (unchecked)
+  &__input:disabled + .check-basic__icon {
+    background: #f6f6f6;
+    border-color: #e1e1e1;
     cursor: not-allowed;
   }
 
-  &__input:disabled ~ .check__label {
-    color: var(--color-text-disabled);
+  &__input:disabled ~ .check-basic__label {
+    color: #929292;
   }
 
-  // Focus
-  &__input:focus-visible + .check__box {
-    @include focus-ring;
+  // Selected + Disabled
+  &__input:checked:disabled + .check-basic__icon {
+    background: #b3b3b3;
+    border-color: #b3b3b3;
+
+    &::after { opacity: 1; }
   }
 
-  // Error
-  &--error .check__box {
-    border-color: var(--color-border-danger);
+  &__input:checked:disabled ~ .check-basic__label {
+    color: #121212;
   }
 
-  // Sizes
-  &--sm {
-    .check__box {
-      width: 16px;
-      height: 16px;
+  // xs size
+  &--xs {
+    .check-basic__icon {
+      width: 18px;
+      height: 18px;
     }
-    .check__label { font-size: var(--font-size-sm); }
-  }
-
-  &--lg {
-    .check__box {
-      width: 20px;
-      height: 20px;
+    .check-basic__label {
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
     }
-    .check__label { font-size: var(--font-size-lg); }
+  }
+}
+
+// =============================================================================
+// Survey type (.check-survey)
+// 투자성향분석 등 설문용, 전체 너비 박스
+// =============================================================================
+.check-survey {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  background: #ffffff;
+  transition: border-color var(--transition-base);
+
+  &__input {
+    @include visually-hidden;
   }
 
-  // Group
-  &-group {
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #d3d3d3;
+    background: #ffffff;
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-4);
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-base), border-color var(--transition-base);
 
-    &--horizontal {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: var(--spacing-6);
+    &::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 9px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 9' fill='none'%3E%3Cpath d='M1 4.5L4.5 8L11 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity var(--transition-base);
     }
+  }
+
+  &__label {
+    flex: 1;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  // Selected
+  &__input:checked + .check-survey__icon {
+    background: #19973c;
+    border-color: #19973c;
+
+    &::after { opacity: 1; }
+  }
+
+  &__input:checked ~ .check-survey__label { color: #505050; }
+
+  // Error state modifier on wrapper
+  &--error {
+    border-color: #e24949;
+  }
+
+  // Guide message (below the check-survey element)
+  &__guide {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    margin-top: 4px;
+
+    &--error { color: #e24949; }
+    &--sub   { color: #767676; }
   }
 }

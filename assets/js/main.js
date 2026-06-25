@@ -65,6 +65,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ── Chip Accordion (.js-chip-acc-toggle) ─────────────────── */
+  document.querySelectorAll('.js-chip-acc-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var chips = btn.closest('.chip-accordion').querySelector('.chip-accordion__chips');
+      if (!chips) return;
+      var open = chips.classList.toggle('is-open');
+      btn.classList.toggle('is-open', open);
+    });
+  });
+
   /* ── Switch (label + checkbox 네이티브 동작 지원) ─────────── */
   // .switch__input checkbox 는 네이티브 동작으로 충분
   // switch-font: thumb order CSS로 처리됨 (JS 불필요)
