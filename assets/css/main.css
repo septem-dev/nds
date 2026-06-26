@@ -940,16 +940,6 @@
 .bottomsheet--open {
   pointer-events: auto;
 }
-.bottomsheet__backdrop {
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-bg-overlay);
-  opacity: 0;
-  transition: opacity var(--transition-slow);
-}
-.bottomsheet--open .bottomsheet__backdrop {
-  opacity: 1;
-}
 .bottomsheet__container {
   position: relative;
   background-color: var(--color-bg-default);
@@ -960,6 +950,9 @@
   transform: translateY(100%);
   transition: transform var(--transition-slow);
   box-shadow: var(--shadow-xl);
+  margin: 0 auto;
+  max-width: 450px;
+  min-width: 320px;
 }
 .bottomsheet--open .bottomsheet__container {
   transform: translateY(0);
@@ -968,7 +961,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-4) 0 var(--spacing-3);
+  padding: 10px 0 0;
   flex-shrink: 0;
   cursor: grab;
 }
@@ -982,12 +975,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-4) var(--spacing-8);
+  height: 50px;
+  padding: 0 var(--spacing-24);
+  border-bottom: 1px solid var(--color-border-subtle);
   flex-shrink: 0;
 }
 .bottomsheet__title {
-  font-size: var(--font-size-xl);
+  font-size: 20px;
   font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
   color: var(--color-text-primary);
 }
 .bottomsheet__close {
@@ -1001,23 +997,42 @@
   display: flex;
   align-items: center;
   color: var(--color-icon-secondary);
-  padding: var(--spacing-2);
+  padding: var(--spacing-8);
 }
 .bottomsheet__body {
   flex: 1;
   overflow-y: auto;
-  padding: var(--spacing-4) var(--spacing-8);
+  padding: var(--spacing-12) var(--spacing-24) 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .bottomsheet__body::-webkit-scrollbar {
   display: none;
 }
+.bottomsheet__body p, .bottomsheet__body span, .bottomsheet__body div {
+  font-size: var(--type-body2-size);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--type-body2-ls);
+  color: var(--color-text-secondary);
+  line-height: var(--type-body2-lh);
+}
+.bottomsheet--no-header .bottomsheet__body {
+  padding-top: 22px;
+}
 .bottomsheet__footer {
-  padding: var(--spacing-4) var(--spacing-8);
-  padding-bottom: calc(var(--spacing-8) + env(safe-area-inset-bottom));
+  padding: var(--spacing-32) var(--spacing-24);
+  padding-bottom: calc(var(--spacing-32) + env(safe-area-inset-bottom));
   flex-shrink: 0;
-  border-top: 1px solid var(--color-border-subtle);
+}
+.bottomsheet__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: #111111;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+.bottomsheet--open .bottomsheet__backdrop {
+  opacity: 0.3;
 }
 
 .bullet {

@@ -15,17 +15,6 @@
 
   &--open { pointer-events: auto; }
 
-  // Backdrop
-  &__backdrop {
-    position: absolute;
-    inset: 0;
-    background-color: var(--color-bg-overlay);
-    opacity: 0;
-    transition: opacity var(--transition-slow);
-
-    .bottomsheet--open & { opacity: 1; }
-  }
-
   // Sheet container
   &__container {
     position: relative;
@@ -37,14 +26,17 @@
     transform: translateY(100%);
     transition: transform var(--transition-slow);
     box-shadow: var(--shadow-xl);
+	margin:0 auto;
+	max-width:450px;
+	min-width:320px;
 
     .bottomsheet--open & { transform: translateY(0); }
   }
 
-  // Handle
+  // Handle — 10px top clearance, drag bar centered
   &__handle {
     @include flex-center;
-    padding: var(--spacing-4) 0 var(--spacing-3);
+    padding: 10px 0 0;
     flex-shrink: 0;
     cursor: grab;
 
@@ -56,16 +48,20 @@
     }
   }
 
-  // Header
+  // Header — height 50px (handle 10px → total Header area 60px)
   &__header {
     @include flex-between;
-    padding: var(--spacing-4) var(--spacing-8);
+    height: 50px;
+    padding: 0 var(--spacing-24);
+    border-bottom: 1px solid var(--color-border-subtle);
     flex-shrink: 0;
   }
 
+  // Title — 20px / SemiBold / -2% / #121212
   &__title {
-    font-size: var(--font-size-xl);
+    font-size: 20px;
     font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.02em;
     color: var(--color-text-primary);
   }
 
@@ -74,22 +70,47 @@
     display: flex;
     align-items: center;
     color: var(--color-icon-secondary);
-    padding: var(--spacing-2);
+    padding: var(--spacing-8);
   }
 
-  // Body
+  // Body — 12px gap after header, 24px horizontal padding
+  // (None-Header: 22px top via padding-top override)
   &__body {
     flex: 1;
     overflow-y: auto;
-    padding: var(--spacing-4) var(--spacing-8);
+    padding: var(--spacing-12) var(--spacing-24) 0;
     @include scrollbar-hidden;
+
+    // Body text — 15px / Regular / -2% / #505050
+    p, span, div {
+      font-size: var(--type-body2-size); // 15px
+      font-weight: var(--font-weight-regular);
+      letter-spacing: var(--type-body2-ls); // -0.02em
+      color: var(--color-text-secondary); // #505050
+      line-height: var(--type-body2-lh);  // 24px
+    }
   }
 
-  // Footer
+  // None-Header variant — 22px top padding instead of 12px
+  &--no-header &__body {
+    padding-top: 22px;
+  }
+
+  // Footer — 32px above button, 32px safe-area bottom
   &__footer {
-    padding: var(--spacing-4) var(--spacing-8);
-    padding-bottom: calc(var(--spacing-8) + env(safe-area-inset-bottom));
+    padding: var(--spacing-32) var(--spacing-24);
+    padding-bottom: calc(var(--spacing-32) + env(safe-area-inset-bottom));
     flex-shrink: 0;
-    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  // Backdrop — #111111 / Opacity 30%
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: #111111;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+
+    .bottomsheet--open & { opacity: 0.30; }
   }
 }
