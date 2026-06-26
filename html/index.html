@@ -491,142 +491,173 @@
   <section class="g-section" id="secTypography">
     <h3 class="g-section-title">Typography</h3>
 
-    <!-- Font Family -->
-    <p class="g-sub-title">Font Family</p>
-    <table class="g-table">
-      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
-      <tr>
-        <td><code>--font-family-base</code></td>
-        <td><code>Pretendard, -apple-system, …</code></td>
-        <td style="font-family:var(--font-family-base);font-size:15px">가나다 ABC abc 123</td>
-      </tr>
-      <tr>
-        <td><code>--font-family-mono</code></td>
-        <td><code>JetBrains Mono, Fira Code, …</code></td>
-        <td style="font-family:var(--font-family-mono);font-size:15px">const nds = 'v1.0';</td>
-      </tr>
-    </table>
-
-    <!-- Font Size -->
-    <p class="g-sub-title" style="margin-top:32px">Font Size</p>
-    <div style="display:flex;flex-direction:column;gap:6px">
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-2xs</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">11px</span>
-        <span style="font-size:var(--font-size-2xs)">NDS Design Library v1.0 — 가나다라마바사</span>
+    <!-- Typeface -->
+    <p class="g-sub-title">Typeface</p>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:16px">국문, 영문, 숫자, 특수문자(유니코드)는 Pretendard Font를 동일하게 사용합니다.</p>
+    <div style="background:var(--color-bg-subtle);border-radius:8px;padding:40px 24px;text-align:center">
+      <div style="font-family:var(--font-family-base);font-size:36px;font-weight:600;letter-spacing:-0.03em;color:var(--color-text-primary);margin-bottom:16px">
+        Pretendard&nbsp;&nbsp;프리텐다드&nbsp;&nbsp;0123!@#$
       </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-xs</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">12px</span>
-        <span style="font-size:var(--font-size-xs)">NDS Design Library v1.0 — 가나다라마바사</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-sm</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">13px</span>
-        <span style="font-size:var(--font-size-sm)">NDS Design Library v1.0 — 가나다라마바사</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-md</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">14px</span>
-        <span style="font-size:var(--font-size-md)">NDS Design Library v1.0 — 가나다라마바사</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-lg</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">15px</span>
-        <span style="font-size:var(--font-size-lg)">NDS Design Library v1.0 — 가나다라마바사</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-xl</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">16px</span>
-        <span style="font-size:var(--font-size-xl)">NDS Design Library v1.0 — 가나다라마바사</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-2xl</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">18px</span>
-        <span style="font-size:var(--font-size-2xl)">NDS Design Library — 가나다라마바</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-3xl</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">20px</span>
-        <span style="font-size:var(--font-size-3xl)">NDS Design Library — 가나다라마</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-4xl</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">24px</span>
-        <span style="font-size:var(--font-size-4xl)">NDS Design Library — 가나다라</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-5xl</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">28px</span>
-        <span style="font-size:var(--font-size-5xl)">NDS Design Library — 가나다</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:16px;padding:10px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:160px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--font-size-6xl</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">32px</span>
-        <span style="font-size:var(--font-size-6xl)">NDS Design Library — 가나다</span>
+      <div style="display:flex;justify-content:center;align-items:center;gap:24px;font-family:var(--font-family-base);font-size:13px;color:var(--color-text-secondary)">
+        <span style="font-weight:600">SemiBold</span>
+        <span style="color:var(--color-border-default)">|</span>
+        <span style="font-weight:500">Medium</span>
+        <span style="color:var(--color-border-default)">|</span>
+        <span style="font-weight:400">Regular</span>
       </div>
     </div>
 
-    <!-- Font Weight -->
-    <p class="g-sub-title" style="margin-top:32px">Font Weight</p>
-    <table class="g-table">
-      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
-      <tr>
-        <td><code>--font-weight-regular</code></td><td>400</td>
-        <td style="font-weight:var(--font-weight-regular);font-size:16px">NDS Design Library 가나다라마</td>
-      </tr>
-      <tr>
-        <td><code>--font-weight-medium</code></td><td>500</td>
-        <td style="font-weight:var(--font-weight-medium);font-size:16px">NDS Design Library 가나다라마</td>
-      </tr>
-      <tr>
-        <td><code>--font-weight-semibold</code></td><td>600</td>
-        <td style="font-weight:var(--font-weight-semibold);font-size:16px">NDS Design Library 가나다라마</td>
-      </tr>
-      <tr>
-        <td><code>--font-weight-bold</code></td><td>700</td>
-        <td style="font-weight:var(--font-weight-bold);font-size:16px">NDS Design Library 가나다라마</td>
-      </tr>
-    </table>
+    <!-- Scale -->
+    <p class="g-sub-title" style="margin-top:40px">Scale</p>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:16px">폰트 사이즈에 따라 고유의 높이값을 가지며, 상미치이므로 필요한 경우에만 정해진 값 이외의 설정값을 사용합니다.</p>
+    <div style="background:var(--color-bg-subtle);border-radius:8px;padding:32px 24px">
+      <div id="typeScalePreview" style="font-family:var(--font-family-base);font-weight:600;font-size:16px;line-height:24px;letter-spacing:-0.02em;color:var(--color-text-primary);text-align:center;margin-bottom:20px">
+        NHBank 금융상품몰 0123456789 !@#$%^&amp;*()
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--color-text-secondary)">
+          <label for="scaleSize" style="white-space:nowrap">Font Size : <span id="scaleSizeVal">16</span></label>
+          <input id="scaleSize" type="range" min="10" max="36" value="16" style="width:120px" oninput="
+            document.getElementById('scaleSizeVal').textContent = this.value;
+            document.getElementById('typeScalePreview').style.fontSize = this.value + 'px';
+          ">
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--color-text-secondary)">
+          <label for="scaleLh" style="white-space:nowrap">Line Height : <span id="scaleLhVal">24</span></label>
+          <input id="scaleLh" type="range" min="12" max="48" value="24" style="width:120px" oninput="
+            document.getElementById('scaleLhVal').textContent = this.value;
+            document.getElementById('typeScalePreview').style.lineHeight = this.value + 'px';
+          ">
+        </div>
+      </div>
+    </div>
 
-    <!-- Line Height -->
-    <p class="g-sub-title" style="margin-top:32px">Line Height</p>
+    <!-- Usage -->
+    <p class="g-sub-title" style="margin-top:40px">Usage</p>
     <table class="g-table">
-      <tr><th>Token</th><th>Value</th><th>Preview (2줄)</th></tr>
-      <tr>
-        <td><code>--line-height-tight</code></td><td>1.2</td>
-        <td style="line-height:var(--line-height-tight);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
-      </tr>
-      <tr>
-        <td><code>--line-height-snug</code></td><td>1.4</td>
-        <td style="line-height:var(--line-height-snug);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
-      </tr>
-      <tr>
-        <td><code>--line-height-normal</code></td><td>1.5</td>
-        <td style="line-height:var(--line-height-normal);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
-      </tr>
-      <tr>
-        <td><code>--line-height-relaxed</code></td><td>1.6</td>
-        <td style="line-height:var(--line-height-relaxed);font-size:14px;max-width:280px">NDS 디자인 시스템의 타이포그래피 토큰입니다.<br>두 번째 줄 간격을 확인하세요.</td>
-      </tr>
-    </table>
-
-    <!-- Letter Spacing -->
-    <p class="g-sub-title" style="margin-top:32px">Letter Spacing</p>
-    <table class="g-table">
-      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
-      <tr>
-        <td><code>--letter-spacing-tight</code></td><td>-0.02em</td>
-        <td style="letter-spacing:var(--letter-spacing-tight);font-size:16px">NDS Design Library 가나다라마바사</td>
-      </tr>
-      <tr>
-        <td><code>--letter-spacing-normal</code></td><td>0</td>
-        <td style="letter-spacing:var(--letter-spacing-normal);font-size:16px">NDS Design Library 가나다라마바사</td>
-      </tr>
-      <tr>
-        <td><code>--letter-spacing-wide</code></td><td>0.02em</td>
-        <td style="letter-spacing:var(--letter-spacing-wide);font-size:16px">NDS Design Library 가나다라마바사</td>
-      </tr>
+      <thead>
+        <tr>
+          <th style="width:100px">Scale</th>
+          <th style="width:120px">Weight</th>
+          <th style="width:120px">Size/Line-height</th>
+          <th style="width:140px">Letter-spacing</th>
+          <th>Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="font-size:var(--type-display1-size);line-height:var(--type-display1-lh);letter-spacing:var(--type-display1-ls);font-weight:600">Display1</span></td>
+          <td>SemiBold</td>
+          <td>36/40</td>
+          <td>-2% / -0.03em</td>
+          <td>상품상세</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-display2-size);line-height:var(--type-display2-lh);letter-spacing:var(--type-display2-ls);font-weight:600">Display2</span></td>
+          <td>SemiBold</td>
+          <td>28/38</td>
+          <td>-2% / -0.03em</td>
+          <td>상품상세</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-h1-size);line-height:var(--type-h1-lh);letter-spacing:var(--type-h1-ls);font-weight:600">H1</span></td>
+          <td>SemiBold/Medium</td>
+          <td>26/38</td>
+          <td>-2% / -0.03em</td>
+          <td>서비스 소개 타이틀</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-h2-size);line-height:var(--type-h2-lh);letter-spacing:var(--type-h2-ls);font-weight:600">H2</span></td>
+          <td>SemiBold/Medium</td>
+          <td>22/32</td>
+          <td>-2% / -0.03em</td>
+          <td>상품 소개, 프로세스 타이틀</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-h3-size);line-height:var(--type-h3-lh);letter-spacing:var(--type-h3-ls);font-weight:600">H3</span></td>
+          <td>SemiBold/Medium</td>
+          <td>20/28</td>
+          <td>-2% / -0.03em</td>
+          <td>팝업 페이지 타이틀</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-h4-size);line-height:var(--type-h4-lh);letter-spacing:var(--type-h4-ls);font-weight:600">H4</span></td>
+          <td>SemiBold/Medium</td>
+          <td>18/26</td>
+          <td>-2% / -0.02em</td>
+          <td>약관 타이틀들, 소자 목록 타이틀들, 안내 팝업, 슬라이드 팝업 타이틀들, 테이블 타이틀</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-h5-size);line-height:var(--type-h5-lh);letter-spacing:var(--type-h5-ls);font-weight:600">H5</span></td>
+          <td>SemiBold/Medium</td>
+          <td>16/24</td>
+          <td>-2% / -0.02em</td>
+          <td>콘텐츠 내부의 서브 타이틀</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-body1-size);line-height:var(--type-body1-lh);letter-spacing:var(--type-body1-ls);font-weight:500">Body1</span></td>
+          <td>Medium/Regular</td>
+          <td>16/24</td>
+          <td>-2% / -0.01em</td>
+          <td>강조 및 기본 폰트</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-body2-size);line-height:var(--type-body2-lh);letter-spacing:var(--type-body2-ls);font-weight:500">Body2</span></td>
+          <td>Medium/Regular</td>
+          <td>15/24</td>
+          <td>-2% / -0.02em</td>
+          <td>콘텐츠 내부 문구 테이블, 안내, 약관 등</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-body3-size);line-height:var(--type-body3-lh);letter-spacing:var(--type-body3-ls);font-weight:500">Body 3</span></td>
+          <td>Medium/Regular</td>
+          <td>14/22</td>
+          <td>-2% / -0.02em</td>
+          <td>콘텐츠 내부 문구, 툴팁 문구, 안내 문구 등</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-table1-size);line-height:var(--type-table1-lh);letter-spacing:var(--type-table1-ls);font-weight:500">Table1</span></td>
+          <td>Medium/Regular</td>
+          <td>16/24</td>
+          <td>-2% / -0.01em</td>
+          <td>테이블 내 숫자 폰트</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-table2-size);line-height:var(--type-table2-lh);letter-spacing:var(--type-table2-ls);font-weight:500">Table2</span></td>
+          <td>Medium/Regular</td>
+          <td>15/24</td>
+          <td>-2% / -0.02em</td>
+          <td>테이블 내 숫자 폰트</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-table3-size);line-height:var(--type-table3-lh);letter-spacing:var(--type-table3-ls);font-weight:500">Table3</span></td>
+          <td>Medium/Regular</td>
+          <td>14/22</td>
+          <td>-2% / -0.02em</td>
+          <td>테이블 내 숫자 폰트</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-caption1-size);line-height:var(--type-caption1-lh);letter-spacing:var(--type-caption1-ls);font-weight:500">Caption1</span></td>
+          <td>Medium/Regular</td>
+          <td>13/20</td>
+          <td>-2% / -0.01em</td>
+          <td>카드 및 라인 리스트 주요정보, 아코디언 목록, 메뉴형 목록</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-caption2-size);line-height:var(--type-caption2-lh);letter-spacing:var(--type-caption2-ls);font-weight:500">Caption2</span></td>
+          <td>Medium/Regular</td>
+          <td>12/18</td>
+          <td>-2% / -0.01em</td>
+          <td>그룹핑 내부 - 아코디언, 메뉴형 목록</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:var(--type-caption3-size);line-height:var(--type-caption3-lh);letter-spacing:var(--type-caption3-ls);font-weight:500">Caption3</span></td>
+          <td>Medium/Regular</td>
+          <td>10/15</td>
+          <td>-2% / -0.01em</td>
+          <td>데이터팝 목록, 박스 내외</td>
+        </tr>
+      </tbody>
     </table>
 
   </section>
@@ -634,94 +665,145 @@
   <!-- ===================== SPACING ===================== -->
   <section class="g-section" id="secSpacing">
     <h3 class="g-section-title">Spacing</h3>
-    <p class="g-sub-title">Spacing Scale — 4px base</p>
-    <div style="display:flex;flex-direction:column;gap:6px">
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-1</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">2px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-1)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-2</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">4px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-2)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-3</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">6px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-3)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-4</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">8px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-4)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-5</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">10px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-5)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-6</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">12px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-6)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-7</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">14px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-7)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-8</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">16px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-8)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-9</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">18px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-9)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-10</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">20px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-10)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-12</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">24px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-12)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-14</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">28px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-14)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-16</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">32px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-16)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-20</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">40px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-20)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-24</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">48px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-24)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-28</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">56px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-28)"></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:8px 14px;background:var(--color-bg-subtle);border-radius:6px">
-        <code style="width:120px;flex-shrink:0;font-size:11px;color:var(--color-text-primary)">--spacing-32</code>
-        <span style="width:36px;font-size:11px;color:var(--color-text-primary)">64px</span>
-        <div style="height:16px;background:var(--color-bg-button-primary-default);border-radius:2px;width:var(--spacing-32)"></div>
-      </div>
-    </div>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:24px">기본 단위는 4와 8의 배수로 사용되며, 8이 포함하고 있는 2배수도 사용 가능합니다.</p>
+    <table class="g-table">
+      <thead>
+        <tr>
+          <th style="width:180px">Variable Name</th>
+          <th style="width:180px">Primitive Variable</th>
+          <th style="width:60px">PX</th>
+          <th>Visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>--spacing-0</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/0</td>
+          <td>0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-2</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/2</td>
+          <td>2</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-2)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-4</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/4</td>
+          <td>4</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-4)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-8</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/8</td>
+          <td>8</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-8)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-12</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/12</td>
+          <td>12</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-12)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-16</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/16</td>
+          <td>16</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-16)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-20</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/20</td>
+          <td>20</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-20)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-24</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/24</td>
+          <td>24</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-24)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-32</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/32</td>
+          <td>32</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-32)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-40</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/40</td>
+          <td>40</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-40)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-48</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/48</td>
+          <td>48</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-48)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-56</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/56</td>
+          <td>56</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-56)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-60</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/60</td>
+          <td>60</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-60)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-64</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/64</td>
+          <td>64</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-64)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-72</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/72</td>
+          <td>72</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-72)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-80</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/80</td>
+          <td>80</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-80)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-88</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/88</td>
+          <td>88</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-88)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-96</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/96</td>
+          <td>96</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-96)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-104</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/104</td>
+          <td>104</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-104)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-112</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/112</td>
+          <td>112</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-112)"></div></td>
+        </tr>
+        <tr>
+          <td><code>--spacing-120</code></td>
+          <td style="color:var(--color-text-secondary);font-size:13px">unit/120</td>
+          <td>120</td>
+          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-120)"></div></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- ===================== RADIUS ===================== -->
@@ -781,66 +863,323 @@
   <section class="g-section" id="secLayout">
     <h3 class="g-section-title">Layout</h3>
 
-    <!-- Shadow -->
-    <p class="g-sub-title">Shadow</p>
-    <div style="display:flex;flex-wrap:wrap;gap:20px;padding:8px 0 24px">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-xs)"></div>
-        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-xs</code>
+    <style>
+      /* ── Layout mockup helpers ── */
+      .lyt-phone { position:relative; background:#f4f6f8; border-radius:16px; border:1px solid #dde1e7; overflow:hidden; font-family:var(--font-family-base); }
+      .lyt-statusbar { display:flex; justify-content:space-between; align-items:center; padding:0 12px; font-size:10px; color:#333; }
+      .lyt-header { display:flex; align-items:center; justify-content:space-between; background:#fff; border-bottom:1px solid #e8eaed; padding:0 12px; font-size:12px; font-weight:600; color:#121212; }
+      .lyt-content { background:#fff; display:flex; align-items:center; justify-content:center; color:#aaa; font-size:11px; }
+      .lyt-content--red { background:#fff0f0; color:#d9534f; font-size:11px; }
+      .lyt-tabbar { background:#fff; border-top:1px solid #e8eaed; display:flex; justify-content:space-around; align-items:center; }
+      .lyt-tab-item { display:flex; flex-direction:column; align-items:center; gap:2px; font-size:9px; color:#767676; }
+      .lyt-cta { background:#1a7c38; color:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; margin:0 12px; }
+      .lyt-spacer { background:#dce8f5; display:flex; align-items:center; padding-left:8px; font-size:10px; color:#1565c0; font-weight:600; }
+      .lyt-spacer--right { background:#dce8f5; display:flex; align-items:center; justify-content:flex-end; padding-right:8px; font-size:10px; color:#1565c0; font-weight:600; }
+      .lyt-margin { background:#dce8f5; }
+      .lyt-dim { color:#666; font-size:10px; }
+      .lyt-annot { position:absolute; background:#1877f2; color:#fff; font-size:10px; font-weight:600; padding:2px 6px; border-radius:3px; white-space:nowrap; }
+      .lyt-phones { display:flex; gap:40px; flex-wrap:wrap; padding:16px 0 24px; justify-content:space-evenly}
+      .lyt-case-label { display:inline-flex; align-items:center; padding:4px 14px; border:1px solid #222; border-radius:20px; font-size:12px; font-weight:600; margin-bottom:12px; }
+      .lyt-cases { display:flex; gap:48px; flex-wrap:wrap; padding:12px 0 24px; justify-content:space-evenly}
+    </style>
+
+    <!-- ── 1. Default Margin ─────────────────────────────────────── -->
+    <p class="g-sub-title">Default Margin</p>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:20px">사이즈는 Android(w360)를 기준으로 하며, 화면의 좌우 마진은 24px을 공통으로 사용합니다.</p>
+    <div class="lyt-phones">
+
+      <!-- Android w360 -->
+      <div>
+        <div class="lyt-case-label">Adroid - w360</div>
+        <div style="background:#f4f6f8;border-radius:12px;padding:20px 24px;border:1px solid #dde1e7">
+          <div style="position:relative;display:inline-block">
+            <div class="lyt-phone" style="width:200px">
+              <!-- statusbar -->
+              <div class="lyt-statusbar" style="height:24px;background:#eef2f7">
+                <span>12:30</span>
+                <span>▪ ▾ ▬</span>
+              </div>
+              <!-- content with left/right margin columns -->
+              <div style="display:flex;height:200px">
+                <div class="lyt-margin" style="width:24px;height:100%"></div>
+                <div style="flex:1;background:#fff"></div>
+                <div class="lyt-margin" style="width:24px;height:100%"></div>
+              </div>
+            </div>
+            <!-- annotations -->
+            <div style="position:absolute;top:-18px;left:0;width:24px;text-align:center;font-size:10px;color:#1565c0;font-weight:600">24</div>
+            <div style="position:absolute;top:-18px;right:0;width:24px;text-align:center;font-size:10px;color:#1565c0;font-weight:600">24</div>
+            <div style="position:absolute;top:0;right:-80px">
+              <span class="lyt-annot">Statusbar : 24</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-sm)"></div>
-        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-sm</code>
+
+      <!-- iOS w375 -->
+      <div>
+        <div class="lyt-case-label">iOS - w375</div>
+        <div style="background:#f4f6f8;border-radius:12px;padding:20px 24px;border:1px solid #dde1e7">
+          <div style="position:relative;display:inline-block">
+            <div class="lyt-phone" style="width:210px">
+              <!-- statusbar -->
+              <div class="lyt-statusbar" style="height:44px;background:#eef2f7">
+                <span>9:41</span>
+                <span>▪ ▾ ▬</span>
+              </div>
+              <!-- content with left/right margin columns -->
+              <div style="display:flex;height:200px">
+                <div class="lyt-margin" style="width:24px;height:100%"></div>
+                <div style="flex:1;background:#fff"></div>
+                <div class="lyt-margin" style="width:24px;height:100%"></div>
+              </div>
+            </div>
+            <!-- annotations -->
+            <div style="position:absolute;top:-18px;left:0;width:24px;text-align:center;font-size:10px;color:#1565c0;font-weight:600">24</div>
+            <div style="position:absolute;top:-18px;right:0;width:24px;text-align:center;font-size:10px;color:#1565c0;font-weight:600">24</div>
+            <div style="position:absolute;top:0;right:-80px">
+              <span class="lyt-annot">Statusbar : 44</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-md)"></div>
-        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-md</code>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-lg)"></div>
-        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-lg</code>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-        <div style="width:100px;height:60px;background:#fff;border-radius:8px;box-shadow:var(--shadow-xl)"></div>
-        <code style="font-size:11px;color:var(--color-text-primary)">--shadow-xl</code>
-      </div>
+
     </div>
 
-    <!-- Z-index -->
-    <p class="g-sub-title">Z-index</p>
-    <table class="g-table">
-      <tr><th>Token</th><th>Value</th><th>용도</th></tr>
-      <tr><td><code>--z-base</code></td><td>0</td><td>기본 레이어</td></tr>
-      <tr><td><code>--z-dropdown</code></td><td>100</td><td>드롭다운, Select</td></tr>
-      <tr><td><code>--z-sticky</code></td><td>200</td><td>스티키 헤더</td></tr>
-      <tr><td><code>--z-overlay</code></td><td>300</td><td>딤 레이어</td></tr>
-      <tr><td><code>--z-modal</code></td><td>400</td><td>팝업, 모달</td></tr>
-      <tr><td><code>--z-popover</code></td><td>500</td><td>Popover, Tooltip</td></tr>
-      <tr><td><code>--z-toast</code></td><td>600</td><td>Toast</td></tr>
-      <tr><td><code>--z-tooltip</code></td><td>700</td><td>Tooltip (최상위)</td></tr>
-    </table>
+    <!-- ── 2. Contents Group Layout ─────────────────────────────── -->
+    <p class="g-sub-title" style="margin-top:16px">Contents Group Layout</p>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:20px">기본이되는 간격으로 규칙을 준수하도록 권장합니다.</p>
+    <div class="lyt-cases">
 
-    <!-- Transition -->
-    <p class="g-sub-title" style="margin-top:32px">Transition</p>
-    <table class="g-table">
-      <tr><th>Token</th><th>Value</th><th>Preview</th></tr>
-      <tr>
-        <td><code>--transition-fast</code></td><td>0.1s ease</td>
-        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-fast)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
-      </tr>
-      <tr>
-        <td><code>--transition-base</code></td><td>0.15s ease</td>
-        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-base)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
-      </tr>
-      <tr>
-        <td><code>--transition-slow</code></td><td>0.25s ease</td>
-        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-slow)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
-      </tr>
-      <tr>
-        <td><code>--transition-slower</code></td><td>0.35s ease</td>
-        <td><button class="btn btn--sm btn--primary" style="transition:var(--transition-slower)" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Hover me</button></td>
-      </tr>
-    </table>
+      <!-- Group Case1 -->
+      <div>
+        <div class="lyt-case-label">Group Case1</div>
+        <div class="lyt-phone" style="width:200px">
+          <div class="lyt-statusbar" style="height:20px;background:#eef2f7"><span>12:30</span><span>▪ ▾ ▬</span></div>
+          <div class="lyt-header" style="height:36px">
+            <span style="font-size:10px">←</span>
+            <span style="font-size:11px">서비스 타이틀</span>
+            <span style="font-size:10px">⌂ ≡</span>
+          </div>
+          <!-- 24px spacer -->
+          <div class="lyt-spacer" style="height:20px">24</div>
+          <!-- Contents A -->
+          <div class="lyt-content--red" style="height:64px">Contents A</div>
+          <!-- 40px divider -->
+          <div class="lyt-spacer" style="height:28px;background:#d0e4f5">40</div>
+          <!-- Contents B -->
+          <div class="lyt-content" style="height:80px;background:#f5f5f5">Contents B</div>
+          <!-- 60px bottom -->
+          <div class="lyt-spacer" style="height:32px">60</div>
+        </div>
+      </div>
+
+      <!-- Group Case2 -->
+      <div>
+        <div class="lyt-case-label">Group Case2</div>
+        <div class="lyt-phone" style="width:200px">
+          <div class="lyt-statusbar" style="height:20px;background:#eef2f7"><span>12:30</span><span>▪ ▾ ▬</span></div>
+          <div class="lyt-header" style="height:36px">
+            <span style="font-size:10px">←</span>
+            <span style="font-size:11px">서비스 타이틀</span>
+            <span style="font-size:10px">⌂ ≡</span>
+          </div>
+          <!-- 24px spacer -->
+          <div class="lyt-spacer" style="height:20px">24</div>
+          <!-- Contents A-01 -->
+          <div class="lyt-content--red" style="height:48px">Contents A-01</div>
+          <!-- 32px inner gap -->
+          <div class="lyt-spacer" style="height:18px;background:#e8f4e8;color:#2e7d32">32</div>
+          <!-- Contents A-02 -->
+          <div class="lyt-content--red" style="height:48px">Contents A-02</div>
+          <!-- 40px divider -->
+          <div class="lyt-spacer" style="height:28px;background:#d0e4f5">40</div>
+          <!-- Contents B -->
+          <div class="lyt-content" style="height:60px;background:#f5f5f5">Contents B</div>
+          <!-- 60px bottom -->
+          <div class="lyt-spacer" style="height:32px">60</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── 3. General Layout ─────────────────────────────────────── -->
+    <p class="g-sub-title" style="margin-top:16px">General Layout - 기본</p>
+    <div style="display:flex;gap:48px;flex-wrap:wrap;padding:12px 0 24px;justify-content:space-evenly">
+
+      <!-- Main -->
+      <div style="display: flex;align-items: flex-start;flex-direction: column;">
+        <div class="lyt-case-label">Main</div>
+        <div style="position:relative;display:inline-block">
+          <div class="lyt-phone" style="width:200px">
+            <div class="lyt-statusbar" style="height:20px;background:#eef2f7"><span>12:30</span><span>▪ ▾ ▬</span></div>
+            <div class="lyt-header" style="height:36px">
+              <span style="font-size:10px">←</span>
+              <span style="font-size:11px">서비스 타이틀</span>
+              <span style="font-size:10px">⌂ ≡</span>
+            </div>
+            <div class="lyt-spacer" style="height:14px;font-size:9px">10</div>
+            <div class="lyt-content" style="height:140px;background:#f9f9f9">Contents Area</div>
+            <div class="lyt-spacer" style="height:24px">40</div>
+            <div class="lyt-tabbar" style="height:48px">
+              <div class="lyt-tab-item"><span style="font-size:14px">⌂</span><span>홈</span></div>
+              <div class="lyt-tab-item"><span style="font-size:14px">☑</span><span>상품몰</span></div>
+              <div class="lyt-tab-item"><span style="font-size:14px">👤</span><span>마이데이터</span></div>
+              <div class="lyt-tab-item"><span style="font-size:14px">🎁</span><span>생활+</span></div>
+            </div>
+          </div>
+          <div style="position:absolute;top:20px;right:0"><span class="lyt-annot">Header : 50</span></div>
+          <div style="position:absolute;bottom:48px;right:0"><span class="lyt-annot">Tabbar : 80</span></div>
+        </div>
+      </div>
+
+      <!-- Sub Page -->
+      <div style="display: flex;align-items: flex-start;flex-direction: column;">
+        <div class="lyt-case-label">Sub Page</div>
+        <div style="position:relative;display:inline-block">
+          <div class="lyt-phone" style="width:200px">
+            <div class="lyt-statusbar" style="height:20px;background:#eef2f7"><span>12:30</span><span>▪ ▾ ▬</span></div>
+            <div class="lyt-header" style="height:36px">
+              <span style="font-size:10px">←</span>
+              <span style="font-size:11px">서비스 타이틀</span>
+              <span style="font-size:10px">⌂ ≡</span>
+            </div>
+            <div class="lyt-spacer" style="height:18px">24</div>
+            <div class="lyt-content" style="height:140px;background:#f9f9f9">Contents Area</div>
+            <div class="lyt-spacer" style="height:28px">60</div>
+            <div class="lyt-cta" style="height:36px;margin:0 8px 0">버튼명</div>
+            <div class="lyt-spacer" style="height:20px">32</div>
+          </div>
+          <div style="position:absolute;top:20px;right:0"><span class="lyt-annot">Header : 50</span></div>
+          <div style="position:absolute;bottom:56px;right:0"><span class="lyt-annot">CTA Button : 56</span></div>
+        </div>
+      </div>
+
+      <!-- Full Popup -->
+      <div style="display: flex;align-items: flex-start;flex-direction: column;">
+        <div class="lyt-case-label">Full Popup</div>
+        <div style="position:relative;display:inline-block">
+          <div class="lyt-phone" style="width:200px">
+            <div class="lyt-statusbar" style="height:20px;background:#eef2f7"><span>12:30</span><span>▪ ▾ ▬</span></div>
+            <div class="lyt-header" style="height:36px;justify-content:space-between">
+              <span style="font-size:11px;font-weight:600">서비스 타이틀</span>
+              <span style="font-size:12px">✕</span>
+            </div>
+            <div class="lyt-spacer" style="height:14px;font-size:9px">16</div>
+            <div class="lyt-content" style="height:200px;background:#f9f9f9">Contents Area</div>
+            <div class="lyt-spacer" style="height:28px">60</div>
+          </div>
+          <div style="position:absolute;top:20px;right:0"><span class="lyt-annot">Header : 50</span></div>
+        </div>
+      </div>
+
+      <!-- Process -->
+      <div style="display: flex;align-items: flex-start;flex-direction: column;">
+        <div class="lyt-case-label">Process</div>
+        <div style="position:relative;display:inline-block">
+          <div class="lyt-phone" style="width:200px">
+            <div class="lyt-statusbar" style="height:20px;background:#eef2f7"><span>12:30</span><span>▪ ▾ ▬</span></div>
+            <div class="lyt-header" style="height:36px">
+              <span style="font-size:10px">←</span>
+              <span style="flex:1"></span>
+              <span style="font-size:11px;color:#555">취소</span>
+            </div>
+            <!-- progress bar -->
+            <div style="height:4px;background:#e8eaed"><div style="height:100%;width:40%;background:#1a7c38;border-radius:2px"></div></div>
+            <div class="lyt-spacer" style="height:18px">24</div>
+            <div class="lyt-content" style="height:160px;background:#f9f9f9">Contents Area</div>
+            <div class="lyt-spacer" style="height:28px">60</div>
+          </div>
+          <div style="position:absolute;top:20px;right:0"><span class="lyt-annot">Header : 50</span></div>
+          <div style="position:absolute;top:56px;right:0"><span class="lyt-annot">Progress bar : 22</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── 4. Common Spacing ─────────────────────────────────────── -->
+    <p class="g-sub-title" style="margin-top:16px">Common Spacing</p>
+    <div style="display:flex;gap:48px;flex-wrap:wrap;padding:12px 0 24px;justify-content:space-evenly">
+
+      <!-- 가입완료 -->
+      <div style="display: flex;align-items: flex-start;flex-direction: column;">
+        <div class="lyt-case-label">가입완료</div>
+        <div style="position:relative;display:inline-block">
+          <div class="lyt-phone" style="width:200px">
+            <div style="height:48px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">48</div>
+            <div style="height:52px;background:#fef0e6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#888">APNG</div>
+            <div style="height:18px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">32</div>
+            <div style="padding:0 12px 4px;font-size:13px;font-weight:600;color:#121212;line-height:1.4">&상품명&<br>가입했어요</div>
+            <div style="height:14px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:9px;color:#1565c0;font-weight:600">12</div>
+            <div style="padding:0 12px 4px;font-size:10px;color:#555">한도제한 해제는 신청일로부터 5일 경과 후 처리됩니다.</div>
+            <div style="height:18px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">32</div>
+            <div style="background:#f5f5f5;padding:8px 12px;font-size:10px;color:#555">
+              <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #eee"><span>타이틀</span><span style="font-weight:600">데이터</span></div>
+              <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #eee"><span>타이틀</span><span style="font-weight:600">데이터</span></div>
+              <div style="display:flex;justify-content:space-between;padding:3px 0"><span>타이틀</span><span style="font-weight:600">데이터</span></div>
+            </div>
+            <div style="height:18px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">32</div>
+            <div style="height:28px;background:#eef5ee"></div>
+            <div style="height:20px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">60</div>
+            <div class="lyt-cta" style="height:32px;margin:0 8px">확인</div>
+            <div style="height:18px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">32</div>
+          </div>
+          <div style="position:absolute;top:0;right:0"><span class="lyt-annot">Height : 72px</span></div>
+          <div style="position:absolute;bottom:50px;right:0"><span class="lyt-annot">CTA Button : 56</span></div>
+        </div>
+      </div>
+
+      <!-- 가입실패 -->
+      <div style="display: flex;align-items: flex-start;flex-direction: column;">
+        <div class="lyt-case-label">가입실패</div>
+        <div style="position:relative;display:inline-block">
+          <div class="lyt-phone" style="width:200px">
+            <div style="height:48px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">48</div>
+            <div style="height:36px;display:flex;align-items:center;justify-content:center">
+              <div style="width:28px;height:28px;border-radius:50%;background:#f55;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">!</div>
+            </div>
+            <div style="height:14px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:9px;color:#1565c0;font-weight:600">12</div>
+            <div style="padding:0 12px 4px;font-size:13px;font-weight:600;color:#121212">대출을 실행할 수 없어요</div>
+            <div style="height:14px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:9px;color:#1565c0;font-weight:600">12</div>
+            <div style="padding:0 12px 4px;font-size:10px;color:#555">다른 금융기관의 대출을 상환할 수 없습니다.</div>
+            <div style="height:18px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">32</div>
+            <div style="padding:0 12px 4px;font-size:10px;color:#555">자세한 내용은 대출 받은 금융기관에 문의해 주세요.</div>
+            <div style="height:14px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:9px;color:#1565c0;font-weight:600">12</div>
+            <div style="padding:0 12px 8px;font-size:10px;color:#555">사유 : [01 담보(보증서 담보 포함, 견질 담보 포함) 및 포괄 근저당 설정 대출]</div>
+            <div style="flex:1;min-height:40px;background:#f9f9f9"></div>
+            <div class="lyt-cta" style="height:32px;margin:8px 8px 0">확인</div>
+            <div style="height:18px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">32</div>
+          </div>
+          <div style="position:absolute;top:0;right:0"><span class="lyt-annot">Height : 72px</span></div>
+          <div style="position:absolute;bottom:50px;right:0"><span class="lyt-annot">CTA Button : 56</span></div>
+        </div>
+      </div>
+
+      <!-- No Data -->
+      <div style="display: flex;align-items: flex-start;flex-direction: column;">
+        <div class="lyt-case-label">No Data</div>
+        <div style="position:relative;display:inline-block">
+          <div class="lyt-phone" style="width:200px">
+            <div class="lyt-statusbar" style="height:20px;background:#eef2f7"><span>12:30</span><span>▪ ▾ ▬</span></div>
+            <div class="lyt-header" style="height:36px">
+              <span style="font-size:10px">←</span>
+              <span style="font-size:11px">서비스 타이틀</span>
+              <span style="font-size:10px">⌂ ≡</span>
+            </div>
+            <div style="height:48px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:10px;color:#1565c0;font-weight:600">72</div>
+            <div style="height:32px;display:flex;align-items:center;justify-content:center">
+              <div style="width:28px;height:28px;border-radius:50%;background:#ccc;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px">•••</div>
+            </div>
+            <div style="height:16px;background:#dce8f5;display:flex;align-items:center;padding-left:8px;font-size:9px;color:#1565c0;font-weight:600">24</div>
+            <div style="padding:0 12px 4px;font-size:11px;color:#555;text-align:center">조회 결과가 없습니다.</div>
+            <div style="height:100px;background:#f9f9f9"></div>
+          </div>
+          <div style="position:absolute;top:56px;right:0"><span class="lyt-annot">Height : 72px</span></div>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
   <!-- ===================== ACCORDION ===================== -->

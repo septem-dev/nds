@@ -4,21 +4,8 @@
 
 :root {
   // Font Family
-  --font-family-base:    'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-mono:    'JetBrains Mono', 'Fira Code', monospace;
-
-  // Font Size
-  --font-size-2xs: 11px;
-  --font-size-xs:  12px;
-  --font-size-sm:  13px;
-  --font-size-md:  14px;
-  --font-size-lg:  15px;
-  --font-size-xl:  16px;
-  --font-size-2xl: 18px;
-  --font-size-3xl: 20px;
-  --font-size-4xl: 24px;
-  --font-size-5xl: 28px;
-  --font-size-6xl: 32px;
+  --font-family-base: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   // Font Weight
   --font-weight-regular:  400;
@@ -26,27 +13,129 @@
   --font-weight-semibold: 600;
   --font-weight-bold:     700;
 
-  // Line Height
-  --line-height-tight:  1.2;
-  --line-height-snug:   1.4;
-  --line-height-normal: 1.5;
-  --line-height-relaxed:1.6;
-
   // Letter Spacing
-  --letter-spacing-tight:  -0.02em;
-  --letter-spacing-normal:  0;
-  --letter-spacing-wide:    0.02em;
+  --letter-spacing-tight:  -0.03em;
+  --letter-spacing-normal: -0.02em;
+  --letter-spacing-wide:   -0.01em;
+
+  // ── Semantic Type Scale ─────────────────────────────────────────────────────
+  // Display
+  --type-display1-size:    36px;
+  --type-display1-lh:      40px;
+  --type-display1-ls:      -0.03em;
+  --type-display1-weight:  var(--font-weight-semibold);
+
+  --type-display2-size:    28px;
+  --type-display2-lh:      38px;
+  --type-display2-ls:      -0.03em;
+  --type-display2-weight:  var(--font-weight-semibold);
+
+  // Heading
+  --type-h1-size:   26px;
+  --type-h1-lh:     38px;
+  --type-h1-ls:     -0.03em;
+
+  --type-h2-size:   22px;
+  --type-h2-lh:     32px;
+  --type-h2-ls:     -0.03em;
+
+  --type-h3-size:   20px;
+  --type-h3-lh:     28px;
+  --type-h3-ls:     -0.03em;
+
+  --type-h4-size:   18px;
+  --type-h4-lh:     26px;
+  --type-h4-ls:     -0.02em;
+
+  --type-h5-size:   16px;
+  --type-h5-lh:     24px;
+  --type-h5-ls:     -0.02em;
+
+  // Body
+  --type-body1-size: 16px;
+  --type-body1-lh:   24px;
+  --type-body1-ls:   -0.01em;
+
+  --type-body2-size: 15px;
+  --type-body2-lh:   24px;
+  --type-body2-ls:   -0.02em;
+
+  --type-body3-size: 14px;
+  --type-body3-lh:   22px;
+  --type-body3-ls:   -0.02em;
+
+  // Table
+  --type-table1-size: 16px;
+  --type-table1-lh:   24px;
+  --type-table1-ls:   -0.01em;
+
+  --type-table2-size: 15px;
+  --type-table2-lh:   24px;
+  --type-table2-ls:   -0.02em;
+
+  --type-table3-size: 14px;
+  --type-table3-lh:   22px;
+  --type-table3-ls:   -0.02em;
+
+  // Caption
+  --type-caption1-size: 13px;
+  --type-caption1-lh:   20px;
+  --type-caption1-ls:   -0.01em;
+
+  --type-caption2-size: 12px;
+  --type-caption2-lh:   18px;
+  --type-caption2-ls:   -0.01em;
+
+  --type-caption3-size: 10px;
+  --type-caption3-lh:   15px;
+  --type-caption3-ls:   -0.01em;
 }
 
-// Typography scale mixins
-@mixin text-2xs { font-size: var(--font-size-2xs); line-height: 16px; }
-@mixin text-xs  { font-size: var(--font-size-xs);  line-height: 18px; }
-@mixin text-sm  { font-size: var(--font-size-sm);  line-height: 20px; }
-@mixin text-md  { font-size: var(--font-size-md);  line-height: 20px; }
-@mixin text-lg  { font-size: var(--font-size-lg);  line-height: 22px; }
-@mixin text-xl  { font-size: var(--font-size-xl);  line-height: 24px; }
-@mixin text-2xl { font-size: var(--font-size-2xl); line-height: 26px; }
-@mixin text-3xl { font-size: var(--font-size-3xl); line-height: 28px; }
-@mixin text-4xl { font-size: var(--font-size-4xl); line-height: 32px; }
-@mixin text-5xl { font-size: var(--font-size-5xl); line-height: 36px; }
-@mixin text-6xl { font-size: var(--font-size-6xl); line-height: 40px; }
+// ── Semantic Type Scale Mixins ─────────────────────────────────────────────────
+// Display
+@mixin type-display1 { font-size: var(--type-display1-size); line-height: var(--type-display1-lh); letter-spacing: var(--type-display1-ls); font-weight: var(--font-weight-semibold); }
+@mixin type-display2 { font-size: var(--type-display2-size); line-height: var(--type-display2-lh); letter-spacing: var(--type-display2-ls); font-weight: var(--font-weight-semibold); }
+
+// Heading (SemiBold variant)
+@mixin type-h1-sb { font-size: var(--type-h1-size); line-height: var(--type-h1-lh); letter-spacing: var(--type-h1-ls); font-weight: var(--font-weight-semibold); }
+@mixin type-h2-sb { font-size: var(--type-h2-size); line-height: var(--type-h2-lh); letter-spacing: var(--type-h2-ls); font-weight: var(--font-weight-semibold); }
+@mixin type-h3-sb { font-size: var(--type-h3-size); line-height: var(--type-h3-lh); letter-spacing: var(--type-h3-ls); font-weight: var(--font-weight-semibold); }
+@mixin type-h4-sb { font-size: var(--type-h4-size); line-height: var(--type-h4-lh); letter-spacing: var(--type-h4-ls); font-weight: var(--font-weight-semibold); }
+@mixin type-h5-sb { font-size: var(--type-h5-size); line-height: var(--type-h5-lh); letter-spacing: var(--type-h5-ls); font-weight: var(--font-weight-semibold); }
+
+// Heading (Medium variant)
+@mixin type-h1-md { font-size: var(--type-h1-size); line-height: var(--type-h1-lh); letter-spacing: var(--type-h1-ls); font-weight: var(--font-weight-medium); }
+@mixin type-h2-md { font-size: var(--type-h2-size); line-height: var(--type-h2-lh); letter-spacing: var(--type-h2-ls); font-weight: var(--font-weight-medium); }
+@mixin type-h3-md { font-size: var(--type-h3-size); line-height: var(--type-h3-lh); letter-spacing: var(--type-h3-ls); font-weight: var(--font-weight-medium); }
+@mixin type-h4-md { font-size: var(--type-h4-size); line-height: var(--type-h4-lh); letter-spacing: var(--type-h4-ls); font-weight: var(--font-weight-medium); }
+@mixin type-h5-md { font-size: var(--type-h5-size); line-height: var(--type-h5-lh); letter-spacing: var(--type-h5-ls); font-weight: var(--font-weight-medium); }
+
+// Body (Medium variant)
+@mixin type-body1-md { font-size: var(--type-body1-size); line-height: var(--type-body1-lh); letter-spacing: var(--type-body1-ls); font-weight: var(--font-weight-medium); }
+@mixin type-body2-md { font-size: var(--type-body2-size); line-height: var(--type-body2-lh); letter-spacing: var(--type-body2-ls); font-weight: var(--font-weight-medium); }
+@mixin type-body3-md { font-size: var(--type-body3-size); line-height: var(--type-body3-lh); letter-spacing: var(--type-body3-ls); font-weight: var(--font-weight-medium); }
+
+// Body (Regular variant)
+@mixin type-body1-rg { font-size: var(--type-body1-size); line-height: var(--type-body1-lh); letter-spacing: var(--type-body1-ls); font-weight: var(--font-weight-regular); }
+@mixin type-body2-rg { font-size: var(--type-body2-size); line-height: var(--type-body2-lh); letter-spacing: var(--type-body2-ls); font-weight: var(--font-weight-regular); }
+@mixin type-body3-rg { font-size: var(--type-body3-size); line-height: var(--type-body3-lh); letter-spacing: var(--type-body3-ls); font-weight: var(--font-weight-regular); }
+
+// Table (Medium variant)
+@mixin type-table1-md { font-size: var(--type-table1-size); line-height: var(--type-table1-lh); letter-spacing: var(--type-table1-ls); font-weight: var(--font-weight-medium); }
+@mixin type-table2-md { font-size: var(--type-table2-size); line-height: var(--type-table2-lh); letter-spacing: var(--type-table2-ls); font-weight: var(--font-weight-medium); }
+@mixin type-table3-md { font-size: var(--type-table3-size); line-height: var(--type-table3-lh); letter-spacing: var(--type-table3-ls); font-weight: var(--font-weight-medium); }
+
+// Table (Regular variant)
+@mixin type-table1-rg { font-size: var(--type-table1-size); line-height: var(--type-table1-lh); letter-spacing: var(--type-table1-ls); font-weight: var(--font-weight-regular); }
+@mixin type-table2-rg { font-size: var(--type-table2-size); line-height: var(--type-table2-lh); letter-spacing: var(--type-table2-ls); font-weight: var(--font-weight-regular); }
+@mixin type-table3-rg { font-size: var(--type-table3-size); line-height: var(--type-table3-lh); letter-spacing: var(--type-table3-ls); font-weight: var(--font-weight-regular); }
+
+// Caption (Medium variant)
+@mixin type-caption1-md { font-size: var(--type-caption1-size); line-height: var(--type-caption1-lh); letter-spacing: var(--type-caption1-ls); font-weight: var(--font-weight-medium); }
+@mixin type-caption2-md { font-size: var(--type-caption2-size); line-height: var(--type-caption2-lh); letter-spacing: var(--type-caption2-ls); font-weight: var(--font-weight-medium); }
+@mixin type-caption3-md { font-size: var(--type-caption3-size); line-height: var(--type-caption3-lh); letter-spacing: var(--type-caption3-ls); font-weight: var(--font-weight-medium); }
+
+// Caption (Regular variant)
+@mixin type-caption1-rg { font-size: var(--type-caption1-size); line-height: var(--type-caption1-lh); letter-spacing: var(--type-caption1-ls); font-weight: var(--font-weight-regular); }
+@mixin type-caption2-rg { font-size: var(--type-caption2-size); line-height: var(--type-caption2-lh); letter-spacing: var(--type-caption2-ls); font-weight: var(--font-weight-regular); }
+@mixin type-caption3-rg { font-size: var(--type-caption3-size); line-height: var(--type-caption3-lh); letter-spacing: var(--type-caption3-ls); font-weight: var(--font-weight-regular); }
