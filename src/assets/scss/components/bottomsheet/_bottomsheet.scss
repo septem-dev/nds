@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
   pointer-events: none;
 
   &--open { pointer-events: auto; }
@@ -24,13 +25,14 @@
     display: flex;
     flex-direction: column;
     transform: translateY(100%);
-    transition: transform var(--transition-slow);
+    opacity: 0;
+    transition: transform var(--transition-slow), opacity var(--transition-slow);
     box-shadow: var(--shadow-xl);
 	margin:0 auto;
 	max-width:450px;
 	min-width:320px;
 
-    .bottomsheet--open & { transform: translateY(0); }
+    .bottomsheet--open & { transform: translateY(0); opacity: 1; }
   }
 
   // Handle — 10px top clearance, drag bar centered

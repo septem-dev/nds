@@ -17,15 +17,6 @@
     justify-content: space-between;
     gap: 8px;
     padding: 10px 16px;
-    border-bottom: 1px solid var(--primitive-gray-200, #F0F0F0);
-
-    &:last-child,
-    &:nth-last-child(2):nth-child(odd) { border-bottom: none; }
-
-    // 오른쪽 열 — 왼쪽 구분선
-    &:nth-child(even) {
-      border-left: 1px solid var(--primitive-gray-200, #F0F0F0);
-    }
   }
 
   &__title {
@@ -52,9 +43,9 @@
 // ── Card ─────────────────────────────────────────────────────────────────────
 // 카드 형태 (border + radius) — 기본 sm
 .list-card {
-  border: 1px solid #E1E1E1;
-  border-radius: 16px;
-  background-color: #fff;
+  //border: 1px solid var(--color-border-2, #E1E1E1);
+  //border-radius: 16px;
+  background-color: var(--color-bg-default, #fff);
   overflow: hidden;
   width: 100%;
 
@@ -106,8 +97,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid #E1E1E1;
-  border-radius: 16px;
+  //border: 1px solid #E1E1E1;
+  //border-radius: 16px;
   background-color: #fff;
   overflow: hidden;
 
@@ -157,8 +148,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid #F0F0F0;
-  border-radius: 16px;
+  //border: 1px solid #F0F0F0;
+  //border-radius: 16px;
   background-color: #fff;
   overflow: hidden;
 
@@ -167,7 +158,7 @@
     align-items: center;
     gap: 12px;
     padding: 16px 20px;
-    border-bottom: 1px solid #F0F0F0;
+    //border-bottom: 1px solid #F0F0F0;
 
     &:last-child { border-bottom: none; }
   }

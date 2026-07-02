@@ -13,6 +13,7 @@
 <aside class="g-sidebar">
   <h1>NDS v1.0 가이드</h1>
   <div class="g-nav-group">
+	<button id="themeToggle" class="btn" onclick="toggleTheme()" style="padding:6px 20px 4px;margin:0 0 10px;display:block;">☀️ Light Mode</button>
 	<div class="g-nav-label">Foundation</div>
 	<nav>
 	  <a href="#secColor">Color Palette</a>
@@ -89,400 +90,486 @@
 	<!-- ── Primitive ── -->
 	<p class="g-sub-title">Primitive Colors</p>
 
+	<div class="g-palette-group-set">
+
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Base</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-base-0)"></div><span class="g-swatch__var">--primitive-base-0</span><span class="g-swatch__hex">#FFFFFF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-base-950)"></div><span class="g-swatch__var">--primitive-base-950</span><span class="g-swatch__hex">#212121</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-base-0);border:1px solid #eee"></div><span class="g-swatch__var">--primitive-base-0</span><span class="g-swatch__hex">#FFFFFF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-base-950)"></div><span class="g-swatch__var">--primitive-base-950</span><span class="g-swatch__hex">#212121</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Gray</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-50)"></div><span class="g-swatch__var">--primitive-gray-50</span><span class="g-swatch__hex">#FFFFFF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-100)"></div><span class="g-swatch__var">--primitive-gray-100</span><span class="g-swatch__hex">#F6F6F6</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-200)"></div><span class="g-swatch__var">--primitive-gray-200</span><span class="g-swatch__hex">#F0F0F0</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-300)"></div><span class="g-swatch__var">--primitive-gray-300</span><span class="g-swatch__hex">#E1E1E1</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-400)"></div><span class="g-swatch__var">--primitive-gray-400</span><span class="g-swatch__hex">#D3D3D3</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-500)"></div><span class="g-swatch__var">--primitive-gray-500</span><span class="g-swatch__hex">#B3B3B3</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-550)"></div><span class="g-swatch__var">--primitive-gray-550</span><span class="g-swatch__hex">#929292</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-600)"></div><span class="g-swatch__var">--primitive-gray-600</span><span class="g-swatch__hex">#707070</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-700)"></div><span class="g-swatch__var">--primitive-gray-700</span><span class="g-swatch__hex">#555555</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-800)"></div><span class="g-swatch__var">--primitive-gray-800</span><span class="g-swatch__hex">#333333</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-gray-900)"></div><span class="g-swatch__var">--primitive-gray-900</span><span class="g-swatch__hex">#111111</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-50)"></div><span class="g-swatch__var">--primitive-gray-50</span><span class="g-swatch__hex">#FFFFFF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-100)"></div><span class="g-swatch__var">--primitive-gray-100</span><span class="g-swatch__hex">#F6F6F6</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-200)"></div><span class="g-swatch__var">--primitive-gray-200</span><span class="g-swatch__hex">#F0F0F0</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-300)"></div><span class="g-swatch__var">--primitive-gray-300</span><span class="g-swatch__hex">#E1E1E1</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-400)"></div><span class="g-swatch__var">--primitive-gray-400</span><span class="g-swatch__hex">#D3D3D3</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-500)"></div><span class="g-swatch__var">--primitive-gray-500</span><span class="g-swatch__hex">#B3B3B3</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-550)"></div><span class="g-swatch__var">--primitive-gray-550</span><span class="g-swatch__hex">#929292</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-600)"></div><span class="g-swatch__var">--primitive-gray-600</span><span class="g-swatch__hex">#707070</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-700)"></div><span class="g-swatch__var">--primitive-gray-700</span><span class="g-swatch__hex">#555555</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-800)"></div><span class="g-swatch__var">--primitive-gray-800</span><span class="g-swatch__hex">#333333</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-gray-900)"></div><span class="g-swatch__var">--primitive-gray-900</span><span class="g-swatch__hex">#111111</span></div>
 	  </div>
 	</div>
+
+	</div><!-- /g-palette-group-set: gray scale -->
+
+	<div class="g-palette-group-set">
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Red</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-50)"></div><span class="g-swatch__var">--primitive-red-50</span><span class="g-swatch__hex">#FFE5E5</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-100)"></div><span class="g-swatch__var">--primitive-red-100</span><span class="g-swatch__hex">#FFB2B2</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-200)"></div><span class="g-swatch__var">--primitive-red-200</span><span class="g-swatch__hex">#FF8989</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-300)"></div><span class="g-swatch__var">--primitive-red-300</span><span class="g-swatch__hex">#E24949</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-400)"></div><span class="g-swatch__var">--primitive-red-400</span><span class="g-swatch__hex">#DF3535</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-500)"></div><span class="g-swatch__var">--primitive-red-500</span><span class="g-swatch__hex">#EC0C0C</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-600)"></div><span class="g-swatch__var">--primitive-red-600</span><span class="g-swatch__hex">#D10F0F</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-700)"></div><span class="g-swatch__var">--primitive-red-700</span><span class="g-swatch__hex">#800400</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-800)"></div><span class="g-swatch__var">--primitive-red-800</span><span class="g-swatch__hex">#610000</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-red-900)"></div><span class="g-swatch__var">--primitive-red-900</span><span class="g-swatch__hex">#400000</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-50)"></div><span class="g-swatch__var">--primitive-red-50</span><span class="g-swatch__hex">#FFE5E5</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-100)"></div><span class="g-swatch__var">--primitive-red-100</span><span class="g-swatch__hex">#FFB2B2</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-200)"></div><span class="g-swatch__var">--primitive-red-200</span><span class="g-swatch__hex">#FF8989</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-300)"></div><span class="g-swatch__var">--primitive-red-300</span><span class="g-swatch__hex">#E24949</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-400)"></div><span class="g-swatch__var">--primitive-red-400</span><span class="g-swatch__hex">#DF3535</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-500)"></div><span class="g-swatch__var">--primitive-red-500</span><span class="g-swatch__hex">#EC0C0C</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-600)"></div><span class="g-swatch__var">--primitive-red-600</span><span class="g-swatch__hex">#D10F0F</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-700)"></div><span class="g-swatch__var">--primitive-red-700</span><span class="g-swatch__hex">#800400</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-800)"></div><span class="g-swatch__var">--primitive-red-800</span><span class="g-swatch__hex">#610000</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-red-900)"></div><span class="g-swatch__var">--primitive-red-900</span><span class="g-swatch__hex">#400000</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Orange</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-50)"></div><span class="g-swatch__var">--primitive-orange-50</span><span class="g-swatch__hex">#FFF0E5</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-100)"></div><span class="g-swatch__var">--primitive-orange-100</span><span class="g-swatch__hex">#FFD1B2</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-200)"></div><span class="g-swatch__var">--primitive-orange-200</span><span class="g-swatch__hex">#FFB380</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-300)"></div><span class="g-swatch__var">--primitive-orange-300</span><span class="g-swatch__hex">#FF944D</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-400)"></div><span class="g-swatch__var">--primitive-orange-400</span><span class="g-swatch__hex">#FF7F29</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-500)"></div><span class="g-swatch__var">--primitive-orange-500</span><span class="g-swatch__hex">#DA6F11</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-600)"></div><span class="g-swatch__var">--primitive-orange-600</span><span class="g-swatch__hex">#D44B10</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-700)"></div><span class="g-swatch__var">--primitive-orange-700</span><span class="g-swatch__hex">#803300</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-800)"></div><span class="g-swatch__var">--primitive-orange-800</span><span class="g-swatch__hex">#4D1F00</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-orange-900)"></div><span class="g-swatch__var">--primitive-orange-900</span><span class="g-swatch__hex">#331400</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-50)"></div><span class="g-swatch__var">--primitive-orange-50</span><span class="g-swatch__hex">#FFF0E5</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-100)"></div><span class="g-swatch__var">--primitive-orange-100</span><span class="g-swatch__hex">#FFD1B2</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-200)"></div><span class="g-swatch__var">--primitive-orange-200</span><span class="g-swatch__hex">#FFB380</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-300)"></div><span class="g-swatch__var">--primitive-orange-300</span><span class="g-swatch__hex">#FF944D</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-400)"></div><span class="g-swatch__var">--primitive-orange-400</span><span class="g-swatch__hex">#FF7F29</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-500)"></div><span class="g-swatch__var">--primitive-orange-500</span><span class="g-swatch__hex">#DA6F11</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-600)"></div><span class="g-swatch__var">--primitive-orange-600</span><span class="g-swatch__hex">#D44B10</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-700)"></div><span class="g-swatch__var">--primitive-orange-700</span><span class="g-swatch__hex">#803300</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-800)"></div><span class="g-swatch__var">--primitive-orange-800</span><span class="g-swatch__hex">#4D1F00</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-orange-900)"></div><span class="g-swatch__var">--primitive-orange-900</span><span class="g-swatch__hex">#331400</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Yellow</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-50)"></div><span class="g-swatch__var">--primitive-yellow-50</span><span class="g-swatch__hex">#FFFCE5</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-100)"></div><span class="g-swatch__var">--primitive-yellow-100</span><span class="g-swatch__hex">#FFF9BF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-200)"></div><span class="g-swatch__var">--primitive-yellow-200</span><span class="g-swatch__hex">#FFF27F</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-300)"></div><span class="g-swatch__var">--primitive-yellow-300</span><span class="g-swatch__hex">#FFEC40</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-400)"></div><span class="g-swatch__var">--primitive-yellow-400</span><span class="g-swatch__hex">#FFE600</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-500)"></div><span class="g-swatch__var">--primitive-yellow-500</span><span class="g-swatch__hex">#FFD103</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-600)"></div><span class="g-swatch__var">--primitive-yellow-600</span><span class="g-swatch__hex">#D9AE02</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-700)"></div><span class="g-swatch__var">--primitive-yellow-700</span><span class="g-swatch__hex">#997300</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-800)"></div><span class="g-swatch__var">--primitive-yellow-800</span><span class="g-swatch__hex">#664400</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-yellow-900)"></div><span class="g-swatch__var">--primitive-yellow-900</span><span class="g-swatch__hex">#331F00</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-50)"></div><span class="g-swatch__var">--primitive-yellow-50</span><span class="g-swatch__hex">#FFFCE5</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-100)"></div><span class="g-swatch__var">--primitive-yellow-100</span><span class="g-swatch__hex">#FFF9BF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-200)"></div><span class="g-swatch__var">--primitive-yellow-200</span><span class="g-swatch__hex">#FFF27F</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-300)"></div><span class="g-swatch__var">--primitive-yellow-300</span><span class="g-swatch__hex">#FFEC40</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-400)"></div><span class="g-swatch__var">--primitive-yellow-400</span><span class="g-swatch__hex">#FFE600</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-500)"></div><span class="g-swatch__var">--primitive-yellow-500</span><span class="g-swatch__hex">#FFD103</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-600)"></div><span class="g-swatch__var">--primitive-yellow-600</span><span class="g-swatch__hex">#D9AE02</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-700)"></div><span class="g-swatch__var">--primitive-yellow-700</span><span class="g-swatch__hex">#997300</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-800)"></div><span class="g-swatch__var">--primitive-yellow-800</span><span class="g-swatch__hex">#664400</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-yellow-900)"></div><span class="g-swatch__var">--primitive-yellow-900</span><span class="g-swatch__hex">#331F00</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Green</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-50)"></div><span class="g-swatch__var">--primitive-green-50</span><span class="g-swatch__hex">#DDF2E4</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-100)"></div><span class="g-swatch__var">--primitive-green-100</span><span class="g-swatch__hex">#CBF2D6</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-200)"></div><span class="g-swatch__var">--primitive-green-200</span><span class="g-swatch__hex">#ACE3BC</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-300)"></div><span class="g-swatch__var">--primitive-green-300</span><span class="g-swatch__hex">#6DD189</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-400)"></div><span class="g-swatch__var">--primitive-green-400</span><span class="g-swatch__hex">#3CDB61</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-500)"></div><span class="g-swatch__var">--primitive-green-500</span><span class="g-swatch__hex">#19973C</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-600)"></div><span class="g-swatch__var">--primitive-green-600</span><span class="g-swatch__hex">#12732E</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-700)"></div><span class="g-swatch__var">--primitive-green-700</span><span class="g-swatch__hex">#0D5722</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-800)"></div><span class="g-swatch__var">--primitive-green-800</span><span class="g-swatch__hex">#094018</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-green-900)"></div><span class="g-swatch__var">--primitive-green-900</span><span class="g-swatch__hex">#062512</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-50)"></div><span class="g-swatch__var">--primitive-green-50</span><span class="g-swatch__hex">#DDF2E4</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-100)"></div><span class="g-swatch__var">--primitive-green-100</span><span class="g-swatch__hex">#CBF2D6</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-200)"></div><span class="g-swatch__var">--primitive-green-200</span><span class="g-swatch__hex">#ACE3BC</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-300)"></div><span class="g-swatch__var">--primitive-green-300</span><span class="g-swatch__hex">#6DD189</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-400)"></div><span class="g-swatch__var">--primitive-green-400</span><span class="g-swatch__hex">#3CDB61</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-500)"></div><span class="g-swatch__var">--primitive-green-500</span><span class="g-swatch__hex">#19973C</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-600)"></div><span class="g-swatch__var">--primitive-green-600</span><span class="g-swatch__hex">#12732E</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-700)"></div><span class="g-swatch__var">--primitive-green-700</span><span class="g-swatch__hex">#0D5722</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-800)"></div><span class="g-swatch__var">--primitive-green-800</span><span class="g-swatch__hex">#094018</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-green-900)"></div><span class="g-swatch__var">--primitive-green-900</span><span class="g-swatch__hex">#062512</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Light Blue</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-50)"></div><span class="g-swatch__var">--primitive-lt-blue-50</span><span class="g-swatch__hex">#E8FCFB</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-100)"></div><span class="g-swatch__var">--primitive-lt-blue-100</span><span class="g-swatch__hex">#BAF7F2</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-200)"></div><span class="g-swatch__var">--primitive-lt-blue-200</span><span class="g-swatch__hex">#8CF2E9</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-300)"></div><span class="g-swatch__var">--primitive-lt-blue-300</span><span class="g-swatch__hex">#5EEDE0</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-400)"></div><span class="g-swatch__var">--primitive-lt-blue-400</span><span class="g-swatch__hex">#30E8D8</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-500)"></div><span class="g-swatch__var">--primitive-lt-blue-500</span><span class="g-swatch__hex">#17CFBE</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-600)"></div><span class="g-swatch__var">--primitive-lt-blue-600</span><span class="g-swatch__hex">#12A396</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-700)"></div><span class="g-swatch__var">--primitive-lt-blue-700</span><span class="g-swatch__hex">#0D736A</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-800)"></div><span class="g-swatch__var">--primitive-lt-blue-800</span><span class="g-swatch__hex">#08453F</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-light-blue-900)"></div><span class="g-swatch__var">--primitive-lt-blue-900</span><span class="g-swatch__hex">#052E2A</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-50)"></div><span class="g-swatch__var">--primitive-lt-blue-50</span><span class="g-swatch__hex">#E8FCFB</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-100)"></div><span class="g-swatch__var">--primitive-lt-blue-100</span><span class="g-swatch__hex">#BAF7F2</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-200)"></div><span class="g-swatch__var">--primitive-lt-blue-200</span><span class="g-swatch__hex">#8CF2E9</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-300)"></div><span class="g-swatch__var">--primitive-lt-blue-300</span><span class="g-swatch__hex">#5EEDE0</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-400)"></div><span class="g-swatch__var">--primitive-lt-blue-400</span><span class="g-swatch__hex">#30E8D8</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-500)"></div><span class="g-swatch__var">--primitive-lt-blue-500</span><span class="g-swatch__hex">#17CFBE</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-600)"></div><span class="g-swatch__var">--primitive-lt-blue-600</span><span class="g-swatch__hex">#12A396</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-700)"></div><span class="g-swatch__var">--primitive-lt-blue-700</span><span class="g-swatch__hex">#0D736A</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-800)"></div><span class="g-swatch__var">--primitive-lt-blue-800</span><span class="g-swatch__hex">#08453F</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-light-blue-900)"></div><span class="g-swatch__var">--primitive-lt-blue-900</span><span class="g-swatch__hex">#052E2A</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Sky Blue</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-50)"></div><span class="g-swatch__var">--primitive-sky-50</span><span class="g-swatch__hex">#E8F8FF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-100)"></div><span class="g-swatch__var">--primitive-sky-100</span><span class="g-swatch__hex">#D1F1FF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-200)"></div><span class="g-swatch__var">--primitive-sky-200</span><span class="g-swatch__hex">#A8DCF2</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-300)"></div><span class="g-swatch__var">--primitive-sky-300</span><span class="g-swatch__hex">#7DCAEA</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-400)"></div><span class="g-swatch__var">--primitive-sky-400</span><span class="g-swatch__hex">#57B6DE</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-500)"></div><span class="g-swatch__var">--primitive-sky-500</span><span class="g-swatch__hex">#2B9AC9</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-600)"></div><span class="g-swatch__var">--primitive-sky-600</span><span class="g-swatch__hex">#187AA4</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-700)"></div><span class="g-swatch__var">--primitive-sky-700</span><span class="g-swatch__hex">#095778</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-800)"></div><span class="g-swatch__var">--primitive-sky-800</span><span class="g-swatch__hex">#023E58</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-sky-blue-900)"></div><span class="g-swatch__var">--primitive-sky-900</span><span class="g-swatch__hex">#012D40</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-50)"></div><span class="g-swatch__var">--primitive-sky-50</span><span class="g-swatch__hex">#E8F8FF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-100)"></div><span class="g-swatch__var">--primitive-sky-100</span><span class="g-swatch__hex">#D1F1FF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-200)"></div><span class="g-swatch__var">--primitive-sky-200</span><span class="g-swatch__hex">#A8DCF2</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-300)"></div><span class="g-swatch__var">--primitive-sky-300</span><span class="g-swatch__hex">#7DCAEA</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-400)"></div><span class="g-swatch__var">--primitive-sky-400</span><span class="g-swatch__hex">#57B6DE</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-500)"></div><span class="g-swatch__var">--primitive-sky-500</span><span class="g-swatch__hex">#2B9AC9</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-600)"></div><span class="g-swatch__var">--primitive-sky-600</span><span class="g-swatch__hex">#187AA4</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-700)"></div><span class="g-swatch__var">--primitive-sky-700</span><span class="g-swatch__hex">#095778</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-800)"></div><span class="g-swatch__var">--primitive-sky-800</span><span class="g-swatch__hex">#023E58</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-sky-blue-900)"></div><span class="g-swatch__var">--primitive-sky-900</span><span class="g-swatch__hex">#012D40</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Blue</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-50)"></div><span class="g-swatch__var">--primitive-blue-50</span><span class="g-swatch__hex">#E5EFFF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-100)"></div><span class="g-swatch__var">--primitive-blue-100</span><span class="g-swatch__hex">#B2D0FF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-200)"></div><span class="g-swatch__var">--primitive-blue-200</span><span class="g-swatch__hex">#8FBBFF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-300)"></div><span class="g-swatch__var">--primitive-blue-300</span><span class="g-swatch__hex">#7AAEFF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-400)"></div><span class="g-swatch__var">--primitive-blue-400</span><span class="g-swatch__hex">#66A1FF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-500)"></div><span class="g-swatch__var">--primitive-blue-500</span><span class="g-swatch__hex">#2C6DD4</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-600)"></div><span class="g-swatch__var">--primitive-blue-600</span><span class="g-swatch__hex">#2357A9</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-700)"></div><span class="g-swatch__var">--primitive-blue-700</span><span class="g-swatch__hex">#003B99</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-800)"></div><span class="g-swatch__var">--primitive-blue-800</span><span class="g-swatch__hex">#003385</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-blue-900)"></div><span class="g-swatch__var">--primitive-blue-900</span><span class="g-swatch__hex">#002259</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-50)"></div><span class="g-swatch__var">--primitive-blue-50</span><span class="g-swatch__hex">#E5EFFF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-100)"></div><span class="g-swatch__var">--primitive-blue-100</span><span class="g-swatch__hex">#B2D0FF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-200)"></div><span class="g-swatch__var">--primitive-blue-200</span><span class="g-swatch__hex">#8FBBFF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-300)"></div><span class="g-swatch__var">--primitive-blue-300</span><span class="g-swatch__hex">#7AAEFF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-400)"></div><span class="g-swatch__var">--primitive-blue-400</span><span class="g-swatch__hex">#66A1FF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-500)"></div><span class="g-swatch__var">--primitive-blue-500</span><span class="g-swatch__hex">#2C6DD4</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-600)"></div><span class="g-swatch__var">--primitive-blue-600</span><span class="g-swatch__hex">#2357A9</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-700)"></div><span class="g-swatch__var">--primitive-blue-700</span><span class="g-swatch__hex">#003B99</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-800)"></div><span class="g-swatch__var">--primitive-blue-800</span><span class="g-swatch__hex">#003385</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-blue-900)"></div><span class="g-swatch__var">--primitive-blue-900</span><span class="g-swatch__hex">#002259</span></div>
 	  </div>
 	</div>
+
+	</div><!-- /g-palette-group-set: chromatic -->
+
+	<div class="g-palette-group-set">
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Navy</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-50)"></div><span class="g-swatch__var">--primitive-navy-50</span><span class="g-swatch__hex">#E6F2FF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-100)"></div><span class="g-swatch__var">--primitive-navy-100</span><span class="g-swatch__hex">#B3DAFF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-200)"></div><span class="g-swatch__var">--primitive-navy-200</span><span class="g-swatch__hex">#80C2FE</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-300)"></div><span class="g-swatch__var">--primitive-navy-300</span><span class="g-swatch__hex">#3F8ED6</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-400)"></div><span class="g-swatch__var">--primitive-navy-400</span><span class="g-swatch__hex">#1B91FE</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-500)"></div><span class="g-swatch__var">--primitive-navy-500</span><span class="g-swatch__hex">#0177E4</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-600)"></div><span class="g-swatch__var">--primitive-navy-600</span><span class="g-swatch__hex">#015AAC</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-700)"></div><span class="g-swatch__var">--primitive-navy-700</span><span class="g-swatch__hex">#01427F</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-800)"></div><span class="g-swatch__var">--primitive-navy-800</span><span class="g-swatch__hex">#00274C</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-navy-900)"></div><span class="g-swatch__var">--primitive-navy-900</span><span class="g-swatch__hex">#001B33</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-50)"></div><span class="g-swatch__var">--primitive-navy-50</span><span class="g-swatch__hex">#E6F2FF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-100)"></div><span class="g-swatch__var">--primitive-navy-100</span><span class="g-swatch__hex">#B3DAFF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-200)"></div><span class="g-swatch__var">--primitive-navy-200</span><span class="g-swatch__hex">#80C2FE</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-300)"></div><span class="g-swatch__var">--primitive-navy-300</span><span class="g-swatch__hex">#3F8ED6</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-400)"></div><span class="g-swatch__var">--primitive-navy-400</span><span class="g-swatch__hex">#1B91FE</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-500)"></div><span class="g-swatch__var">--primitive-navy-500</span><span class="g-swatch__hex">#0177E4</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-600)"></div><span class="g-swatch__var">--primitive-navy-600</span><span class="g-swatch__hex">#015AAC</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-700)"></div><span class="g-swatch__var">--primitive-navy-700</span><span class="g-swatch__hex">#01427F</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-800)"></div><span class="g-swatch__var">--primitive-navy-800</span><span class="g-swatch__hex">#00274C</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-navy-900)"></div><span class="g-swatch__var">--primitive-navy-900</span><span class="g-swatch__hex">#001B33</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Cobalt</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-50)"></div><span class="g-swatch__var">--primitive-cobalt-50</span><span class="g-swatch__hex">#E1DEFE</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-100)"></div><span class="g-swatch__var">--primitive-cobalt-100</span><span class="g-swatch__hex">#C4BEFE</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-200)"></div><span class="g-swatch__var">--primitive-cobalt-200</span><span class="g-swatch__hex">#A59EFE</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-300)"></div><span class="g-swatch__var">--primitive-cobalt-300</span><span class="g-swatch__hex">#8E86FD</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-400)"></div><span class="g-swatch__var">--primitive-cobalt-400</span><span class="g-swatch__hex">#7167FF</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-500)"></div><span class="g-swatch__var">--primitive-cobalt-500</span><span class="g-swatch__hex">#685EFD</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-600)"></div><span class="g-swatch__var">--primitive-cobalt-600</span><span class="g-swatch__hex">#4D44D9</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-700)"></div><span class="g-swatch__var">--primitive-cobalt-700</span><span class="g-swatch__hex">#362FB6</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-800)"></div><span class="g-swatch__var">--primitive-cobalt-800</span><span class="g-swatch__hex">#231D92</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-cobalt-900)"></div><span class="g-swatch__var">--primitive-cobalt-900</span><span class="g-swatch__hex">#0E0C5A</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-50)"></div><span class="g-swatch__var">--primitive-cobalt-50</span><span class="g-swatch__hex">#E1DEFE</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-100)"></div><span class="g-swatch__var">--primitive-cobalt-100</span><span class="g-swatch__hex">#C4BEFE</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-200)"></div><span class="g-swatch__var">--primitive-cobalt-200</span><span class="g-swatch__hex">#A59EFE</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-300)"></div><span class="g-swatch__var">--primitive-cobalt-300</span><span class="g-swatch__hex">#8E86FD</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-400)"></div><span class="g-swatch__var">--primitive-cobalt-400</span><span class="g-swatch__hex">#7167FF</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-500)"></div><span class="g-swatch__var">--primitive-cobalt-500</span><span class="g-swatch__hex">#685EFD</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-600)"></div><span class="g-swatch__var">--primitive-cobalt-600</span><span class="g-swatch__hex">#4D44D9</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-700)"></div><span class="g-swatch__var">--primitive-cobalt-700</span><span class="g-swatch__hex">#362FB6</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-800)"></div><span class="g-swatch__var">--primitive-cobalt-800</span><span class="g-swatch__hex">#231D92</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-cobalt-900)"></div><span class="g-swatch__var">--primitive-cobalt-900</span><span class="g-swatch__hex">#0E0C5A</span></div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Purple</p>
 	  <div class="g-palette-row">
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-50)"></div><span class="g-swatch__var">--primitive-purple-50</span><span class="g-swatch__hex">#FFEFF7</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-100)"></div><span class="g-swatch__var">--primitive-purple-100</span><span class="g-swatch__hex">#F7DEEA</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-200)"></div><span class="g-swatch__var">--primitive-purple-200</span><span class="g-swatch__hex">#F7CCE1</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-300)"></div><span class="g-swatch__var">--primitive-purple-300</span><span class="g-swatch__hex">#EEB7D2</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-400)"></div><span class="g-swatch__var">--primitive-purple-400</span><span class="g-swatch__hex">#E794BD</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-500)"></div><span class="g-swatch__var">--primitive-purple-500</span><span class="g-swatch__hex">#D870A3</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-600)"></div><span class="g-swatch__var">--primitive-purple-600</span><span class="g-swatch__hex">#AF4F7D</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-700)"></div><span class="g-swatch__var">--primitive-purple-700</span><span class="g-swatch__hex">#92265A</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-800)"></div><span class="g-swatch__var">--primitive-purple-800</span><span class="g-swatch__hex">#5A0D32</span></div>
-		<div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-purple-900)"></div><span class="g-swatch__var">--primitive-purple-900</span><span class="g-swatch__hex">#38001B</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-50)"></div><span class="g-swatch__var">--primitive-purple-50</span><span class="g-swatch__hex">#FFEFF7</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-100)"></div><span class="g-swatch__var">--primitive-purple-100</span><span class="g-swatch__hex">#F7DEEA</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-200)"></div><span class="g-swatch__var">--primitive-purple-200</span><span class="g-swatch__hex">#F7CCE1</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-300)"></div><span class="g-swatch__var">--primitive-purple-300</span><span class="g-swatch__hex">#EEB7D2</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-400)"></div><span class="g-swatch__var">--primitive-purple-400</span><span class="g-swatch__hex">#E794BD</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-500)"></div><span class="g-swatch__var">--primitive-purple-500</span><span class="g-swatch__hex">#D870A3</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-600)"></div><span class="g-swatch__var">--primitive-purple-600</span><span class="g-swatch__hex">#AF4F7D</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-700)"></div><span class="g-swatch__var">--primitive-purple-700</span><span class="g-swatch__hex">#92265A</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-800)"></div><span class="g-swatch__var">--primitive-purple-800</span><span class="g-swatch__hex">#5A0D32</span></div>
+		<div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-purple-900)"></div><span class="g-swatch__var">--primitive-purple-900</span><span class="g-swatch__hex">#38001B</span></div>
 	  </div>
 	</div>
 
+	</div><!-- /g-palette-group-set: navy/cobalt/purple -->
+
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Product</p>
-	  <div style="display:flex;flex-direction:column;gap:10px">
+	  <div class="g-palette-sub-group">
 		<div class="g-palette-row">
 		  <span class="g-palette-row-title">Product-1 (Blue)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-50)"></div><span class="g-swatch__var">--primitive-product1-50</span><span class="g-swatch__hex">#DAEAF6</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-100)"></div><span class="g-swatch__var">--primitive-product1-100</span><span class="g-swatch__hex">#BEDAEF</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-200)"></div><span class="g-swatch__var">--primitive-product1-200</span><span class="g-swatch__hex">#A4CDEC</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-300)"></div><span class="g-swatch__var">--primitive-product1-300</span><span class="g-swatch__hex">#72B0DF</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-400)"></div><span class="g-swatch__var">--primitive-product1-400</span><span class="g-swatch__hex">#428FC9</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-500)"></div><span class="g-swatch__var">--primitive-product1-500</span><span class="g-swatch__hex">#2473AF</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-600)"></div><span class="g-swatch__var">--primitive-product1-600</span><span class="g-swatch__hex">#114E7D</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-700)"></div><span class="g-swatch__var">--primitive-product1-700</span><span class="g-swatch__hex">#083D64</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-800)"></div><span class="g-swatch__var">--primitive-product1-800</span><span class="g-swatch__hex">#052B48</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product1-900)"></div><span class="g-swatch__var">--primitive-product1-900</span><span class="g-swatch__hex">#031E33</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-50)"></div><span class="g-swatch__var">--primitive-product1-50</span><span class="g-swatch__hex">#DAEAF6</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-100)"></div><span class="g-swatch__var">--primitive-product1-100</span><span class="g-swatch__hex">#BEDAEF</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-200)"></div><span class="g-swatch__var">--primitive-product1-200</span><span class="g-swatch__hex">#A4CDEC</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-300)"></div><span class="g-swatch__var">--primitive-product1-300</span><span class="g-swatch__hex">#72B0DF</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-400)"></div><span class="g-swatch__var">--primitive-product1-400</span><span class="g-swatch__hex">#428FC9</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-500)"></div><span class="g-swatch__var">--primitive-product1-500</span><span class="g-swatch__hex">#2473AF</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-600)"></div><span class="g-swatch__var">--primitive-product1-600</span><span class="g-swatch__hex">#114E7D</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-700)"></div><span class="g-swatch__var">--primitive-product1-700</span><span class="g-swatch__hex">#083D64</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-800)"></div><span class="g-swatch__var">--primitive-product1-800</span><span class="g-swatch__hex">#052B48</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product1-900)"></div><span class="g-swatch__var">--primitive-product1-900</span><span class="g-swatch__hex">#031E33</span></div>
 		</div>
 		<div class="g-palette-row">
 		  <span class="g-palette-row-title">Product-2 (Indigo)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-50)"></div><span class="g-swatch__var">--primitive-product2-50</span><span class="g-swatch__hex">#DCE4F5</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-100)"></div><span class="g-swatch__var">--primitive-product2-100</span><span class="g-swatch__hex">#C8D4EF</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-200)"></div><span class="g-swatch__var">--primitive-product2-200</span><span class="g-swatch__hex">#ACC0EC</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-300)"></div><span class="g-swatch__var">--primitive-product2-300</span><span class="g-swatch__hex">#7896D8</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-400)"></div><span class="g-swatch__var">--primitive-product2-400</span><span class="g-swatch__hex">#5076CB</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-500)"></div><span class="g-swatch__var">--primitive-product2-500</span><span class="g-swatch__hex">#2F5ABA</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-600)"></div><span class="g-swatch__var">--primitive-product2-600</span><span class="g-swatch__hex">#1A42A1</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-700)"></div><span class="g-swatch__var">--primitive-product2-700</span><span class="g-swatch__hex">#0E2D78</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-800)"></div><span class="g-swatch__var">--primitive-product2-800</span><span class="g-swatch__hex">#061B50</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product2-900)"></div><span class="g-swatch__var">--primitive-product2-900</span><span class="g-swatch__hex">#031237</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-50)"></div><span class="g-swatch__var">--primitive-product2-50</span><span class="g-swatch__hex">#DCE4F5</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-100)"></div><span class="g-swatch__var">--primitive-product2-100</span><span class="g-swatch__hex">#C8D4EF</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-200)"></div><span class="g-swatch__var">--primitive-product2-200</span><span class="g-swatch__hex">#ACC0EC</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-300)"></div><span class="g-swatch__var">--primitive-product2-300</span><span class="g-swatch__hex">#7896D8</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-400)"></div><span class="g-swatch__var">--primitive-product2-400</span><span class="g-swatch__hex">#5076CB</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-500)"></div><span class="g-swatch__var">--primitive-product2-500</span><span class="g-swatch__hex">#2F5ABA</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-600)"></div><span class="g-swatch__var">--primitive-product2-600</span><span class="g-swatch__hex">#1A42A1</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-700)"></div><span class="g-swatch__var">--primitive-product2-700</span><span class="g-swatch__hex">#0E2D78</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-800)"></div><span class="g-swatch__var">--primitive-product2-800</span><span class="g-swatch__hex">#061B50</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product2-900)"></div><span class="g-swatch__var">--primitive-product2-900</span><span class="g-swatch__hex">#031237</span></div>
 		</div>
 		<div class="g-palette-row">
 			<span class="g-palette-row-title">Product-3 (Violet)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-50)"></div><span class="g-swatch__var">--primitive-product3-50</span><span class="g-swatch__hex">#E7E4F3</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-100)"></div><span class="g-swatch__var">--primitive-product3-100</span><span class="g-swatch__hex">#D4CDF1</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-200)"></div><span class="g-swatch__var">--primitive-product3-200</span><span class="g-swatch__hex">#BFB4E9</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-300)"></div><span class="g-swatch__var">--primitive-product3-300</span><span class="g-swatch__hex">#A392E2</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-400)"></div><span class="g-swatch__var">--primitive-product3-400</span><span class="g-swatch__hex">#7B65D1</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-500)"></div><span class="g-swatch__var">--primitive-product3-500</span><span class="g-swatch__hex">#523AB1</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-600)"></div><span class="g-swatch__var">--primitive-product3-600</span><span class="g-swatch__hex">#2E1788</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-700)"></div><span class="g-swatch__var">--primitive-product3-700</span><span class="g-swatch__hex">#200C6B</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-800)"></div><span class="g-swatch__var">--primitive-product3-800</span><span class="g-swatch__hex">#15064E</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product3-900)"></div><span class="g-swatch__var">--primitive-product3-900</span><span class="g-swatch__hex">#0F0439</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-50)"></div><span class="g-swatch__var">--primitive-product3-50</span><span class="g-swatch__hex">#E7E4F3</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-100)"></div><span class="g-swatch__var">--primitive-product3-100</span><span class="g-swatch__hex">#D4CDF1</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-200)"></div><span class="g-swatch__var">--primitive-product3-200</span><span class="g-swatch__hex">#BFB4E9</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-300)"></div><span class="g-swatch__var">--primitive-product3-300</span><span class="g-swatch__hex">#A392E2</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-400)"></div><span class="g-swatch__var">--primitive-product3-400</span><span class="g-swatch__hex">#7B65D1</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-500)"></div><span class="g-swatch__var">--primitive-product3-500</span><span class="g-swatch__hex">#523AB1</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-600)"></div><span class="g-swatch__var">--primitive-product3-600</span><span class="g-swatch__hex">#2E1788</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-700)"></div><span class="g-swatch__var">--primitive-product3-700</span><span class="g-swatch__hex">#200C6B</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-800)"></div><span class="g-swatch__var">--primitive-product3-800</span><span class="g-swatch__hex">#15064E</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product3-900)"></div><span class="g-swatch__var">--primitive-product3-900</span><span class="g-swatch__hex">#0F0439</span></div>
 		  
 		</div>
 		<div class="g-palette-row">
 			<span class="g-palette-row-title">Product-4 (Pink)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-50)"></div><span class="g-swatch__var">--primitive-product4-50</span><span class="g-swatch__hex">#F3E9F0</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-100)"></div><span class="g-swatch__var">--primitive-product4-100</span><span class="g-swatch__hex">#F2D1E8</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-200)"></div><span class="g-swatch__var">--primitive-product4-200</span><span class="g-swatch__hex">#EBB7DB</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-300)"></div><span class="g-swatch__var">--primitive-product4-300</span><span class="g-swatch__hex">#DE8EC5</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-400)"></div><span class="g-swatch__var">--primitive-product4-400</span><span class="g-swatch__hex">#CE66AD</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-500)"></div><span class="g-swatch__var">--primitive-product4-500</span><span class="g-swatch__hex">#AF3C8B</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-600)"></div><span class="g-swatch__var">--primitive-product4-600</span><span class="g-swatch__hex">#8A2069</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-700)"></div><span class="g-swatch__var">--primitive-product4-700</span><span class="g-swatch__hex">#6E0E50</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-800)"></div><span class="g-swatch__var">--primitive-product4-800</span><span class="g-swatch__hex">#4A0635</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product4-900)"></div><span class="g-swatch__var">--primitive-product4-900</span><span class="g-swatch__hex">#300322</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-50)"></div><span class="g-swatch__var">--primitive-product4-50</span><span class="g-swatch__hex">#F3E9F0</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-100)"></div><span class="g-swatch__var">--primitive-product4-100</span><span class="g-swatch__hex">#F2D1E8</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-200)"></div><span class="g-swatch__var">--primitive-product4-200</span><span class="g-swatch__hex">#EBB7DB</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-300)"></div><span class="g-swatch__var">--primitive-product4-300</span><span class="g-swatch__hex">#DE8EC5</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-400)"></div><span class="g-swatch__var">--primitive-product4-400</span><span class="g-swatch__hex">#CE66AD</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-500)"></div><span class="g-swatch__var">--primitive-product4-500</span><span class="g-swatch__hex">#AF3C8B</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-600)"></div><span class="g-swatch__var">--primitive-product4-600</span><span class="g-swatch__hex">#8A2069</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-700)"></div><span class="g-swatch__var">--primitive-product4-700</span><span class="g-swatch__hex">#6E0E50</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-800)"></div><span class="g-swatch__var">--primitive-product4-800</span><span class="g-swatch__hex">#4A0635</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product4-900)"></div><span class="g-swatch__var">--primitive-product4-900</span><span class="g-swatch__hex">#300322</span></div>
 		  
 		</div>
 		<div class="g-palette-row">
 			<span class="g-palette-row-title">Product-5 (Gold)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-50)"></div><span class="g-swatch__var">--primitive-product5-50</span><span class="g-swatch__hex">#F6EFE6</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-100)"></div><span class="g-swatch__var">--primitive-product5-100</span><span class="g-swatch__hex">#F6E9CE</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-200)"></div><span class="g-swatch__var">--primitive-product5-200</span><span class="g-swatch__hex">#ECC98D</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-300)"></div><span class="g-swatch__var">--primitive-product5-300</span><span class="g-swatch__hex">#E5B851</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-400)"></div><span class="g-swatch__var">--primitive-product5-400</span><span class="g-swatch__hex">#EEAE1A</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-500)"></div><span class="g-swatch__var">--primitive-product5-500</span><span class="g-swatch__hex">#C88F0B</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-600)"></div><span class="g-swatch__var">--primitive-product5-600</span><span class="g-swatch__hex">#A27409</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-700)"></div><span class="g-swatch__var">--primitive-product5-700</span><span class="g-swatch__hex">#684C09</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-800)"></div><span class="g-swatch__var">--primitive-product5-800</span><span class="g-swatch__hex">#4A3606</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product5-900)"></div><span class="g-swatch__var">--primitive-product5-900</span><span class="g-swatch__hex">#332503</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-50)"></div><span class="g-swatch__var">--primitive-product5-50</span><span class="g-swatch__hex">#F6EFE6</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-100)"></div><span class="g-swatch__var">--primitive-product5-100</span><span class="g-swatch__hex">#F6E9CE</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-200)"></div><span class="g-swatch__var">--primitive-product5-200</span><span class="g-swatch__hex">#ECC98D</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-300)"></div><span class="g-swatch__var">--primitive-product5-300</span><span class="g-swatch__hex">#E5B851</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-400)"></div><span class="g-swatch__var">--primitive-product5-400</span><span class="g-swatch__hex">#EEAE1A</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-500)"></div><span class="g-swatch__var">--primitive-product5-500</span><span class="g-swatch__hex">#C88F0B</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-600)"></div><span class="g-swatch__var">--primitive-product5-600</span><span class="g-swatch__hex">#A27409</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-700)"></div><span class="g-swatch__var">--primitive-product5-700</span><span class="g-swatch__hex">#684C09</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-800)"></div><span class="g-swatch__var">--primitive-product5-800</span><span class="g-swatch__hex">#4A3606</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product5-900)"></div><span class="g-swatch__var">--primitive-product5-900</span><span class="g-swatch__hex">#332503</span></div>
 		  
 		</div>
 		<div class="g-palette-row">
 			<span class="g-palette-row-title">Product-6 (Green)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-50)"></div><span class="g-swatch__var">--primitive-product6-50</span><span class="g-swatch__hex">#E2EFE8</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-100)"></div><span class="g-swatch__var">--primitive-product6-100</span><span class="g-swatch__hex">#C4EED7</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-200)"></div><span class="g-swatch__var">--primitive-product6-200</span><span class="g-swatch__hex">#9FE2BE</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-300)"></div><span class="g-swatch__var">--primitive-product6-300</span><span class="g-swatch__hex">#66D599</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-400)"></div><span class="g-swatch__var">--primitive-product6-400</span><span class="g-swatch__hex">#39C479</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-500)"></div><span class="g-swatch__var">--primitive-product6-500</span><span class="g-swatch__hex">#199A54</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-600)"></div><span class="g-swatch__var">--primitive-product6-600</span><span class="g-swatch__hex">#0A753B</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-700)"></div><span class="g-swatch__var">--primitive-product6-700</span><span class="g-swatch__hex">#054622</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-800)"></div><span class="g-swatch__var">--primitive-product6-800</span><span class="g-swatch__hex">#064622</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-product6-900)"></div><span class="g-swatch__var">--primitive-product6-900</span><span class="g-swatch__hex">#022411</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-50)"></div><span class="g-swatch__var">--primitive-product6-50</span><span class="g-swatch__hex">#E2EFE8</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-100)"></div><span class="g-swatch__var">--primitive-product6-100</span><span class="g-swatch__hex">#C4EED7</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-200)"></div><span class="g-swatch__var">--primitive-product6-200</span><span class="g-swatch__hex">#9FE2BE</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-300)"></div><span class="g-swatch__var">--primitive-product6-300</span><span class="g-swatch__hex">#66D599</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-400)"></div><span class="g-swatch__var">--primitive-product6-400</span><span class="g-swatch__hex">#39C479</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-500)"></div><span class="g-swatch__var">--primitive-product6-500</span><span class="g-swatch__hex">#199A54</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-600)"></div><span class="g-swatch__var">--primitive-product6-600</span><span class="g-swatch__hex">#0A753B</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-700)"></div><span class="g-swatch__var">--primitive-product6-700</span><span class="g-swatch__hex">#054622</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-800)"></div><span class="g-swatch__var">--primitive-product6-800</span><span class="g-swatch__hex">#064622</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-product6-900)"></div><span class="g-swatch__var">--primitive-product6-900</span><span class="g-swatch__hex">#022411</span></div>
 		</div>
 	  </div>
 	</div>
 
 	<div class="g-palette-group">
 	  <p class="g-palette-group-title">Plant</p>
-	  <div style="display:flex;flex-direction:column;gap:10px">
+	  <div class="g-palette-sub-group">
 		<div class="g-palette-row">
 			<span class="g-palette-row-title">Plant-1 (Steel Blue)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-50)"></div><span class="g-swatch__var">--primitive-plant1-50</span><span class="g-swatch__hex">#DCEEF8</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-100)"></div><span class="g-swatch__var">--primitive-plant1-100</span><span class="g-swatch__hex">#C4E3F4</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-200)"></div><span class="g-swatch__var">--primitive-plant1-200</span><span class="g-swatch__hex">#9DD1ED</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-300)"></div><span class="g-swatch__var">--primitive-plant1-300</span><span class="g-swatch__hex">#73BDE6</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-400)"></div><span class="g-swatch__var">--primitive-plant1-400</span><span class="g-swatch__hex">#51ABDD</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-500)"></div><span class="g-swatch__var">--primitive-plant1-500</span><span class="g-swatch__hex">#2D9CDB</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-600)"></div><span class="g-swatch__var">--primitive-plant1-600</span><span class="g-swatch__hex">#267DAE</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-700)"></div><span class="g-swatch__var">--primitive-plant1-700</span><span class="g-swatch__hex">#1E6289</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-800)"></div><span class="g-swatch__var">--primitive-plant1-800</span><span class="g-swatch__hex">#123F58</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant1-900)"></div><span class="g-swatch__var">--primitive-plant1-900</span><span class="g-swatch__hex">#09212E</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-50)"></div><span class="g-swatch__var">--primitive-plant1-50</span><span class="g-swatch__hex">#DCEEF8</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-100)"></div><span class="g-swatch__var">--primitive-plant1-100</span><span class="g-swatch__hex">#C4E3F4</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-200)"></div><span class="g-swatch__var">--primitive-plant1-200</span><span class="g-swatch__hex">#9DD1ED</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-300)"></div><span class="g-swatch__var">--primitive-plant1-300</span><span class="g-swatch__hex">#73BDE6</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-400)"></div><span class="g-swatch__var">--primitive-plant1-400</span><span class="g-swatch__hex">#51ABDD</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-500)"></div><span class="g-swatch__var">--primitive-plant1-500</span><span class="g-swatch__hex">#2D9CDB</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-600)"></div><span class="g-swatch__var">--primitive-plant1-600</span><span class="g-swatch__hex">#267DAE</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-700)"></div><span class="g-swatch__var">--primitive-plant1-700</span><span class="g-swatch__hex">#1E6289</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-800)"></div><span class="g-swatch__var">--primitive-plant1-800</span><span class="g-swatch__hex">#123F58</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant1-900)"></div><span class="g-swatch__var">--primitive-plant1-900</span><span class="g-swatch__hex">#09212E</span></div>
 		</div>
 		<div class="g-palette-row">
 			<span class="g-palette-row-title">Plant-2 (Purple)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-50)"></div><span class="g-swatch__var">--primitive-plant2-50</span><span class="g-swatch__hex">#F4DBFF</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-100)"></div><span class="g-swatch__var">--primitive-plant2-100</span><span class="g-swatch__hex">#EBDAFF</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-200)"></div><span class="g-swatch__var">--primitive-plant2-200</span><span class="g-swatch__hex">#D1B3F6</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-300)"></div><span class="g-swatch__var">--primitive-plant2-300</span><span class="g-swatch__hex">#B78BEE</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-400)"></div><span class="g-swatch__var">--primitive-plant2-400</span><span class="g-swatch__hex">#9F62EB</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-500)"></div><span class="g-swatch__var">--primitive-plant2-500</span><span class="g-swatch__hex">#9B51E0</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-600)"></div><span class="g-swatch__var">--primitive-plant2-600</span><span class="g-swatch__hex">#6B29BE</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-700)"></div><span class="g-swatch__var">--primitive-plant2-700</span><span class="g-swatch__hex">#4F1696</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-800)"></div><span class="g-swatch__var">--primitive-plant2-800</span><span class="g-swatch__hex">#3D0E77</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant2-900)"></div><span class="g-swatch__var">--primitive-plant2-900</span><span class="g-swatch__hex">#200443</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-50)"></div><span class="g-swatch__var">--primitive-plant2-50</span><span class="g-swatch__hex">#F4DBFF</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-100)"></div><span class="g-swatch__var">--primitive-plant2-100</span><span class="g-swatch__hex">#EBDAFF</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-200)"></div><span class="g-swatch__var">--primitive-plant2-200</span><span class="g-swatch__hex">#D1B3F6</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-300)"></div><span class="g-swatch__var">--primitive-plant2-300</span><span class="g-swatch__hex">#B78BEE</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-400)"></div><span class="g-swatch__var">--primitive-plant2-400</span><span class="g-swatch__hex">#9F62EB</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-500)"></div><span class="g-swatch__var">--primitive-plant2-500</span><span class="g-swatch__hex">#9B51E0</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-600)"></div><span class="g-swatch__var">--primitive-plant2-600</span><span class="g-swatch__hex">#6B29BE</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-700)"></div><span class="g-swatch__var">--primitive-plant2-700</span><span class="g-swatch__hex">#4F1696</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-800)"></div><span class="g-swatch__var">--primitive-plant2-800</span><span class="g-swatch__hex">#3D0E77</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant2-900)"></div><span class="g-swatch__var">--primitive-plant2-900</span><span class="g-swatch__hex">#200443</span></div>
 		</div>
 		<div class="g-palette-row">
 			<span class="g-palette-row-title">Plant-3 (Orange)</span>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-50)"></div><span class="g-swatch__var">--primitive-plant3-50</span><span class="g-swatch__hex">#FFF3E9</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-100)"></div><span class="g-swatch__var">--primitive-plant3-100</span><span class="g-swatch__hex">#FEE8D4</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-200)"></div><span class="g-swatch__var">--primitive-plant3-200</span><span class="g-swatch__hex">#FBCFA9</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-300)"></div><span class="g-swatch__var">--primitive-plant3-300</span><span class="g-swatch__hex">#F9BA85</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-400)"></div><span class="g-swatch__var">--primitive-plant3-400</span><span class="g-swatch__hex">#F7A763</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-500)"></div><span class="g-swatch__var">--primitive-plant3-500</span><span class="g-swatch__hex">#F1974B</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-600)"></div><span class="g-swatch__var">--primitive-plant3-600</span><span class="g-swatch__hex">#DB7C2D</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-700)"></div><span class="g-swatch__var">--primitive-plant3-700</span><span class="g-swatch__hex">#B15911</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-800)"></div><span class="g-swatch__var">--primitive-plant3-800</span><span class="g-swatch__hex">#7E3F0B</span></div>
-		  <div class="g-swatch"><div class="g-swatch__color" style="background:var(--primitive-plant3-900)"></div><span class="g-swatch__var">--primitive-plant3-900</span><span class="g-swatch__hex">#422004</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-50)"></div><span class="g-swatch__var">--primitive-plant3-50</span><span class="g-swatch__hex">#FFF3E9</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-100)"></div><span class="g-swatch__var">--primitive-plant3-100</span><span class="g-swatch__hex">#FEE8D4</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-200)"></div><span class="g-swatch__var">--primitive-plant3-200</span><span class="g-swatch__hex">#FBCFA9</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-300)"></div><span class="g-swatch__var">--primitive-plant3-300</span><span class="g-swatch__hex">#F9BA85</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-400)"></div><span class="g-swatch__var">--primitive-plant3-400</span><span class="g-swatch__hex">#F7A763</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-500)"></div><span class="g-swatch__var">--primitive-plant3-500</span><span class="g-swatch__hex">#F1974B</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-600)"></div><span class="g-swatch__var">--primitive-plant3-600</span><span class="g-swatch__hex">#DB7C2D</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-700)"></div><span class="g-swatch__var">--primitive-plant3-700</span><span class="g-swatch__hex">#B15911</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-800)"></div><span class="g-swatch__var">--primitive-plant3-800</span><span class="g-swatch__hex">#7E3F0B</span></div>
+		  <div class="g-swatch"><div class="g-dot g-dot--lg" style="background:var(--primitive-plant3-900)"></div><span class="g-swatch__var">--primitive-plant3-900</span><span class="g-swatch__hex">#422004</span></div>
 		  
 		</div>
 	  </div>
 	</div>
 
-	<!-- ── Semantic ── -->
-	<p class="g-sub-title" style="margin-top:40px">Semantic — Background</p>
-	<div class="g-semantic-grid">
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-default</span><span class="g-semantic-item__val">--primitive-base-0</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-subtle)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-subtle</span><span class="g-semantic-item__val">--primitive-gray-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-muted)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-muted</span><span class="g-semantic-item__val">--primitive-gray-100</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-emphasis)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-emphasis</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-button-primary-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-button-primary-default</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-button-primary-hover)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-button-primary-hover</span><span class="g-semantic-item__val">--primitive-green-600</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-button-primary-disabled)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-button-primary-disabled</span><span class="g-semantic-item__val">--primitive-gray-200</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-button-secondary-default);border:1px solid var(--color-border-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-button-secondary-default</span><span class="g-semantic-item__val">transparent</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-button-secondary-hover)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-button-secondary-hover</span><span class="g-semantic-item__val">--primitive-green-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-button-tertiary-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-button-tertiary-default</span><span class="g-semantic-item__val">--primitive-gray-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-input-default);border:1px solid var(--color-border-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-input-default</span><span class="g-semantic-item__val">--primitive-base-0</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-input-disabled)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-input-disabled</span><span class="g-semantic-item__val">--primitive-gray-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-badge-primary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-badge-primary</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-badge-secondary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-badge-secondary</span><span class="g-semantic-item__val">--primitive-gray-200</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-badge-info)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-badge-info</span><span class="g-semantic-item__val">--primitive-blue-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-badge-danger)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-badge-danger</span><span class="g-semantic-item__val">--primitive-red-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-badge-warning)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-badge-warning</span><span class="g-semantic-item__val">--primitive-orange-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-chip-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-chip-default</span><span class="g-semantic-item__val">--primitive-gray-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-chip-selected)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-chip-selected</span><span class="g-semantic-item__val">--primitive-green-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-control-default);border:1px solid var(--color-border-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-control-default</span><span class="g-semantic-item__val">--primitive-base-0</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-control-selected)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-control-selected</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-control-disabled)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-control-disabled</span><span class="g-semantic-item__val">--primitive-gray-200</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-toast-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-toast-default</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-infobox-info)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-infobox-info</span><span class="g-semantic-item__val">--primitive-blue-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-infobox-success)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-infobox-success</span><span class="g-semantic-item__val">--primitive-green-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-infobox-warning)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-infobox-warning</span><span class="g-semantic-item__val">--primitive-orange-50</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-bg-infobox-danger)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-bg-infobox-danger</span><span class="g-semantic-item__val">--primitive-red-50</span></div></div>
+	<!-- ── Semantic Colors ── -->
+	<p class="g-sub-title g-mt-40">Semantic Color</p>
+	<p class="g-section-note">폰트/보더/배경/아이콘 토큰 · BG-White(#FFFF) / BG-Gray(#F0F0) 기준 WCAG 대비비</p>
+
+	<!-- Font -->
+	<div class="g-semantic-section-label">Font</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White(#FFFF)</span><span>BG-Gray(#F0F0)</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-1)"></div><div><b>font-1</b><span>--color-font-1</span></div></div><span>이이텍스트 1</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-2)"></div><div><b>font-2</b><span>--color-font-2</span></div></div><span>이이텍스트 2</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-3)"></div><div><b>font-3</b><span>--color-font-3</span></div></div><span>이이텍스트 3</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-4)"></div><div><b>font-4</b><span>--color-font-4</span></div></div><span>이이텍스트 4</span><span class="g-cr-aa">AA</span><span class="g-cr-aalg">AA Large</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-5)"></div><div><b>font-5</b><span>--color-font-5</span></div></div><span>Disabled</span><span class="g-cr-aalg">AA Large</span><span class="g-cr-aalg">AA Large</span></div>
+	  <div class="g-semantic-table__row g-cr-row-fail"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-6)"></div><div><b>font-6</b><span>--color-font-6</span></div></div><span>—</span><span class="g-cr-fail">2.21:1</span><span class="g-cr-fail">2.41:1</span></div>
+	  <div class="g-semantic-table__row g-cr-row-fail"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-7)"></div><div><b>font-7</b><span>--color-font-7</span></div></div><span>—</span><span class="g-cr-fail">2.20:1</span><span class="g-cr-fail">2.43:1</span></div>
+	  <div class="g-semantic-table__row g-cr-row-fail"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-8)"></div><div><b>font-8</b><span>--color-font-8</span></div></div><span>—</span><span class="g-cr-fail">2.25:1</span><span class="g-cr-fail">2.45:1</span></div>
+	  <div class="g-semantic-table__row g-cr-row-fail"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-9)"></div><div><b>font-9</b><span>--color-font-9</span></div></div><span>—</span><span class="g-cr-fail">2.25:1</span><span class="g-cr-fail">2.50:1</span></div>
+	  <div class="g-semantic-table__row g-cr-row-fail"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-10);border:1px solid #e0e0e0"></div><div><b>font-10</b><span>--color-font-10</span></div></div><span>—</span><span class="g-cr-fail">2.25:1</span><span class="g-cr-fail">2.55:1</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-visual)"></div><div><b>font-visual</b><span>--color-font-visual</span></div></div><span>Visual</span><span class="g-cr-aa">AA</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-error)"></div><div><b>font-error</b><span>--color-font-error</span></div></div><span>Error</span><span class="g-cr-aalg">AA Large</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-point)"></div><div><b>font-point</b><span>--color-font-point</span></div></div><span>Primary</span><span class="g-cr-aalg">AA Large</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-positive)"></div><div><b>font-positive</b><span>--color-font-positive</span></div></div><span>Positive</span><span class="g-cr-aa">AA</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-font-negative)"></div><div><b>font-negative</b><span>--color-font-negative</span></div></div><span>Negative</span><span class="g-cr-aa">AA</span><span>—</span></div>
 	</div>
 
-	<p class="g-sub-title">Semantic — Text</p>
-	<div class="g-semantic-grid">
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-primary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-primary</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-secondary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-secondary</span><span class="g-semantic-item__val">--primitive-gray-600</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-tertiary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-tertiary</span><span class="g-semantic-item__val">--primitive-gray-400</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-disabled)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-disabled</span><span class="g-semantic-item__val">--primitive-gray-400</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-inverse);border:1px solid var(--color-border-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-inverse</span><span class="g-semantic-item__val">--primitive-base-0</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-brand)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-brand</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-danger)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-danger</span><span class="g-semantic-item__val">--primitive-red-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-info)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-info</span><span class="g-semantic-item__val">--primitive-blue-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-warning)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-warning</span><span class="g-semantic-item__val">--primitive-orange-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-button-primary-default);border:1px solid var(--color-border-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-button-primary-default</span><span class="g-semantic-item__val">--primitive-base-0</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-button-primary-disabled)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-button-primary-disabled</span><span class="g-semantic-item__val">--primitive-gray-400</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-button-secondary-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-button-secondary-default</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-text-button-tertiary-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-text-button-tertiary-default</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
+	<!-- Border -->
+	<div class="g-semantic-section-label g-mt-24">Border</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White(#FFFF)</span><span>BG-Gray(#F0F0)</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-border-1)"></div><div><b>border-1</b><span>--color-border-1</span></div></div><span>Visual</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-border-2)"></div><div><b>border-2</b><span>--color-border-2</span></div></div><span>Visual</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-border-3)"></div><div><b>border-3</b><span>--color-border-3</span></div></div><span>Body / 기본</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-border-4)"></div><div><b>border-4</b><span>--color-border-4</span></div></div><span>Info</span><span class="g-cr-aa">AA</span><span class="g-cr-aalg">AA Large</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-border-error)"></div><div><b>border-error</b><span>--color-border-error</span></div></div><span>Info</span><span class="g-cr-aa">AA</span><span class="g-cr-aalg">AA Large</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-border-point)"></div><div><b>border-point</b><span>--color-border-point</span></div></div><span>Info</span><span class="g-cr-aa">AA</span><span class="g-cr-aalg">AA Large</span></div>
 	</div>
 
-	<p class="g-sub-title">Semantic — Border</p>
-	<div class="g-semantic-grid">
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-default</span><span class="g-semantic-item__val">--primitive-gray-200</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-subtle)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-subtle</span><span class="g-semantic-item__val">--primitive-gray-100</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-emphasis)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-emphasis</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-brand)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-brand</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-danger)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-danger</span><span class="g-semantic-item__val">--primitive-red-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-info)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-info</span><span class="g-semantic-item__val">--primitive-blue-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-focus)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-focus</span><span class="g-semantic-item__val">--primitive-blue-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-button-secondary-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-button-secondary-default</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-button-secondary-disabled)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-button-secondary-disabled</span><span class="g-semantic-item__val">--primitive-gray-200</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-input-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-input-default</span><span class="g-semantic-item__val">--primitive-gray-200</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-input-focus)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-input-focus</span><span class="g-semantic-item__val">--primitive-blue-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-border-input-error)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-border-input-error</span><span class="g-semantic-item__val">--primitive-red-500</span></div></div>
+	<!-- Background -->
+	<div class="g-semantic-section-label g-mt-24">Background</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White(#FFFF)</span><span>BG-Gray(#F0F0)</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-bg-default);border:1px solid #e0e0e0"></div><div><b>default</b><span>--color-bg-default</span></div></div><span>이중배경</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-bg-container)"></div><div><b>container</b><span>--color-bg-container</span></div></div><span>기본</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-bg-extra-bg)"></div><div><b>extra-bg</b><span>--color-bg-extra-bg</span></div></div><span>Body / 기본</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-bg-disabled)"></div><div><b>disabled</b><span>--color-bg-disabled</span></div></div><span>Disabled</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:#888;opacity:0.4"></div><div><b>dimmed</b><span>--color-bg-dimmed</span></div></div><span>Info</span><span class="g-cr-aa">AA</span><span class="g-cr-aalg">AA Large</span></div>
 	</div>
 
-	<p class="g-sub-title">Semantic — Icon</p>
+	<!-- Icon -->
+	<div class="g-semantic-section-label g-mt-24">Icon</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White(#FFFF)</span><span>BG-Gray(#F0F0)</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-icon-1)"></div><div><b>icon-1</b><span>--color-icon-1</span></div></div><span>이이콘 1</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-icon-2)"></div><div><b>icon-2</b><span>--color-icon-2</span></div></div><span>이이콘 2</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-icon-3)"></div><div><b>icon-3</b><span>--color-icon-3</span></div></div><span>이이콘 3</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-icon-4)"></div><div><b>icon-4</b><span>--color-icon-4</span></div></div><span>이이콘 4</span><span class="g-cr-aa">AA</span><span class="g-cr-aalg">AA Large</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-icon-5)"></div><div><b>icon-5</b><span>--color-icon-5</span></div></div><span>이이콘 5</span><span class="g-cr-aalg">AA Large</span><span class="g-cr-aalg">AA Large</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-icon-00);border:1px solid #e0e0e0"></div><div><b>icon-00</b><span>--color-icon-00</span></div></div><span>이이콘 00 (inverse)</span><span class="g-cr-aaa">AAA</span><span class="g-cr-aaa">AAA</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-icon-point)"></div><div><b>icon-point</b><span>--color-icon-point</span></div></div><span>이이콘 point</span><span class="g-cr-aalg">AA Large</span><span class="g-cr-aaa">AAA</span></div>
+	</div>
+
+	<!-- ── Semantic Color - Component ── -->
+	<p class="g-sub-title g-mt-40">Semantic Color — Component</p>
+
+	<!-- Button -->
+	<div class="g-semantic-section-label">Button</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White</span><span>BG-Gray</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-primary-default-bg)"></div><div><b>primary-default</b><span>btn-primary-default-bg</span></div></div><span>Primary Button</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-primary-hovered-bg)"></div><div><b>primary-hovered</b><span>btn-primary-hovered-bg</span></div></div><span>Primary Button</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-primary-disabled-bg)"></div><div><b>primary-disabled</b><span>btn-primary-disabled-bg</span></div></div><span>Primary Button</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-secondary-default-bg);border:1px solid var(--color-comp-btn-secondary-default-border)"></div><div><b>secondary-default</b><span>btn-secondary-default-bg</span></div></div><span>Secondary Button</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-secondary-hovered-bg)"></div><div><b>secondary-hovered</b><span>btn-secondary-hovered-bg</span></div></div><span>Secondary Button</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-tertiary-default-bg)"></div><div><b>tertiary-default</b><span>btn-tertiary-default-bg</span></div></div><span>Tertiary Button</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-tertiary-hovered-bg)"></div><div><b>tertiary-hovered</b><span>btn-tertiary-hovered-bg</span></div></div><span>Tertiary Button</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-btn-floating-default-bg)"></div><div><b>floating</b><span>btn-floating-default-bg</span></div></div><span>Floating Button</span><span>—</span><span>—</span></div>
+	</div>
+
+	<!-- Input / Select / Picker -->
+	<div class="g-semantic-section-label g-mt-20">Input</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White</span><span>BG-Gray</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-input-default-bg);border:2px solid var(--color-comp-input-baseline-border)"></div><div><b>baseline</b><span>input-baseline-border</span></div></div><span>Input</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-input-default-bg);border:1px solid var(--color-comp-input-default-border)"></div><div><b>default</b><span>input-default-border</span></div></div><span>Input</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-input-readonly-bg);border:1px solid var(--color-comp-input-readonly-border)"></div><div><b>readonly</b><span>input-readonly-bg</span></div></div><span>Input</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-input-disabled-bg);border:1px solid var(--color-comp-input-disabled-border)"></div><div><b>disabled</b><span>input-disabled-bg</span></div></div><span>Input</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-input-default-bg);border:2px solid var(--color-comp-input-focus-border)"></div><div><b>focus</b><span>input-focus-border</span></div></div><span>Input</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-input-default-bg);border:2px solid var(--color-comp-input-error-border)"></div><div><b>error</b><span>input-error-border</span></div></div><span>Input</span><span>—</span><span>—</span></div>
+	</div>
+
+	<!-- Radio -->
+	<div class="g-semantic-section-label g-mt-20">Radio</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White</span><span>BG-Gray</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-radio-basic-default-bg);border:2px solid var(--color-comp-radio-basic-default-border);border-radius:50%"></div><div><b>basic-default</b><span>radio-basic-default</span></div></div><span>Radio — Basic</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-radio-basic-selected-bg);border:2px solid var(--color-comp-radio-basic-selected-border);border-radius:50%"></div><div><b>basic-selected</b><span>radio-basic-selected</span></div></div><span>Radio — Basic</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-radio-basic-disabled-bg);border:2px solid var(--color-comp-radio-basic-disabled-border);border-radius:50%"></div><div><b>basic-disabled</b><span>radio-basic-disabled</span></div></div><span>Radio — Basic</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-radio-box-default-bg);border:1px solid var(--color-comp-radio-box-default-border)"></div><div><b>box-default</b><span>radio-box-default</span></div></div><span>Radio — Box</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-radio-box-selected-bg);border:2px solid var(--color-comp-radio-box-selected-border)"></div><div><b>box-selected</b><span>radio-box-selected</span></div></div><span>Radio — Box</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-radio-survey-positive-bg);border:2px solid var(--color-comp-radio-survey-positive-border)"></div><div><b>survey-positive</b><span>radio-survey-positive</span></div></div><span>Radio — Box</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-radio-survey-negative-bg);border:2px solid var(--color-comp-radio-survey-negative-border)"></div><div><b>survey-negative</b><span>radio-survey-negative</span></div></div><span>Radio — Box</span><span>—</span><span>—</span></div>
+	</div>
+
+	<!-- Check Box -->
+	<div class="g-semantic-section-label g-mt-20">Check Box</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White</span><span>BG-Gray</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-check-basic-default-bg);border:2px solid var(--color-comp-check-basic-default-border)"></div><div><b>basic-default</b><span>check-basic-default</span></div></div><span>Check Box — Basic</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-check-basic-selected-bg);border:2px solid var(--color-comp-check-basic-selected-border)"></div><div><b>basic-selected</b><span>check-basic-selected</span></div></div><span>Check Box — Basic</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-check-basic-disabled-bg);border:2px solid var(--color-comp-check-basic-disabled-border)"></div><div><b>basic-disabled</b><span>check-basic-disabled</span></div></div><span>Check Box — Basic</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-check-box-selected-bg);border:2px solid var(--color-comp-check-box-selected-border)"></div><div><b>box-selected</b><span>check-box-selected</span></div></div><span>Check Box — Box</span><span>—</span><span>—</span></div>
+	</div>
+
+	<!-- Tab / Label / Badge / Switch -->
+	<div class="g-semantic-section-label g-mt-20">Tab</div>
+	<div class="g-semantic-table">
+	  <div class="g-semantic-table__head"><span>Light Mode</span><span>Role</span><span>BG-White</span><span>BG-Gray</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-tab-chip-tag-bg)"></div><div><b>chip-tag</b><span>tab-chip-tag-bg</span></div></div><span>Tab</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-tab-chip-default-bg)"></div><div><b>chip-default</b><span>tab-chip-default-bg</span></div></div><span>Tab</span><span>—</span><span>—</span></div>
+	  <div class="g-semantic-table__row"><div class="g-semantic-table__cell"><div class="g-dot g-dot--md" style="background:var(--color-comp-tab-chip-amber-bg)"></div><div><b>chip-amber</b><span>tab-chip-amber-bg</span></div></div><span>Tab</span><span>—</span><span>—</span></div>
+	</div>
+
+	<div class="g-semantic-section-label g-mt-20">Label</div>
 	<div class="g-semantic-grid">
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-primary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-primary</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-secondary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-secondary</span><span class="g-semantic-item__val">--primitive-gray-600</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-tertiary)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-tertiary</span><span class="g-semantic-item__val">--primitive-gray-400</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-disabled)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-disabled</span><span class="g-semantic-item__val">--primitive-gray-400</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-inverse);border:1px solid var(--color-border-default)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-inverse</span><span class="g-semantic-item__val">--primitive-base-0</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-brand)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-brand</span><span class="g-semantic-item__val">--primitive-green-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-danger)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-danger</span><span class="g-semantic-item__val">--primitive-red-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-info)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-info</span><span class="g-semantic-item__val">--primitive-blue-500</span></div></div>
-	  <div class="g-semantic-item"><div class="g-semantic-item__dot" style="background:var(--color-icon-gray900)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">--color-icon-gray900</span><span class="g-semantic-item__val">--primitive-gray-800</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-red)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-red</span><span class="g-semantic-item__val">red-400</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-orange)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-orange</span><span class="g-semantic-item__val">orange-400</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-yellow)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-yellow</span><span class="g-semantic-item__val">yellow-600</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-lightblue)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-lightblue</span><span class="g-semantic-item__val">lt-blue-600</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-skyblue)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-skyblue</span><span class="g-semantic-item__val">sky-blue-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-navy)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-navy</span><span class="g-semantic-item__val">navy-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-cobalt)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-cobalt</span><span class="g-semantic-item__val">cobalt-600</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-gray)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-gray</span><span class="g-semantic-item__val">gray-600</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-green)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-green</span><span class="g-semantic-item__val">green-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-label-blue)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">label-blue</span><span class="g-semantic-item__val">blue-500</span></div></div>
+	</div>
+
+	<div class="g-semantic-section-label g-mt-20">Step / Badge / Switch / Progress</div>
+	<div class="g-semantic-grid">
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-step-active-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">step-active</span><span class="g-semantic-item__val">green-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-step-default-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">step-default</span><span class="g-semantic-item__val">gray-200</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-badge-red)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">badge-red</span><span class="g-semantic-item__val">red-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-switch-off-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">switch-off</span><span class="g-semantic-item__val">gray-300</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-switch-on-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">switch-on</span><span class="g-semantic-item__val">green-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-progress-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">progress-bg</span><span class="g-semantic-item__val">gray-200</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-progress-active-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">progress-active</span><span class="g-semantic-item__val">green-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-chip-active-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">chip-active</span><span class="g-semantic-item__val">green-500</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-toast-default-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">toast-default</span><span class="g-semantic-item__val">gray-900</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-indicator-active-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">indicator-active</span><span class="g-semantic-item__val">gray-800</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-popover-default-bg);border:1px solid var(--color-comp-popover-default-border)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">popover-default</span><span class="g-semantic-item__val">base-0</span></div></div>
+	  <div class="g-semantic-item"><div class="g-dot g-dot--md" style="background:var(--color-comp-popover-point-bg)"></div><div class="g-semantic-item__info"><span class="g-semantic-item__var">popover-point</span><span class="g-semantic-item__val">gray-900</span></div></div>
 	</div>
 
   </section>
@@ -493,38 +580,38 @@
 
     <!-- Typeface -->
     <p class="g-sub-title">Typeface</p>
-    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:16px">국문, 영문, 숫자, 특수문자(유니코드)는 Pretendard Font를 동일하게 사용합니다.</p>
-    <div style="background:var(--color-bg-subtle);border-radius:8px;padding:40px 24px;text-align:center">
-      <div style="font-family:var(--font-family-base);font-size:36px;font-weight:600;letter-spacing:-0.03em;color:var(--color-text-primary);margin-bottom:16px">
+    <p class="g-desc">국문, 영문, 숫자, 특수문자(유니코드)는 Pretendard Font를 동일하게 사용합니다.</p>
+    <div class="g-preview-card">
+      <div class="g-type-specimen">
         Pretendard&nbsp;&nbsp;프리텐다드&nbsp;&nbsp;0123!@#$
       </div>
-      <div style="display:flex;justify-content:center;align-items:center;gap:24px;font-family:var(--font-family-base);font-size:13px;color:var(--color-text-secondary)">
-        <span style="font-weight:600">SemiBold</span>
-        <span style="color:var(--color-border-default)">|</span>
-        <span style="font-weight:500">Medium</span>
-        <span style="color:var(--color-border-default)">|</span>
-        <span style="font-weight:400">Regular</span>
+      <div class="g-type-weights">
+        <span class="g-fw-600">SemiBold</span>
+        <span class="g-type-weights-sep">|</span>
+        <span class="g-fw-500">Medium</span>
+        <span class="g-type-weights-sep">|</span>
+        <span class="g-fw-400">Regular</span>
       </div>
     </div>
 
     <!-- Scale -->
-    <p class="g-sub-title" style="margin-top:40px">Scale</p>
-    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:16px">폰트 사이즈에 따라 고유의 높이값을 가지며, 상미치이므로 필요한 경우에만 정해진 값 이외의 설정값을 사용합니다.</p>
-    <div style="background:var(--color-bg-subtle);border-radius:8px;padding:32px 24px">
-      <div id="typeScalePreview" style="font-family:var(--font-family-base);font-weight:600;font-size:16px;line-height:24px;letter-spacing:-0.02em;color:var(--color-text-primary);text-align:center;margin-bottom:20px">
+    <p class="g-sub-title g-mt-40">Scale</p>
+    <p class="g-desc">폰트 사이즈에 따라 고유의 높이값을 가지며, 상미치이므로 필요한 경우에만 정해진 값 이외의 설정값을 사용합니다.</p>
+    <div class="g-preview-card g-preview-card--scale">
+      <div id="typeScalePreview" class="g-type-scale-preview">
         NHBank 금융상품몰 0123456789 !@#$%^&amp;*()
       </div>
-      <div style="display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap">
-        <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--color-text-secondary)">
-          <label for="scaleSize" style="white-space:nowrap">Font Size : <span id="scaleSizeVal">16</span></label>
-          <input id="scaleSize" type="range" min="10" max="36" value="16" style="width:120px" oninput="
+      <div class="g-type-scale-controls">
+        <div class="g-type-scale-group">
+          <label for="scaleSize" class="g-type-scale-label">Font Size : <span id="scaleSizeVal">16</span></label>
+          <input id="scaleSize" type="range" min="10" max="36" value="16" class="g-type-scale-input" oninput="
             document.getElementById('scaleSizeVal').textContent = this.value;
             document.getElementById('typeScalePreview').style.fontSize = this.value + 'px';
           ">
         </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--color-text-secondary)">
-          <label for="scaleLh" style="white-space:nowrap">Line Height : <span id="scaleLhVal">24</span></label>
-          <input id="scaleLh" type="range" min="12" max="48" value="24" style="width:120px" oninput="
+        <div class="g-type-scale-group">
+          <label for="scaleLh" class="g-type-scale-label">Line Height : <span id="scaleLhVal">24</span></label>
+          <input id="scaleLh" type="range" min="12" max="48" value="24" class="g-type-scale-input" oninput="
             document.getElementById('scaleLhVal').textContent = this.value;
             document.getElementById('typeScalePreview').style.lineHeight = this.value + 'px';
           ">
@@ -533,14 +620,14 @@
     </div>
 
     <!-- Usage -->
-    <p class="g-sub-title" style="margin-top:40px">Usage</p>
+    <p class="g-sub-title g-mt-40">Usage</p>
     <table class="g-table">
       <thead>
         <tr>
-          <th style="width:100px">Scale</th>
-          <th style="width:120px">Weight</th>
-          <th style="width:120px">Size/Line-height</th>
-          <th style="width:140px">Letter-spacing</th>
+          <th class="g-th-100">Scale</th>
+          <th class="g-th-120">Weight</th>
+          <th class="g-th-120">Size/Line-height</th>
+          <th class="g-th-140">Letter-spacing</th>
           <th>Usage</th>
         </tr>
       </thead>
@@ -665,142 +752,142 @@
   <!-- ===================== SPACING ===================== -->
   <section class="g-section" id="secSpacing">
     <h3 class="g-section-title">Spacing</h3>
-    <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:24px">기본 단위는 4와 8의 배수로 사용되며, 8이 포함하고 있는 2배수도 사용 가능합니다.</p>
+    <p class="g-desc--mb24">기본 단위는 4와 8의 배수로 사용되며, 8이 포함하고 있는 2배수도 사용 가능합니다.</p>
     <table class="g-table">
       <thead>
         <tr>
-          <th style="width:180px">Variable Name</th>
-          <th style="width:180px">Primitive Variable</th>
-          <th style="width:60px">PX</th>
+          <th class="g-th-180">Variable Name</th>
+          <th class="g-th-180">Primitive Variable</th>
+          <th class="g-th-60">PX</th>
           <th>Visual</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><code>--spacing-0</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/0</td>
+          <td class="g-td-note">unit/0</td>
           <td>0</td>
           <td></td>
         </tr>
         <tr>
           <td><code>--spacing-2</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/2</td>
+          <td class="g-td-note">unit/2</td>
           <td>2</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-2)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-2)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-4</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/4</td>
+          <td class="g-td-note">unit/4</td>
           <td>4</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-4)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-4)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-8</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/8</td>
+          <td class="g-td-note">unit/8</td>
           <td>8</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-8)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-8)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-12</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/12</td>
+          <td class="g-td-note">unit/12</td>
           <td>12</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-12)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-12)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-16</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/16</td>
+          <td class="g-td-note">unit/16</td>
           <td>16</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-16)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-16)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-20</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/20</td>
+          <td class="g-td-note">unit/20</td>
           <td>20</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-20)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-20)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-24</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/24</td>
+          <td class="g-td-note">unit/24</td>
           <td>24</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-24)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-24)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-32</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/32</td>
+          <td class="g-td-note">unit/32</td>
           <td>32</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-32)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-32)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-40</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/40</td>
+          <td class="g-td-note">unit/40</td>
           <td>40</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-40)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-40)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-48</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/48</td>
+          <td class="g-td-note">unit/48</td>
           <td>48</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-48)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-48)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-56</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/56</td>
+          <td class="g-td-note">unit/56</td>
           <td>56</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-56)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-56)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-60</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/60</td>
+          <td class="g-td-note">unit/60</td>
           <td>60</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-60)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-60)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-64</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/64</td>
+          <td class="g-td-note">unit/64</td>
           <td>64</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-64)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-64)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-72</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/72</td>
+          <td class="g-td-note">unit/72</td>
           <td>72</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-72)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-72)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-80</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/80</td>
+          <td class="g-td-note">unit/80</td>
           <td>80</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-80)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-80)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-88</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/88</td>
+          <td class="g-td-note">unit/88</td>
           <td>88</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-88)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-88)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-96</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/96</td>
+          <td class="g-td-note">unit/96</td>
           <td>96</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-96)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-96)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-104</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/104</td>
+          <td class="g-td-note">unit/104</td>
           <td>104</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-104)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-104)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-112</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/112</td>
+          <td class="g-td-note">unit/112</td>
           <td>112</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-112)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-112)"></div></td>
         </tr>
         <tr>
           <td><code>--spacing-120</code></td>
-          <td style="color:var(--color-text-secondary);font-size:13px">unit/120</td>
+          <td class="g-td-note">unit/120</td>
           <td>120</td>
-          <td><div style="height:16px;background:#AECCE4;border-radius:2px;width:var(--spacing-120)"></div></td>
+          <td><div class="g-spacing-bar" style="width:var(--spacing-120)"></div></td>
         </tr>
       </tbody>
     </table>
@@ -1628,7 +1715,7 @@
 	</div>
 
 	<!-- ── None-Header ── -->
-	<p class="g-sub-title" style="margin-top:40px">None-Header</p>
+	<p class="g-sub-title g-mt-40">None-Header</p>
 	<div class="bs-preview-box">
 
 	  <!-- 1) Clean view -->
@@ -2038,7 +2125,7 @@
 	</div>
 
 	<!-- ── Stock ───────────────────────────────────────────────── -->
-	<p class="g-sub-title" style="margin-top:40px">Stock</p>
+	<p class="g-sub-title g-mt-40">Stock</p>
 	<div class="bs-preview-box">
 
 	  <!-- 1) Clean view — 증권사 active -->
@@ -3436,26 +3523,21 @@
 	<div class="g-example col">
 	  <ul class="bullet bullet--body">
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>NH농협 계좌를 보유한 개인 고객</span>
 		</li>
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>만 14세 이상 내국인
 			<ul class="bullet__depth2">
 			  <li class="bullet__item">
-				<span class="bullet__marker bullet__marker--dash"></span>
 				<span>단, 미성년자의 경우 법정대리인 동의 필요</span>
 			  </li>
 			  <li class="bullet__item">
-				<span class="bullet__marker bullet__marker--dash"></span>
 				<span>외국인 등록증 보유 외국인 포함</span>
 			  </li>
 			</ul>
 		  </span>
 		</li>
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>기본 수수료 무료</span>
 		</li>
 	  </ul>
@@ -3465,15 +3547,12 @@
 	<div class="g-example col">
 	  <ul class="bullet bullet--caption">
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>타행 이체 수수료 면제</span>
 		</li>
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>모바일 뱅킹 전용 금리 우대</span>
 		</li>
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>이벤트 기간 내 가입 고객 한정</span>
 		</li>
 	  </ul>
@@ -3483,26 +3562,21 @@
 	<div class="g-example col">
 	  <ul class="bullet bullet--notice">
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>본 상품은 예금자 보호 대상입니다</span>
 		</li>
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>금리는 가입 시점에 따라 변동될 수 있습니다
 			<ul class="bullet__depth2">
 			  <li class="bullet__item">
-				<span class="bullet__marker bullet__marker--dash"></span>
 				<span>우대금리 조건 충족 시 최대 연 0.5% 추가</span>
 			  </li>
 			  <li class="bullet__item">
-				<span class="bullet__marker bullet__marker--dash"></span>
 				<span>만기 후 이자는 보통예금 금리 적용</span>
 			  </li>
 			</ul>
 		  </span>
 		</li>
 		<li class="bullet__item">
-		  <span class="bullet__marker bullet__marker--dot"></span>
 		  <span>중도해지 시 약정 이율의 50% 적용</span>
 		</li>
 	  </ul>
@@ -9875,5 +9949,23 @@
   </script>
 
   <script src="../assets/js/main.js"></script>
+  <script>
+  function toggleTheme() {
+    var html = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    if (html.getAttribute('data-theme') === 'dark') {
+      html.removeAttribute('data-theme');
+      btn.textContent = '☀️ Light Mode';
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙 Dark Mode';
+    }
+  }
+  // OS 다크모드 감지해서 버튼 라벨 초기화
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.textContent = '🌙 Dark Mode';
+  }
+  </script>
 </body>
 </html>

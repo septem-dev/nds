@@ -5,14 +5,16 @@
    ==================================================== */
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-family-base);font-size:14px;color:var(--color-text-primary);background:#fff;display:flex;min-height:100vh}
+[data-theme=dark] body{background:#1a1a1a;color:var(--color-text-primary)}
 
 /* Sidebar */
 .g-sidebar{width:220px;flex-shrink:0;border-right:1px solid var(--color-border-default);position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 0;background:#fff}
+[data-theme=dark] .g-sidebar{background:#1a1a1a;color:var(--color-text-primary)}
 .g-sidebar::-webkit-scrollbar{width:4px}
 .g-sidebar::-webkit-scrollbar-thumb{background:var(--color-border-default);border-radius:2px}
 .g-sidebar h1{padding:0 20px 16px;font-size:var(--font-size-sm);font-weight:var(--font-weight-bold);color:var(--color-text-brand);letter-spacing:.02em;border-bottom:1px solid var(--color-border-subtle)}
 .g-nav-group{padding:12px 0 0}
-.g-nav-label{padding:6px 20px 4px;font-size:var(--font-size-2xs);font-weight:var(--font-weight-semibold);color:var(--color-text-tertiary);letter-spacing:.06em;text-transform:uppercase}
+.g-nav-label{padding:6px 20px 4px;font-size:var(--font-size-2xs);font-weight:var(--font-weight-bold);color:var(--color-text-primary);letter-spacing:.06em;text-transform:uppercase;background:var(--color-bg-muted)}
 .g-sidebar nav a{display:block;padding:6px 20px;font-size:var(--font-size-sm);color:var(--color-text-secondary);text-decoration:none;transition:color var(--transition-base),background var(--transition-base)}
 .g-sidebar nav a:hover{color:var(--color-text-brand);background:var(--primitive-green-50)}
 .g-sidebar nav a.active,.g-sidebar nav a.is-active{color:var(--color-text-brand) !important;font-weight:var(--font-weight-semibold);background:var(--primitive-green-50)}
@@ -29,7 +31,7 @@ body{font-family:var(--font-family-base);font-size:14px;color:var(--color-text-p
 .g-section{margin-bottom:72px;scroll-margin-top:24px}
 .g-section-title{font-size:var(--font-size-3xl);font-weight:var(--font-weight-bold);color:var(--color-text-primary);padding-bottom:12px;border-bottom:2px solid var(--color-text-primary);margin-bottom:28px}
 .g-sub-title{font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);color:var(--color-text-secondary);margin:24px 0 12px;font-family:var(--font-family-mono)}
-.g-desc{margin:10px 0}
+.g-desc{font-size:13px;color:var(--color-text-secondary);margin:10px 0 16px}
 
 /* Example box */
 .g-example{background:var(--color-bg-subtle);border:1px solid var(--color-border-default);border-radius:var(--radius-lg);padding:24px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;position:relative}
@@ -43,27 +45,82 @@ body{font-family:var(--font-family-base);font-size:14px;color:var(--color-text-p
 .g-copy-btn.is-copied{color:#19973c !important;border-color:#19973c !important}
 .g-copy-btn svg{width:11px;height:11px;flex-shrink:0}
 
-/* ── Color Palette Guide ───────────────────────────────────── */
-.g-palette-group { margin-bottom: 32px; }
-.g-palette-group-title {font-size: 13px;font-weight: 600;color: var(--color-text-secondary);margin: 0 0 8px;text-transform: uppercase;letter-spacing: .06em;}
-.g-palette-row {display: flex;flex-wrap: wrap;gap: 6px;}
-.g-palette-row-title{font-size:11px;color:var(--color-text-primary);width:120px;}
-.g-palette-row-title::after{display:block;content:'';clear:both}
-.g-swatch {display: flex;flex-direction: column;align-items: center;width: 120px;}
-.g-swatch__color {width: 120px;height: 48px;border-radius: 6px;border: 1px solid rgba(0,0,0,.08);}
-.g-swatch__var {font-family: monospace;font-size: 11px;color: var(--color-text-primary);margin-top: 4px;text-align: center;line-height: 1.3;}/*white-space: nowrap;overflow: hidden;text-overflow: ellipsis;*/
-.g-swatch__hex {font-size: 10px;color: var(--color-text-tertiary);text-align: center;font-family: monospace;}
+/* ── Color Palette Guide ─────────────────────────── */
+.g-palette-group-set{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;margin-bottom:32px}
+.g-palette-group{margin-bottom:32px}
+.g-palette-group-set .g-palette-group{margin-bottom:0}
+.g-palette-group-title{font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--color-border-default);display:inline-block;padding:2px 10px;border-radius:20px}
+.g-palette-row{display:flex;flex-direction:column;gap:4px}
+.g-palette-row-title{font-size:11px;font-weight:600;color:var(--color-text-primary);margin-bottom:4px}
+.g-swatch{display:flex;flex-direction:row;align-items:center;gap:10px;padding:4px 0}
+.g-dot{border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.08)}
+.g-dot--lg{width:44px;height:44px}
+.g-dot--md{width:28px;height:28px}
+.g-swatch__var{font-family:monospace;font-size:11px;color:var(--color-text-primary);line-height:1.4;text-align:left}
+.g-swatch__hex{font-size:10px;color:var(--color-text-tertiary);font-family:monospace;text-align:left}
 
-/* Semantic token table */
-.g-semantic-grid {display: grid;grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));gap: 6px;margin-bottom: 24px;}
-.g-semantic-item {display: flex;align-items: center;gap: 10px;padding: 6px 10px;border-radius: 6px;background: var(--color-bg-subtle);font-size: 12px;}
-.g-semantic-item__dot {width: 28px;height: 28px;border-radius: 4px;flex-shrink: 0;border: 1px solid rgba(0,0,0,.08);}
-.g-semantic-item__info { display: flex; flex-direction: column; gap: 1px; overflow: hidden; }
-.g-semantic-item__var { font-family: monospace; font-size: 11px; color: var(--color-text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.g-semantic-item__val { font-size: 10px; color: var(--color-text-primary); font-family: monospace; }
+/* Semantic token grid */
+.g-semantic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;margin-bottom:24px}
+.g-semantic-item{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:6px;background:var(--color-bg-subtle);font-size:12px}
+.g-semantic-item__info{display:flex;flex-direction:column;gap:1px;overflow:hidden}
+.g-semantic-item__var{font-family:monospace;font-size:11px;color:var(--color-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-semantic-item__val{font-size:10px;color:var(--color-text-primary);font-family:monospace}
 
-/* Table */
+/* Semantic Color Table */
+.g-semantic-section-label{display:inline-block;padding:3px 10px;font-size:11px;font-weight:600;border:1px solid var(--color-border-2);border-radius:20px;color:var(--color-font-3);margin-bottom:10px;margin-top:4px}
+.g-semantic-table{width:100%;border-collapse:collapse;font-size:12px;border:1px solid var(--color-border-1);border-radius:8px;overflow:hidden;margin-bottom:4px}
+.g-semantic-table__head,
+.g-semantic-table__row{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr;gap:0;border-bottom:1px solid var(--color-border-1);align-items:center}
+.g-semantic-table__row:last-child{border-bottom:none}
+.g-semantic-table__head{background:var(--color-bg-container);font-weight:600;color:var(--color-font-3)}
+.g-semantic-table__head span,
+.g-semantic-table__row > span{padding:8px 12px}
+.g-semantic-table__cell{display:flex;align-items:center;gap:10px;padding:8px 12px}
+.g-semantic-table__cell div:last-child{display:flex;flex-direction:column;gap:1px}
+.g-semantic-table__cell b{font-size:12px;font-weight:600;color:var(--color-font-2)}
+.g-semantic-table__cell span{font-size:10px;color:var(--color-font-4)}
+.g-cr-aaa{color:#2C6DD4;font-weight:600}
+.g-cr-aa{color:#2C6DD4}
+.g-cr-aalg{color:#2C6DD4;font-size:11px}
+.g-cr-fail{color:#EC0C0C}
+.g-cr-row-fail{background:rgba(236,12,12,.04)}
+
+/* ── General Table ─────────────────────────────────── */
 .g-table{width:100%;border-collapse:collapse;font-size:var(--font-size-sm);margin-top:12px;margin-bottom:32px}
 .g-table th{text-align:left;padding:8px 12px;background:var(--color-bg-subtle);border:1px solid var(--color-border-default);font-weight:var(--font-weight-semibold);color:var(--color-text-secondary);white-space:nowrap}
 .g-table td{padding:8px 12px;border:1px solid var(--color-border-default);color:var(--color-text-secondary);vertical-align:top}
 .g-table td code{font-family:var(--font-family-mono);font-size:var(--font-size-xs);background:var(--color-bg-muted);padding:1px 5px;border-radius:3px;color:var(--primitive-blue-600)}
+
+/* ── Guide layout utilities ─────────────────────────── */
+.g-palette-sub-group{display:flex;flex-direction:row;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.g-section-note{font-size:12px;color:var(--color-font-4);margin-bottom:16px}
+.g-desc--mb24{font-size:13px;color:var(--color-text-secondary);margin-bottom:24px}
+.g-mt-20{margin-top:20px}
+.g-mt-24{margin-top:24px}
+.g-mt-40{margin-top:40px}
+
+/* ── Typography guide ──────────────────────────────── */
+.g-preview-card{background:var(--color-bg-subtle);border-radius:8px;padding:40px 24px;text-align:center}
+.g-preview-card--scale{padding:32px 24px;text-align:left}
+.g-type-specimen{font-family:var(--font-family-base);font-size:36px;font-weight:600;letter-spacing:-0.03em;color:var(--color-text-primary);margin-bottom:16px}
+.g-type-weights{display:flex;justify-content:center;align-items:center;gap:24px;font-family:var(--font-family-base);font-size:13px;color:var(--color-text-secondary)}
+.g-type-weights-sep{color:var(--color-border-default)}
+.g-fw-400{font-weight:400}
+.g-fw-500{font-weight:500}
+.g-fw-600{font-weight:600}
+.g-type-scale-preview{font-family:var(--font-family-base);font-weight:600;font-size:16px;line-height:24px;letter-spacing:-0.02em;color:var(--color-text-primary);text-align:center;margin-bottom:20px}
+.g-type-scale-controls{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.g-type-scale-group{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--color-text-secondary)}
+.g-type-scale-label{white-space:nowrap}
+.g-type-scale-input{width:120px}
+
+/* ── Spacing guide ─────────────────────────────────── */
+.g-spacing-bar{height:16px;background:#AECCE4;border-radius:2px}
+
+/* ── Table utilities ───────────────────────────────── */
+.g-th-60{width:60px}
+.g-th-100{width:100px}
+.g-th-120{width:120px}
+.g-th-140{width:140px}
+.g-th-180{width:180px}
+.g-td-note{color:var(--color-text-secondary) !important;font-size:13px !important}
