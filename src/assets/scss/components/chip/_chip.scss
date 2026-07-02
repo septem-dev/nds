@@ -72,6 +72,7 @@
   display: flex;
   align-items: flex-start;
   gap: 6px;
+  width:320px; // Set a fixed width for the accordion chip group
 
   // Chip list wrapper
   &__chips {

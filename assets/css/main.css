@@ -2355,6 +2355,7 @@
   display: flex;
   align-items: flex-start;
   gap: 6px;
+  width: 320px;
 }
 .chip-accordion__chips {
   display: flex;
@@ -3461,6 +3462,20 @@
   letter-spacing: -0.02em;
   color: #707070;
 }
+.link-tx__type {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.link-tx__type--recv {
+  color: #1565C0;
+}
+.link-tx__type--unrecv {
+  color: #C62828;
+}
+.link-tx__type--cancel {
+  color: #767676;
+}
 .link-tx__amount {
   font-size: 14px;
   font-weight: 500;
@@ -3475,6 +3490,9 @@
 }
 .link-tx__amount--recv {
   color: #AD1457;
+}
+.link-tx__amount--muted {
+  color: var(--primitive-gray-500, #B3B3B3);
 }
 .link-tx__balance {
   font-size: 12px;

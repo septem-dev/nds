@@ -208,8 +208,16 @@
     color: #707070;
   }
 
-  // type label 영역 (label 컴포넌트 사용)
-  &__type { }
+  // type 상태 텍스트 (수령/미수령/예약취소)
+  &__type {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+
+    &--recv   { color: #1565C0; }  // 수령
+    &--unrecv { color: #C62828; }  // 미수령
+    &--cancel { color: #767676; }  // 예약취소
+  }
 
   &__amount {
     font-size: 14px;
@@ -217,9 +225,10 @@
     letter-spacing: -0.02em;
     color: #121212;
 
-    &--out  { color: #C62828; }   // 출금
-    &--in   { color: #1565C0; }   // 입금
-    &--recv { color: #AD1457; }   // 이수령
+    &--out   { color: #C62828; }   // 출금
+    &--in    { color: #1565C0; }   // 입금
+    &--recv  { color: #AD1457; }   // 이수령
+    &--muted { color: var(--primitive-gray-500, #B3B3B3); }  // 미수령/예약취소
   }
 
   &__balance {
