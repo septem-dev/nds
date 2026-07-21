@@ -1,31 +1,33 @@
 // =============================================================================
 // Select — NDS Design Library v1.0
 // =============================================================================
-// Variants: basic / 2row / currency / icon / account / price / list / admin
-// States  : inactive / focus / filled / error / readonly / disabled
+// select-field : 레이블 + 트리거박스 + 메시지 (basic / 2row / bank / account / currency / icon)
+// select-card  : 카드형 (price / list / admin) — radius 16, 내부 dividers 없음
+// States       : inactive / focus / filled / error / readonly / disabled
 // =============================================================================
 // Base specs
-//   Label   : 14px / Medium / -2% / #505050
-//   Text    : 18px / Medium / -2%
-//   Placeholder: #929292  /  Filled: #121212
-//   Border  : #E1E1E1 / BG: #FFFFFF / Radius: 12
+//   Label   : 14px / Medium / -0.28px / #505050
+//   Text    : 18px / Medium / -0.36px / line26 (placeholder #929292, filled #121212)
+//   Sub(2row): 14px / Regular / -0.28px / #505050
+//   Border  : #E1E1E1 / BG: #FFFFFF / Radius: 12 (field) / 16 (card)
 //   Readonly/Disabled: BG #F0F0F0
 //   Error   : Border #E24949 / Message #E24949
-//   Message : 13px / Regular / -2% / #767676
+//   Message : 13px / Regular / -0.26px / #767676
 // =============================================================================
 
-// ── 공통 베이스 ────────────────────────────────────────────────────────────────
+// ── 공통 베이스 (basic / bank / account / currency / icon / 2row) ────────────────
 .select-field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 12px;
   width: 100%;
 
   // 라벨
   &__label {
     font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
     color: #505050;
   }
 
@@ -36,10 +38,10 @@
     gap: 8px;
     width: 100%;
     min-height: 54px;
-    padding: 12px 16px 12px 20px;
-    border: 1px solid #E1E1E1;
+    padding: 14px 16px 14px 20px;
+    border: 1px solid #e1e1e1;
     border-radius: 12px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     cursor: pointer;
     box-sizing: border-box;
     transition: border-color 0.15s ease;
@@ -50,30 +52,32 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     min-width: 0;
   }
 
   // 메인 텍스트
   &__text {
     font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
     color: #929292; // placeholder 기본
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  // 부가설명 (2row variant)
+  // 부가설명 (2row variant, 위/아래 배치 가능)
   &__sub {
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
     color: #505050;
   }
 
-  // 왼쪽 아이콘 (currency/icon)
+  // 왼쪽 아이콘 (icon variant)
   &__prefix {
     display: inline-flex;
     align-items: center;
@@ -81,39 +85,8 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    font-size: 18px;
-    line-height: 1;
-  }
 
-  // 계좌 아바타 (account/price/list/admin)
-  &__avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #1565C0;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  // 계좌명 (account variant의 텍스트)
-  &__acct-name {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #121212;
-  }
-
-  &__acct-num {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #767676;
+    svg { width: 24px; height: 24px; }
   }
 
   // 오른쪽 체브론
@@ -122,12 +95,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     color: #505050;
     transition: transform 0.15s ease;
 
-    svg { width: 20px; height: 20px; }
+    svg { width: 24px; height: 24px; }
 
     &--up { transform: rotate(180deg); }
   }
@@ -135,66 +108,202 @@
   // 안내/오류 메시지
   &__msg {
     font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
     color: #767676;
-    line-height: 1.4;
   }
 
   // ── States ──────────────────────────────────────────────────────────────────
-  // filled: 텍스트 색상 변경
   &--filled &__text,
   &--error  &__text,
   &--readonly &__text,
   &--disabled &__text { color: #121212; }
 
-  // error: 테두리 + 메시지
-  &--error &__box { border-color: #E24949; }
-  &--error &__msg { color: #E24949; }
+  &--error &__box { border-color: #e24949; }
+  &--error &__msg { color: #e24949; }
 
-  // readonly / disabled: 배경 회색
   &--readonly &__box,
   &--disabled &__box {
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
     pointer-events: none;
   }
 }
 
-// ── Price / List / Admin 공통 카드 래퍼 ──────────────────────────────────────
-// Filled 상태에서 박스 내부가 여러 섹션으로 나뉨
-
-// 카드형 박스 (price / list / admin)
+// ── Select Card (price / list / admin) ───────────────────────────────────────
+// 단일 컨테이너, radius 16, 내부 섹션 gap 32 (구분선 없음)
 .select-card {
-  border: 1px solid #E1E1E1;
-  border-radius: 12px;
-  background-color: #FFFFFF;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   width: 100%;
+  padding: 20px 16px 20px 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-sizing: border-box;
 
-  // ── Price: 한도제한 드롭다운 행 ──────────────────────────────────────────
-  &__limit-row {
+  // ── 상단: 라벨칩 + 로고 + 이름/계좌번호 + 체브론 ──────────────────────────────
+  &__select-row {
     display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__select-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  // 한도제한 등 작은 라벨 칩
+  &__chip {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 16px;
-    border-bottom: 1px solid #F0F0F0;
-    cursor: pointer;
+    justify-content: center;
+    width: fit-content;
+    padding: 3px 8px 2px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.2px;
+    line-height: 15px;
+    color: #343434;
   }
 
-  &__limit-text {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #505050;
-  }
-
-  // ── 계좌 헤더 행 (price/list/admin) ──────────────────────────────────────
-  &__acct-row {
+  &__logo-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 16px;
-    border-bottom: 1px solid #F0F0F0;
+    width: 100%;
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  }
+
+  &__name {
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__number {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__chevron {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #505050;
+
+    svg { width: 24px; height: 24px; }
+  }
+
+  // ── 하단: 정보 행 (잔액채우기 버튼 + 금액) ────────────────────────────────────
+  &__info-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__fill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #121212;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  &__price {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__price-label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+    text-align: right;
+  }
+
+  &__price-value {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.4px;
+    line-height: 28px;
+    color: #121212;
+    text-align: right;
+
+    svg { width: 24px; height: 24px; flex-shrink: 0; }
+  }
+
+  // ── List: 키-값 행 ────────────────────────────────────────────────────────
+  &__list-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__list-title {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+  }
+
+  &__list-data {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
   }
 
   // admin용: 우측 메뉴 버튼
@@ -210,102 +319,11 @@
     color: #505050;
     flex-shrink: 0;
     padding: 0;
-  }
 
-  // 계좌 내 드롭다운 (admin의 계좌번호 ˅)
-  &__acct-sub-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #767676;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  // ── 금액 행 (price/admin) ─────────────────────────────────────────────────
-  &__amount-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
-  }
-
-  &__amount-label {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #767676;
-    text-align: right;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  &__amount-value {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: #121212;
-  }
-
-  // 잔액채우기 버튼
-  &__fill-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 32px;
-    padding: 0 12px;
-    border: 1px solid #E1E1E1;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #505050;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-
-  // ── List: 키-값 행 ────────────────────────────────────────────────────────
-  &__list-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 16px;
-    border-top: 1px solid #F0F0F0;
-  }
-
-  &__list-title {
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #505050;
-  }
-
-  &__list-data {
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #121212;
+    svg { width: 24px; height: 24px; }
   }
 
   // ── States ────────────────────────────────────────────────────────────────
-  &--error  { border-color: #E24949; }
-  &--readonly, &--disabled { background-color: #F0F0F0; pointer-events: none; }
-}
-
-// Admin variant: radius 16px
-.select-card--admin {
-  border-radius: 16px;
-}
-
-// ── 공통: 체브론 SVG 유틸 ───────────────────────────────────────────────────
-.chevron-icon {
-  display: inline-flex;
-  align-items: center;
-  color: #505050;
+  &--error  { border-color: #e24949; }
+  &--readonly, &--disabled { background-color: #f0f0f0; pointer-events: none; }
 }

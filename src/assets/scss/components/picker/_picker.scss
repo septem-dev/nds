@@ -1,0 +1,254 @@
+// =============================================================================
+// Picker — NDS Design Library v1.0
+// =============================================================================
+// Variants: picker-wheel (year·month·day / hour·minute / period 스크롤 휠형)
+//           picker-calendar (year·month·day 달력형, 범위선택 가능)
+// Figma: bottomsheet-picker/wheel/year-month-day (103:7555),
+//        bottomsheet-picker/calendar/year-month-day (103:9046)
+// =============================================================================
+
+// =============================================================================
+// Wheel Picker — 세로 스크롤 휠 (연/월/일, 시/분, 오전·오후 등)
+// =============================================================================
+// Container : padding-top 12 / padding-x 24 / padding-bottom 6
+// Column    : gap 8px between columns, col1 98px fixed / col2·col3 flex
+// Row       : height 56 / radius 10 / padding 12px 10px
+// Text      : 16 / Regular / -2% / line24 / color/text/picker/default(#121212)
+// Selected  : 16 / SemiBold / color/text/picker/picker-select(#19973c)
+// Press     : BG color/bg/picker/picker-press(#f6f6f6)
+// =============================================================================
+.picker-wheel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 12px 24px 6px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 312px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    min-width: 0;
+
+    &:first-child {
+      flex: none;
+      width: 98px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+    text-align: center;
+    box-sizing: border-box;
+    transition: background-color var(--transition-base), color var(--transition-base);
+
+    // 중앙 선택 값 — 강조
+    &--selected {
+      font-weight: var(--font-weight-semibold);
+      color: #19973c;
+    }
+
+    // 스크롤 중 눌림 상태
+    &--press {
+      background-color: #f6f6f6;
+    }
+  }
+}
+
+// =============================================================================
+// Calendar Picker — 달력형 (연/월 네비게이션 + 요일 헤더 + 날짜 그리드)
+// =============================================================================
+// Content   : gap 24 / padding-top 12 / padding-x 24 / padding-bottom 22
+// Control   : 오늘 버튼(tertiary) + 연도 네비 + 월 네비, height 30
+// Nav text  : Display/Picker1-Medium — 25 / Medium / 0% / line30 / #121212
+// Weekday   : 36×18 / 13 / Medium / -2% / line20
+//             일(빨강 #EC0C0C) / 토(파랑 #2C6DD4) / 월~금(#767676)
+// Day cell  : 36×36 / radius 14 / 16 / Regular / -2% / line24
+//             기본 #121212 / 이전·다음달(#929292) / 일(#EC0C0C) / 토(#2C6DD4)
+//             범위 시작: border 1px color/border/line-1(#D3D3D3), text #111111
+//             범위 종료: BG #19973C, text #FFFFFF
+// =============================================================================
+.picker-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 12px 24px 22px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+
+  // ── 상단 컨트롤: 오늘 버튼 + 연/월 네비게이션 ────────────────────────────────
+  &__control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 312px;
+    height: 30px;
+  }
+
+  &__today {
+    position: absolute;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #121212;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #121212;
+    padding: 0;
+    flex-shrink: 0;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  &__nav-text {
+    font-size: 25px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0;
+    line-height: 30px;
+    color: #121212;
+    white-space: nowrap;
+  }
+
+  // ── 요일/날짜 그리드 ──────────────────────────────────────────────────────
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 312px;
+  }
+
+  &__weekdays {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 18px;
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
+    text-align: center;
+
+    &--sun { color: #ec0c0c; }
+    &--sat { color: #2c6dd4; }
+  }
+
+  &__weeks {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+  }
+
+  &__week {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  &__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color var(--transition-base), color var(--transition-base);
+
+    // 이전/다음달 — 비활성
+    &--disabled {
+      color: #929292;
+      cursor: default;
+    }
+
+    &--sun { color: #ec0c0c; }
+    &--sat { color: #2c6dd4; }
+
+    // 범위 선택 시작일
+    &--range-from {
+      background-color: #ffffff;
+      border: 1px solid #d3d3d3;
+      color: #111111;
+    }
+
+    // 범위 선택 종료일
+    &--range-to {
+      background-color: #19973c;
+      color: #ffffff;
+    }
+
+    // 시작일~종료일 사이 — Figma 인스턴스에 노출되지 않아 추정치(연한 포인트 배경)로 적용
+    &--range-mid {
+      background-color: #ddf2e4;
+      border-radius: 0;
+    }
+  }
+}

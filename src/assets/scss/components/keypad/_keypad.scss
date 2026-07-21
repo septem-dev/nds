@@ -1,0 +1,89 @@
+// =============================================================================
+// Keypad — NDS Design Library v1.0
+// =============================================================================
+// 비밀번호/PIN 입력용 커스텀 숫자 키패드 (Bottomsheet 하단에 고정)
+// Figma: bottomsheet-keypad/basic (node 103:6688)
+// =============================================================================
+// Container : BG #FFFFFF / padding-top 16 / padding-x 24 / padding-bottom 6
+// Grid      : 3 columns × 4 rows / col1 100px fixed, col2·col3 flex
+// Key       : height 54px, centered
+// Font      : Display/Keypad-SemiBold — 24 / SemiBold / 0% / line32 / #121212
+// Row4      : col1 = 생체인증(지문) 아이콘, col2 = "0", col3 = 삭제 아이콘
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+.keypad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 16px 24px 6px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+
+  &__grid {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 312px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    min-width: 0;
+
+    &:first-child {
+      flex: none;
+      width: 100px;
+    }
+  }
+
+  &__key {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #121212;
+    font-family: inherit;
+    font-size: var(--type-keypad-size, 24px);
+    line-height: var(--type-keypad-lh, 32px);
+    letter-spacing: var(--type-keypad-ls, 0);
+    font-weight: var(--font-weight-semibold);
+    transition: background-color var(--transition-base);
+    border-radius: 8px;
+
+    &:active,
+    &.is-pressed {
+      background-color: #f6f6f6;
+    }
+
+    // 생체인증(지문/얼굴) 자리 — 아이콘만 표시
+    &--bio {
+      color: #767676;
+
+      svg { width: 38px; height: 16px; display: block; }
+    }
+
+    // 삭제(백스페이스)
+    &--del {
+      color: #121212;
+
+      svg { width: 24px; height: 24px; display: block; }
+    }
+
+    // 빈 칸 (숫자/아이콘 없음)
+    &--blank {
+      pointer-events: none;
+    }
+  }
+}

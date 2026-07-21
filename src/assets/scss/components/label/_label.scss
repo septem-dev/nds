@@ -2,23 +2,33 @@
 // Label — NDS Design Library v1.0
 // =============================================================================
 // 작은 텍스트 뱃지로 상태·등급·분류를 표시하는 컴포넌트
-// Type: --line (테두리형) / --fill (채움형)
+// Type: --line (테두리형) / --fill (채움형)  ·  Size: --sm / --lg
 // =============================================================================
 
 .label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  height: 20px;
-  padding: 0 6px;
+  gap: 4px;
   border-radius: 4px;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-regular);
   white-space: nowrap;
   vertical-align: middle;
-  line-height: 1;
+
+  // ── Size ────────────────────────────────────────────────────────────────────
+  &--sm {
+    padding: 3px 8px 2px;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: -0.2px;
+  }
+
+  &--lg {
+    padding: 2px 8px;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.26px;
+  }
 
   // ── Type ────────────────────────────────────────────────────────────────────
   // Line: 테두리형 (기본)
@@ -32,73 +42,139 @@
     border: none;
   }
 
-  // ── Color — Line ────────────────────────────────────────────────────────────
-  &--default  { color: #707070; }
-  &--blue     { color: #1565C0; }
-  &--green    { color: #19973C; }
-  &--orange   { color: #E65100; }
-  &--red      { color: #C62828; }
-  &--yellow   { color: #B8860B; }
-  &--purple   { color: #6A1B9A; }
-  &--teal     { color: #006064; }
-  &--pink     { color: #AD1457; }
+  // ── Color — Line & shared color tokens ────────────────────────────────────
+  &--gray      { color: #767676; }
+  &--blue      { color: #2c6dd4; }
+  &--green     { color: #19973c; }
+  &--lightblue { color: #12a396; }
+  &--navy      { color: #015aac; }
+  &--orange    { color: #d44b10; }
+  &--red       { color: #d10f0f; }
+  &--skyblue   { color: #2b9ac9; }
+  &--yellow    { color: #da6f11; }
 
-  // ── Color — Fill ────────────────────────────────────────────────────────────
+  // gray line uses a slightly darker border than its text tone
+  &--line.label--gray { border-color: #707070; }
+
+  // ── Grade (등급) — aliases onto the same color tokens ─────────────────────
+  &--grade1 { color: #d10f0f; } // 1등급 — red
+  &--grade2 { color: #d44b10; } // 2등급 — orange
+  &--grade3 { color: #da6f11; } // 3등급 — yellow
+  &--grade4 { color: #12a396; } // 4등급 — lightblue
+  &--grade5 { color: #2b9ac9; } // 5등급 — skyblue
+  &--grade6 { color: #015aac; } // 6등급 — navy
+
+  // ── Color — Fill (bg + text pairs) ────────────────────────────────────────
   &--fill {
-    &.label--default  { background-color: #E0E0E0; color: #505050; }
-    &.label--blue     { background-color: #1565C0; color: #fff; }
-    &.label--green    { background-color: #19973C; color: #fff; }
-    &.label--orange   { background-color: #E65100; color: #fff; }
-    &.label--red      { background-color: #C62828; color: #fff; }
-    &.label--yellow   { background-color: #F9A825; color: #fff; }
-    &.label--purple   { background-color: #6A1B9A; color: #fff; }
-    &.label--teal     { background-color: #006064; color: #fff; }
-    &.label--pink     { background-color: #AD1457; color: #fff; }
+    &.label--gray    { background-color: #f6f6f6; color: #343434; }
+    &.label--green   { background-color: #19973c; color: #ffffff; }
+    &.label--red     { background-color: #d10f0f; color: #ffffff; }
+    &.label--skyblue { background-color: #2b9ac9; color: #ffffff; }
+    &.label--yellow  { background-color: #ffd103; color: #121212; }
   }
 
-  // ── Grade ───────────────────────────────────────────────────────────────────
-  // 등급 레이블 (1등급 = 최우수, 6등급 = 일반)
-  &--grade1 { color: #C62828; }   // 1등급 — 빨강
-  &--grade2 { color: #EF6C00; }   // 2등급 — 주황
-  &--grade3 { color: #B8860B; }   // 3등급 — 노랑
-  &--grade4 { color: #2E7D32; }   // 4등급 — 초록
-  &--grade5 { color: #006064; }   // 5등급 — 청록
-  &--grade6 { color: #1565C0; }   // 6등급 — 파랑
-
-  &--fill {
-    &.label--grade1 { background-color: #C62828; color: #fff; }
-    &.label--grade2 { background-color: #EF6C00; color: #fff; }
-    &.label--grade3 { background-color: #F9A825; color: #fff; }
-    &.label--grade4 { background-color: #2E7D32; color: #fff; }
-    &.label--grade5 { background-color: #006064; color: #fff; }
-    &.label--grade6 { background-color: #1565C0; color: #fff; }
-  }
-
-  // ── Dot ─────────────────────────────────────────────────────────────────────
-  &__dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: currentColor;
+  // Optional trailing arrow (dropdown indicator, lg size)
+  &__arrow {
     flex-shrink: 0;
+    width: 4px;
+    height: 8px;
+
+    svg { width: 4px; height: 8px; display: block; }
+  }
+}
+
+// =============================================================================
+// Icon label (.label-icon) — 프로모션/이벤트용 아이콘+텍스트 라벨
+// =============================================================================
+.label-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2.5px 6px;
+  background: #4d44d9;
+  border-radius: 4px;
+  color: #ffffff;
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+
+    svg { width: 12px; height: 12px; display: block; }
+  }
+
+  &__text {
+    font-size: 10px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.2px;
+    line-height: 15px;
+    white-space: nowrap;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+
+    svg { width: 8px; height: 8px; display: block; }
   }
 }
 
 // ── Text-Label ───────────────────────────────────────────────────────────────
-// 텍스트 옆에 인라인으로 붙는 레이블 패턴
+// 폼 필드 등에서 텍스트 옆에 인라인으로 붙는 레이블 패턴 (선택 툴팁/번호뱃지 포함 가능)
 .text-label {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
+  height: 22px;
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.28px;
+  line-height: 22px;
   color: #505050;
 
-  &__divider {
-    width: 1px;
-    height: 12px;
-    background-color: #D3D3D3;
+  &__tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #707070;
     flex-shrink: 0;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  &__number {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #19973c;
+
+    svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    span {
+      position: relative;
+      font-size: 13px;
+      font-weight: var(--font-weight-medium);
+      letter-spacing: -0.26px;
+      line-height: 13px;
+      color: #ffffff;
+    }
   }
 }

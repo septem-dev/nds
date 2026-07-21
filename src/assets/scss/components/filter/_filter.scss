@@ -92,8 +92,8 @@
     }
   }
 
-  // Divider 옵션
+  // Divider 옵션 (divider-page-1px)
   &--divider {
-    border-bottom: 1px solid var(--primitive-gray-200, #F0F0F0);
+    border-bottom: 1px solid #F6F6F6;
   }
 }

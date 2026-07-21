@@ -39,11 +39,13 @@ body{font-family:var(--font-family-base);font-size:14px;color:var(--color-text-p
 .g-example.col{flex-direction:column}
 
 /* Copy button */
-.g-copy-btn{position:absolute;top:8px;right:8px;height:24px;padding:0 9px;background:#fff;border:1px solid #d3d3d3;border-radius:5px;font-size:11px;font-weight:500;color:#929292;cursor:pointer;display:inline-flex;align-items:center;gap:4px;opacity:0;transition:opacity .15s,color .15s,border-color .15s;z-index:10;font-family:var(--font-family-mono);white-space:nowrap;line-height:1}
+.g-copy-btn{position:absolute;top:8px;right:8px;height:24px;padding:0 9px;background:#fff;border:1px solid #d3d3d3;border-radius:5px;font-size:11px;font-weight:500;color:#929292;cursor:pointer;display:inline-flex;align-items:center;gap:4px;opacity:0;transition:opacity .15s,color .15s,border-color .15s,background-color .15s;z-index:10;font-family:var(--font-family-mono);white-space:nowrap;line-height:1}
 .g-example:hover .g-copy-btn{opacity:1}
 .g-copy-btn:hover{color:#505050;border-color:#929292}
 .g-copy-btn.is-copied{color:#19973c !important;border-color:#19973c !important}
 .g-copy-btn svg{width:11px;height:11px;flex-shrink:0}
+[data-theme=dark] .g-copy-btn{background:#2a2a2a;border-color:#505050;color:#b0b0b0}
+[data-theme=dark] .g-copy-btn:hover{color:#e6e6e6;border-color:#707070}
 
 /* ── Color Palette Guide ─────────────────────────── */
 .g-palette-group-set{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;margin-bottom:32px}

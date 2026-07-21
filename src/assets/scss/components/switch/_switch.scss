@@ -4,16 +4,16 @@
 // Variants: basic (lg / sm / xs) / big-font
 // =============================================================================
 // Basic
-//   Track BG : False #707070  /  True #19973C
-//   Thumb    : #FFFFFF
+//   Track BG : False #707070 (opacity .76)  /  True #19973C
+//   Thumb    : #FFFFFF, shadow 0 3px 6px rgba(0,0,0,.05), padding 2px
 //   lg  : track 52×30px / thumb 26px
 //   sm  : track 42×24px / thumb 20px
 //   xs  : track 32×18px / thumb 14px
 //
 // Big-Font (텍스트 내장)
 //   Track BG : False #E1E1E1  /  True #19973C
-//   Text     : False #707070  /  True #FFFFFF
-//   Height   : 24px
+//   Text     : False #505050  /  True #FFFFFF (13px regular -0.26px line20)
+//   Height   : 24px / Thumb 20px / gap 4px / padding thumb측 2px, 텍스트측 6px
 // =============================================================================
 
 // ── Basic Switch ─────────────────────────────────────────────────────────────
@@ -43,7 +43,8 @@
     height: 24px;
     border-radius: 999px;
     background-color: #707070;
-    transition: background-color 0.2s ease;
+    opacity: 0.76;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
     flex-shrink: 0;
 
     // 썸 (원)
@@ -56,7 +57,7 @@
       height: 20px;
       border-radius: 50%;
       background-color: #FFFFFF;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.05);
       transition: transform 0.2s ease;
     }
   }
@@ -64,6 +65,7 @@
   // ── On 상태 ──────────────────────────────────────────────────────────────
   &__input:checked + &__track {
     background-color: #19973C;
+    opacity: 1;
 
     &::after {
       transform: translateX(18px); // 42 - 20 - 2*2 = 18
@@ -116,7 +118,7 @@
   // ── 크기: xs ─────────────────────────────────────────────────────────────
   &--xs {
     .switch__track {
-      width: 32px;
+      width: 28px;
       height: 18px;
 
       &::after {
@@ -126,15 +128,15 @@
     }
 
     .switch__input:checked + .switch__track::after {
-      transform: translateX(14px); // 32 - 14 - 4 = 14
+      transform: translateX(10px); // 28 - 14 - 2*2 = 10
     }
   }
 }
 
 // ── Big-Font Switch (텍스트 내장 토글) ────────────────────────────────────────
 // 트랙 안에 레이블 텍스트가 표시됨
-// False: BG #E1E1E1, text #707070, thumb 왼쪽
-// True : BG #19973C, text #FFFFFF, thumb 오른쪽
+// False: BG #E1E1E1, text #505050, thumb 왼쪽 (padding 2px 6px 2px 2px)
+// True : BG #19973C, text #FFFFFF, thumb 오른쪽 (padding 2px 2px 2px 6px)
 .switch-font {
   display: inline-flex;
   align-items: center;
@@ -153,49 +155,46 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    height: 28px;
-    padding: 2px;
+    height: 24px;
+    padding: 2px 6px 2px 2px;
     border-radius: 999px;
     background-color: #E1E1E1;
     transition: background-color 0.2s ease;
-    gap: 0;
-    min-width: 72px;
+    gap: 4px;
   }
 
   // 썸 (왼쪽)
   &__thumb {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: #FFFFFF;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
     flex-shrink: 0;
-    transition: transform 0.2s ease, margin 0.2s ease;
+    order: 1;
+    transition: transform 0.2s ease;
     position: relative;
-    z-index: 1;
   }
 
   // 레이블 텍스트
   &__text {
-    flex: 1;
     font-size: 13px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #707070;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #505050;
     text-align: center;
-    padding: 0 8px;
     white-space: nowrap;
+    order: 2;
     transition: color 0.2s ease;
   }
 
   // ── On 상태 ──────────────────────────────────────────────────────────────
   &__input:checked + &__track {
     background-color: #19973C;
+    padding: 2px 2px 2px 6px;
 
-    // 썸을 오른쪽으로
-    .switch-font__thumb {
-      order: 2;
-    }
+    .switch-font__thumb { order: 2; }
     .switch-font__text {
       color: #FFFFFF;
       order: 1;

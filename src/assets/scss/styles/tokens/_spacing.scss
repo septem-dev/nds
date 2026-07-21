@@ -26,16 +26,16 @@
   --spacing-112: 112px;
   --spacing-120: 120px;
 
-  // Border Radius
-  --radius-none: 0;
-  --radius-xs:   2px;
-  --radius-sm:   4px;
-  --radius-md:   6px;
-  --radius-lg:   8px;
-  --radius-xl:   12px;
-  --radius-2xl:  16px;
-  --radius-3xl:  24px;
-  --radius-full: 9999px;
+  // Border Radius — Figma "Radius" 토큰 페이지(border/radius/*) 기준
+  // 4/8의 배수 + 8이 포함하는 2배수(10)만 정의됨. 24px 등은 개별 컴포넌트에서 값으로만 사용되고
+  // 전역 변수로 노출되지 않음(예: bottomsheet 상단 코너).
+  --radius-0:   0;
+  --radius-4:   4px;
+  --radius-8:   8px;
+  --radius-10:  10px;
+  --radius-12:  12px;
+  --radius-16:  16px;
+  --radius-full: 999px; // border/radius/circle
 
   // Shadow
   --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.05);
@@ -50,7 +50,6 @@
   --z-sticky:    200;
   --z-overlay:   300;
   --z-modal:     400;
-  --z-popover:   500;
   --z-toast:     600;
   --z-tooltip:   700;
 

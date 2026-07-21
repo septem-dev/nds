@@ -1,6 +1,9 @@
 // =============================================================================
 // Radio -- NDS Design Library v1.0
 // =============================================================================
+// Variants: box-center(sm/lg) / box-left(lg) / basic / explain(none/icon) /
+//           choose(icon) / survey(icon/text/yn/ox)
+// =============================================================================
 
 @use '../../styles/mixins/mixins' as *;
 
@@ -25,7 +28,8 @@
     border-radius: 10px;
     font-size: 15px;
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #505050;
     cursor: pointer;
     user-select: none;
@@ -49,6 +53,8 @@
     height: 36px;
     padding: 0 16px;
     font-size: 14px;
+    letter-spacing: -0.28px;
+    line-height: 22px;
     border-radius: 8px;
   }
 }
@@ -73,7 +79,8 @@
     border-radius: 10px;
     font-size: 15px;
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #505050;
     cursor: pointer;
     user-select: none;
@@ -110,11 +117,12 @@
 
   &__input { @include visually-hidden; }
 
+  // Figma 실측: 28px(기본) / 24px(sm) — 내부 dot은 미선택 상태에서도 항상 표시(회색), 선택 시 점만 브랜드 그린으로 전환
   &__icon {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    border: 2px solid #d3d3d3;
+    border: 1px solid #d3d3d3;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -126,34 +134,27 @@
 
     &::after {
       content: '';
-      width: 8px;
-      height: 8px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      background: #ffffff;
-      opacity: 0;
-      transform: scale(0.5);
-      transition:
-        opacity var(--transition-base),
-        transform var(--transition-base);
+      background: #d3d3d3;
+      transition: background-color var(--transition-base);
     }
   }
 
   &__label {
     font-size: 16px;
     font-weight: var(--font-weight-medium);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.32px;
+    line-height: 24px;
     color: #121212;
   }
 
   // Checked
   &__input:checked + .radio-basic__icon {
     border-color: #19973c;
-    background: #19973c;
 
-    &::after {
-      opacity: 1;
-      transform: scale(1);
-    }
+    &::after { background: #19973c; }
   }
 
   // Disabled
@@ -161,6 +162,8 @@
     border-color: #e1e1e1;
     background: #f6f6f6;
     cursor: not-allowed;
+
+    &::after { background: #e1e1e1; }
   }
 
   &__input:disabled ~ .radio-basic__label {
@@ -170,30 +173,28 @@
   // Selected + Disabled
   &__input:checked:disabled + .radio-basic__icon {
     border-color: #b3b3b3;
-    background: #b3b3b3;
 
-    &::after {
-      opacity: 1;
-      transform: scale(1);
-    }
+    &::after { background: #b3b3b3; }
   }
 
-  // sm size
+  // sm size — Figma 실측: 24px / dot 10px
   &--sm {
     gap: 6px;
 
     .radio-basic__icon {
-      width: 18px;
-      height: 18px;
+      width: 24px;
+      height: 24px;
 
       &::after {
-        width: 6px;
-        height: 6px;
+        width: 10px;
+        height: 10px;
       }
     }
 
     .radio-basic__label {
       font-size: 15px;
+      letter-spacing: -0.3px;
+      line-height: 24px;
     }
   }
 }
@@ -250,7 +251,8 @@
   &__title {
     font-size: 15px;
     font-weight: var(--font-weight-medium);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #121212;
     transition: color var(--transition-base);
   }
@@ -258,7 +260,8 @@
   &__sub {
     font-size: 13px;
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.26px;
+    line-height: 20px;
     color: #505050;
   }
 
@@ -278,7 +281,8 @@
   &__guide {
     font-size: 13px;
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.26px;
+    line-height: 20px;
     color: #767676;
     margin-top: 4px;
 
@@ -288,7 +292,58 @@
 }
 
 // =============================================================================
-// radio-survey -- Inline button-pair survey (yn / ox)
+// radio-choose -- Icon + text vertical card (grid, 152px)
+// =============================================================================
+.radio-choose {
+  display: inline-flex;
+
+  &__input { @include visually-hidden; }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 152px;
+    padding: 16px;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    transition: border-color var(--transition-base);
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    color: #767676;
+
+    svg { width: 36px; height: 36px; display: block; }
+  }
+
+  &__text {
+    width: 120px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    text-align: center;
+  }
+
+  &__input:checked + .radio-choose__label {
+    border-color: #19973c;
+
+    .radio-choose__text { color: #19973c; }
+  }
+}
+
+// =============================================================================
+// radio-survey -- Inline button-pair survey (yn / ox) / icon+text row / text
 // =============================================================================
 .radio-survey {
   display: flex;
@@ -308,12 +363,13 @@
     justify-content: center;
     flex: 1;
     height: 50px;
-	min-width: 152px;
+    min-width: 152px;
     border: 1px solid #d3d3d3;
     border-radius: 10px;
     font-size: 15px;
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #505050;
     cursor: pointer;
     user-select: none;
@@ -334,10 +390,37 @@
   &__guide {
     font-size: 13px;
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.26px;
+    line-height: 20px;
     color: #767676;
 
     &--error    { color: #e24949; }
     &--selected { color: #19973c; }
+  }
+
+  // ── icon 변형: 36px 아이콘 + 텍스트 1줄, 가로 풀폭 카드 ─────────────────────
+  &--icon {
+    .radio-survey__label {
+      width: 100%;
+      height: auto;
+      min-width: 0;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 16px 16px 16px 12px;
+    }
+
+    .radio-survey__icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      color: #767676;
+
+      svg { width: 36px; height: 36px; display: block; }
+    }
+
+    .radio-survey__text {
+      flex: 1;
+      text-align: left;
+    }
   }
 }

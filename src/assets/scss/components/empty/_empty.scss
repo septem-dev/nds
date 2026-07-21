@@ -9,10 +9,10 @@
   justify-content: center;
   text-align: center;
 
-  // Icon: gray circle with ellipsis dots
+  // Icon: gray circle with ellipsis dots (no-data icon 40x40)
   &__icon {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: var(--primitive-gray-200, #F0F0F0);
     display: flex;
@@ -23,7 +23,8 @@
   }
 
   &__text {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.28px;
+    line-height: 22px;
     color: #505050;
   }
 

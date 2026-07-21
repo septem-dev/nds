@@ -2,100 +2,127 @@
 // Navigation — NDS Design Library v1.0
 // =============================================================================
 // Top: main / basic / process / full-popup / partnership / tooltip / login / mydata
-// Bottom: all-one (탭바)
+//      (mall·smartbank 계열은 동일 구조에 아이콘/문구만 상이하여 클래스 공유)
+// Bottom: allone / smartbanking (탭바)
 // =============================================================================
 
 // ── Top Navigation ────────────────────────────────────────────────────────────
 .top-nav {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  height: 50px;
-  padding: 0 16px;
-  background-color: #fff;
+  justify-content: center;
+  gap: 12px;
   width: 100%;
+  padding: 12px 24px;
+  background-color: #ffffff;
   box-sizing: border-box;
 
-  // 왼쪽 영역
-  &__left {
+  // 좌/우 고정폭 아이콘 영역
+  &__left,
+  &__right {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    gap: 0;
-    justify-self: start;
+    width: 60px;
   }
 
-  // 가운데 타이틀 (다른 영역에 영향 없이 가운데 정렬)
+  &__right {
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  // 가운데 타이틀 영역 (다른 영역에 영향 없이 가운데 정렬)
   &__center {
+    flex: 1;
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    justify-self: center;
-    white-space: nowrap;
+    gap: 2px;
+    overflow: hidden;
   }
 
-  // 오른쪽 영역
-  &__right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
-    justify-self: end;
-  }
-
-  // ── 공통 아이콘 버튼 ──────────────────────────────────────────────────────
+  // 공통 아이콘 버튼
   &__btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
     background: none;
     border: none;
     cursor: pointer;
     color: #121212;
     flex-shrink: 0;
     padding: 0;
-    border-radius: 8px;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  // 알림 등 배지 점 (btn 우상단)
+  &__badge {
+    position: absolute;
+    top: 2px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+    border-radius: var(--border-radius-circle, 999px);
+    background-color: #e24949;
   }
 
   // 텍스트 액션 버튼 (취소, 닫기)
   &__text-btn {
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 20px;
     color: #343434;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px 0;
+    padding: 0;
     flex-shrink: 0;
-    line-height: 1;
+    white-space: nowrap;
   }
 
   // 페이지 타이틀 (Basic, Partnership, Tooltip 등)
   &__title {
+    flex: 1;
+    min-width: 0;
     font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
     color: #121212;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   // 사용자 이름 (Main variant)
   &__name {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #121212;
     display: inline-flex;
     align-items: center;
     gap: 2px;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     white-space: nowrap;
+
+    svg { width: 12px; height: 12px; flex-shrink: 0; }
+  }
+
+  // 큰글 스위치 (Main, atom/switch-big-font 재사용)
+  &__switch {
+    flex-shrink: 0;
   }
 
   // 툴팁 물음표 버튼
@@ -106,10 +133,10 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 1px solid var(--primitive-gray-400, #D3D3D3);
+    border: 1px solid #d3d3d3;
     background: none;
     font-size: 11px;
-    color: var(--primitive-gray-600, #707070);
+    color: #707070;
     cursor: pointer;
     flex-shrink: 0;
     line-height: 1;
@@ -118,48 +145,62 @@
   // 브랜드 로고 텍스트 (Login variant)
   &__brand {
     font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-weight: var(--font-weight-bold, 700);
+    letter-spacing: -0.36px;
 
     &--nh {
-      // NH올원뱅크 스타일: NH=파랑, 올원뱅크=초록
-      .top-nav__brand-nh  { color: #1565C0; }
-      .top-nav__brand-txt { color: #19973C; }
+      .top-nav__brand-nh { color: #1565c0; }
+      .top-nav__brand-txt { color: #19973c; }
     }
+  }
+
+  // 로그인 로고 이미지 영역
+  &__logo {
+    height: 24px;
+    display: block;
+
+    img { height: 100%; display: block; }
   }
 
   // 마이데이터 로고 텍스트
   &__mydata {
     font-size: 16px;
-    font-weight: 600;
-    color: #FF4D6D;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #ff4d6d;
   }
 
   // Full-Popup: 타이틀 왼쪽 정렬
   &--full-popup {
-    grid-template-columns: 1fr auto;
+    justify-content: flex-start;
 
-    .top-nav__center {
-      justify-self: start;
-    }
+    .top-nav__center { justify-content: flex-start; }
+    .top-nav__title { text-align: left; }
   }
 
-  // gray bg variants (Basic, Process, Partnership 등)
-  &--gray {
-    background-color: #F6F6F6;
+  // 회색 배경 (Basic, Process, Partnership, Mydata 등)
+  &--container {
+    background-color: #f6f6f6;
+  }
+
+  // 포인트 배경 (Login 등)
+  &--point {
+    background-color: #19973c;
+
+    .top-nav__btn { color: #ffffff; }
   }
 }
 
-// ── Bottom Navigation (탭바) ──────────────────────────────────────────────────
+// ── Bottom Navigation (탭바) ───────────────────────────────────────────────────
 .bottom-nav {
   display: flex;
   align-items: stretch;
-  height: 80px;
-  background-color: #fff;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px 16px 0 0;
   box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.05);
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  width: 100%;
 
   &__item {
     flex: 1;
@@ -167,75 +208,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 16px;
     gap: 4px;
+    padding: 16px 8px 12px;
     cursor: pointer;
     text-decoration: none;
-    color: #707070;
-    transition: color 0.15s;
-
-    &--active {
-      color: #121212;
-    }
+    color: #121212;
   }
 
   &__icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
   }
 
   &__label {
     font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
     color: inherit;
     text-align: center;
-    line-height: 1;
-  }
-}
-
-// ── Side Navigation (어드민/웹) ───────────────────────────────────────────────
-.sidenav {
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-right: 1px solid #F0F0F0;
-  padding: 8px 0;
-
-  &__section { & + & { margin-top: 4px; } }
-
-  &__label {
-    padding: 8px 20px 4px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #B3B3B3;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    height: 40px;
-    padding: 0 20px;
-    font-size: 14px;
-    color: #505050;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.15s, color 0.15s;
-
-    svg { width: 18px; height: 18px; flex-shrink: 0; color: inherit; }
-
-    &:hover { background-color: #F6F6F6; color: #121212; }
-
-    &--active {
-      background-color: #F0FBF4;
-      color: #19973C;
-      font-weight: 500;
-      border-right: 2px solid #19973C;
-    }
   }
 }

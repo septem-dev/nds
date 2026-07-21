@@ -19,29 +19,44 @@
   --letter-spacing-wide:   -0.01em;
 
   // ── Semantic Type Scale ─────────────────────────────────────────────────────
+  // Figma Typography 파운데이션(node-id 216:32347) 기준: 대부분의 스타일이 letter-spacing -2%(-0.02em)로 통일되어 있음
+  // (Picker/Keypad 계열만 0%)
   // Display
   --type-display1-size:    36px;
   --type-display1-lh:      40px;
-  --type-display1-ls:      -0.03em;
+  --type-display1-ls:      -0.02em;
   --type-display1-weight:  var(--font-weight-semibold);
 
   --type-display2-size:    28px;
   --type-display2-lh:      38px;
-  --type-display2-ls:      -0.03em;
+  --type-display2-ls:      -0.02em;
   --type-display2-weight:  var(--font-weight-semibold);
+
+  // Picker / Keypad (0% letter-spacing)
+  --type-picker1-size: 25px;
+  --type-picker1-lh:   30px;
+  --type-picker1-ls:   0em;
+
+  --type-picker2-size: 20px;
+  --type-picker2-lh:   24px;
+  --type-picker2-ls:   0em;
+
+  --type-keypad-size: 24px;
+  --type-keypad-lh:   32px;
+  --type-keypad-ls:   0em;
 
   // Heading
   --type-h1-size:   26px;
   --type-h1-lh:     38px;
-  --type-h1-ls:     -0.03em;
+  --type-h1-ls:     -0.02em;
 
   --type-h2-size:   22px;
   --type-h2-lh:     32px;
-  --type-h2-ls:     -0.03em;
+  --type-h2-ls:     -0.02em;
 
   --type-h3-size:   20px;
   --type-h3-lh:     28px;
-  --type-h3-ls:     -0.03em;
+  --type-h3-ls:     -0.02em;
 
   --type-h4-size:   18px;
   --type-h4-lh:     26px;
@@ -54,11 +69,15 @@
   // Body
   --type-body1-size: 16px;
   --type-body1-lh:   24px;
-  --type-body1-ls:   -0.01em;
+  --type-body1-ls:   -0.02em;
 
   --type-body2-size: 15px;
   --type-body2-lh:   24px;
   --type-body2-ls:   -0.02em;
+
+  --type-body2_1-size: 15px;
+  --type-body2_1-lh:   20px;
+  --type-body2_1-ls:   -0.02em;
 
   --type-body3-size: 14px;
   --type-body3-lh:   22px;
@@ -67,7 +86,7 @@
   // Table
   --type-table1-size: 16px;
   --type-table1-lh:   24px;
-  --type-table1-ls:   -0.01em;
+  --type-table1-ls:   -0.02em;
 
   --type-table2-size: 15px;
   --type-table2-lh:   24px;
@@ -80,21 +99,26 @@
   // Caption
   --type-caption1-size: 13px;
   --type-caption1-lh:   20px;
-  --type-caption1-ls:   -0.01em;
+  --type-caption1-ls:   -0.02em;
 
   --type-caption2-size: 12px;
   --type-caption2-lh:   18px;
-  --type-caption2-ls:   -0.01em;
+  --type-caption2-ls:   -0.02em;
 
   --type-caption3-size: 10px;
   --type-caption3-lh:   15px;
-  --type-caption3-ls:   -0.01em;
+  --type-caption3-ls:   -0.02em;
 }
 
 // ── Semantic Type Scale Mixins ─────────────────────────────────────────────────
 // Display
 @mixin type-display1 { font-size: var(--type-display1-size); line-height: var(--type-display1-lh); letter-spacing: var(--type-display1-ls); font-weight: var(--font-weight-semibold); }
 @mixin type-display2 { font-size: var(--type-display2-size); line-height: var(--type-display2-lh); letter-spacing: var(--type-display2-ls); font-weight: var(--font-weight-semibold); }
+
+// Picker (Medium) / Keypad (SemiBold) — 0% letter-spacing
+@mixin type-picker1 { font-size: var(--type-picker1-size); line-height: var(--type-picker1-lh); letter-spacing: var(--type-picker1-ls); font-weight: var(--font-weight-medium); }
+@mixin type-picker2 { font-size: var(--type-picker2-size); line-height: var(--type-picker2-lh); letter-spacing: var(--type-picker2-ls); font-weight: var(--font-weight-regular); }
+@mixin type-keypad  { font-size: var(--type-keypad-size);  line-height: var(--type-keypad-lh);  letter-spacing: var(--type-keypad-ls);  font-weight: var(--font-weight-semibold); }
 
 // Heading (SemiBold variant)
 @mixin type-h1-sb { font-size: var(--type-h1-size); line-height: var(--type-h1-lh); letter-spacing: var(--type-h1-ls); font-weight: var(--font-weight-semibold); }
@@ -119,6 +143,10 @@
 @mixin type-body1-rg { font-size: var(--type-body1-size); line-height: var(--type-body1-lh); letter-spacing: var(--type-body1-ls); font-weight: var(--font-weight-regular); }
 @mixin type-body2-rg { font-size: var(--type-body2-size); line-height: var(--type-body2-lh); letter-spacing: var(--type-body2-ls); font-weight: var(--font-weight-regular); }
 @mixin type-body3-rg { font-size: var(--type-body3-size); line-height: var(--type-body3-lh); letter-spacing: var(--type-body3-ls); font-weight: var(--font-weight-regular); }
+
+// Body 2.1 (15/20, -2%)
+@mixin type-body2_1-md { font-size: var(--type-body2_1-size); line-height: var(--type-body2_1-lh); letter-spacing: var(--type-body2_1-ls); font-weight: var(--font-weight-medium); }
+@mixin type-body2_1-rg { font-size: var(--type-body2_1-size); line-height: var(--type-body2_1-lh); letter-spacing: var(--type-body2_1-ls); font-weight: var(--font-weight-regular); }
 
 // Table (Medium variant)
 @mixin type-table1-md { font-size: var(--type-table1-size); line-height: var(--type-table1-lh); letter-spacing: var(--type-table1-ls); font-weight: var(--font-weight-medium); }

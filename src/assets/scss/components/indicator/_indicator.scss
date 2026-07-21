@@ -66,9 +66,9 @@
 
   &__divider {
     width: 1px;
-    height: 10px;
+    height: 6px;
     background-color: rgba(255, 255, 255, 0.3);
-    margin: 0 4px;
+    margin: 0;
   }
 }
 
@@ -80,13 +80,15 @@
   gap: 4px;
 
   &__item {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full, 999px);
     background-color: #D3D3D3;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, width 0.2s;
 
+    // Figma: 활성 dot은 16x8 pill 형태로 확장 (원형 → 알약형)
     &--active {
+      width: 16px;
       background-color: #19973C;
     }
   }
@@ -102,6 +104,7 @@
     padding: 0;
     margin-left: 4px;
 
+    // Figma: icon/12/fill/system/ico_indicator-stop_gray600_fill_12 — color/icon/gray600(#707070)
     &::before,
     &::after {
       content: '';
@@ -109,7 +112,7 @@
       width: 2px;
       height: 8px;
       border-radius: 1px;
-      background-color: #D3D3D3;
+      background-color: #707070;
     }
   }
 }

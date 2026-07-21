@@ -335,21 +335,23 @@
   // font-1 ~ font-5: usable on white/light bg (WCAG AA or above)
   // font-6 ~ font-10: for dark backgrounds only (fail on white)
   // ---------------------------------------------------------------------------
-  --color-font-1:        var(--primitive-gray-900);       // AAA on white — primary/darkest
-  --color-font-2:        var(--primitive-gray-800);       // AAA on white — primary
-  --color-font-3:        var(--primitive-gray-700);       // AAA on white — secondary
-  --color-font-4:        var(--primitive-gray-600);       // AA  on white — tertiary
-  --color-font-5:        var(--primitive-gray-550);       // AA Large — disabled
+  // Figma "color/text/font-*" 변수는 Gray가 아닌 Gray-Font 프리미티브 스케일에 매핑되어 있음
+  // (font-1=#121212, font-2=#343434, font-3=#505050, font-4=#767676, font-5(disabled)=#929292)
+  --color-font-1:        var(--primitive-gray-font-900);  // #121212 — AAA on white — primary/darkest
+  --color-font-2:        var(--primitive-gray-font-800);  // #343434 — AAA on white — primary
+  --color-font-3:        var(--primitive-gray-font-700);  // #505050 — AAA on white — secondary
+  --color-font-4:        var(--primitive-gray-font-600);  // #767676 — AA  on white — tertiary
+  --color-font-5:        var(--primitive-gray-font-500);  // #929292 — AA Large — disabled
   --color-font-6:        var(--primitive-gray-400);       // ~2.2:1 — dark bg only
   --color-font-7:        var(--primitive-gray-300);       // ~1.8:1 — dark bg only
   --color-font-8:        var(--primitive-gray-200);       // ~1.4:1 — dark bg only
   --color-font-9:        var(--primitive-gray-100);       // ~1.1:1 — dark bg only
   --color-font-10:       var(--primitive-gray-50);        // ~1.0:1 — dark bg only
-  --color-font-visual:   var(--primitive-blue-500);       // Visual / info
-  --color-font-error:    var(--primitive-red-500);        // Error / danger
+  --color-font-visual:   var(--primitive-blue-500);       // Visual / info — Figma color/text/positive #2C6DD4
+  --color-font-error:    var(--primitive-red-300);        // #E24949 — Figma color/text/error
   --color-font-point:    var(--primitive-green-500);      // Brand / primary point
-  --color-font-positive: var(--primitive-blue-400);       // Positive / info
-  --color-font-negative: var(--primitive-red-400);        // Negative / warning
+  --color-font-positive: var(--primitive-blue-500);       // #2C6DD4 — Figma color/text/positive
+  --color-font-negative: var(--primitive-red-500);        // #EC0C0C — Figma color/text/negative
 
   // ---------------------------------------------------------------------------
   // Border Tokens
@@ -358,7 +360,7 @@
   --color-border-2:      var(--primitive-gray-300);       // Visual / body
   --color-border-3:      var(--primitive-gray-400);       // Body emphasis
   --color-border-4:      var(--primitive-gray-500);       // Info / neutral strong
-  --color-border-error:  var(--primitive-red-500);        // Error state
+  --color-border-error:  var(--primitive-red-300);        // #E24949 — Figma color/border/input/error 기준
   --color-border-point:  var(--primitive-green-500);      // Brand / focus
 
   // ---------------------------------------------------------------------------
@@ -442,7 +444,7 @@
   --color-comp-input-disabled-border:        var(--primitive-gray-300);
   --color-comp-input-disabled-fg:            var(--primitive-gray-400);
   --color-comp-input-focus-border:           var(--primitive-blue-500);
-  --color-comp-input-error-border:           var(--primitive-red-500);
+  --color-comp-input-error-border:           var(--primitive-red-300);  // #E24949 — Figma color/border/input/error
   --color-comp-input-bad-data-border:        var(--primitive-orange-500);
 
   // ---------------------------------------------------------------------------
@@ -457,7 +459,7 @@
   --color-comp-select-disabled-bg:           var(--primitive-gray-100);
   --color-comp-select-disabled-fg:           var(--primitive-gray-400);
   --color-comp-select-focus-border:          var(--primitive-blue-500);
-  --color-comp-select-error-border:          var(--primitive-red-500);
+  --color-comp-select-error-border:          var(--primitive-red-300);  // #E24949 — Figma color/border/input/error
 
   // ---------------------------------------------------------------------------
   // Component — Picker
@@ -596,10 +598,8 @@
   --color-comp-indicator-active-bg:            var(--primitive-gray-800);
 
   --color-comp-popover-default-bg:             var(--primitive-base-0);
-  --color-comp-popover-default-border:         var(--primitive-gray-200);
+  --color-comp-popover-default-border:         var(--primitive-gray-300);
   --color-comp-popover-point-bg:               var(--primitive-gray-900);
-  --color-comp-popover-point-fg:               var(--primitive-base-0);
-  --color-comp-popover-point-border:           var(--primitive-gray-900);
 
   // ---------------------------------------------------------------------------
   // Backward-Compatibility Aliases (existing component SCSS 호환)
@@ -690,7 +690,7 @@
   --color-icon-brand:          var(--color-icon-point);
   --color-icon-danger:         var(--color-icon-error);
   --color-icon-info:           var(--color-icon-visual);
-  --color-icon-gray900:        var(--primitive-gray-800);
+  --color-icon-gray900:        var(--primitive-gray-900);  // #111111 — Figma color/icon/gray900
 }
 
 // ===========================================================================
@@ -781,12 +781,6 @@
 
   --color-comp-switch-off-bg:                var(--primitive-gray-dark-600);
   --color-comp-switch-on-bg:                 var(--primitive-green-500);
-
-  --color-comp-popover-default-bg:           var(--primitive-gray-dark-800);
-  --color-comp-popover-default-border:       var(--primitive-gray-dark-600);
-  --color-comp-popover-point-bg:             var(--primitive-gray-dark-100);
-  --color-comp-popover-point-fg:             var(--primitive-gray-dark-900);
-  --color-comp-popover-point-border:         var(--primitive-gray-dark-100);
 
   // Backward-compat aliases (dark)
   --color-text-primary:        var(--color-font-2);

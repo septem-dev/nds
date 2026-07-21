@@ -1,239 +1,400 @@
 // =============================================================================
 // List — NDS Design Library v1.0
 // =============================================================================
-// Variants: list-card (lg/sm/xs) / list-page (sm/xs) / list-line / list-account
+// Variants: list-card (lg/sm/xs) / list-page (lg/sm/xs) / list-account /
+//           list-continue / list-accordion
 // =============================================================================
 
-// ── 공통: 키-값 그리드 ────────────────────────────────────────────────────────
-// 2열 grid — 각 열이 [타이틀 | 데이터] 쌍
+// ── 공통: 키-값 행 (타이틀 좌 / 데이터 우) ────────────────────────────────────
 .list-kv {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
   width: 100%;
 
-  &__pair {
+  &__title {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    padding: 10px 16px;
+    gap: 2px;
+    width: 108px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  &__title {
+  &__tooltip {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    width: 24px;
+    height: 20px;
+    color: #707070;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  &__data {
     flex: 1;
+    min-width: 0;
+    text-align: right;
     font-size: 15px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+}
+
+// ── Card: 카드 형태 그룹 (border 없이도 사용 가능한 wrapper) ──────────────────
+.list-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background-color: #ffffff;
+
+  &__title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  // lg: 데이터 22px Semibold
+  &--lg {
+    .list-kv__title { width: 108px; }
+    .list-kv__data {
+      font-size: 22px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.44px;
+      line-height: 32px;
+    }
+  }
+
+  // sm: 데이터 15px Medium (기본 .list-kv 값과 동일)
+  &--sm {
+    .list-kv__title { width: 108px; }
+  }
+
+  // xs: 데이터 14px Regular (타이틀과 동일 색상)
+  &--xs {
+    .list-kv__title {
+      width: 108px;
+      font-size: 14px;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+    .list-kv__data {
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+      color: #505050;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+  }
+}
+
+// ── Page: 페이지형 — 상/하단 구분선 포함 가능 ─────────────────────────────────
+.list-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  &__title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #f0f0f0;
+    flex-shrink: 0;
+  }
+
+  // lg: 데이터 22px Semibold
+  &--lg {
+    .list-kv__title { width: 108px; }
+    .list-kv__data {
+      font-size: 22px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.44px;
+      line-height: 32px;
+    }
+  }
+
+  // sm: 타이틀 124px, 데이터 15px Medium
+  &--sm {
+    .list-kv__title { width: 124px; }
+  }
+
+  // xs: 타이틀 124px, 데이터 14px Regular
+  &--xs {
+    .list-kv__title {
+      width: 124px;
+      font-size: 14px;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+    .list-kv__data {
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+      color: #505050;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+  }
+}
+
+// ── Account: 계좌/금융상품 리스트 아이템 ──────────────────────────────────────
+.list-account {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+
+  &__logo {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding: 3px 0;
+
+    img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__number {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+
+    strong {
+      font-weight: var(--font-weight-medium);
+      color: #121212;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+    text-decoration: underline;
+  }
+
+  &__fav {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #707070;
+
+    svg { width: 24px; height: 24px; display: block; }
+
+    &--active { color: #f9a825; }
+  }
+}
+
+// ── Continue: 이어하기 카드 (텍스트 + 버튼 + 닫기) ────────────────────────────
+.list-continue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 13px 16px 13px 20px;
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #505050;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  &__data {
+  &__actions {
     flex-shrink: 0;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #121212;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    background: #ffffff;
+    border: 1px solid #19973c;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #19973c;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111111;
+
+    svg { width: 24px; height: 24px; display: block; }
   }
 }
 
-// ── Card ─────────────────────────────────────────────────────────────────────
-// 카드 형태 (border + radius) — 기본 sm
-.list-card {
-  //border: 1px solid var(--color-border-2, #E1E1E1);
-  //border-radius: 16px;
-  background-color: var(--color-bg-default, #fff);
-  overflow: hidden;
-  width: 100%;
-
-  // lg: 데이터 22px Semibold
-  &--lg {
-    .list-kv__title { font-size: 15px; font-weight: 400; color: #505050; }
-    .list-kv__data  { font-size: 22px; font-weight: 600; color: #121212; }
-    .list-kv__pair  { padding: 12px 20px; }
-  }
-
-  // sm: 데이터 15px Medium
-  &--sm {
-    .list-kv__title { font-size: 15px; font-weight: 400; color: #505050; }
-    .list-kv__data  { font-size: 15px; font-weight: 500; color: #121212; }
-    .list-kv__pair  { padding: 10px 16px; }
-  }
-
-  // xs: 데이터 14px Regular (타이틀과 동일 색상)
-  &--xs {
-    .list-kv__title { font-size: 14px; font-weight: 400; color: #505050; }
-    .list-kv__data  { font-size: 14px; font-weight: 400; color: #505050; }
-    .list-kv__pair  { padding: 8px 12px; }
-  }
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-// 페이지형 — 카드 wrapper 없이 전체 너비
-.list-page {
-  width: 100%;
-
-  // sm: 데이터 15px Medium
-  &--sm {
-    .list-kv__title { font-size: 15px; font-weight: 400; color: #505050; }
-    .list-kv__data  { font-size: 15px; font-weight: 500; color: #121212; }
-    .list-kv__pair  { padding: 10px 16px; }
-  }
-
-  // xs: 데이터 14px Regular
-  &--xs {
-    .list-kv__title { font-size: 14px; font-weight: 400; color: #505050; }
-    .list-kv__data  { font-size: 14px; font-weight: 400; color: #505050; }
-    .list-kv__pair  { padding: 8px 12px; }
-  }
-}
-
-// ── Line ─────────────────────────────────────────────────────────────────────
-// 구분선 리스트 — 기간 + 타이틀/데이터 행
-.list-line {
+// ── Accordion: 상/하단 구분선 + 요약행 + 펼치기 토글 ──────────────────────────
+.list-accordion {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 20px;
   width: 100%;
-  //border: 1px solid #E1E1E1;
-  //border-radius: 16px;
-  background-color: #fff;
-  overflow: hidden;
 
-  &__item {
-    display: flex;
-    flex-direction: column;
-    padding: 14px 20px;
-    border-bottom: 1px solid #E1E1E1;
-    gap: 4px;
-
-    &:last-child { border-bottom: none; }
-  }
-
-  &__period {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #767676;
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #f0f0f0;
+    flex-shrink: 0;
   }
 
   &__row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+    gap: 4px;
+    width: 100%;
   }
 
   &__title {
+    flex-shrink: 0;
+    width: 124px;
     font-size: 15px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #505050;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__data {
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #121212;
-    text-align: right;
-  }
-}
-
-// ── Account ──────────────────────────────────────────────────────────────────
-// 계좌/금융상품 리스트 아이템
-.list-account {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  //border: 1px solid #F0F0F0;
-  //border-radius: 16px;
-  background-color: #fff;
-  overflow: hidden;
-
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 20px;
-    //border-bottom: 1px solid #F0F0F0;
-
-    &:last-child { border-bottom: none; }
-  }
-
-  // 로고/아바타
-  &__icon {
-    position: relative;
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #1565C0;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-  }
-
-  // 아이콘 위 숫자 뱃지
-  &__badge {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    min-width: 18px;
-    height: 18px;
-    padding: 0 4px;
-    border-radius: 999px;
-    background-color: #C62828;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid #fff;
-  }
-
-  &__body {
     flex: 1;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  &__name {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
+    line-height: 26px;
     color: #121212;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  &__number {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #767676;
-  }
-
-  // 즐겨찾기 버튼
-  &__fav {
-    flex-shrink: 0;
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding-top: 4px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
-    color: #B3B3B3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
 
-    &--active { color: #F9A825; }
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      transition: transform var(--transition-base);
+    }
+
+    &.is-open svg { transform: rotate(180deg); }
   }
 }

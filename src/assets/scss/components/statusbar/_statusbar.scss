@@ -1,76 +1,76 @@
 // =============================================================================
 // Statusbar — NDS Design Library v1.0
 // =============================================================================
-
-@use '../../styles/mixins/mixins' as *;
+// 모바일 OS 상태표시줄(시간 + 통신/와이파이/배터리 아이콘)
+// Variants : --aos (24px, Android) / --ios (44px, iOS)
+// =============================================================================
 
 .statusbar {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
 
-  // Dot indicator
-  &__dot {
-    width: 8px;
-    height: 8px;
-    border-radius: var(--radius-full);
-    flex-shrink: 0;
+  // 시간 텍스트
+  &__time {
+    color: #121212;
   }
 
-  // Label
-  &__label { color: var(--color-text-secondary); }
-
-  // Status variants
-  &--default  { .statusbar__dot { background-color: var(--color-border-default); } }
-  &--active   { .statusbar__dot { background-color: var(--primitive-green-500); } .statusbar__label { color: var(--primitive-green-700); } }
-  &--inactive { .statusbar__dot { background-color: var(--primitive-gray-400); } }
-  &--pending  { .statusbar__dot { background-color: var(--primitive-orange-500); } .statusbar__label { color: var(--primitive-orange-500); } }
-  &--error    { .statusbar__dot { background-color: var(--primitive-red-500); }   .statusbar__label { color: var(--primitive-red-600); } }
-  &--info     { .statusbar__dot { background-color: var(--primitive-blue-500); }  .statusbar__label { color: var(--primitive-blue-700); } }
-
-  // Bar / progress statusbar
-  &--bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-2);
-    width: 100%;
-
-    .statusbar__header {
-      @include flex-between;
-      width: 100%;
-    }
-
-    .statusbar__track {
-      width: 100%;
-      height: 6px;
-      background-color: var(--color-bg-muted);
-      border-radius: var(--radius-full);
-      overflow: hidden;
-    }
-
-    .statusbar__fill {
-      height: 100%;
-      border-radius: var(--radius-full);
-      background-color: var(--primitive-green-500);
-      transition: width var(--transition-slow);
-    }
-
-    &.statusbar--error   .statusbar__fill { background-color: var(--primitive-red-500); }
-    &.statusbar--pending .statusbar__fill { background-color: var(--primitive-orange-500); }
+  // 아이콘 그룹 (우측 고정)
+  &__icons {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
   }
 
-  // Tag style
-  &--tag {
+  &__icon {
     display: inline-flex;
-    padding: var(--spacing-1) var(--spacing-3);
-    border-radius: var(--radius-full);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 
-    &.statusbar--active   { background-color: var(--primitive-green-50); }
-    &.statusbar--pending  { background-color: var(--primitive-orange-50); }
-    &.statusbar--error    { background-color: var(--primitive-red-50); }
-    &.statusbar--info     { background-color: var(--primitive-blue-50); }
-    &.statusbar--inactive { background-color: var(--color-bg-subtle); }
+    svg { display: block; }
+  }
+
+  // ── AOS (Android) — height 24, time 좌측 14px ────────────────────────────
+  &--aos {
+    height: 24px;
+    padding: 0 12px 0 14px;
+    justify-content: flex-start;
+
+    .statusbar__time {
+      font-size: 14px;
+      font-weight: var(--font-weight-medium);
+      letter-spacing: -0.28px;
+      line-height: 1;
+    }
+
+    .statusbar__icons { gap: 6px; }
+    .statusbar__icon--cellular { width: 18px; height: 12px; }
+    .statusbar__icon--wifi { width: 16px; height: 12px; }
+    .statusbar__icon--battery { width: 24px; height: 12px; }
+  }
+
+  // ── iOS — height 44, time 중앙 정렬 ────────────────────────────────────
+  &--ios {
+    height: 44px;
+    padding: 0 14px;
+    justify-content: center;
+
+    .statusbar__time {
+      font-size: 15px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.3px;
+      line-height: 1;
+    }
+
+    .statusbar__icons { gap: 4px; }
+    .statusbar__icon--cellular { width: 20px; height: 14px; }
+    .statusbar__icon--wifi { width: 16px; height: 14px; }
+    .statusbar__icon--battery { width: 25px; height: 14px; }
   }
 }

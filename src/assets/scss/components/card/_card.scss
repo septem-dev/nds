@@ -1,282 +1,793 @@
 // =============================================================================
 // Card -- NDS Design Library v1.0
 // =============================================================================
+// Reuses: .list-card / .list-kv (rows), .label--line/--fill (tags),
+//         .text-label (label+tooltip), .check-basic, .accordion-gray,
+//         .unit-load-data (gray kv box), .btn / .btn--tertiary/--secondary,
+//         .input-line (field rows)
+// =============================================================================
 
-// Shared base
+@use '../../styles/mixins/mixins' as *;
+
+// -----------------------------------------------------------------------------
+// Base container
+// -----------------------------------------------------------------------------
 .card {
-  background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 312px;
+  padding: 20px;
+  background-color: #ffffff;
   border: 1px solid #e1e1e1;
   border-radius: 16px;
-  padding: 16px;
+  box-sizing: border-box;
 
-  // -- Badge/Label tag
-  &__label {
-    display: inline-flex;
+  &--gap-24 { gap: 24px; }
+  &--gap-32 { gap: 32px; }
+
+  &--radius-sm { border-radius: 12px; }
+
+  // Gray "summary" style card (no border, gray-100 background)
+  &--gray {
+    background-color: #f6f6f6;
+    border: none;
+  }
+
+  // Row-oriented card (etc/input aligns content to the end)
+  &--end { align-items: flex-end; }
+
+  &--row {
+    flex-direction: row;
     align-items: center;
-    height: 18px;
-    padding: 0 6px;
-    font-size: 11px;
-    font-weight: var(--font-weight-medium);
-    letter-spacing: -0.02em;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Header text blocks
+// -----------------------------------------------------------------------------
+.card__label-row {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 4px;
+
+  &--between { justify-content: space-between; }
+}
+
+.card__eyebrow {
+  width: 100%;
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.28px;
+  line-height: 22px;
+  color: #767676;
+}
+
+.card__title {
+  width: 100%;
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  color: #121212;
+
+  &--semibold { font-weight: var(--font-weight-semibold); }
+}
+
+.card__subtitle {
+  width: 100%;
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.28px;
+  line-height: 22px;
+  color: #767676;
+
+  &--dark { color: #505050; }
+}
+
+.card__date {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.26px;
+  line-height: 20px;
+  color: #505050;
+  white-space: nowrap;
+}
+
+.card__category {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.28px;
+  line-height: 22px;
+  color: #121212;
+}
+
+.card__tooltip-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  color: #767676;
+
+  svg { width: 24px; height: 24px; flex-shrink: 0; }
+}
+
+.card__tag-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.28px;
+  line-height: 22px;
+  color: #767676;
+  white-space: nowrap;
+}
+
+.card__guide-text {
+  width: 100%;
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.26px;
+  line-height: 20px;
+  color: #767676;
+}
+
+// -----------------------------------------------------------------------------
+// Divider
+// -----------------------------------------------------------------------------
+.card__divider {
+  flex-shrink: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #f0f0f0;
+
+  &--strong { background-color: #e1e1e1; }
+}
+
+// -----------------------------------------------------------------------------
+// Corner controls (close / check / radio / arrow)
+// -----------------------------------------------------------------------------
+.card__close {
+  @include reset-button;
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  color: #121212;
+  cursor: pointer;
+
+  svg { width: 24px; height: 24px; display: block; }
+}
+
+.card__check {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &--label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    color: #767676;
+  }
+}
+
+.card__radio {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+}
+
+.card__arrow {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #b3b3b3;
+
+  svg { width: 24px; height: 24px; display: block; }
+
+  &--sm { width: 16px; height: 16px; svg { width: 16px; height: 16px; } }
+}
+
+// -----------------------------------------------------------------------------
+// Footer button row
+// -----------------------------------------------------------------------------
+.card__button-row {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  .btn { flex: 1; }
+}
+
+// -----------------------------------------------------------------------------
+// Percent / rate row (general/rate)
+// -----------------------------------------------------------------------------
+.card__percent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  width: 100%;
+  white-space: nowrap;
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
     color: #505050;
-    background: #f0f0f0;
-    border-radius: 4px;
-    margin-bottom: 6px;
   }
 
-  &__label--brand {
-    color: #19973c;
-    background: #e8f7ee;
-    border: 1px solid #19973c;
+  &__value {
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.4px;
+    color: #121212;
   }
 
-  &__label--warn {
-    color: #e24949;
-    background: #fef0f0;
-    border: 1px solid #e24949;
+  &__info {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    color: #767676;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Detail (icon badge + title/subtitle)
+// -----------------------------------------------------------------------------
+.card__icon-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img, svg { width: 100%; height: 100%; display: block; }
   }
 
-  // -- Close button
-  &__close {
+  &__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Info: title+data 2-column top row (general/info)
+// -----------------------------------------------------------------------------
+.card__info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 160px;
+  }
+
+  &__data {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Grip (drag handle row)
+// -----------------------------------------------------------------------------
+.card__grip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  &__name {
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    color: #121212;
+  }
+
+  &__actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
     width: 24px;
     height: 24px;
-    border-radius: 50%;
-    background: #e8e8e8;
-    border: none;
-    cursor: pointer;
+    color: #929292;
+    cursor: grab;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Load-data alias (reuse .unit-load-data visuals if unit.scss not loaded first)
+// -----------------------------------------------------------------------------
+.card__load-data {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  &__label {
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    color: #505050;
+  }
+
+  &__data {
+    flex: 1;
+    min-width: 0;
+    text-align: right;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    color: #121212;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Input row inside card (data label + input-line/price|unit)
+// -----------------------------------------------------------------------------
+.card__input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+
+  &__label {
+    flex-shrink: 0;
+    width: 78px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    color: #505050;
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Image slot (etc/image)
+// -----------------------------------------------------------------------------
+.card__image {
+  flex-shrink: 0;
+  width: 100px;
+  height: 58px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+}
+
+// -----------------------------------------------------------------------------
+// Account head (logo + name block + trailing icon/check/close)
+// -----------------------------------------------------------------------------
+.card__account {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+
+  &__body {
+    flex: 1;
+    min-width: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #767676;
-    font-size: 14px;
-    flex-shrink: 0;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  // -- More menu
-  &__menu {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #767676;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-
-  // -- Header row (badge + close / avatar + title + menu)
-  &__header {
+  &__row {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 4px;
+    gap: 8px;
+    width: 100%;
   }
 
-  // -- Avatar / Thumbnail (account cards)
-  &__thumb {
-    width: 36px;
-    height: 36px;
+  &__logo {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: #1b74e4;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-size: 11px;
-    font-weight: var(--font-weight-bold);
-    flex-shrink: 0;
-    margin-right: 8px;
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold);
+    background-color: #004a37;
+
+    img { width: 100%; height: 100%; object-fit: cover; display: block; }
   }
 
-  // -- Title block
-  &__title {
-    font-size: 18px;
-    font-weight: var(--font-weight-semibold);
+  &__name-block {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__category {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
     color: #121212;
-    letter-spacing: -0.02em;
-    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    color: #121212;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__sub {
-    font-size: 13px;
-    color: #929292;
-    margin-top: 2px;
-    letter-spacing: -0.02em;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    color: #767676;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  // -- Info group (title + sub)
-  &__info {
-    flex: 1;
-    min-width: 0;
-  }
+  &__admin {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #767676;
+    cursor: pointer;
 
-  // -- Tags row (#tag1 #tag2)
-  &__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin: 6px 0;
-    font-size: 12px;
-    color: #929292;
+    svg { width: 24px; height: 24px; display: block; }
   }
+}
 
-  // -- Key-value rows
-  &__rows {
-    margin-top: 12px;
-    border-top: 1px solid #f0f0f0;
+// -----------------------------------------------------------------------------
+// Price display (account/price, data/highlight main-data, summary/price/*)
+// -----------------------------------------------------------------------------
+.card__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  width: 100%;
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    color: #767676;
   }
 
   &__row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
-    gap: 8px;
-
-    &:last-child { border-bottom: none; }
+    justify-content: flex-end;
+    gap: 4px;
+    width: 100%;
   }
 
-  &__row-label {
-    font-size: 14px;
-    color: #767676;
-    letter-spacing: -0.02em;
+  &__refresh {
     flex-shrink: 0;
-  }
-
-  &__row-data {
-    font-size: 14px;
-    font-weight: var(--font-weight-semibold);
+    width: 24px;
+    height: 24px;
     color: #121212;
-    letter-spacing: -0.02em;
-    text-align: right;
-
-    &--up   { color: #e24949; } // positive rate (red in finance)
-    &--down { color: #e24949; }
-    &--brand { color: #19973c; }
-  }
-
-  // Input row (inline form field)
-  &__row-input {
-    background: none;
-    border: none;
-    border-bottom: 1px solid #e1e1e1;
-    font-size: 14px;
-    color: #121212;
-    text-align: right;
-    padding: 2px 0;
-    width: 100%;
-    letter-spacing: -0.02em;
-    outline: none;
-
-    &::placeholder { color: #c0c0c0; }
-  }
-
-  // -- Price display (large amount)
-  &__price {
-    text-align: right;
-    margin: 8px 0 4px;
-
-    &-label {
-      font-size: 12px;
-      color: #929292;
-    }
-
-    &-value {
-      font-size: 20px;
-      font-weight: var(--font-weight-bold);
-      color: #121212;
-      letter-spacing: -0.02em;
-    }
-  }
-
-  // -- Divider section title
-  &__section-title {
-    font-size: 15px;
-    font-weight: var(--font-weight-semibold);
-    color: #121212;
-    padding: 10px 0 4px;
-    margin-top: 4px;
-  }
-
-  // -- Accordion toggle
-  &__accordion-trigger {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 0;
-    background: none;
-    border: none;
-    border-top: 1px solid #f0f0f0;
-    font-size: 14px;
-    color: #505050;
     cursor: pointer;
-    letter-spacing: -0.02em;
 
-    svg { transition: transform 0.2s; }
-    &.is-open svg { transform: rotate(180deg); }
+    svg { width: 24px; height: 24px; display: block; }
   }
 
-  &__accordion-body {
-    display: none;
-    &.is-open { display: block; }
-  }
+  &__value {
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.4px;
+    color: #121212;
+    white-space: nowrap;
 
-  // -- Footer / action area
-  &__footer {
-    margin-top: 12px;
-  }
+    &--xl {
+      font-size: 26px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.52px;
+    }
 
-  // -- Message (below card body)
-  &__message {
-    text-align: center;
-    font-size: 13px;
-    color: #929292;
-    margin-top: 8px;
-
-    &--error { color: #e24949; }
-  }
-
-  // -- 2-column grid (Summary 2column)
-  &__grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: #e1e1e1;
-    border-radius: 12px;
-    overflow: hidden;
-
-    > * {
-      background: #f8f8f8;
-      padding: 12px;
+    &--lg {
+      font-size: 22px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.44px;
+      color: var(--color-point, #19973c);
     }
   }
 
-  &__grid-label {
-    font-size: 12px;
-    color: #929292;
+  &__unit {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    color: #121212;
+  }
+
+  &__sub {
+    width: 100%;
+    text-align: right;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    color: #121212;
+  }
+}
+
+// Summary price row (title left / price right) -- used by price/single, /double, /divide
+.card__price-line {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+
+  &__title {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 6px;
+  }
+
+  &__title-main {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    color: #505050;
+    white-space: nowrap;
+  }
+
+  &__title-sub {
+    font-size: 12px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.24px;
+    color: #767676;
+    white-space: nowrap;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Vertical mini-list (sub data columns -- data/highlight, data/4column)
+// -----------------------------------------------------------------------------
+.card__vlist {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  &--sm { gap: 4px; }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+
+    &:first-child { align-items: flex-start; }
+    &:last-child { align-items: flex-end; }
+    &:not(:first-child):not(:last-child) { align-items: center; }
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    color: #505050;
+  }
+
+  &__data {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    color: #121212;
+  }
+
+  &--sm &__title {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+
+  &--sm &__data {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 2-column summary (summary/2column)
+// -----------------------------------------------------------------------------
+.card__col2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  &__col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
     gap: 4px;
   }
 
-  &__grid-value {
-    font-size: 16px;
-    font-weight: var(--font-weight-bold);
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    color: #505050;
+    white-space: nowrap;
+  }
+
+  &__data {
+    width: 100%;
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
     color: #121212;
-    margin-top: 4px;
-    letter-spacing: -0.02em;
   }
 
-  // -- Highlight variant (gray bg, no border)
-  &--highlight {
-    background: #f8f8f8;
-    border-color: transparent;
+  &__sep {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 1px;
+    background-color: #f0f0f0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Highlight list (data/highlight -- large kv row, list-card/--lg reuse)
+// -----------------------------------------------------------------------------
+.card__hlist {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+
+  &__title {
+    flex-shrink: 0;
+    width: 108px;
+    padding-top: 6px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    color: #505050;
   }
 
-  // -- Selected state
-  &--selected {
-    border-color: #19973c;
+  &__data {
+    flex: 1;
+    min-width: 0;
+    text-align: right;
+    font-size: 22px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.44px;
+    color: #121212;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Accordion card (general/account/summary -- card-level expand/collapse)
+// -----------------------------------------------------------------------------
+.card__accordion-toggle {
+  @include reset-button;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    color: #121212;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #121212;
+    transition: transform 0.2s ease;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  &[aria-expanded="true"] .card__accordion-toggle__arrow { transform: rotate(180deg); }
+}
+
+// Download-link rows inside .accordion-gray__body (general/add-accordion)
+.card__accordion-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.card__accordion-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.28px;
+  color: #121212;
+
+  &__text { flex: 1; min-width: 0; }
+
+  &__icons {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #767676;
+
+    svg { width: 24px; height: 24px; display: block; }
   }
 }

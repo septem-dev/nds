@@ -1,31 +1,33 @@
 // =============================================================================
 // Search — NDS Design Library v1.0
 // =============================================================================
-// search        : 레이블 + 인풋 + 메시지 (단독 검색 필드)
-// search-filter : 인풋 + 필터 버튼 (검색 + 필터 세트)
+// search        : 레이블 + 박스형 인풋 + 메시지 (단독 검색 필드)
+// search-filter : 박스형 인풋 + 필터 버튼 (검색 + 필터 세트)
+// search-line   : 레이블 + 언더라인 인풋 + 메시지 (+옵션 버튼행)
 // =============================================================================
 // Input states
-//   Inactive : Border #E1E1E1 / BG #FFFFFF / Placeholder 18px/Medium/#929292
+//   Inactive : Border #E1E1E1 / BG #FFFFFF / Placeholder 18px/Medium/-0.36px/#929292
 //   Focus    : Border #19973C / BG #FFFFFF / Text 18px/Medium/#121212
 //   Filled   : Border #E1E1E1 / BG #FFFFFF / Text 18px/Medium/#121212
-//   Error    : Border #E24949 / BG #FFFFFF / Message #E24949
-// Label : 14px / Medium / -2% / #505050
-// Message : 13px / Regular / -2% / #767676 (error: #E24949)
-// Radius: 12px
+//   Error    : Border #E24949 / Message #E24949
+// Label : 14px / Medium / -0.28px / #505050
+// Message : 13px / Regular / -0.26px / #767676 (error: #E24949)
+// Box Radius: 12px / Height: 54px
 // =============================================================================
 
-// ── Search ────────────────────────────────────────────────────────────────────
+// ── Search (박스형) ──────────────────────────────────────────────────────────
 .search {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 12px;
   width: 100%;
 
   // 라벨
   &__label {
     font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
     color: #505050;
   }
 
@@ -40,14 +42,15 @@
   // 인풋 필드
   &__field {
     width: 100%;
-    height: 48px;
-    padding: 0 52px 0 16px; // 오른쪽: clear(20) + gap(4) + icon(20) + 우패딩(8)
-    border: 1px solid #E1E1E1;
+    height: 54px;
+    padding: 0 52px 0 20px;
+    border: 1px solid #e1e1e1;
     border-radius: 12px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
     color: #121212;
     outline: none;
     box-sizing: border-box;
@@ -55,24 +58,22 @@
 
     &::placeholder {
       color: #929292;
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
     }
 
-    // Focus 상태
     &:focus {
-      border-color: #19973C;
+      border-color: #19973c;
     }
 
-    // Error 상태
     .search--error & {
-      border-color: #E24949;
+      border-color: #e24949;
     }
   }
 
   // 우측 액션 영역 (clear + search icon)
   &__actions {
     position: absolute;
-    right: 12px;
+    right: 16px;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -85,11 +86,11 @@
     justify-content: center;
     width: 20px;
     height: 20px;
-    background: #B3B3B3;
+    background: #b3b3b3;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 12px;
     line-height: 1;
     padding: 0;
@@ -103,41 +104,39 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background: none;
     border: none;
     cursor: pointer;
-    color: #505050;
+    color: #929292;
     padding: 0;
     flex-shrink: 0;
 
-    svg { width: 20px; height: 20px; }
+    svg { width: 24px; height: 24px; }
     &:hover { color: #121212; }
   }
 
   // 안내/오류 메시지
   &__msg {
     font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
     color: #767676;
-    line-height: 1.4;
   }
 
-  // Error 메시지 색상
-  &--error &__msg { color: #E24949; }
+  &--error &__msg { color: #e24949; }
 }
 
 // ── Search Filter ─────────────────────────────────────────────────────────────
-// 검색 인풋 + 별도 필터 버튼 (가로 배열)
+// 박스형 검색 인풋 + 별도 필터 버튼 (가로 배열)
 .search-filter {
   display: flex;
   align-items: center;
   gap: 8px;
   width: 100%;
 
-  // 인풋 래퍼 (flex: 1)
   &__wrap {
     position: relative;
     display: flex;
@@ -147,14 +146,15 @@
 
   &__field {
     width: 100%;
-    height: 48px;
-    padding: 0 52px 0 16px;
-    border: 1px solid #E1E1E1;
+    height: 54px;
+    padding: 0 52px 0 20px;
+    border: 1px solid #e1e1e1;
     border-radius: 12px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
     color: #121212;
     outline: none;
     box-sizing: border-box;
@@ -162,15 +162,15 @@
 
     &::placeholder {
       color: #929292;
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
     }
 
-    &:focus { border-color: #19973C; }
+    &:focus { border-color: #19973c; }
   }
 
   &__actions {
     position: absolute;
-    right: 12px;
+    right: 16px;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -182,11 +182,11 @@
     justify-content: center;
     width: 20px;
     height: 20px;
-    background: #B3B3B3;
+    background: #b3b3b3;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 12px;
     line-height: 1;
     padding: 0;
@@ -199,35 +199,157 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background: none;
     border: none;
     cursor: pointer;
-    color: #505050;
+    color: #929292;
     padding: 0;
     flex-shrink: 0;
 
-    svg { width: 20px; height: 20px; }
+    svg { width: 24px; height: 24px; }
   }
 
-  // 필터 버튼 (우측 독립 버튼)
+  // 필터 버튼 (우측 독립 버튼, 54×54)
   &__filter {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    background-color: #FFFFFF;
-    border: 1px solid #E1E1E1;
+    width: 54px;
+    height: 54px;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
     border-radius: 12px;
     cursor: pointer;
     color: #505050;
     flex-shrink: 0;
     padding: 0;
 
-    svg { width: 20px; height: 20px; }
-    &:hover { border-color: #B3B3B3; }
-    &:active { border-color: #19973C; color: #19973C; }
+    svg { width: 24px; height: 24px; }
+    &:hover { border-color: #b3b3b3; }
+    &:active { border-color: #19973c; color: #19973c; }
+  }
+}
+
+// ── Search Line (언더라인형) ───────────────────────────────────────────────────
+// 레이블 + (옵션)라디오행 + 언더라인 인풋 + 메시지 + (옵션)버튼행
+.search-line {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+  }
+
+  // 라디오 페어 행 (옵션)
+  &__radios {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    padding-top: 4px;
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 54px;
+    padding: 14px 8px;
+    border-bottom: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 32px 0 0;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+    outline: none;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #929292;
+      font-weight: var(--font-weight-medium);
+    }
+  }
+
+  &__wrap:focus-within {
+    border-color: #19973c;
+  }
+
+  &--error &__wrap {
+    border-color: #e24949;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #929292;
+    padding: 0;
+    flex-shrink: 0;
+
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__msg {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
+  }
+
+  &--error &__msg { color: #e24949; }
+
+  // 하단 버튼 행 (옵션: tertiary + secondary)
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    width: 100%;
+    padding-top: 8px;
+  }
+
+  &__footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    cursor: pointer;
+    background-color: #ffffff;
+    white-space: nowrap;
+
+    &--tertiary { border: 1px solid #d3d3d3; color: #121212; }
+    &--secondary { border: 1px solid #19973c; color: #19973c; }
   }
 }

@@ -5,8 +5,9 @@
 // 2. table--h   — Horizontal (th 헤더 행, 균등/혼합 열)
 // Data helpers : __mono (숫자) / __rise (상승 #E24949) / __fall (하락 #2C6DD4) / __total (합계 행)
 // =============================================================================
-// Th  : 14 / Medium / -2% / #121212 / BG #F6F6F6 / Line #E1E1E1
-// Td  : 14 / Regular / -2% / #505050 / BG #FFFFFF / Line #E1E1E1
+// Th  : 14 / Medium / -0.28px / line22 / #121212 / BG #F6F6F6 / Line #E1E1E1
+// Td  : 14 / Regular / -0.28px / line22 / #505050 / BG #FFFFFF / Line #E1E1E1
+// Cell: padding 9px 8px / min-height 40px / 전체 그리드(우측+하단 경계선)
 // Vertical   — 기본 Left 정렬
 // Horizontal — 기본 Center 정렬 / 문장형(is-text) Left
 // =============================================================================
@@ -29,13 +30,20 @@
 
   th,
   td {
-    padding: 10px 8px;
+    padding: 9px 8px;
+    min-height: 40px;
     font-size: 14px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.28px;
+    line-height: 22px;
     border-bottom: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
     vertical-align: middle;
-    line-height: 1.5;
     box-sizing: border-box;
+  }
+
+  th:last-child,
+  td:last-child {
+    border-right: none;
   }
 
   tr:last-child th,
@@ -63,7 +71,6 @@
       text-align: left;
       width: 30%;
       min-width: 80px;
-      border-right: 1px solid #E1E1E1;
     }
 
     td { text-align: left; }

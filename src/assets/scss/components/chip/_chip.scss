@@ -18,7 +18,8 @@
   &__text {
     font-size: 13px;
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.26px;
+    line-height: 20px;
     color: #505050;
     white-space: nowrap;
   }
@@ -27,8 +28,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     padding: 0;
     background: none;
     border: none;
@@ -37,8 +38,8 @@
     flex-shrink: 0;
 
     svg {
-      width: 10px;
-      height: 10px;
+      width: 16px;
+      height: 16px;
       display: block;
     }
 
@@ -47,118 +48,101 @@
 }
 
 // =============================================================================
-// Single chip (.chip-single) -- text only
+// Single chip (.chip-single) -- pill shape, default / active
 // =============================================================================
 .chip-single {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
-  padding: 0 12px;
-  background: #f6f6f6;
-  border-radius: 6px;
+  min-width: 28px;
+  padding: 5px 12px;
+  background: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 999px;
   font-size: 13px;
   font-weight: var(--font-weight-regular);
-  letter-spacing: -0.02em;
-  color: #505050;
+  letter-spacing: -0.26px;
+  line-height: 20px;
+  color: #121212;
   white-space: nowrap;
   flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+
+  &--active {
+    background: #111111;
+    border-color: #111111;
+    color: #ffffff;
+    font-weight: var(--font-weight-medium);
+  }
 }
 
 // =============================================================================
 // Accordion chip group (.chip-accordion)
+// 한 줄 pill 칩 목록 + 펼침/접힘 토글 버튼
 // =============================================================================
 .chip-accordion {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  width:320px; // Set a fixed width for the accordion chip group
+  position: relative;
+  width: 100%;
 
-  // Chip list wrapper
   &__chips {
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
-    gap: 6px;
-    flex: 1;
-    min-width: 0;
+    gap: 4px;
     overflow: hidden;
-
-    &.is-open {
-      flex-wrap: wrap;
-    }
   }
 
-  // Individual chip item
-  &__item {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    padding: 0 12px;
-    background: #ffffff;
-    border: 1px solid #d3d3d3;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: var(--font-weight-regular);
-    letter-spacing: -0.02em;
-    color: #121212;
-    white-space: nowrap;
-    cursor: pointer;
-    flex-shrink: 0;
-    user-select: none;
-    transition:
-      background-color var(--transition-base),
-      color var(--transition-base),
-      border-color var(--transition-base);
-
-    &.is-active {
-      background: #111111;
-      border-color: #111111;
-      color: #ffffff;
-      font-weight: var(--font-weight-medium);
-    }
-  }
-
-  // Overflow count badge (+N)
-  &__more {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    padding: 0 8px;
-    background: #e8f0fe;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: var(--font-weight-medium);
-    letter-spacing: -0.02em;
-    color: #1b74e4;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  // Toggle chevron
   &__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 30px;
     height: 30px;
-    padding: 0;
-    background: none;
+    padding: 3px;
+    background: #f6f6f6;
     border: none;
+    border-radius: 999px;
     cursor: pointer;
-    color: #767676;
-    flex-shrink: 0;
+    color: #121212;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 24px;
+      height: 30px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+      pointer-events: none;
+    }
 
     svg {
-      width: 16px;
-      height: 16px;
+      width: 24px;
+      height: 24px;
       display: block;
       transition: transform var(--transition-base);
     }
+  }
 
-    &.is-open svg {
-      transform: rotate(180deg);
+  // Open state: chips wrap onto multiple lines, toggle flows inline at end
+  &.is-open {
+    .chip-accordion__chips {
+      flex-wrap: wrap;
+    }
+
+    .chip-accordion__toggle {
+      position: static;
+      margin-left: auto;
+
+      &::before { display: none; }
+
+      svg { transform: rotate(180deg); }
     }
   }
 }

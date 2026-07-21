@@ -9,12 +9,13 @@
 // Size Tokens
 // lg:56 md:52 rg:48 sm:44 xs:40
 // -----------------------------------------------------------------------------
+// Figma 인스턴스 실측(padding+line-height) 기준 — height/font-size 수정됨
 $btn-sizes: (
   'lg': (height: 56px, padding-h: 16px, font-size: 18px, border-radius: 12px, min-width: 78px),
-  'md': (height: 52px, padding-h: 16px, font-size: 16px, border-radius: 10px, min-width: 73px),
-  'rg': (height: 48px, padding-h: 16px, font-size: 16px, border-radius: 10px, min-width: 71px),
-  'sm': (height: 44px, padding-h: 12px, font-size: 14px, border-radius: 8px,  min-width: 48px),
-  'xs': (height: 40px, padding-h: 12px, font-size: 13px, border-radius: 8px,  min-width: 47px),
+  'md': (height: 48px, padding-h: 16px, font-size: 16px, border-radius: 10px, min-width: 73px),
+  'rg': (height: 42px, padding-h: 16px, font-size: 15px, border-radius: 10px, min-width: 71px),
+  'sm': (height: 36px, padding-h: 12px, font-size: 14px, border-radius: 8px,  min-width: 48px),
+  'xs': (height: 30px, padding-h: 12px, font-size: 13px, border-radius: 8px,  min-width: 47px),
 );
 
 // -----------------------------------------------------------------------------
@@ -157,6 +158,12 @@ $btn-sizes: (
 
     &:disabled { color: #929292; cursor: not-allowed; }
   }
+
+  // Text -- centered (open / closed accordion toggles)
+  &--text--center {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 // -----------------------------------------------------------------------------
@@ -195,10 +202,86 @@ $btn-sizes: (
   &--basic  { padding-bottom: 32px; }
   &--popup  { padding-bottom: 20px; }
 
+  // Double -- two stacked full-width buttons (secondary outline + primary)
+  &--double {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-bottom: 32px;
+  }
+
   &__item {
     flex: 1;
   }
 
   &__item--3 { flex: 3; }
   &__item--7 { flex: 7; }
+}
+
+// -----------------------------------------------------------------------------
+// Floating (circular info badge button with dismiss)
+// -----------------------------------------------------------------------------
+.btn-floating {
+  position: relative;
+  width: 56px;
+  height: 56px;
+
+  &__circle {
+    @include reset-button;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 1px solid #685efd;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: var(--font-weight-medium);
+    line-height: 15px;
+    color: #685efd;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+  }
+
+  &__close {
+    @include reset-button;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg { width: 10px; height: 10px; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Plus / Minus stepper button (standalone, 54x54)
+// -----------------------------------------------------------------------------
+.btn-plusminus {
+  @include reset-button;
+  @include flex-center;
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
+  color: #121212;
+
+  svg { width: 24px; height: 24px; }
+
+  &.is-active { color: #19973c; }
 }

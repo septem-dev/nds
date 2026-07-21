@@ -16,7 +16,7 @@
 .input-box {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
   width: 100%;
   max-width: 428px;
 
@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     height: 54px;
-    padding: 0 12px 0 20px;
+    padding: 0 16px 0 20px;
     background: #ffffff;
     border: 1px solid #e1e1e1;
     border-radius: 12px;
@@ -76,7 +76,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #c0c0c0;
+    background: #b3b3b3;
     border: none;
     cursor: pointer;
     color: #ffffff;
@@ -221,7 +221,7 @@
 .input-line {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
   max-width: 428px;
 
@@ -235,10 +235,12 @@
   &__field {
     display: flex;
     align-items: center;
-    padding: 4px 0 10px 0;
+    height: 54px;
+    padding: 14px 8px;
     background: #ffffff;
     border-bottom: 1px solid #e1e1e1;
-    gap: 8px;
+    gap: 12px;
+    box-sizing: border-box;
     transition: border-color var(--transition-base);
   }
 
@@ -272,7 +274,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #c0c0c0;
+    background: #b3b3b3;
     border: none;
     cursor: pointer;
     color: #ffffff;
@@ -302,21 +304,27 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 28px;
-    padding: 0 8px;
-    background: none;
+    padding: 7px 12px;
+    background: #ffffff;
     border: 1px solid #d3d3d3;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: var(--font-weight-regular);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
     letter-spacing: -0.02em;
-    color: #505050;
+    color: #121212;
     cursor: pointer;
     flex-shrink: 0;
     white-space: nowrap;
     transition: background-color var(--transition-base);
 
     &:hover { background: #f6f6f6; }
+
+    &--secondary {
+      border-color: #19973c;
+      color: #19973c;
+
+      &:hover { background: #ffffff; }
+    }
   }
 
   &__select {

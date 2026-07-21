@@ -47,7 +47,11 @@
   &--body {
     .bullet__item {
       font-size: 15px;
+      line-height: 24px;
+      letter-spacing: -0.3px;
       color: #505050;
+
+      &::before { margin-top: 10px; }
     }
   }
 
@@ -56,14 +60,26 @@
 
     .bullet__item {
       font-size: 13px;
+      line-height: 20px;
+      letter-spacing: -0.26px;
       color: #767676;
+
+      &::before {
+        width: 3px;
+        height: 3px;
+        margin-top: 9px;
+      }
     }
   }
 
   &--notice {
     .bullet__item {
       font-size: 14px;
+      line-height: 22px;
+      letter-spacing: -0.28px;
       color: #505050;
+
+      &::before { margin-top: 9px; }
     }
   }
 }

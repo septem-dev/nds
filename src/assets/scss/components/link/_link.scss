@@ -2,40 +2,203 @@
 // Link — NDS Design Library v1.0
 // =============================================================================
 // 리스트 항목을 선택하여 다른 화면으로 이동하거나 추가 정보를 확인하는 컴포넌트
-// Variants: none / horizontal / vertical / mix / category / divide
+// Variants: vertical / horizontal / mix / none / category / category2 / divide / price / product / list
 // =============================================================================
 
-// ── Link Item ────────────────────────────────────────────────────────────────
-.link-item {
+// ── Vertical: 아이콘(위) + 타이틀(아래), 카드형 ────────────────────────────────
+.link-vertical {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100px;
+  padding: 20px 8px 16px;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    color: #121212;
+
+    svg { width: 32px; height: 32px; display: block; }
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+    text-align: center;
+  }
+}
+
+// ── Horizontal: 아이콘(좌, 선택) + 타이틀 + 화살표 ─────────────────────────────
+.link-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 16px 16px 16px 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #121212;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #b3b3b3;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+}
+
+// ── Mix: 아이콘 + 타이틀/설명 혼합형 ───────────────────────────────────────────
+.link-mix {
   display: flex;
   align-items: center;
   gap: 12px;
   width: 100%;
-  min-height: 48px;
-  padding: 12px 0;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
   text-decoration: none;
-  background: none;
-  border: none;
   cursor: pointer;
 
-  // Icon
   &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
     flex-shrink: 0;
-    overflow: hidden;
-    background-color: var(--primitive-gray-200, #F0F0F0);
-    color: var(--primitive-gray-600, #707070);
+    width: 32px;
+    height: 32px;
 
-    img, svg { width: 100%; height: 100%; }
+    svg, img { width: 32px; height: 32px; display: block; }
   }
 
-  // Body
-  &__body {
+  &__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__sub {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
+  }
+}
+
+// ── None: 박스 없이 타이틀 + 화살표만 ──────────────────────────────────────────
+.link-none {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #b3b3b3;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+}
+
+// ── Category: 원형 아이콘 + (상위)카테고리 + 타이틀 + (하위)카테고리 ──────────
+.link-category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 16px 16px 16px 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border: 1px solid #f0f0f0;
+    background: #ffffff;
+    overflow: hidden;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  &__text {
     flex: 1;
     min-width: 0;
     display: flex;
@@ -44,133 +207,53 @@
   }
 
   &__category {
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #707070;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
   }
 
   &__title {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #121212;
   }
 
-  &__sub {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #707070;
-  }
-
-  // Arrow
   &__arrow {
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #B3B3B3;
-    font-size: 18px;
-    line-height: 1;
-  }
+    width: 24px;
+    height: 24px;
+    color: #b3b3b3;
 
-  // ── Variants ──────────────────────────────────────────────────────────────
-
-  // None: 텍스트 + 화살표 (아이콘 없음)
-  &--none {
-    .link-item__icon { display: none; }
-  }
-
-  // Horizontal: 아이콘(좌) + 텍스트 + 화살표 (가로형)
-  // — 기본 구조와 동일, 아이콘 크기 조정
-  &--horizontal {
-    .link-item__icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-    }
-  }
-
-  // Vertical: 아이콘(위) + 텍스트(아래) (세로형 바로가기)
-  &--vertical {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: unset;
-    padding: 8px;
-    gap: 6px;
-
-    .link-item__icon {
-      width: 48px;
-      height: 48px;
-    }
-
-    .link-item__body {
-      align-items: center;
-    }
-
-    .link-item__title {
-      font-size: 12px;
-      font-weight: 400;
-      text-align: center;
-    }
-
-    .link-item__arrow { display: none; }
-  }
-
-  // Mix: 아이콘(좌) + 텍스트+설명 + 화살표 (선택)
-  // — 아이콘 사이즈와 radius 유연하게
-  &--mix {
-    .link-item__icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px; // 정사각형+radius 변형도 허용
-    }
-  }
-
-  // Category: 카테고리 텍스트 + 아이콘 + 타이틀 + 화살표
-  &--category {
-    .link-item__icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-    }
-  }
-
-  // Divide: 하단 구분선
-  &--divide {
-    border-bottom: 1px solid var(--primitive-gray-200, #F0F0F0);
-    padding: 14px 0;
-
-    &:last-child { border-bottom: none; }
+    svg { width: 24px; height: 24px; display: block; }
   }
 }
 
-// ── Link Card ────────────────────────────────────────────────────────────────
-// Divide variant 그룹 컨테이너
-.link-card {
-  background-color: #fff;
-  border-radius: 12px;
-  border: 1px solid var(--primitive-gray-200, #F0F0F0);
-  padding: 0 16px;
-  overflow: hidden;
-}
-
-// ── Link Transaction ─────────────────────────────────────────────────────────
-// 금융 거래 내역 행 (link-divide 내부 사용)
-.link-tx {
+// ── Category2: 아이콘(좌, 상단정렬) + 타이틀+화살표(같은 줄) + 서브카테고리 ──
+.link-category2 {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--primitive-gray-200, #F0F0F0);
   gap: 8px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 16px 16px 16px 20px;
+  text-decoration: none;
+  cursor: pointer;
 
-  &:last-child { border-bottom: none; }
+  &__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
 
-  &__left {
+    svg { width: 32px; height: 32px; display: block; }
+  }
+
+  &__text {
     flex: 1;
     min-width: 0;
     display: flex;
@@ -178,104 +261,358 @@
     gap: 2px;
   }
 
-  &__right {
+  &__title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__arrow {
     flex-shrink: 0;
-    text-align: right;
+    width: 24px;
+    height: 24px;
+    color: #b3b3b3;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  &__sub-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__sub {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__blank {
+    flex-shrink: 0;
+    width: 24px;
+  }
+}
+
+// ── Divide: 카드 내부에 여러 링크 행을 구분선으로 나눔 ────────────────────────
+.link-divide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 16px;
+  padding: 20px 16px 20px 20px;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+
+    & + & {
+      padding-top: 20px;
+      border-top: 1px solid #f6f6f6;
+      margin-top: -8px; // compensate parent gap so border sits mid-gap
+    }
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     gap: 2px;
   }
 
-  &__date {
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #707070;
-  }
-
-  &__name {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+  &__title {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
     color: #121212;
   }
 
   &__sub {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #707070;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
   }
 
-  // type 상태 텍스트 (수령/미수령/예약취소)
-  &__type {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #b3b3b3;
 
-    &--recv   { color: #1565C0; }  // 수령
-    &--unrecv { color: #C62828; }  // 미수령
-    &--cancel { color: #767676; }  // 예약취소
-  }
-
-  &__amount {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #121212;
-
-    &--out   { color: #C62828; }   // 출금
-    &--in    { color: #1565C0; }   // 입금
-    &--recv  { color: #AD1457; }   // 이수령
-    &--muted { color: var(--primitive-gray-500, #B3B3B3); }  // 미수령/예약취소
-  }
-
-  &__balance {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #707070;
+    svg { width: 24px; height: 24px; display: block; }
   }
 }
 
-// ── Inline Link (텍스트 하이퍼링크) ──────────────────────────────────────────
-.link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-1);
-  color: var(--color-text-brand);
-  text-decoration: none;
-  cursor: pointer;
-  transition: color var(--transition-base);
+// ── Price: 금융 거래 내역 행 (아이콘 + 이름/일시/설명 + 금액/잔액 + 버튼) ─────
+.link-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  width: 100%;
 
-  &:hover {
-    text-decoration: underline;
-    color: var(--primitive-green-600);
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
   }
 
-  &:active { color: var(--primitive-green-700); }
+  &__name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+    padding: 2px 0;
+  }
 
   &__icon {
-    width: 1em;
-    height: 1em;
     flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
+    background: #f6f6f6;
+    overflow: hidden;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
   }
 
-  &--secondary {
-    color: var(--color-text-secondary);
-    &:hover { color: var(--color-text-primary); }
+  &__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
-  &--danger {
-    color: var(--color-text-danger);
-    &:hover { color: var(--primitive-red-600); }
+  &__date {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #505050;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  &--underline { text-decoration: underline; }
+  &__name-text {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-  &--disabled {
-    color: var(--color-text-disabled);
-    pointer-events: none;
+  &__sub {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #929292;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__amount-col {
+    flex-shrink: 0;
+    width: 136px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    text-align: right;
+  }
+
+  &__amount-title {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+  }
+
+  &__amount {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+
+    &--out { color: #d10f0f; }
+    &--in  { color: #2c6dd4; }
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #121212;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+}
+
+// ── Product: 상품명 + 라벨 + 설명 + 금리 정보 (박스 없음) ─────────────────────
+.link-product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+    white-space: nowrap;
+  }
+
+  &__desc {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #767676;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &__rate {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+
+  &__rate-main {
+    font-weight: var(--font-weight-semibold);
+    color: #19973c;
+  }
+
+  &__rate-sub {
+    font-weight: var(--font-weight-medium);
+    color: #767676;
+  }
+}
+
+// ── List: 라벨(좌) + 값(우, flex) + 화살표(선택) ──────────────────────────────
+.link-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 16px 16px 16px 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__label {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__value {
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+    text-align: right;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #b3b3b3;
+
+    svg { width: 24px; height: 24px; display: block; }
   }
 }

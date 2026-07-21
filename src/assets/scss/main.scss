@@ -28,12 +28,13 @@
 @use 'components/indicator/indicator';
 @use 'components/infobox/infobox';
 @use 'components/input/input';
+@use 'components/keypad/keypad';
 @use 'components/label/label';
 @use 'components/link/link';
 @use 'components/list/list';
 @use 'components/load-data/load-data';
 @use 'components/navigation/navigation';
-@use 'components/popover/popover';
+@use 'components/picker/picker';
 @use 'components/popup/popup';
 @use 'components/process/process';
 @use 'components/radio/radio';
@@ -47,3 +48,5 @@
 @use 'components/textarea-message/textarea-message';
 @use 'components/toast/toast';
 @use 'components/tooltip/tooltip';
+@use 'components/page-title/page-title';
+@use 'components/unit/unit';

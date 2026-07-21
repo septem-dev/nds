@@ -1,95 +1,296 @@
 // =============================================================================
 // Terms — NDS Design Library v1.0
 // =============================================================================
-// Background : Radius 12 / BG #FFFFFF / Border #E1E1E1
-// Title      : 16 / Semibold / -2% / #121212
-// Body Text  : 14 / Regular  / -2% / #505050
-//
-// Spacing (Figma 기준)
-//   카드 전체       : border 1px #E1E1E1 / radius 12
-//   헤더 padding   : 상하 20px / 좌 12px / 우 20px
-//   아이템 padding  : 상하 14px / 좌 20px / 우 20px
-//   아이템 사이     : border-top 1px #E1E1E1
+// .terms          — 약관 동의 카드 (전체동의 헤더 + 개별 약관 링크 목록)
+// .terms-accordion — 유의사항 등 단일 아코디언 (헤더 + 본문 텍스트)
+// =============================================================================
+// Card    : Radius 12 / BG #FFFFFF / Border #E1E1E1 / Padding 20px / Gap 20px
+// Title   : 16 / Semibold / -0.32px / line24 / #121212
+// Divider : 1px #F0F0F0 (헤더 - 목록 사이)
+// Link    : 14 / Regular / -0.28px / line22 / #505050
+// Body    : 14 / Regular / -0.28px / line22 / #505050
+// Checkbox: 24×24 / Radius 8 / Border #707070 (checked: BG/Border #19973C)
 // =============================================================================
 
+// ── 공통: 체크박스 (헤더용, 테두리 박스형) ─────────────────────────────────────
+@mixin terms-checkbox {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 1px solid #707070;
+  background: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 7' fill='none'%3E%3Cpath d='M1 3.5L3.2 6L8 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  &.is-checked {
+    background: #19973C;
+    border-color: #19973C;
+    &::after { opacity: 1; }
+  }
+}
+
+// ── 1. Terms (전체동의 카드) ───────────────────────────────────────────────────
 .terms {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
   border: 1px solid #E1E1E1;
   border-radius: 12px;
   background-color: #FFFFFF;
-  overflow: hidden;
-  width: 100%;
+  box-sizing: border-box;
 
-  // ── 전체 동의 헤더 행 ──────────────────────────────────────────────────────
-  &__all {
+  // 헤더: 체크 + 타이틀 + 화살표
+  &__header {
     display: flex;
-    align-items: center;
-    padding: 20px 20px 20px 12px;
+    align-items: flex-start;
     gap: 8px;
+    width: 100%;
     cursor: pointer;
-    border-bottom: 1px solid #E1E1E1;
-
-    // 단독 카드 (하위 항목 없음): 하단 구분선 제거
-    &--alone { border-bottom: none; }
   }
 
-  // ── 체크 아이콘 (헤더: circle-check / 아이템: plain check) ──────────────
-  &__check {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    color: #B3B3B3;
-
-    svg { width: 20px; height: 20px; display: block; }
-
-    &.is-active { color: #19973C; }
+  &__check-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
   }
 
-  // ── 전체 동의 타이틀 ──────────────────────────────────────────────────────
+  &__checkbox { @include terms-checkbox; }
+
   &__title {
     flex: 1;
+    min-width: 0;
     font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
     color: #121212;
-    line-height: 1.4;
   }
 
-  // ── 체브론 ────────────────────────────────────────────────────────────────
-  &__chevron {
+  // 화살표 (펼침/이동)
+  &__arrow {
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    color: #B3B3B3;
+    width: 24px;
+    height: 24px;
+    color: #767676;
 
-    svg { width: 20px; height: 20px; display: block; }
+    svg { width: 24px; height: 24px; }
   }
 
-  // ── 개별 약관 목록 ────────────────────────────────────────────────────────
-  &__list { width: 100%; }
+  // 구분선 (헤더 - 목록 사이)
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #F0F0F0;
+    flex-shrink: 0;
+  }
 
-  // ── 개별 약관 행 ──────────────────────────────────────────────────────────
-  &__item {
+  // 개별 약관 목록
+  &__list {
     display: flex;
-    align-items: center;
-    padding: 14px 20px;
-    gap: 8px;
-    border-top: 1px solid #E1E1E1;
-    cursor: pointer;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
 
-    // 약관명 텍스트
-    .terms__name {
-      flex: 1;
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      color: #505050;
-      line-height: 1.4;
+  // 개별 약관 링크 (행 + 옵션 상세)
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__link-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__link-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  // 개별 항목 체크 아이콘 (테두리 없는 단순 체크)
+  &__link-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #B3B3B3;
+
+    svg { width: 24px; height: 24px; }
+
+    &.is-checked { color: #19973C; }
+  }
+
+  &__link-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+  }
+
+  &__link-arrow {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #767676;
+
+    svg { width: 24px; height: 24px; }
+  }
+
+  // 링크 상세 (선택 펼침: 설명 + 2depth 불릿)
+  &__link-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding-left: 36px;
+    box-sizing: border-box;
+  }
+
+  &__link-desc {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+  }
+
+  &__link-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    padding-left: 12px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: 4px;
+      height: 1px;
+      background-color: #767676;
+      margin-top: 11px;
     }
+
+    span {
+      flex: 1;
+      min-width: 0;
+      font-size: 15px;
+      font-weight: var(--font-weight-regular);
+      letter-spacing: -0.3px;
+      line-height: 24px;
+      color: #505050;
+    }
+  }
+}
+
+// ── 2. Terms Accordion (유의사항 단일 펼침 카드) ───────────────────────────────
+.terms-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #E1E1E1;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__check-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__checkbox { @include terms-checkbox; }
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #767676;
+    transition: transform 0.2s ease;
+
+    svg { width: 24px; height: 24px; }
+
+    &--open { transform: rotate(180deg); }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #F0F0F0;
+    flex-shrink: 0;
+  }
+
+  &__body {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
   }
 }

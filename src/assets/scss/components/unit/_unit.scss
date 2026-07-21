@@ -1,0 +1,1245 @@
+// =============================================================================
+// Unit — NDS Design Library v1.0
+// =============================================================================
+// 실제 화면에서 반복적으로 쓰이는 "복합 패턴"들의 모음.
+// 대부분 기존 atom(components)들을 그대로 조합해서 만들며, 여기서는 각 패턴의
+// 최상위 wrapper(레이아웃 gap)과, 다른 컴포넌트에 없는 소수의 신규 조각만 정의한다.
+// 재사용 atom: .input-box / .select-field / .search / .radio-box-center /
+//              .check-basic / .check-survey / .radio-survey--icon / .list-kv /
+//              .switch / .btn / .infobox / .bullet / .input-line / .terms
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+// ── 공통: 필드 위 라벨 텍스트 (label-text-label) ───────────────────────────────
+.unit-label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.28px;
+  line-height: 22px;
+  color: #505050;
+
+  &__tooltip {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    color: #707070;
+    svg { width: 24px; height: 24px; }
+  }
+}
+
+// ── 공통: 보조 설명/헬퍼 텍스트 ─────────────────────────────────────────────────
+.unit-helper-text {
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.26px;
+  line-height: 20px;
+  color: #767676;
+}
+
+// ── 공통: 잔여한도/원화환산 등 회색 박스형 key-value (load-data-basic) ───────────
+.unit-load-data {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  &__label {
+    flex-shrink: 0;
+    width: 120px;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__value {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+// =============================================================================
+// 1. unit-top-product — 상품 타이틀 + 가격 요약
+// =============================================================================
+.unit-top-product {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 2px 8px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    color: #343434;
+  }
+
+  &__title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__title-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+  }
+
+  &__arrow {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    color: #505050;
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__subtext {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__price-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+
+  &__price-label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__price-value {
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.4px;
+    line-height: 28px;
+    color: #121212;
+  }
+
+  &__price-sub {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
+  }
+}
+
+// =============================================================================
+// 2~13. 필드 조합형 패턴 — 레이아웃 wrapper만 정의 (내부는 기존 atom 재사용)
+// =============================================================================
+.unit-radio-field   { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+.unit-radio-mix     { display: flex; flex-direction: column; gap: 12px; width: 100%;
+
+  &__check-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__mix { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+
+  &__stepper-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+}
+
+// 54×54 +/- 스테퍼 버튼
+.unit-stepper-btn {
+  @include reset-button;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #707070;
+
+  svg { width: 24px; height: 24px; display: block; }
+
+  &.is-active { color: #19973c; border-color: #19973c; }
+}
+
+.unit-phone-number  { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+// 인증번호 입력창의 깜빡이는 커서 바
+.unit-cursor {
+  display: inline-block;
+  width: 1.5px;
+  height: 16px;
+  background-color: #006ffd;
+  flex-shrink: 0;
+}
+
+.unit-staff-search       { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.unit-recommend-account  { display: flex; flex-direction: column; gap: 16px; width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+}
+
+.unit-address-search    { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; width: 100%; }
+.unit-consultant-search  { display: flex; flex-direction: column; gap: 16px; width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+  }
+}
+
+.unit-email-input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+
+  &__row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+  }
+}
+
+.unit-subscription-amount,
+.unit-exchange-rate,
+.unit-type-taxation {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  &__group   { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  &__footer  { display: flex; align-items: center; gap: 8px; width: 100%; }
+  &__footer-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #121212;
+  }
+}
+
+// =============================================================================
+// 14~15. Survey — 번호+질문 + 라디오/체크 리스트
+// =============================================================================
+.unit-survey-radio,
+.unit-survey-check {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  &__question {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__num {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    padding-top: 1px;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+}
+
+// =============================================================================
+// 16. unit-fund-info — 펀드 투자정보 카드
+// =============================================================================
+.unit-fund-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding: 24px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  &__title {
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+
+  &__link-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__link-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__link-arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #505050;
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__tiles {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__tile {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 10px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+    cursor: pointer;
+  }
+}
+
+// =============================================================================
+// 17. unit-card-box-list — 라벨+상품명 카드 + 리스트 (list-kv 재사용)
+// =============================================================================
+.unit-card-box-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 16px;
+  box-sizing: border-box;
+
+  &__title-block { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+
+  &__title {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__body { display: flex; flex-direction: column; gap: 24px; width: 100%; }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  &__rows { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+}
+
+// =============================================================================
+// 18. unit-highlight-list — 요약가격(price-single) + list-kv + caption
+// =============================================================================
+.unit-highlight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+
+  &__summary { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+
+  &__title {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+  }
+
+  &__rows { display: flex; flex-direction: column; gap: 24px; width: 100%; }
+  &__list { display: flex; flex-direction: column; gap: 20px; width: 100%; padding: 0 4px; box-sizing: border-box; }
+
+  &__caption {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
+    width: 100%;
+  }
+}
+
+// 가격 강조 요약 카드 (매월 0원 형태)
+.unit-price-single {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 20px;
+  background-color: #f6f6f6;
+  border-radius: 16px;
+  box-sizing: border-box;
+
+  &__title-block { display: flex; flex-direction: column; gap: 2px; padding-top: 6px; }
+
+  &__title {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+  }
+
+  &__title-sub {
+    font-size: 12px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.24px;
+    line-height: 18px;
+    color: #767676;
+  }
+
+  &__data { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+
+  &__price-row { display: flex; align-items: baseline; gap: 4px; }
+
+  &__price-label {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    color: #19973c;
+  }
+
+  &__price-value {
+    font-size: 22px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.44px;
+    line-height: 32px;
+    color: #19973c;
+  }
+
+  &__data-sub {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+}
+
+// =============================================================================
+// 19. unit-branches — 지점 안내 카드 (아이콘 + 텍스트 + 버튼 2개)
+// =============================================================================
+.unit-branches {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 16px;
+  box-sizing: border-box;
+
+  &__header { display: flex; align-items: flex-start; gap: 8px; width: 100%; }
+
+  &__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #f6f6f6;
+    color: #505050;
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+  &__title {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__desc {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__buttons { display: flex; gap: 4px; justify-content: flex-end; width: 100%; }
+  &__buttons .btn { flex: 1; }
+}
+
+// =============================================================================
+// 20. unit-combination — 리스트 + 약관확인 + 라디오 + 인풋 + 버튼
+// =============================================================================
+.unit-combination {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 16px;
+  box-sizing: border-box;
+
+  &__list-block { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+
+  &__title {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__rows { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+  &__radio-block { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+  &__radio-row { display: flex; gap: 4px; width: 100%; }
+
+  &__submit { height: 36px; padding: 7px 12px; }
+}
+
+// 약관/약정서 확인 행 (체크 + 타이틀 + 화살표)
+.unit-terms-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__check { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #767676;
+    svg { width: 24px; height: 24px; }
+  }
+}
+
+// =============================================================================
+// 21. unit-inquiry-period — 조회기간 라디오 + 캘린더 범위 + 조회버튼
+// =============================================================================
+.unit-inquiry-period {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+
+  &__group { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+}
+
+.unit-calendar-range {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 16px 14px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  &__date { display: flex; align-items: center; gap: 4px; flex: 1; min-width: 0; }
+
+  &__text {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #767676;
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__sep {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    color: #121212;
+  }
+}
+
+// =============================================================================
+// 22. unit-refund-account / 23. unit-nh-point — 필드 조합 (기존 atom 재사용)
+// =============================================================================
+.unit-refund-account { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+.unit-nh-point {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  &__group { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__title { display: flex; align-items: center; gap: 2px; }
+
+  &__desc {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    width: 100%;
+  }
+}
+
+// =============================================================================
+// 24. unit-complete — 완료 화면 (일러스트 + 타이틀 + 바디 + 요약카드)
+//     complete-card / complete-accordion / complete-check-left / complete-check-center 공용
+// =============================================================================
+.unit-complete {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  &__illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+    font-size: 56px;
+  }
+
+  &--sm &__illustration {
+    width: 68px;
+    height: 68px;
+    font-size: 32px;
+  }
+
+  &__text { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+  &__title {
+    font-size: 26px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.52px;
+    line-height: 38px;
+    color: #121212;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__body {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    width: 100%;
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  &--accordion &__summary { gap: 24px; }
+
+  &__summary-rows { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+
+    svg { width: 16px; height: 16px; transform: rotate(90deg); }
+  }
+}
+
+// =============================================================================
+// 25. unit-confirm — 안내/확인 화면 (아이콘 + 타이틀 + 인포박스 + 버튼)
+//     alert-center / confirm-isa / confirm-account-cancle 공용
+// =============================================================================
+.unit-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  &--center { align-items: center; text-align: center; }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    font-size: 32px;
+  }
+
+  &__title-block { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+  &__title {
+    font-size: 22px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.44px;
+    line-height: 32px;
+    color: #121212;
+  }
+
+  &--center &__title {
+    font-size: 26px;
+    letter-spacing: -0.52px;
+    line-height: 38px;
+  }
+
+  &__body {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    width: 100%;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    width: 100%;
+  }
+}
+
+// =============================================================================
+// 26. unit-product-top — 상품상세 상단 (제목 + 금리/기간/금액 + CTA)
+//     product-detail-top-account/loan/performance/eld/fund/etf-elt/isa/gold/
+//     foreign-currency/insurance/irp-dc 공용
+// =============================================================================
+.unit-product-top {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  &__body { display: flex; flex-direction: column; gap: 48px; width: 100%; }
+
+  &__heading { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+
+  &__name {
+    font-size: 26px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.52px;
+    line-height: 38px;
+    color: #121212;
+  }
+
+  &__tag {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+  }
+
+  &__stats { display: flex; flex-direction: column; gap: 36px; width: 100%; }
+  &__rates { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+  &__rate-row { display: flex; gap: 40px; align-items: center; width: 100%; }
+  &__rate { display: flex; flex-direction: column; }
+
+  &__rate-label {
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #505050;
+  }
+
+  &__rate-value {
+    font-size: 36px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.72px;
+    line-height: 40px;
+    color: #121212;
+
+    &--point { color: #19973c; }
+  }
+
+  &__rate-caption {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
+    width: 100%;
+  }
+
+  &__info-rows { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+  &__info-row { display: flex; gap: 12px; align-items: flex-start; width: 100%; }
+
+  &__info-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 83px;
+    height: 32px;
+    color: #19973c;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    svg { width: 32px; height: 32px; flex-shrink: 0; }
+  }
+
+  &__info-value {
+    flex: 1;
+    min-width: 0;
+    padding-top: 4px;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+}
+
+// =============================================================================
+// 27. unit-product-panel — 프로모션 안내 패널 (gray-bg / white-bg)
+// =============================================================================
+.unit-product-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  padding: 56px 24px;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+
+  &--white { background-color: #ffffff; }
+
+  &__text { display: flex; flex-direction: column; gap: 12px; width: 100%; text-align: center; }
+
+  &__title {
+    font-size: 26px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.52px;
+    line-height: 38px;
+    color: #121212;
+  }
+
+  &__desc {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 312px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+}
+
+// =============================================================================
+// 28. unit-calculator — 만기금액 계산기 (아코디언 + 인풋 + 버튼 + 결과)
+// =============================================================================
+.unit-calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__header-title {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+
+    svg { width: 32px; height: 32px; flex-shrink: 0; }
+  }
+
+  &__toggle {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #505050;
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__body { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+  &__rows { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  &__row  { display: flex; align-items: center; gap: 12px; width: 100%; }
+
+  &__row-text {
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+    white-space: nowrap;
+  }
+
+  &__result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__result-label {
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+  }
+
+  &__result-value {
+    font-size: 20px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.4px;
+    line-height: 28px;
+    color: #19973c;
+  }
+}
+
+// =============================================================================
+// 29. unit-product-instruction — 상품설명서/약관 아코디언 헤더 + 링크 목록
+// =============================================================================
+.unit-product-instruction {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 20px 0;
+    cursor: pointer;
+  }
+
+  &__header-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__header-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #505050;
+    svg { width: 24px; height: 24px; }
+  }
+}
+
+// 링크 행 (변경이력보기 / 기본약관 / 상품설명서 / 상품특약)
+.unit-link-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 56px;
+  padding: 16px 16px 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #505050;
+    svg { width: 24px; height: 24px; }
+  }
+}
+
+// =============================================================================
+// 30. unit-product-recommend — 추천 상품 배너 타일 목록
+// =============================================================================
+.unit-product-recommend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  background-color: #ffffff;
+
+  &__title {
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__tiles {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  &__tile {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 140px;
+    padding: 20px;
+    background-color: #f3f5f8;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  &__tile-name {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__tile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 4px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #121212;
+  }
+}

@@ -33,4 +33,10 @@
     height: 1px;
     background-color: #f0f0f0;
   }
+
+  // Dash-1px: 점선 구분
+  &--dash {
+    height: 0;
+    border-top: 1px dashed #f6f6f6;
+  }
 }

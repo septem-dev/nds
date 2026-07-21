@@ -6,9 +6,8 @@
 // =============================================================================
 // Background : Radius 12 / #111111
 // Shadow     : x0, y3, blur6, #000000 5%
-// Font       : 14 / Regular / -2% / Left / #FFFFFF
-// Height     : 48px
-// Padding    : 0 16px (기본) / 0 16px 0 16px (close 있을 때 우측 조정)
+// Font       : 14 / Regular / -0.28px / line22 / Left / #FFFFFF
+// Padding    : 13px 16px (전체) → Height 48px (13*2 + line22)
 // =============================================================================
 
 // ── 위치 컨테이너 ─────────────────────────────────────────────────────────────
@@ -32,8 +31,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 48px;
-  padding: 0 16px;
+  padding: 13px 16px;
   border-radius: 12px;
   background-color: #111111;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
@@ -47,11 +45,10 @@
   &__text {
     flex: 1;
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
     color: #FFFFFF;
-    line-height: 1.4;
-    padding: 14px 0;
   }
 
   // ── Close 버튼 ──────────────────────────────────────────────────────────────

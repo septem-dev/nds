@@ -2,6 +2,44 @@
    NDS Design Library v1.0 — Interactions
    ============================================================ */
 
+/* ── Theme (Dark Mode) ────────────────────────────────────────
+   #themeToggle 버튼 onclick="toggleTheme()" 로 연결됨.
+   <html data-theme="dark|light"> 로 명시 설정 시 시스템 설정보다 우선.
+   localStorage 에 사용자 선택을 저장해 새로고침 후에도 유지. */
+(function () {
+  var STORAGE_KEY = 'nds-theme';
+  var root = document.documentElement;
+
+  function effectiveTheme() {
+    var explicit = root.getAttribute('data-theme');
+    if (explicit === 'dark' || explicit === 'light') return explicit;
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ? 'dark' : 'light';
+  }
+
+  function updateToggleLabel() {
+    var btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    btn.innerHTML = effectiveTheme() === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode';
+  }
+
+  // 저장된 설정을 최대한 빨리(페인트 전) 적용해 깜빡임 방지
+  var saved = null;
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+  if (saved === 'dark' || saved === 'light') {
+    root.setAttribute('data-theme', saved);
+  }
+
+  window.toggleTheme = function () {
+    var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+    updateToggleLabel();
+  };
+
+  document.addEventListener('DOMContentLoaded', updateToggleLabel);
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ── Accordion ────────────────────────────────────────────── */
