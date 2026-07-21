@@ -12464,21 +12464,41 @@
   <!-- =========================================================== -->
   <script>
   (function () {
-    var sections = document.querySelectorAll('.g-section');
     var navLinks = document.querySelectorAll('.g-sidebar nav a');
-    if (!sections.length || !navLinks.length || !window.IntersectionObserver) return;
+    if (!navLinks.length || !window.IntersectionObserver) return;
+
+    // 각 nav 링크(href="#id")가 실제로 가리키는 대상 엘리먼트를 관찰 대상으로 삼는다.
+    // (섹션 전체뿐 아니라 g-nav-sub 서브메뉴가 가리키는 서브섹션 wrapper도 포함)
+    var navTargets = [];
+    navLinks.forEach(function (l) {
+      var id = (l.getAttribute('href') || '').slice(1);
+      var target = id && document.getElementById(id);
+      if (target) navTargets.push(target);
+    });
+    if (!navTargets.length) return;
+
+    var visible = {};
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          navLinks.forEach(function (l) { l.classList.remove('active'); });
-          var link = document.querySelector('.g-sidebar nav a[href="#' + entry.target.id + '"]');
-          if (link) link.classList.add('active');
-        }
+        visible[entry.target.id] = entry.isIntersecting;
       });
+
+      // navTargets는 사이드바 링크 순서(= 문서 순서, 상위 섹션 다음 그 하위 서브앵커)로
+      // 정렬되어 있으므로, 보이는 것 중 마지막(가장 안쪽/아래쪽) 것을 active로 표시한다.
+      var current = null;
+      navTargets.forEach(function (t) {
+        if (visible[t.id]) current = t;
+      });
+
+      if (current) {
+        navLinks.forEach(function (l) { l.classList.remove('active'); });
+        var link = document.querySelector('.g-sidebar nav a[href="#' + current.id + '"]');
+        if (link) link.classList.add('active');
+      }
     }, { rootMargin: '-20% 0px -70% 0px' });
 
-    sections.forEach(function (s) { observer.observe(s); });
+    navTargets.forEach(function (t) { observer.observe(t); });
   })();
   </script>
 
