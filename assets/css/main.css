@@ -16,14 +16,14 @@
   --primitive-gray-dark-100: #E6E6E6;
   --primitive-gray-dark-200: #D0D0D0;
   --primitive-gray-dark-300: #B0B0B0;
-  --primitive-gray-dark-400: #929292;
+  --primitive-gray-dark-400: #909090;
   --primitive-gray-dark-500: #707070;
   --primitive-gray-dark-550: #6E6E6E;
   --primitive-gray-dark-600: #505050;
   --primitive-gray-dark-700: #404040;
   --primitive-gray-dark-800: #303030;
   --primitive-gray-dark-900: #212121;
-  --primitive-gray-font-50: #D9D9D9;
+  --primitive-gray-font-50: #FFFFFF;
   --primitive-gray-font-100: #F2F2F2;
   --primitive-gray-font-200: #D9D9D9;
   --primitive-gray-font-300: #BFBFBF;
@@ -9722,4 +9722,3 @@
   line-height: 20px;
   color: #121212;
 }
-/*# sourceMappingURL=main.css.map */
