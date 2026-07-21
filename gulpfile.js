@@ -7,6 +7,7 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
+const del = require('del');
 
 const paths = {
   html: {
@@ -90,12 +91,25 @@ function cssMinify() {
     .pipe(gulp.dest('assets/css'));
 }
 
+// Netlify가 배포하는 dist/ 폴더 — 루트 index.html, html/, assets/ 를 그대로 미러링
+function cleanDist() {
+  return del(['dist/**', '!dist']);
+}
+
+function distCopy() {
+  return gulp.src(['index.html', 'html/**/*', 'assets/**/*'], { base: '.' })
+    .pipe(gulp.dest('dist'));
+}
+
 exports.styles = styles;
 exports.html = html;
+exports.dist = gulp.series(cleanDist, distCopy);
 
 exports.build = gulp.series(
   gulp.parallel(styles, html),
-  cssMinify
+  cssMinify,
+  cleanDist,
+  distCopy
 );
 
 exports.default = gulp.series(
