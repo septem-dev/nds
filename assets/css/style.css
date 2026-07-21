@@ -126,3 +126,9 @@ body{font-family:var(--font-family-base);font-size:14px;color:var(--color-text-p
 .g-th-140{width:140px}
 .g-th-180{width:180px}
 .g-td-note{color:var(--color-text-secondary) !important;font-size:13px !important}
+
+/* ── Icon guide grid ──────────────────────────────────── */
+.g-icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:4px;margin-bottom:16px}
+.g-icon-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px 6px;border-radius:8px;background:var(--color-bg-subtle);min-height:88px}
+.g-icon-cell__name{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-tertiary);text-align:center;word-break:break-all;line-height:1.3}
+[data-theme=dark] .g-icon-cell{background:#2a2a2a}

@@ -3331,6 +3331,2512 @@
   border-bottom: 1px solid #F6F6F6;
 }
 
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.icon--account-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/account-24.svg");
+  mask-image: url("../img/icon-mono/account-24.svg");
+}
+
+.icon--admin-dot-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/admin-dot-24.svg");
+  mask-image: url("../img/icon-mono/admin-dot-24.svg");
+}
+
+.icon--admin-number-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/admin-number-24.svg");
+  mask-image: url("../img/icon-mono/admin-number-24.svg");
+}
+
+.icon--aim-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/aim-24.svg");
+  mask-image: url("../img/icon-mono/aim-24.svg");
+}
+
+.icon--alarm-notice-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/alarm-notice-24.svg");
+  mask-image: url("../img/icon-mono/alarm-notice-24.svg");
+}
+
+.icon--application-check-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/application-check-24.svg");
+  mask-image: url("../img/icon-mono/application-check-24.svg");
+}
+
+.icon--apply-insurance-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/apply-insurance-24.svg");
+  mask-image: url("../img/icon-mono/apply-insurance-24.svg");
+}
+
+.icon--arrow-down-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-down-16.svg");
+  mask-image: url("../img/icon-mono/arrow-down-16.svg");
+}
+
+.icon--arrow-down1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-down1-24.svg");
+  mask-image: url("../img/icon-mono/arrow-down1-24.svg");
+}
+
+.icon--arrow-down2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-down2-24.svg");
+  mask-image: url("../img/icon-mono/arrow-down2-24.svg");
+}
+
+.icon--arrow-left-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-left-16.svg");
+  mask-image: url("../img/icon-mono/arrow-left-16.svg");
+}
+
+.icon--arrow-left2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-left2-24.svg");
+  mask-image: url("../img/icon-mono/arrow-left2-24.svg");
+}
+
+.icon--arrow-left3-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-left3-24.svg");
+  mask-image: url("../img/icon-mono/arrow-left3-24.svg");
+}
+
+.icon--arrow-recalculate-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-recalculate-24.svg");
+  mask-image: url("../img/icon-mono/arrow-recalculate-24.svg");
+}
+
+.icon--arrow-right-12 {
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-right-12.svg");
+  mask-image: url("../img/icon-mono/arrow-right-12.svg");
+}
+
+.icon--arrow-right-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-right-16.svg");
+  mask-image: url("../img/icon-mono/arrow-right-16.svg");
+}
+
+.icon--arrow-right-line-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-right-line-16.svg");
+  mask-image: url("../img/icon-mono/arrow-right-line-16.svg");
+}
+
+.icon--arrow-right1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-right1-24.svg");
+  mask-image: url("../img/icon-mono/arrow-right1-24.svg");
+}
+
+.icon--arrow-right2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-right2-24.svg");
+  mask-image: url("../img/icon-mono/arrow-right2-24.svg");
+}
+
+.icon--arrow-up-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-up-16.svg");
+  mask-image: url("../img/icon-mono/arrow-up-16.svg");
+}
+
+.icon--arrow-up1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-up1-24.svg");
+  mask-image: url("../img/icon-mono/arrow-up1-24.svg");
+}
+
+.icon--arrow-up2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/arrow-up2-24.svg");
+  mask-image: url("../img/icon-mono/arrow-up2-24.svg");
+}
+
+.icon--bank-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/bank-24.svg");
+  mask-image: url("../img/icon-mono/bank-24.svg");
+}
+
+.icon--bullet-hyphen-4 {
+  width: 4px;
+  height: 4px;
+  -webkit-mask-image: url("../img/icon-mono/bullet-hyphen-4.svg");
+  mask-image: url("../img/icon-mono/bullet-hyphen-4.svg");
+}
+
+.icon--calendar-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/calendar-24.svg");
+  mask-image: url("../img/icon-mono/calendar-24.svg");
+}
+
+.icon--call-receiver-20 {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("../img/icon-mono/call-receiver-20.svg");
+  mask-image: url("../img/icon-mono/call-receiver-20.svg");
+}
+
+.icon--camera-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/camera-24.svg");
+  mask-image: url("../img/icon-mono/camera-24.svg");
+}
+
+.icon--cancle1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/cancle1-24.svg");
+  mask-image: url("../img/icon-mono/cancle1-24.svg");
+}
+
+.icon--cancle2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/cancle2-24.svg");
+  mask-image: url("../img/icon-mono/cancle2-24.svg");
+}
+
+.icon--card-select-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/card-select-24.svg");
+  mask-image: url("../img/icon-mono/card-select-24.svg");
+}
+
+.icon--cart-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/cart-24.svg");
+  mask-image: url("../img/icon-mono/cart-24.svg");
+}
+
+.icon--certi-ars-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/certi-ars-32.svg");
+  mask-image: url("../img/icon-mono/certi-ars-32.svg");
+}
+
+.icon--certi-fingerprint-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/certi-fingerprint-32.svg");
+  mask-image: url("../img/icon-mono/certi-fingerprint-32.svg");
+}
+
+.icon--chat-cs-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/chat-cs-24.svg");
+  mask-image: url("../img/icon-mono/chat-cs-24.svg");
+}
+
+.icon--check-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/check-16.svg");
+  mask-image: url("../img/icon-mono/check-16.svg");
+}
+
+.icon--check-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/check-24.svg");
+  mask-image: url("../img/icon-mono/check-24.svg");
+}
+
+.icon--check-line-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/check-line-24.svg");
+  mask-image: url("../img/icon-mono/check-line-24.svg");
+}
+
+.icon--circle-cancle-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/circle-cancle-24.svg");
+  mask-image: url("../img/icon-mono/circle-cancle-24.svg");
+}
+
+.icon--close1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/close1-24.svg");
+  mask-image: url("../img/icon-mono/close1-24.svg");
+}
+
+.icon--close2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/close2-24.svg");
+  mask-image: url("../img/icon-mono/close2-24.svg");
+}
+
+.icon--clover-36 {
+  width: 36px;
+  height: 36px;
+  -webkit-mask-image: url("../img/icon-mono/clover-36.svg");
+  mask-image: url("../img/icon-mono/clover-36.svg");
+}
+
+.icon--confirm-phone-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/confirm-phone-24.svg");
+  mask-image: url("../img/icon-mono/confirm-phone-24.svg");
+}
+
+.icon--continue-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/continue-24.svg");
+  mask-image: url("../img/icon-mono/continue-24.svg");
+}
+
+.icon--copy-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/copy-24.svg");
+  mask-image: url("../img/icon-mono/copy-24.svg");
+}
+
+.icon--copy-info-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/copy-info-16.svg");
+  mask-image: url("../img/icon-mono/copy-info-16.svg");
+}
+
+.icon--cs-call-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/cs-call-24.svg");
+  mask-image: url("../img/icon-mono/cs-call-24.svg");
+}
+
+.icon--cs-center-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/cs-center-24.svg");
+  mask-image: url("../img/icon-mono/cs-center-24.svg");
+}
+
+.icon--customer-verification-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/customer-verification-24.svg");
+  mask-image: url("../img/icon-mono/customer-verification-24.svg");
+}
+
+.icon--delete-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/delete-16.svg");
+  mask-image: url("../img/icon-mono/delete-16.svg");
+}
+
+.icon--delete-waste-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/delete-waste-24.svg");
+  mask-image: url("../img/icon-mono/delete-waste-24.svg");
+}
+
+.icon--domestic-franchise-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/domestic-franchise-24.svg");
+  mask-image: url("../img/icon-mono/domestic-franchise-24.svg");
+}
+
+.icon--download-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/download-16.svg");
+  mask-image: url("../img/icon-mono/download-16.svg");
+}
+
+.icon--download-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/download-24.svg");
+  mask-image: url("../img/icon-mono/download-24.svg");
+}
+
+.icon--exchange-docu-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/exchange-docu-32.svg");
+  mask-image: url("../img/icon-mono/exchange-docu-32.svg");
+}
+
+.icon--exchange-pocket-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/exchange-pocket-24.svg");
+  mask-image: url("../img/icon-mono/exchange-pocket-24.svg");
+}
+
+.icon--exchange-remittance-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/exchange-remittance-32.svg");
+  mask-image: url("../img/icon-mono/exchange-remittance-32.svg");
+}
+
+.icon--favorite-star-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/favorite-star-16.svg");
+  mask-image: url("../img/icon-mono/favorite-star-16.svg");
+}
+
+.icon--favorite-star-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/favorite-star-24.svg");
+  mask-image: url("../img/icon-mono/favorite-star-24.svg");
+}
+
+.icon--favorite-star-line-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/favorite-star-line-16.svg");
+  mask-image: url("../img/icon-mono/favorite-star-line-16.svg");
+}
+
+.icon--favorite-star1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/favorite-star1-24.svg");
+  mask-image: url("../img/icon-mono/favorite-star1-24.svg");
+}
+
+.icon--favorite-star2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/favorite-star2-24.svg");
+  mask-image: url("../img/icon-mono/favorite-star2-24.svg");
+}
+
+.icon--favorite-star2-line-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/favorite-star2-line-24.svg");
+  mask-image: url("../img/icon-mono/favorite-star2-line-24.svg");
+}
+
+.icon--filter-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/filter-24.svg");
+  mask-image: url("../img/icon-mono/filter-24.svg");
+}
+
+.icon--finance-won-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/finance-won-24.svg");
+  mask-image: url("../img/icon-mono/finance-won-24.svg");
+}
+
+.icon--foreign-exchange-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/foreign-exchange-24.svg");
+  mask-image: url("../img/icon-mono/foreign-exchange-24.svg");
+}
+
+.icon--foreign-out-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/foreign-out-32.svg");
+  mask-image: url("../img/icon-mono/foreign-out-32.svg");
+}
+
+.icon--franchise-shoot-40 {
+  width: 40px;
+  height: 40px;
+  -webkit-mask-image: url("../img/icon-mono/franchise-shoot-40.svg");
+  mask-image: url("../img/icon-mono/franchise-shoot-40.svg");
+}
+
+.icon--full-popup-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/full-popup-24.svg");
+  mask-image: url("../img/icon-mono/full-popup-24.svg");
+}
+
+.icon--fund-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/fund-24.svg");
+  mask-image: url("../img/icon-mono/fund-24.svg");
+}
+
+.icon--gold-bar-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/gold-bar-32.svg");
+  mask-image: url("../img/icon-mono/gold-bar-32.svg");
+}
+
+.icon--grip-line-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/grip-line-24.svg");
+  mask-image: url("../img/icon-mono/grip-line-24.svg");
+}
+
+.icon--heart-36 {
+  width: 36px;
+  height: 36px;
+  -webkit-mask-image: url("../img/icon-mono/heart-36.svg");
+  mask-image: url("../img/icon-mono/heart-36.svg");
+}
+
+.icon--home-28 {
+  width: 28px;
+  height: 28px;
+  -webkit-mask-image: url("../img/icon-mono/home-28.svg");
+  mask-image: url("../img/icon-mono/home-28.svg");
+}
+
+.icon--home-allone-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/home-allone-24.svg");
+  mask-image: url("../img/icon-mono/home-allone-24.svg");
+}
+
+.icon--id-login-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/id-login-24.svg");
+  mask-image: url("../img/icon-mono/id-login-24.svg");
+}
+
+.icon--indicator-play-12 {
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url("../img/icon-mono/indicator-play-12.svg");
+  mask-image: url("../img/icon-mono/indicator-play-12.svg");
+}
+
+.icon--indicator-play-8 {
+  width: 8px;
+  height: 8px;
+  -webkit-mask-image: url("../img/icon-mono/indicator-play-8.svg");
+  mask-image: url("../img/icon-mono/indicator-play-8.svg");
+}
+
+.icon--indicator-stop-12 {
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url("../img/icon-mono/indicator-stop-12.svg");
+  mask-image: url("../img/icon-mono/indicator-stop-12.svg");
+}
+
+.icon--indicator-stop-8 {
+  width: 8px;
+  height: 8px;
+  -webkit-mask-image: url("../img/icon-mono/indicator-stop-8.svg");
+  mask-image: url("../img/icon-mono/indicator-stop-8.svg");
+}
+
+.icon--input-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/input-24.svg");
+  mask-image: url("../img/icon-mono/input-24.svg");
+}
+
+.icon--input2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/input2-24.svg");
+  mask-image: url("../img/icon-mono/input2-24.svg");
+}
+
+.icon--insurance-heart2-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/insurance-heart2-32.svg");
+  mask-image: url("../img/icon-mono/insurance-heart2-32.svg");
+}
+
+.icon--interest-heart-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/interest-heart-24.svg");
+  mask-image: url("../img/icon-mono/interest-heart-24.svg");
+}
+
+.icon--lifeplus-28 {
+  width: 28px;
+  height: 28px;
+  -webkit-mask-image: url("../img/icon-mono/lifeplus-28.svg");
+  mask-image: url("../img/icon-mono/lifeplus-28.svg");
+}
+
+.icon--lounge-earth-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/lounge-earth-24.svg");
+  mask-image: url("../img/icon-mono/lounge-earth-24.svg");
+}
+
+.icon--mall-28 {
+  width: 28px;
+  height: 28px;
+  -webkit-mask-image: url("../img/icon-mono/mall-28.svg");
+  mask-image: url("../img/icon-mono/mall-28.svg");
+}
+
+.icon--market-price-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/market-price-24.svg");
+  mask-image: url("../img/icon-mono/market-price-24.svg");
+}
+
+.icon--menu-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/menu-24.svg");
+  mask-image: url("../img/icon-mono/menu-24.svg");
+}
+
+.icon--minus-12 {
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url("../img/icon-mono/minus-12.svg");
+  mask-image: url("../img/icon-mono/minus-12.svg");
+}
+
+.icon--minus-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/minus-24.svg");
+  mask-image: url("../img/icon-mono/minus-24.svg");
+}
+
+.icon--mobile-center-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/mobile-center-24.svg");
+  mask-image: url("../img/icon-mono/mobile-center-24.svg");
+}
+
+.icon--mydata-28 {
+  width: 28px;
+  height: 28px;
+  -webkit-mask-image: url("../img/icon-mono/mydata-28.svg");
+  mask-image: url("../img/icon-mono/mydata-28.svg");
+}
+
+.icon--next-arrow-12 {
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url("../img/icon-mono/next-arrow-12.svg");
+  mask-image: url("../img/icon-mono/next-arrow-12.svg");
+}
+
+.icon--nh-group-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/nh-group-24.svg");
+  mask-image: url("../img/icon-mono/nh-group-24.svg");
+}
+
+.icon--nh-mydata-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/nh-mydata-24.svg");
+  mask-image: url("../img/icon-mono/nh-mydata-24.svg");
+}
+
+.icon--notice-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/notice-24.svg");
+  mask-image: url("../img/icon-mono/notice-24.svg");
+}
+
+.icon--o-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/o-24.svg");
+  mask-image: url("../img/icon-mono/o-24.svg");
+}
+
+.icon--overseas-payment-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/overseas-payment-24.svg");
+  mask-image: url("../img/icon-mono/overseas-payment-24.svg");
+}
+
+.icon--payment-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/payment-24.svg");
+  mask-image: url("../img/icon-mono/payment-24.svg");
+}
+
+.icon--payment-card-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/payment-card-24.svg");
+  mask-image: url("../img/icon-mono/payment-card-24.svg");
+}
+
+.icon--pencil-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/pencil-24.svg");
+  mask-image: url("../img/icon-mono/pencil-24.svg");
+}
+
+.icon--phone-cs-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/phone-cs-24.svg");
+  mask-image: url("../img/icon-mono/phone-cs-24.svg");
+}
+
+.icon--photo-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/photo-24.svg");
+  mask-image: url("../img/icon-mono/photo-24.svg");
+}
+
+.icon--plus-12 {
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url("../img/icon-mono/plus-12.svg");
+  mask-image: url("../img/icon-mono/plus-12.svg");
+}
+
+.icon--plus-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/plus-16.svg");
+  mask-image: url("../img/icon-mono/plus-16.svg");
+}
+
+.icon--plus-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/plus-24.svg");
+  mask-image: url("../img/icon-mono/plus-24.svg");
+}
+
+.icon--plus-add-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/plus-add-24.svg");
+  mask-image: url("../img/icon-mono/plus-add-24.svg");
+}
+
+.icon--point-28 {
+  width: 28px;
+  height: 28px;
+  -webkit-mask-image: url("../img/icon-mono/point-28.svg");
+  mask-image: url("../img/icon-mono/point-28.svg");
+}
+
+.icon--product-bag-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/product-bag-24.svg");
+  mask-image: url("../img/icon-mono/product-bag-24.svg");
+}
+
+.icon--product-new-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/product-new-24.svg");
+  mask-image: url("../img/icon-mono/product-new-24.svg");
+}
+
+.icon--profile-add-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/profile-add-24.svg");
+  mask-image: url("../img/icon-mono/profile-add-24.svg");
+}
+
+.icon--profile-confirm-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/profile-confirm-24.svg");
+  mask-image: url("../img/icon-mono/profile-confirm-24.svg");
+}
+
+.icon--publish-insurance-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/publish-insurance-24.svg");
+  mask-image: url("../img/icon-mono/publish-insurance-24.svg");
+}
+
+.icon--receipt-branch-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/receipt-branch-32.svg");
+  mask-image: url("../img/icon-mono/receipt-branch-32.svg");
+}
+
+.icon--refresh-16 {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url("../img/icon-mono/refresh-16.svg");
+  mask-image: url("../img/icon-mono/refresh-16.svg");
+}
+
+.icon--refresh-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/refresh-24.svg");
+  mask-image: url("../img/icon-mono/refresh-24.svg");
+}
+
+.icon--search-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/search-24.svg");
+  mask-image: url("../img/icon-mono/search-24.svg");
+}
+
+.icon--security-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/security-24.svg");
+  mask-image: url("../img/icon-mono/security-24.svg");
+}
+
+.icon--security-info-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/security-info-24.svg");
+  mask-image: url("../img/icon-mono/security-info-24.svg");
+}
+
+.icon--setup-nuts-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/setup-nuts-24.svg");
+  mask-image: url("../img/icon-mono/setup-nuts-24.svg");
+}
+
+.icon--share-copylink-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-copylink-32.svg");
+  mask-image: url("../img/icon-mono/share-copylink-32.svg");
+}
+
+.icon--share-facebook-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-facebook-32.svg");
+  mask-image: url("../img/icon-mono/share-facebook-32.svg");
+}
+
+.icon--share-kakaostory-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-kakaostory-32.svg");
+  mask-image: url("../img/icon-mono/share-kakaostory-32.svg");
+}
+
+.icon--share-kakaotalk-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-kakaotalk-32.svg");
+  mask-image: url("../img/icon-mono/share-kakaotalk-32.svg");
+}
+
+.icon--share-kakaotalk1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share-kakaotalk1-24.svg");
+  mask-image: url("../img/icon-mono/share-kakaotalk1-24.svg");
+}
+
+.icon--share-kakaotalk2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share-kakaotalk2-24.svg");
+  mask-image: url("../img/icon-mono/share-kakaotalk2-24.svg");
+}
+
+.icon--share-link-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share-link-24.svg");
+  mask-image: url("../img/icon-mono/share-link-24.svg");
+}
+
+.icon--share-link-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-link-32.svg");
+  mask-image: url("../img/icon-mono/share-link-32.svg");
+}
+
+.icon--share-message-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share-message-24.svg");
+  mask-image: url("../img/icon-mono/share-message-24.svg");
+}
+
+.icon--share-message-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-message-32.svg");
+  mask-image: url("../img/icon-mono/share-message-32.svg");
+}
+
+.icon--share-message1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share-message1-24.svg");
+  mask-image: url("../img/icon-mono/share-message1-24.svg");
+}
+
+.icon--share-message2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share-message2-24.svg");
+  mask-image: url("../img/icon-mono/share-message2-24.svg");
+}
+
+.icon--share-present-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-present-32.svg");
+  mask-image: url("../img/icon-mono/share-present-32.svg");
+}
+
+.icon--share-twitter-32 {
+  width: 32px;
+  height: 32px;
+  -webkit-mask-image: url("../img/icon-mono/share-twitter-32.svg");
+  mask-image: url("../img/icon-mono/share-twitter-32.svg");
+}
+
+.icon--share-wallet-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share-wallet-24.svg");
+  mask-image: url("../img/icon-mono/share-wallet-24.svg");
+}
+
+.icon--share1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share1-24.svg");
+  mask-image: url("../img/icon-mono/share1-24.svg");
+}
+
+.icon--share2-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/share2-24.svg");
+  mask-image: url("../img/icon-mono/share2-24.svg");
+}
+
+.icon--shop-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/shop-24.svg");
+  mask-image: url("../img/icon-mono/shop-24.svg");
+}
+
+.icon--stockoption-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/stockoption-24.svg");
+  mask-image: url("../img/icon-mono/stockoption-24.svg");
+}
+
+.icon--terms-agree-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/terms-agree-24.svg");
+  mask-image: url("../img/icon-mono/terms-agree-24.svg");
+}
+
+.icon--tooltip-error-20 {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("../img/icon-mono/tooltip-error-20.svg");
+  mask-image: url("../img/icon-mono/tooltip-error-20.svg");
+}
+
+.icon--tooltip1-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/tooltip1-24.svg");
+  mask-image: url("../img/icon-mono/tooltip1-24.svg");
+}
+
+.icon--x-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/x-24.svg");
+  mask-image: url("../img/icon-mono/x-24.svg");
+}
+
+.icon--zoom-in-24 {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../img/icon-mono/zoom-in-24.svg");
+  mask-image: url("../img/icon-mono/zoom-in-24.svg");
+}
+
+.icon-img {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.icon-img--account-deposit-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/account-deposit-32.svg");
+}
+
+.icon-img--amount-dollar-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/amount-dollar-32.svg");
+}
+
+.icon-img--amount-won-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/amount-won-32.svg");
+}
+
+.icon-img--analysis-reanalyzing-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/analysis-reanalyzing-36.svg");
+}
+
+.icon-img--announce-bell-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/announce-bell-24.svg");
+}
+
+.icon-img--apart-application-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/apart-application-32.svg");
+}
+
+.icon-img--assets-0percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-0percent-36.svg");
+}
+
+.icon-img--assets-100percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-100percent-36.svg");
+}
+
+.icon-img--assets-15percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-15percent-36.svg");
+}
+
+.icon-img--assets-20percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-20percent-36.svg");
+}
+
+.icon-img--assets-50percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-50percent-36.svg");
+}
+
+.icon-img--assets-90percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-90percent-36.svg");
+}
+
+.icon-img--assets-upto-100000w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-100000w-36.svg");
+}
+
+.icon-img--assets-upto-10000w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-10000w-36.svg");
+}
+
+.icon-img--assets-upto-1000w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-1000w-36.svg");
+}
+
+.icon-img--assets-upto-100w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-100w-36.svg");
+}
+
+.icon-img--assets-upto-10percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-10percent-36.svg");
+}
+
+.icon-img--assets-upto-10w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-10w-36.svg");
+}
+
+.icon-img--assets-upto-15percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-15percent-36.svg");
+}
+
+.icon-img--assets-upto-200w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-200w-36.svg");
+}
+
+.icon-img--assets-upto-20percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-20percent-36.svg");
+}
+
+.icon-img--assets-upto-30percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-30percent-36.svg");
+}
+
+.icon-img--assets-upto-30w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-30w-36.svg");
+}
+
+.icon-img--assets-upto-3percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-3percent-36.svg");
+}
+
+.icon-img--assets-upto-400w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-400w-36.svg");
+}
+
+.icon-img--assets-upto-40percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-40percent-36.svg");
+}
+
+.icon-img--assets-upto-50000w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-50000w-36.svg");
+}
+
+.icon-img--assets-upto-5000w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-5000w-36.svg");
+}
+
+.icon-img--assets-upto-500w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-500w-36.svg");
+}
+
+.icon-img--assets-upto-50percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-50percent-36.svg");
+}
+
+.icon-img--assets-upto-50w-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-50w-36.svg");
+}
+
+.icon-img--assets-upto-5percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-5percent-36.svg");
+}
+
+.icon-img--assets-upto-70percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-70percent-36.svg");
+}
+
+.icon-img--assets-upto-7percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-7percent-36.svg");
+}
+
+.icon-img--assets-upto-90percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/assets-upto-90percent-36.svg");
+}
+
+.icon-img--auto-charge-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/auto-charge-24.svg");
+}
+
+.icon-img--auto-payment-result-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/auto-payment-result-32.svg");
+}
+
+.icon-img--auto-withdrawal-account-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/auto-withdrawal-account-32.svg");
+}
+
+.icon-img--baby-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/baby-36.svg");
+}
+
+.icon-img--bankbook-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/bankbook-32.svg");
+}
+
+.icon-img--bankbook-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/bankbook-36.svg");
+}
+
+.icon-img--bar-cancel-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/bar-cancel-36.svg");
+}
+
+.icon-img--bar-caution-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/bar-caution-36.svg");
+}
+
+.icon-img--bar-decrease-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/bar-decrease-36.svg");
+}
+
+.icon-img--bar-increase-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/bar-increase-36.svg");
+}
+
+.icon-img--bar-join-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/bar-join-36.svg");
+}
+
+.icon-img--best-crown-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/best-crown-32.svg");
+}
+
+.icon-img--block-account-opening-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/block-account-opening-32.svg");
+}
+
+.icon-img--block-credit-trans-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/block-credit-trans-32.svg");
+}
+
+.icon-img--calculator-coin-48 {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/icon-color/calculator-coin-48.svg");
+}
+
+.icon-img--calculator-home-48 {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/icon-color/calculator-home-48.svg");
+}
+
+.icon-img--certi-face-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-face-32.svg");
+}
+
+.icon-img--certi-financial-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-financial-32.svg");
+}
+
+.icon-img--certi-joint-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-joint-32.svg");
+}
+
+.icon-img--certi-joint2-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-joint2-32.svg");
+}
+
+.icon-img--certi-kakao-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-kakao-32.svg");
+}
+
+.icon-img--certi-kakao-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/certi-kakao-56.svg");
+}
+
+.icon-img--certi-my-account-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-my-account-32.svg");
+}
+
+.icon-img--certi-naver-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-naver-32.svg");
+}
+
+.icon-img--certi-naver-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/certi-naver-56.svg");
+}
+
+.icon-img--certi-nh-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-nh-32.svg");
+}
+
+.icon-img--certi-nh-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/certi-nh-56.svg");
+}
+
+.icon-img--certi-pass-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-pass-32.svg");
+}
+
+.icon-img--certi-pass-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/certi-pass-56.svg");
+}
+
+.icon-img--certi-pattern-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-pattern-32.svg");
+}
+
+.icon-img--certi-pw-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-pw-32.svg");
+}
+
+.icon-img--certi-security-device-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-security-device-32.svg");
+}
+
+.icon-img--certi-sms-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-sms-32.svg");
+}
+
+.icon-img--certi-toss-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-toss-32.svg");
+}
+
+.icon-img--certi-toss-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/certi-toss-56.svg");
+}
+
+.icon-img--certi-usim-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-usim-32.svg");
+}
+
+.icon-img--certi-videotelephony-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/certi-videotelephony-32.svg");
+}
+
+.icon-img--certi-yeskey-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/certi-yeskey-56.svg");
+}
+
+.icon-img--certificate-48 {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/icon-color/certificate-48.svg");
+}
+
+.icon-img--certificate-empty-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/certificate-empty-56.svg");
+}
+
+.icon-img--change-auto-payment-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/change-auto-payment-32.svg");
+}
+
+.icon-img--check-payment-result-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/check-payment-result-32.svg");
+}
+
+.icon-img--children-insurance-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/children-insurance-32.svg");
+}
+
+.icon-img--coin-bank-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/coin-bank-32.svg");
+}
+
+.icon-img--deposit-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/deposit-36.svg");
+}
+
+.icon-img--diversified-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/diversified-32.svg");
+}
+
+.icon-img--elf-shield-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/elf-shield-32.svg");
+}
+
+.icon-img--elw-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/elw-36.svg");
+}
+
+.icon-img--estate-capital-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/estate-capital-36.svg");
+}
+
+.icon-img--finance-pocket-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/finance-pocket-36.svg");
+}
+
+.icon-img--financial-bond-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/financial-bond-36.svg");
+}
+
+.icon-img--financial-recovery-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/financial-recovery-36.svg");
+}
+
+.icon-img--folder-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/folder-24.svg");
+}
+
+.icon-img--folder-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/folder-32.svg");
+}
+
+.icon-img--foreign-exchange-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/foreign-exchange-32.svg");
+}
+
+.icon-img--foreign-exchange-account-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/foreign-exchange-account-32.svg");
+}
+
+.icon-img--foreign-input-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/foreign-input-32.svg");
+}
+
+.icon-img--foreign-storage-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/foreign-storage-32.svg");
+}
+
+.icon-img--franchise-qr-40 {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/icon-color/franchise-qr-40.svg");
+}
+
+.icon-img--fund-coinhand-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/fund-coinhand-32.svg");
+}
+
+.icon-img--fund-graph-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/fund-graph-32.svg");
+}
+
+.icon-img--global-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/global-32.svg");
+}
+
+.icon-img--goal1-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/goal1-36.svg");
+}
+
+.icon-img--goal2-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/goal2-36.svg");
+}
+
+.icon-img--gold-percent-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/gold-percent-32.svg");
+}
+
+.icon-img--gold-won-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/gold-won-32.svg");
+}
+
+.icon-img--gov-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/gov-32.svg");
+}
+
+.icon-img--guard-48 {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/icon-color/guard-48.svg");
+}
+
+.icon-img--guide-deposit-product-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/guide-deposit-product-32.svg");
+}
+
+.icon-img--guide-own-goods-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/guide-own-goods-32.svg");
+}
+
+.icon-img--hasten-explain-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/hasten-explain-36.svg");
+}
+
+.icon-img--home-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/home-28.svg");
+}
+
+.icon-img--house1-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/house1-36.svg");
+}
+
+.icon-img--housewife-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/housewife-36.svg");
+}
+
+.icon-img--hybrid-roboadviser-32-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/hybrid-roboadviser-32-32.svg");
+}
+
+.icon-img--ico-40 {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/icon-color/ico-40.svg");
+}
+
+.icon-img--ico-60 {
+  width: 60px;
+  height: 60px;
+  background-image: url("../img/icon-color/ico-60.svg");
+}
+
+.icon-img--identification-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/identification-32.svg");
+}
+
+.icon-img--installment-save-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/installment-save-32.svg");
+}
+
+.icon-img--institutional-change-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/institutional-change-36.svg");
+}
+
+.icon-img--insurance-annuity-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/insurance-annuity-24.svg");
+}
+
+.icon-img--insurance-gift-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/insurance-gift-28.svg");
+}
+
+.icon-img--insurance-heart-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/insurance-heart-32.svg");
+}
+
+.icon-img--investor-1th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/investor-1th-36.svg");
+}
+
+.icon-img--investor-2th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/investor-2th-36.svg");
+}
+
+.icon-img--investor-3th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/investor-3th-36.svg");
+}
+
+.icon-img--investor-4th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/investor-4th-36.svg");
+}
+
+.icon-img--investor-5th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/investor-5th-36.svg");
+}
+
+.icon-img--investor-analysis-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/investor-analysis-36.svg");
+}
+
+.icon-img--isa-shield-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/isa-shield-32.svg");
+}
+
+.icon-img--keep-gift-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/keep-gift-28.svg");
+}
+
+.icon-img--level-1th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/level-1th-36.svg");
+}
+
+.icon-img--level-2th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/level-2th-36.svg");
+}
+
+.icon-img--level-3th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/level-3th-36.svg");
+}
+
+.icon-img--level-4th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/level-4th-36.svg");
+}
+
+.icon-img--level-5th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/level-5th-36.svg");
+}
+
+.icon-img--level-6th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/level-6th-36.svg");
+}
+
+.icon-img--lifeplus-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/lifeplus-28.svg");
+}
+
+.icon-img--loan-pocket-fink-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/loan-pocket-fink-32.svg");
+}
+
+.icon-img--loan-pocket-orange-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/loan-pocket-orange-32.svg");
+}
+
+.icon-img--low-rate-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/low-rate-36.svg");
+}
+
+.icon-img--mail-cs-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/mail-cs-24.svg");
+}
+
+.icon-img--major-index-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/major-index-24.svg");
+}
+
+.icon-img--mall-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/mall-28.svg");
+}
+
+.icon-img--management-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/management-24.svg");
+}
+
+.icon-img--management-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/management-32.svg");
+}
+
+.icon-img--meritorious-person-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/meritorious-person-32.svg");
+}
+
+.icon-img--military-veterans-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/military-veterans-32.svg");
+}
+
+.icon-img--minor-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/minor-36.svg");
+}
+
+.icon-img--mixed-fund-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/mixed-fund-36.svg");
+}
+
+.icon-img--money-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/money-36.svg");
+}
+
+.icon-img--money-48 {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/icon-color/money-48.svg");
+}
+
+.icon-img--monitor-48 {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/icon-color/monitor-48.svg");
+}
+
+.icon-img--monitoring-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/monitoring-24.svg");
+}
+
+.icon-img--monitoring-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/monitoring-32.svg");
+}
+
+.icon-img--my-phone-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/my-phone-32.svg");
+}
+
+.icon-img--mydata-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/mydata-28.svg");
+}
+
+.icon-img--nh-account-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/nh-account-32.svg");
+}
+
+.icon-img--nh-robo-dream-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/nh-robo-dream-32.svg");
+}
+
+.icon-img--nhis-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/nhis-32.svg");
+}
+
+.icon-img--no-data-56 {
+  width: 56px;
+  height: 56px;
+  background-image: url("../img/icon-color/no-data-56.svg");
+}
+
+.icon-img--no-risk-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/no-risk-36.svg");
+}
+
+.icon-img--not-applicable-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/not-applicable-36.svg");
+}
+
+.icon-img--note-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/note-36.svg");
+}
+
+.icon-img--notice-candy-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-candy-28.svg");
+}
+
+.icon-img--notice-community-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-community-28.svg");
+}
+
+.icon-img--notice-electronic-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-electronic-28.svg");
+}
+
+.icon-img--notice-event-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-event-28.svg");
+}
+
+.icon-img--notice-new-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-new-28.svg");
+}
+
+.icon-img--notice-nts-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-nts-28.svg");
+}
+
+.icon-img--notice-recommend-product-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-recommend-product-28.svg");
+}
+
+.icon-img--notice-remittance-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-remittance-28.svg");
+}
+
+.icon-img--notice-smart-talk-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-smart-talk-28.svg");
+}
+
+.icon-img--notice-the-mouim-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-the-mouim-28.svg");
+}
+
+.icon-img--notice-withdrawal-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/notice-withdrawal-28.svg");
+}
+
+.icon-img--one-year1-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/one-year1-36.svg");
+}
+
+.icon-img--one-year2-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/one-year2-36.svg");
+}
+
+.icon-img--own-name-phone-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/own-name-phone-32.svg");
+}
+
+.icon-img--pension-pocket-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/pension-pocket-32.svg");
+}
+
+.icon-img--period-10y-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-10y-low-36.svg");
+}
+
+.icon-img--period-1y-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-1y-high-36.svg");
+}
+
+.icon-img--period-1y-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-1y-low-36.svg");
+}
+
+.icon-img--period-20y-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-20y-high-36.svg");
+}
+
+.icon-img--period-20y-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-20y-low-36.svg");
+}
+
+.icon-img--period-2y-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-2y-high-36.svg");
+}
+
+.icon-img--period-2y-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-2y-low-36.svg");
+}
+
+.icon-img--period-30y-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-30y-high-36.svg");
+}
+
+.icon-img--period-30y-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-30y-low-36.svg");
+}
+
+.icon-img--period-3y-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-3y-high-36.svg");
+}
+
+.icon-img--period-3y-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-3y-low-36.svg");
+}
+
+.icon-img--period-65y-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-65y-high-36.svg");
+}
+
+.icon-img--period-6m-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-6m-36.svg");
+}
+
+.icon-img--period-6m-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-6m-low-36.svg");
+}
+
+.icon-img--period-7y-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-7y-low-36.svg");
+}
+
+.icon-img--period-calendar-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/period-calendar-32.svg");
+}
+
+.icon-img--period-expiry-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-expiry-36.svg");
+}
+
+.icon-img--period-none-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/period-none-36.svg");
+}
+
+.icon-img--phone-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/phone-32.svg");
+}
+
+.icon-img--play-video-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/play-video-32.svg");
+}
+
+.icon-img--point-28 {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon-color/point-28.svg");
+}
+
+.icon-img--present-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/present-36.svg");
+}
+
+.icon-img--product-thumb-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/product-thumb-24.svg");
+}
+
+.icon-img--profit-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/profit-high-36.svg");
+}
+
+.icon-img--profit-low-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/profit-low-36.svg");
+}
+
+.icon-img--profit-none-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/profit-none-36.svg");
+}
+
+.icon-img--ranking-1th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ranking-1th-36.svg");
+}
+
+.icon-img--ranking-2th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ranking-2th-36.svg");
+}
+
+.icon-img--ranking-3th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ranking-3th-36.svg");
+}
+
+.icon-img--ranking-4th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ranking-4th-36.svg");
+}
+
+.icon-img--ranking-5th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ranking-5th-36.svg");
+}
+
+.icon-img--ranking-6th-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ranking-6th-36.svg");
+}
+
+.icon-img--rates-calculator-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/rates-calculator-32.svg");
+}
+
+.icon-img--ratio-20percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ratio-20percent-36.svg");
+}
+
+.icon-img--ratio-30percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ratio-30percent-36.svg");
+}
+
+.icon-img--ratio-80percent-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ratio-80percent-36.svg");
+}
+
+.icon-img--ratio-80percent-high-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ratio-80percent-high-36.svg");
+}
+
+.icon-img--rebalancing-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/rebalancing-32.svg");
+}
+
+.icon-img--received-paid-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/received-paid-32.svg");
+}
+
+.icon-img--recommed-fund-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/recommed-fund-32.svg");
+}
+
+.icon-img--repayment-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/repayment-32.svg");
+}
+
+.icon-img--retiree-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/retiree-36.svg");
+}
+
+.icon-img--retirement-capital-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/retirement-capital-36.svg");
+}
+
+.icon-img--retirement-pension-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/retirement-pension-32.svg");
+}
+
+.icon-img--return-rate-search-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/return-rate-search-24.svg");
+}
+
+.icon-img--ring-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/ring-36.svg");
+}
+
+.icon-img--saving-48 {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/icon-color/saving-48.svg");
+}
+
+.icon-img--security-insurance-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/security-insurance-32.svg");
+}
+
+.icon-img--senior-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/senior-36.svg");
+}
+
+.icon-img--service-branch-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/service-branch-32.svg");
+}
+
+.icon-img--service-counselor-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/service-counselor-32.svg");
+}
+
+.icon-img--service-faq-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/service-faq-32.svg");
+}
+
+.icon-img--service-time-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/service-time-32.svg");
+}
+
+.icon-img--short-term-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/short-term-36.svg");
+}
+
+.icon-img--silver-percent-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/silver-percent-32.svg");
+}
+
+.icon-img--silver-won-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/silver-won-32.svg");
+}
+
+.icon-img--slight-risk-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/slight-risk-36.svg");
+}
+
+.icon-img--source-income-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/source-income-36.svg");
+}
+
+.icon-img--stock-fund-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/stock-fund-36.svg");
+}
+
+.icon-img--suitcase-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/suitcase-36.svg");
+}
+
+.icon-img--target-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/target-32.svg");
+}
+
+.icon-img--tendency-graph-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/tendency-graph-24.svg");
+}
+
+.icon-img--three-years-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/three-years-36.svg");
+}
+
+.icon-img--timer-36 {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/icon-color/timer-36.svg");
+}
+
+.icon-img--tooltip2-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/tooltip2-24.svg");
+}
+
+.icon-img--transaction-time-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/transaction-time-32.svg");
+}
+
+.icon-img--travel-insurance-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/travel-insurance-32.svg");
+}
+
+.icon-img--trust-charitable-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/trust-charitable-24.svg");
+}
+
+.icon-img--trust-graph-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/trust-graph-32.svg");
+}
+
+.icon-img--trust-money-24 {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon-color/trust-money-24.svg");
+}
+
+.icon-img--variable-shield-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/variable-shield-32.svg");
+}
+
+.icon-img--verifying-info-32 {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/icon-color/verifying-info-32.svg");
+}
+
 .indicator-number {
   display: inline-flex;
   align-items: center;
@@ -9722,4 +12228,3 @@
   line-height: 20px;
   color: #121212;
 }
-/*# sourceMappingURL=main.css.map */
