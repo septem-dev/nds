@@ -281,20 +281,38 @@ document.addEventListener('DOMContentLoaded', function () {
   if (cbIndet) cbIndet.indeterminate = true;
 
   /* ── Sidebar 스크롤 active 표시 ──────────────────────────── */
-  var sections = document.querySelectorAll('.g-section');
+  // 각 nav 링크(href="#id")가 가리키는 실제 대상 엘리먼트를 관찰 대상으로 삼는다.
+  // (섹션 전체뿐 아니라 g-nav-sub 서브메뉴가 가리키는 g-sub-title 등도 포함)
   var navLinks = document.querySelectorAll('.g-sidebar nav a');
+  var navTargets = [];
+  navLinks.forEach(function (l) {
+    var id = (l.getAttribute('href') || '').slice(1);
+    var target = id && document.getElementById(id);
+    if (target) navTargets.push(target);
+  });
+
+  var visible = {};
 
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        navLinks.forEach(function (l) { l.classList.remove('active'); });
-        var link = document.querySelector('.g-sidebar nav a[href="#' + e.target.id + '"]');
-        if (link) link.classList.add('active');
-      }
+      visible[e.target.id] = e.isIntersecting;
     });
+
+    // navTargets는 사이드바 링크 순서(= 문서 순서, 상위 섹션 다음 그 하위 서브앵커)로
+    // 정렬되어 있으므로, 보이는 것 중 마지막(가장 안쪽/아래쪽) 것을 active로 표시한다.
+    var current = null;
+    navTargets.forEach(function (t) {
+      if (visible[t.id]) current = t;
+    });
+
+    if (current) {
+      navLinks.forEach(function (l) { l.classList.remove('active'); });
+      var link = document.querySelector('.g-sidebar nav a[href="#' + current.id + '"]');
+      if (link) link.classList.add('active');
+    }
   }, { rootMargin: '-20% 0px -70% 0px' });
 
-  sections.forEach(function (s) { observer.observe(s); });
+  navTargets.forEach(function (t) { observer.observe(t); });
 
   /* ── Tooltip-card 닫기 버튼 ──────────────────────────────── */
   document.querySelectorAll('.tooltip-card__close').forEach(function (btn) {
