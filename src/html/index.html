@@ -47,8 +47,9 @@
 	  <a href="#secLayout">Layout</a>
 	  <a href="#secIcon">Icon</a>
 	  <a href="#secIconSystem" class="g-nav-sub">— System</a>
-	  <a href="#secIconFlag" class="g-nav-sub">— Flag</a>
-	  <a href="#secIconLogo" class="g-nav-sub">— Logo</a>
+	  <a href="#secImage">Image</a>
+	  <a href="#secImageFlag" class="g-nav-sub">— Flag</a>
+	  <a href="#secImageLogo" class="g-nav-sub">— Logo</a>
 	</nav>
   </div>
   <div class="g-nav-group">
@@ -1418,8 +1419,6 @@
       <tr><td><code>.icon--{name}</code></td><td>개별 단색 아이콘 (예: <code>.icon--plus-12</code>) — width/height 고정, mask-image 지정</td></tr>
       <tr><td><code>.icon-img</code></td><td>멀티컬러/그라데이션 아이콘 베이스. background-image로 원본 색 그대로 표시</td></tr>
       <tr><td><code>.icon-img--{name}</code></td><td>개별 멀티컬러 아이콘 (예: <code>.icon-img--certi-nh-32</code>)</td></tr>
-      <tr><td><code>.icon-flag--{name}</code></td><td>국기 아이콘, <code>.icon-img</code> 베이스 재사용 (예: <code>.icon-flag--flag-korea-24</code>) — 96개</td></tr>
-      <tr><td><code>.icon-logo--{name}</code></td><td>브랜드 로고, <code>.icon-img</code> 베이스 재사용 (예: <code>.icon-logo--bank-nh-32</code>) — 382개</td></tr>
     </table>
 
     <p class="g-sub-title" id="secIconSystem">System</p>
@@ -1874,7 +1873,20 @@
       <div class="g-icon-cell"><span class="icon icon--point-28" style="color:#333333"></span><span class="g-icon-cell__name">point-28</span></div>
     </div>
 
-    <p class="g-sub-title" id="secIconFlag">Flag</p>
+  </section>
+
+  <!-- ===================== IMAGE ===================== -->
+  <section class="g-section" id="secImage">
+    <h3 class="g-section-title">Image</h3>
+    <p class="g-desc">Figma Image Guide(node 265:14075) 기준. 국기(Flag)와 은행/보험/증권/기타 브랜드 로고(Logo)는 원본 색상을 그대로 표시하는 이미지 에셋입니다. Icon과 마찬가지로 <code>.icon-img</code> 베이스를 재사용하되, 재색상이 금지되는 브랜드/국기 전용 모디파이어를 사용합니다.</p>
+
+    <table class="g-table">
+      <tr><th>클래스</th><th>설명</th></tr>
+      <tr><td><code>.icon-flag--{name}</code></td><td>국기 이미지, <code>.icon-img</code> 베이스 재사용 (예: <code>.icon-flag--flag-korea-24</code>) — 96개</td></tr>
+      <tr><td><code>.icon-logo--{name}</code></td><td>브랜드 로고 이미지, <code>.icon-img</code> 베이스 재사용 (예: <code>.icon-logo--bank-nh-32</code>) — 382개</td></tr>
+    </table>
+
+    <p class="g-sub-title" id="secImageFlag">Flag</p>
     <p class="g-desc--mb24">국가 국기 아이콘 (48개국 x 24/32px). 국기는 원본 색을 그대로 표시하므로 <code>.icon-img</code>를 재사용하는 <code>.icon-flag--{name}</code>로 지정합니다.</p>
     <p class="g-palette-row-title" style="margin:12px 0 6px">24px (48개)</p>
     <div class="g-icon-grid">
@@ -1979,7 +1991,7 @@
       <div class="g-icon-cell"><span class="icon-img icon-flag--flag-zimbabwe-32"></span><span class="g-icon-cell__name">flag-zimbabwe-32</span></div>
     </div>
 
-    <p class="g-sub-title" id="secIconLogo">Logo</p>
+    <p class="g-sub-title" id="secImageLogo">Logo</p>
     <p class="g-desc--mb24">은행/보험/증권/기타 브랜드 로고 (382개). 브랜드 색을 그대로 표시하므로 <code>.icon-img</code>를 재사용하는 <code>.icon-logo--{name}</code>로 지정합니다.</p>
     <p class="g-palette-row-title" style="margin:12px 0 6px">Bank (은행) (135개)</p>
     <div class="g-icon-grid">
