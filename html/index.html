@@ -11195,13 +11195,37 @@
   </div>
 
   <script>
-  function toggleAccordion(subId, headerEl) {
-    var sub = document.getElementById(subId);
-    var chevronId = subId.replace('sub', 'chevron');
-    var chevron = document.getElementById(chevronId);
-    var isOpen = sub.style.display !== 'none';
-    sub.style.display = isOpen ? 'none' : 'block';
-    if (chevron) chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+  // toggleAccordion은 두 가지 호출 방식을 모두 지원한다.
+  // 1) 문자열 id 방식(BS 캘린더/피커 등 기존 서브 아코디언): toggleAccordion('acc-sub-1', this)
+  //    'sub'가 포함된 id → 'chevron'으로 바꾼 id의 엘리먼트를 화살표로 사용, display로 토글
+  // 2) 트리거 엘리먼트 방식(accordion-notice/line/box/gray, card__accordion-toggle 등):
+  //    onclick="toggleAccordion(this)" — aria-expanded를 토글하고, 화살표 회전은 CSS
+  //    ([aria-expanded="true"] 셀렉터)가 처리하므로, 형제 중 첫 .accordion-content에
+  //    open 클래스만 토글해주면 된다.
+  function toggleAccordion(subIdOrEl, headerEl) {
+    if (typeof subIdOrEl === 'string') {
+      var sub = document.getElementById(subIdOrEl);
+      var chevronId = subIdOrEl.replace('sub', 'chevron');
+      var chevron = document.getElementById(chevronId);
+      if (!sub) return;
+      var isOpen = sub.style.display !== 'none';
+      sub.style.display = isOpen ? 'none' : 'block';
+      if (chevron) chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+      return;
+    }
+
+    var trigger = subIdOrEl;
+    if (!trigger || !trigger.getAttribute) return;
+    var expanded = trigger.getAttribute('aria-expanded') === 'true';
+    trigger.setAttribute('aria-expanded', String(!expanded));
+
+    // .accordion-content는 항상 trigger의 형제 요소들 중 하나(사이에 다른 요소가
+    // 끼어 있는 경우도 있음, 예: card__subtitle)로 존재 — 순서대로 찾아서 토글
+    var el = trigger.nextElementSibling;
+    while (el && !el.classList.contains('accordion-content')) {
+      el = el.nextElementSibling;
+    }
+    if (el) el.classList.toggle('open', !expanded);
   }
   </script>
 
